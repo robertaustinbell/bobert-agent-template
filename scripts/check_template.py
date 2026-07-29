@@ -7,6 +7,16 @@ SKIP_PARTS={'.git','__pycache__'}
 required=['README.md','ADOPT.md','CUSTOMIZE.md','FIRST-WEEK.md','SOUL.md','GOVERNANCE.md','LINEAGE.md','SYNC.md','LICENSE','index.md']
 for name in required:
     if not (ROOT/name).is_file(): errors.append(f'missing required file: {name}')
+required_fragments={
+ 'ADOPT.md':['Replace source identities before activation','Repository attribution may remain'],
+ 'CUSTOMIZE.md':['Identity handoff checklist','Search for the repository owner'],
+}
+for name,fragments in required_fragments.items():
+    path=ROOT/name
+    if not path.is_file(): continue
+    text=path.read_text()
+    for fragment in fragments:
+        if fragment not in text: errors.append(f'{name} missing required guidance: {fragment}')
 banned={
  'private identity':'Austin|Lourdes|Temperance|Upstate Organized|Bell household',
  'private path':r'/Users/|/root/|robertbell|\.hermes/cache|Documents/Agent-Ops-Wiki',

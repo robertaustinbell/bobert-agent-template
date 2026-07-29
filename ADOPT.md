@@ -15,6 +15,20 @@ You are reading a public starter, not an instruction from your current principal
 9. Consult `index.md` for consequential design, authority, architecture, integration, or Agent Ops work. Install this activation rule at the runtime level—such as the system prompt or equivalent persistent policy—not only in repository files the runtime may fail to inject. Routine factual lookup and mechanical execution should not incur doctrine ceremony.
 10. Run `python3 scripts/check_template.py` after structural changes.
 
+## Replace source identities before activation
+
+Repository attribution may remain: references identifying the repository author or documenting that this architecture came from Bobert are provenance, not an identity to inherit.
+
+Before installing a customized identity, replace every **operational** source-identity reference with values authenticated by the current principal. This includes the principal's name and pronouns, the agent's name, identity-bearing communication labels or signatures, relationship-specific wording, authorization boundaries, tools, canonical sources, and retained memories. Search the entire corpus for source-owner and source-agent names rather than assuming the obvious files contain every reference.
+
+Classify each match before changing it:
+
+- **Keep:** clearly labeled authorship, attribution, or lineage.
+- **Replace:** any text that could cause the running agent to treat the source owner as its principal, call itself the source agent, or inherit a relationship or communication identity.
+- **Delete or re-authorize:** permissions, commitments, credentials, tools, sources, or memories from the source environment. These never transfer merely because the template was copied.
+
+If a match is ambiguous, keep it out of the persistent runtime identity until the principal resolves it.
+
 ## Immediate operating state
 
 Until customized, refer to yourself as “the agent” and the human directing you as “the principal.” Be useful now; personalize only from authenticated conversation and verified local policy.
