@@ -58,7 +58,7 @@ Examples: a balance in the finance vault, an event in the live calendar, a setti
 
 ### Interpretation
 
-the agent's model of what facts mean. Interpretations must remain distinguishable from their sources and revisable when evidence changes.
+The agent's model of what facts mean. Interpretations must remain distinguishable from their sources and revisable when evidence changes.
 
 ### Adopted doctrine
 
@@ -156,7 +156,7 @@ Use named subjects whenever pronouns or first-person phrasing could blur ownersh
 
 ## Placement test
 
-Ask what future the agent must do differently:
+Ask what a future agent must do differently:
 
 - **Embody without retrieval?** SOUL.
 - **Retrieve for consequential judgment across domains?** Agent Ops doctrine.
@@ -177,7 +177,7 @@ Write memory for:
 
 - stable preferences the principal explicitly stated;
 - durable environment facts unlikely to stale quickly;
-- corrections that future the agent would otherwise repeat;
+- corrections a future agent would otherwise repeat;
 - compact pointers to canonical records;
 - standing boundaries and ownership facts.
 

@@ -7,8 +7,8 @@ authority: advisory
 confidence: mixed
 confidence_basis:
   - Basic source, causal, base-rate, sensitivity, and uncertainty hygiene has broad methodological support.
-  - Baron-derived bounded-search guidance has low confidence and no recorded the agent application.
-  - Binmore-derived model-adequacy guidance has low confidence and no recorded the agent application.
+  - Baron-derived bounded-search guidance has low confidence and no recorded agent application.
+  - Binmore-derived model-adequacy guidance has low confidence and no recorded agent application.
   - Local value must be judged by whether the page changes consequential decisions without adding disproportionate ceremony.
 scope:
   - consequential decisions with uncertain framing, evidence, models, estimates, causal claims, or tradeoffs
@@ -150,7 +150,7 @@ When outcomes or observations do not fit, ask whether to update a parameter or r
 - What alternative model would recommend a different move?
 - What observation would force a structural revision?
 
-**Confidence: low for the Binmore-derived formulation.** It has not been evaluated in recorded the agent applications. Use it as a disciplined question set, not a validated house theory.
+**Confidence: low for the Binmore-derived formulation.** It has not been evaluated in recorded agent applications. Use it as a disciplined question set, not a validated house theory.
 
 ## 5. Earn precision
 
@@ -288,7 +288,7 @@ Stop researching when:
 - the deadline or opportunity cost now dominates;
 - additional detail only increases confidence theater.
 
-**Confidence: low for the Baron-derived bounded-search formulation.** No recorded the agent application establishes its local value. The stopping logic remains useful as bounded advisory guidance.
+**Confidence: low for the Baron-derived bounded-search formulation.** No recorded agent application establishes its local value. The stopping logic remains useful as bounded advisory guidance.
 
 ## 12. Robust action and close-the-loop
 

@@ -22,6 +22,7 @@ That instruction is intentionally conservative: a reusable identity should trans
 | `index.md` | Generated problem router; not an independent authority |
 | `ADOPT.md` | Safe bootstrap procedure for a blank agent |
 | `CUSTOMIZE.md` | Questions and rules for making the starter genuinely yours |
+| `FIRST-WEEK.md` | Conservative initial behavior, expectations, and correction path |
 | `SYNC.md` | Curated private-to-public projection policy |
 | `scripts/` | Deterministic generation and integrity checks |
 

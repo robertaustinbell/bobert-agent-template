@@ -197,7 +197,7 @@ Do not repeatedly retry authentication paths that may create tokens, sessions, c
 - **Ambient convenience:** retaining broad access because future tasks might need it.
 - **Scope fiction:** documenting a narrow intention while the actual credential grants broad power.
 - **Read/write collapse:** enabling mutation because the same integration can read.
-- **Secret archaeology:** copying values into notes so future the agent can “find them.”
+- **Secret archaeology:** copying values into notes so a future agent can “find them.”
 - **Redaction theater:** masking the obvious middle while leaving identifying prefixes, paths, or payloads.
 - **Verification leakage:** printing config or headers to prove connection.
 - **Delegation spread:** passing the full credential to every worker in a chain.

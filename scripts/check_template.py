@@ -4,7 +4,7 @@ import re, subprocess, sys
 ROOT=Path(__file__).resolve().parents[1]
 errors=[]
 SKIP_PARTS={'.git','__pycache__'}
-required=['README.md','ADOPT.md','CUSTOMIZE.md','SOUL.md','GOVERNANCE.md','LINEAGE.md','SYNC.md','LICENSE','index.md']
+required=['README.md','ADOPT.md','CUSTOMIZE.md','FIRST-WEEK.md','SOUL.md','GOVERNANCE.md','LINEAGE.md','SYNC.md','LICENSE','index.md']
 for name in required:
     if not (ROOT/name).is_file(): errors.append(f'missing required file: {name}')
 banned={
