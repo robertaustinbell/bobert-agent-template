@@ -9,6 +9,7 @@ confidence_basis:
   - Basic source, causal, base-rate, sensitivity, and uncertainty hygiene has broad methodological support.
   - Baron-derived bounded-search guidance has low confidence and no recorded agent application.
   - Binmore-derived model-adequacy guidance has low confidence and no recorded agent application.
+  - The situational-awareness failure taxonomy is an operational extrapolation; adopters should judge it by changed decisions or repairs rather than conceptual neatness.
   - Local value must be judged by whether the page changes consequential decisions without adding disproportionate ceremony.
 scope:
   - consequential decisions with uncertain framing, evidence, models, estimates, causal claims, or tradeoffs
@@ -17,11 +18,13 @@ consult_when:
   - evidence conflicts, selection is unclear, or a generalization is load-bearing
   - a quantitative estimate, probability, deadline, forecast, or causal claim changes the move
   - the model may omit actors, options, mechanisms, constraints, or feedback
+  - current state may change during the task, several observations must be integrated, or a near-future projection materially determines the move
   - downside, irreversibility, opportunity cost, or update timing is material
 do_not_use_when:
   - an authoritative source directly answers a low-stakes factual question
   - the task is mechanical and already decided
   - uncertainty cannot change the action and further analysis would only decorate the answer
+  - a current authoritative source resolves the relevant state and further situation modeling cannot alter the authorized action
   - casual language, jokes, vents, or brainstorming do not make a load-bearing claim
 router_summary: Test the framing, evidence, causal story, model adequacy, precision, alternatives, and stopping point of consequential decisions.
 decision_effect:
@@ -36,13 +39,16 @@ known_failures:
   - hidden precision in point estimates and model outputs
   - representation sensitivity mistaken for substantive robustness
   - outcome bias when judging the prior decision
+  - mistaking information volume, confidence, fluent explanation, or a successful outcome for situational understanding
+  - checklist theater that names awareness stages without changing observation, projection, action, or repair
   - analysis that continues after it can no longer change the move
 review_when:
   - a real application produces a materially worse decision than a simpler approach
   - repeated retrieval adds ceremony without changing the recommendation
   - an outcome exposes a missing actor, option, mechanism, constraint, or causal path
+  - perception, comprehension, and projection failures cannot be distinguished reliably enough to prescribe different repairs
   - the same estimate class repeatedly misses in a directional way
-last_material_revision: 2026-07-29
+last_material_revision: 2026-07-30
 ---
 
 # Decision Quality Under Uncertainty
@@ -291,6 +297,31 @@ Stop researching when:
 **Confidence: low for the Baron-derived bounded-search formulation.** No recorded agent application establishes its local value. The stopping logic remains useful as bounded advisory guidance.
 
 ## 12. Robust action and close-the-loop
+
+### Situational understanding in dynamic work
+
+When relevant state can change during analysis or execution, separate three layers of situational understanding:
+
+1. **Perception:** establish relevant current state from live, appropriately authoritative observations.
+2. **Comprehension:** integrate those observations relative to the objective, decision owner, constraints, actors, dependencies, and feedback loops.
+3. **Projection:** identify material state transitions, responses, and near-future possibilities that could change the decision.
+
+Information volume is not situational understanding. More observations can reduce decision quality when they are stale, redundant, correlated, unauthoritative, irrelevant, invasive, or too costly to obtain. Allocate observation and reasoning effort according to consequence, volatility, uncertainty, authority, and expected decision value.
+
+For consequential dynamic actions, preserve proportionally the objective and owner, material verified and unobserved state, interpretation, load-bearing projection, expected result, disconfirming signal, authorization boundary, and feedback path. This is a checkpoint, not a mandatory visible recital. Skip it when live authoritative state directly resolves a low-stakes question or more modeling cannot change the authorized move.
+
+### Diagnose the earliest failed layer
+
+After a material surprise or failure, distinguish:
+
+- **Perception failure:** relevant state was missed, stale, or drawn from the wrong source.
+- **Comprehension failure:** facts were observed but their relationships or significance were misunderstood.
+- **Projection failure:** present state was understood but its development was forecast poorly.
+- **Decision failure:** the situation model was adequate but the chosen action poorly fit the objective, authority, tradeoffs, or downside.
+- **Execution failure:** the decision was sound but implementation, sequencing, tooling, or verification failed.
+- **Feedback failure:** action occurred but its effects were not observed or incorporated.
+
+Classify the earliest load-bearing failure supported by evidence rather than the most visible final symptom. Multiple layers may fail; preserve ambiguity when the evidence cannot distinguish them. Do not infer sound understanding from confidence, fluent explanation, process completion, or outcome alone.
 
 When uncertainty remains:
 
