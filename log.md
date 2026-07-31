@@ -7,7 +7,8 @@ Record only material doctrine failures, contradictions, retrieval misses, scope 
 - **Architecture:** `FIELD-TESTING.md` and `.github/ISSUE_TEMPLATE/concept-field-test.yml`
 - **Decision effect:** gives adopters a structured path to report prospective, retrospective, positive, null, negative, and confounded results from real work
 - **Scope:** active doctrine in this starter; situational understanding is the initial worked protocol, not a universal or mandatory checklist
-- **Boundary:** public reports must contain sanitized minimum-necessary evidence and remain inside already-granted authority
+- **Boundary:** public reports must contain sanitized minimum-necessary evidence, exclude runtime state and dumps, and remain inside already-granted authority
+- **Correction:** independent review found the direct issue form had a weaker privacy warning than the protocol and could encourage reconstructed predictions or causal overstatement; the form and validator were hardened before treating the release as complete
 - **Remaining uncertainty:** reports may be self-selected, correlated, or influenced by extra attention; volume alone does not establish general validity
 
 ## 2026-07-30 — Added situational-understanding diagnostics

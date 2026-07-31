@@ -11,7 +11,7 @@ required_fragments={
  'ADOPT.md':['Replace source identities before activation','Repository attribution may remain'],
  'CUSTOMIZE.md':['Identity handoff checklist','Search for the repository owner'],
  'FIELD-TESTING.md':['Situational-understanding starter test','Privacy and authority boundary'],
- '.github/ISSUE_TEMPLATE/concept-field-test.yml':['Concept field test','Strongest alternative explanation or confound'],
+ '.github/ISSUE_TEMPLATE/concept-field-test.yml':['Concept field test','Strongest alternative explanation or confound','runtime state and dumps','do not reconstruct one'],
 }
 for name,fragments in required_fragments.items():
     path=ROOT/name
@@ -19,6 +19,16 @@ for name,fragments in required_fragments.items():
     text=path.read_text()
     for fragment in fragments:
         if fragment not in text: errors.append(f'{name} missing required guidance: {fragment}')
+issue_form=ROOT/'.github/ISSUE_TEMPLATE/concept-field-test.yml'
+if issue_form.is_file():
+    form=issue_form.read_text()
+    for key in ['name','description','title','body']:
+        if not re.search(rf'(?m)^{key}:',form): errors.append(f'issue form missing top-level key: {key}')
+    field_ids=re.findall(r'(?m)^    id:\s*([a-z0-9_-]+)\s*$',form)
+    if not field_ids: errors.append('issue form has no field ids')
+    if len(field_ids)!=len(set(field_ids)): errors.append('issue form has duplicate field ids')
+    for field_type in ['markdown','input','dropdown','textarea','checkboxes']:
+        if not re.search(rf'(?m)^  - type:\s*{field_type}\s*$',form): errors.append(f'issue form missing field type: {field_type}')
 banned={
  'private identity':'Austin|Lourdes|Temperance|Upstate Organized|Bell household',
  'private path':r'/Users/|/root/|robertbell|\.hermes/cache|Documents/Agent-Ops-Wiki',

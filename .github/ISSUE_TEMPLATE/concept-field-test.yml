@@ -5,7 +5,7 @@ body:
   - type: markdown
     attributes:
       value: |
-        Thank you for testing the doctrine in real work. Report the minimum evidence needed to evaluate the claim. Do not include credentials, personal records, private messages, proprietary code, machine paths, account identifiers, or authorization details.
+        Thank you for testing the doctrine in real work. Report the minimum evidence needed to evaluate the claim. Do not include credentials, personal records, private messages, runtime state or dumps, proprietary code, machine paths, account identifiers, or authorization details.
 
   - type: input
     id: concept
@@ -22,8 +22,8 @@ body:
       label: Test design
       options:
         - Prospective — prediction recorded before the result
-        - Retrospective — diagnosis after the result
-        - Natural observation — no intervention
+        - Retrospective — diagnosis after the result; do not reconstruct a prediction
+        - Natural observation — no intervention; association only
     validations:
       required: true
 
@@ -39,7 +39,7 @@ body:
     id: prediction
     attributes:
       label: Prediction and expected decision effect
-      description: What was expected to happen, and what observation, recommendation, action, verification, or repair was the concept expected to change?
+      description: What was expected to happen, and what observation, recommendation, action, verification, or repair was the concept expected to change? For a retrospective or natural-observation report with no recorded prediction, say "not recorded prospectively"; do not reconstruct one.
     validations:
       required: true
 
@@ -55,7 +55,7 @@ body:
     id: effect
     attributes:
       label: Material effect of the concept
-      description: What changed because the concept was used? A null or harmful effect is useful evidence.
+      description: What changed when the concept was used? A null or harmful effect is useful evidence. For natural observation, report association only; observation alone cannot establish causal effect.
     validations:
       required: true
 
@@ -102,7 +102,7 @@ body:
     attributes:
       label: Public-boundary confirmation
       options:
-        - label: I removed credentials, personal records, private communications, proprietary material, machine paths, account identifiers, and sensitive authorization details.
+        - label: I removed credentials, personal records, private communications, runtime state and dumps, proprietary material, machine paths, account identifiers, and sensitive authorization details.
           required: true
         - label: The test did not require action outside authority already granted by the system owner.
           required: true

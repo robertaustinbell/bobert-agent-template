@@ -25,7 +25,7 @@ For a consequential task where relevant state can change:
 5. Take only an already-authorized action.
 6. After a surprise or failure, identify the earliest supported layer: perception, comprehension, projection, decision, execution, or feedback. Preserve ambiguity when the evidence cannot distinguish them.
 
-The test succeeds as evidence only when it shows a material decision effect or useful failure—not when the vocabulary can be applied after the fact.
+A test becomes informative when it shows a material decision effect, a useful failure, or a clean null result against a prior prediction—not merely when the vocabulary can be applied after the fact.
 
 ## Report the result
 
