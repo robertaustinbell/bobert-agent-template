@@ -5,7 +5,8 @@ status: active
 authority: adopted
 confidence: not-applicable
 confidence_basis:
-  - This is an adopted ownership and lifecycle policy, not an empirical hypothesis.
+  - Normative basis: adopted repository policy for maintaining a coherent ownership, authority, retrieval, and lifecycle architecture.
+  - Its design is informed by the duplicate-authority, status-and-confidence conflation, retrieval, and ceremony failures documented on this page; it does not claim universal empirical validity.
 scope:
   - Agent Ops placement, authority, lifecycle, retrieval, and maintenance
 consult_when:

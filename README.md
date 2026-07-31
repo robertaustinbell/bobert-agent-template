@@ -60,6 +60,8 @@ Then follow [RUNTIMES.md](RUNTIMES.md) to install and verify the identity, doctr
 
 A coherent repository does not prove good judgment. Static checks establish structure and detect some classes of drift. Real work reveals retrieval failures, bad assumptions, overreach, and doctrine that does not earn its complexity.
 
+Prompt-level rules are behavioral policy, not a security sandbox. Follow [RUNTIMES.md](RUNTIMES.md) and [Least-Privilege Capability Access](doctrine/authority/least-privilege-capability-access.md) to pair them with runtime verification and technical controls proportionate to the risk.
+
 ## License
 
 MIT. See `LICENSE` and `LINEAGE.md`.

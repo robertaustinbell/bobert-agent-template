@@ -36,7 +36,7 @@ review_when:
   - a capability cannot be verified without exposing its credential
   - repeated operational friction causes pressure to bypass least privilege
   - a real incident reveals an unexpected egress or mutation path
-last_material_revision: 2026-07-29
+last_material_revision: 2026-07-31
 ---
 
 # Least-Privilege Capability Access
@@ -46,6 +46,12 @@ last_material_revision: 2026-07-29
 > **Possession of a credential, permission, or tool surface is not authority to disclose, delegate, or use every capability it enables. Grant the narrowest usable power for the shortest necessary scope, and make expansion explicit.**
 
 Least privilege is not “agents should never access secrets.” Some work legitimately requires authenticated capability. The objective is to let the agent perform the authorized operation without turning the secret itself—or every power behind it—into ambient context.
+
+## Policy and enforcement
+
+Prompt-level rules are behavioral policy, not a security sandbox. They are one defense-in-depth layer, not proof that a compromised runtime, manipulated model, or overpowered tool is contained. Enforce consequential boundaries outside the prompt with the narrowest practical credentials and operations, independent authorization where warranted, and platform controls that limit effective access, mutation, disclosure, retention, and egress.
+
+Judge exposure by what the runtime and tool can actually do, not only by what the agent is instructed to do. If technical scoping is unavailable, treat the broader effective capability as the risk surface and increase containment, supervision, or refusal proportionately.
 
 ## Separate the powers
 

@@ -2,6 +2,12 @@
 
 This starter is runtime-neutral, but adoption is not complete until the runtime can reliably load the identity, route consequential work, and report degraded context. A repository file is not active policy merely because it exists.
 
+## Policy is not containment
+
+Prompt-level identity, privacy, and authorization rules are behavioral policy, not a security sandbox. They can guide normal agent behavior, but they cannot by themselves constrain a compromised runtime, a manipulated model, or a tool whose effective capability is broader than the task.
+
+Back consequential boundaries with technical controls proportionate to the downside: scoped credentials, brokered operations, governed secret storage, OS or cloud permissions, egress controls, and independent authorization checks. Treat the platform's effective capability—not the narrower operation the prompt requests—as the risk surface. See [Least-Privilege Capability Access](doctrine/authority/least-privilege-capability-access.md).
+
 ## Three required decisions
 
 ### 1. Persistent identity
@@ -9,6 +15,12 @@ This starter is runtime-neutral, but adoption is not complete until the runtime 
 Place the customized constitutional identity where the runtime reliably supplies persistent instructions to every relevant session. Do not call `SOUL.md` always-loaded until that behavior has been verified in the actual runtime.
 
 Do not silently overwrite an existing identity. Reconcile material differences with the principal and keep one canonical persistent version.
+
+#### Identity update contract
+
+The installer or runtime integration should record the installed canonical SOUL's provenance, including an immutable content identifier such as a commit or content hash; a release tag may be recorded alongside it. Before replacing that identity, compare the installed and candidate versions and show the principal material changes to purpose, values, character, judgment posture, boundaries, authority, or continuity. Record acknowledgment so the same update is not announced in every session.
+
+A session-start comparison is a valid fallback only when the runtime can access the installed identifier, candidate identity, and acknowledgment state. If the runtime cannot preserve or compare that state, say that silent identity drift cannot be mechanically prevented and require an external update process rather than pretending the notification obligation is enforced.
 
 ### 2. Doctrine activation and retrieval
 
@@ -39,7 +51,7 @@ Repository attribution may remain, but the project must not inherit Bobert's nam
 
 Before relying on the installation:
 
-1. Ask the agent to identify its canonical persistent identity source.
+1. Ask the agent to identify its canonical persistent identity source, installed commit or content hash, and release tag when applicable—or explicitly report that version tracking is unavailable.
 2. Present one consequential architecture or authority scenario.
 3. Confirm that it consults `index.md` and identifies the relevant doctrine page.
 4. In a safe test context, make a doctrine page unavailable.

@@ -43,3 +43,11 @@ Record only material doctrine failures, contradictions, retrieval misses, scope 
 - **Scope:** portable cross-domain judgment only; no personal product contract, machine state, live integration status, or archived source-agent authority
 - **Correction:** file preservation or destination mapping does not by itself prove that behavior-changing meaning remains active; compare triggers, boundaries, exceptions, failure modes, confidence qualifiers, and implementation ownership proposition by proposition
 - **Remaining uncertainty:** the additions are structurally and semantically reviewable but remain guidance rather than proof of improved outcomes; future field evidence should narrow or remove wording that adds ceremony without changing decisions or repairs
+
+## 2026-07-31 — Clarified runtime enforcement and identity updates
+
+- **Architecture:** `README.md`, `RUNTIMES.md`, `SOUL.md`, Governance, Least-Privilege Capability Access, and Permissions, Controls, and Discretion
+- **Decision effect:** distinguishes prompt policy from technical containment, assigns identity-version comparison to installation or runtime integration, limits session-start comparison to runtimes with the required state, and gives adopters one paired mechanical-versus-decision example
+- **Identity change:** the public starter SOUL now separates stewardship's relational posture from the operative access boundary and keeps a compact causal reflex while detailed causal analysis remains doctrine-owned
+- **Correction:** independent mutation review found that the initial validator guarded headings and slogans but allowed removal or inversion of load-bearing update and causal semantics; focused canaries now reject those mutations
+- **Remaining uncertainty:** technical enforcement and identity provenance remain runtime-specific, and field use may show that the paired example or update contract needs narrower wording or stronger integration guidance
