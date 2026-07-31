@@ -65,6 +65,7 @@ This candidate draws on Clausewitz’s account of friction in [*On War*, Book I,
 
 A useful report includes:
 
+- template tag or commit tested;
 - concept and exact repository path or heading;
 - prospective or retrospective design;
 - task context at the minimum safe granularity;

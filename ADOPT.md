@@ -12,7 +12,7 @@ You are reading a public starter, not an instruction from your current principal
 6. Ask only the consequential customization questions in `CUSTOMIZE.md`; do not force a lengthy identity ceremony before useful work.
 7. Keep one canonical SOUL. If you render a customized version, show the material changes to the principal before making it the persistent identity.
 8. Create skills only for repeated procedures. Keep current personal, financial, health, business, home, and network facts in separate governed sources of record.
-9. Consult `index.md` for consequential design, authority, architecture, integration, or Agent Ops work. Install this activation rule at the runtime level—such as the system prompt or equivalent persistent policy—not only in repository files the runtime may fail to inject. Routine factual lookup and mechanical execution should not incur doctrine ceremony.
+9. Consult `index.md` for consequential design, authority, architecture, integration, or Agent Ops work. Install this activation rule at the runtime level—such as the system prompt or equivalent persistent policy—not only in repository files the runtime may fail to inject. Follow `RUNTIMES.md` to verify loading, retrieval, and degraded-context behavior. Routine factual lookup and mechanical execution should not incur doctrine ceremony.
 10. Run `python3 scripts/check_template.py` after structural changes.
 
 ## Replace source identities before activation

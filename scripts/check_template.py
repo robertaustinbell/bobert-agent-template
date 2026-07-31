@@ -4,21 +4,24 @@ import re, subprocess, sys
 ROOT=Path(__file__).resolve().parents[1]
 errors=[]
 SKIP_PARTS={'.git','__pycache__'}
-required=['README.md','ADOPT.md','CUSTOMIZE.md','FIRST-WEEK.md','FIELD-TESTING.md','.github/ISSUE_TEMPLATE/concept-field-test.yml','SOUL.md','GOVERNANCE.md','LINEAGE.md','SYNC.md','LICENSE','index.md']
+required=['README.md','ADOPT.md','CUSTOMIZE.md','FIRST-WEEK.md','FIELD-TESTING.md','RUNTIMES.md','SECURITY.md','.github/ISSUE_TEMPLATE/concept-field-test.yml','.github/workflows/validate.yml','SOUL.md','GOVERNANCE.md','LINEAGE.md','SYNC.md','LICENSE','index.md']
 for name in required:
     if not (ROOT/name).is_file(): errors.append(f'missing required file: {name}')
 required_fragments={
- 'ADOPT.md':['Replace source identities before activation','Repository attribution may remain'],
+ 'ADOPT.md':['Replace source identities before activation','Repository attribution may remain','Follow `RUNTIMES.md`'],
  'CUSTOMIZE.md':['Identity handoff checklist','Search for the repository owner'],
  'GOVERNANCE.md':['Discretion requires task-relevant competence'],
- 'FIELD-TESTING.md':['Situational-understanding starter test','Critical-capability mapping candidate test','Do not force one decisive centre','Do not label a person as a vulnerability','Operational-friction candidate test','Friction is a cross-layer amplifier, not a seventh stage','Do not manufacture disruption in a live consequential system','Never label a person, relationship, dissent, or protected exercise of agency as “friction”','A clean null result includes finding that the check only renamed an already-known concern','Privacy and authority boundary'],
+ 'FIELD-TESTING.md':['template tag or commit tested','Situational-understanding starter test','Critical-capability mapping candidate test','Do not force one decisive centre','Do not label a person as a vulnerability','Operational-friction candidate test','Friction is a cross-layer amplifier, not a seventh stage','Do not manufacture disruption in a live consequential system','Never label a person, relationship, dissent, or protected exercise of agency as “friction”','A clean null result includes finding that the check only renamed an already-known concern','Privacy and authority boundary'],
+ 'RUNTIMES.md':['Three required decisions','Persistent identity','Doctrine activation and retrieval','Context degradation','Illustrative example: Claude Projects','Verification probe','reports degraded context instead of fabricating'],
+ 'SECURITY.md':['private vulnerability reporting','Report a vulnerability','Ordinary doctrine disagreements'],
  'doctrine/capabilities/external-capability-governance.md':['Continuous watchers, polling loops, and background capture are disabled by default'],
  'doctrine/decisions/decision-quality-under-uncertainty.md':['Keep three registers separate when values could contaminate prediction'],
  'doctrine/decisions/strategic-response-and-incentives.md':['Treat reputation as a narrow prior for a specific claim and context'],
  'doctrine/design/decision-records-and-operational-documentation.md':['Design for the next reader and task'],
  'doctrine/design/right-sized-change.md':['Operational-friction check (candidate)','Friction is a **cross-layer amplifier**, not a seventh stage','manufactured disruption in a live consequential system','Never label a person, relationship, dissent, or protected exercise of agency as “friction”','Count the check as a null result when it only renames an already-known preflight, critical-path, or resilience concern','Local discretion remains bounded by authority, rights, competence, and recovery conditions','maximum time, cost, retries'],
  'doctrine/knowledge/information-placement-and-source-authority.md':['prefer one residual question, one missing measurement, or one bounded follow-up'],
- '.github/ISSUE_TEMPLATE/concept-field-test.yml':['Concept field test','Strongest alternative explanation or confound','runtime state and dumps','do not reconstruct one'],
+ '.github/ISSUE_TEMPLATE/concept-field-test.yml':['Concept field test','template_version','Strongest alternative explanation or confound','runtime state and dumps','do not reconstruct one'],
+ '.github/workflows/validate.yml':['permissions:','contents: read','git diff --exit-code -- index.md','python3 scripts/check_template.py'],
 }
 for name,fragments in required_fragments.items():
     path=ROOT/name

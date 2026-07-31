@@ -24,6 +24,7 @@ That instruction is intentionally conservative: a reusable identity should trans
 | `CUSTOMIZE.md` | Questions and rules for making the starter genuinely yours |
 | `FIRST-WEEK.md` | Conservative initial behavior, expectations, and correction path |
 | `FIELD-TESTING.md` | Bounded tests and a privacy-safe path for reporting useful, null, and negative results |
+| `RUNTIMES.md` | Runtime installation decisions, degradation behavior, and a bounded verification probe |
 | `SYNC.md` | Curated private-to-public projection policy |
 | `scripts/` | Deterministic generation and integrity checks |
 
@@ -53,7 +54,7 @@ python3 scripts/generate_index.py
 python3 scripts/check_template.py
 ```
 
-Then configure your agent runtime to load `SOUL.md`. Runtime installation differs; do not let a bootstrap script silently overwrite an existing identity.
+Then follow [RUNTIMES.md](RUNTIMES.md) to install and verify the identity, doctrine router, and degraded-context behavior. Runtime installation differs; do not let a bootstrap script silently overwrite an existing identity.
 
 ## What this does not prove
 
