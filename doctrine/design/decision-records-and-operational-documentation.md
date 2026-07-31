@@ -8,29 +8,34 @@ confidence: high
 confidence_basis:
   - The guidance reflects established operational documentation practice and direct local failures from stale duplication, missing rationale, and unauditable changes.
 scope:
-  - decision records, operational documentation, canonicality, generated views, and change traceability
+  - decision records, operational documentation, claim-to-evidence traceability, canonicality, generated views, and change traceability
 consult_when:
   - making a durable architecture, authority, integration, product, or governance choice
+  - a consequential recommendation, report, audit, or release depends materially on evidence-bearing claims
   - a future operator needs rationale, constraints, rollback, or ownership to change the system safely
   - documentation is duplicated, stale, or competing with a canonical source
   - a migration must prove semantic survival rather than merely preserve files
 do_not_use_when:
   - the task is temporary session work with no durable decision or handoff
   - a canonical source already answers the question and another summary would only drift
-router_summary: Record durable choices and operational knowledge at the minimum detail needed for safe future change, ownership, verification, and rollback.
+  - routine authoritative-source lookup or reversible low-stakes work would not become easier to verify or repair through a formal record
+router_summary: Record durable choices and consequential evidence claims at the minimum detail needed for safe future change, verification, repair, and rollback.
 decision_effect:
   - preserve rationale and constraints without copying every implementation detail
+  - connect load-bearing claims to inspectable evidence and audit coverage separately from support correctness
   - make canonical versus generated versus historical status explicit
   - stop documentation when additional prose no longer improves future action
 implemented_by: []
 lineage: LINEAGE.md
 known_failures:
   - documentation theater that describes activity but not decisions
+  - polished conclusions whose citations exist but do not support the wording, scope, result, specification, or method claimed
   - duplicate summaries drifting from their source of record
   - decision records missing authority, alternatives, assumptions, or reconsideration triggers
   - generated indexes edited as canonical prose
 review_when:
   - future work repeatedly cannot determine why a choice was made
+  - claim-to-evidence records add ceremony without catching errors or improving repair
   - documentation survives while the behavior it describes changes
   - maintaining the document costs more than its decision or recovery value
   - a generated view and canonical source disagree
@@ -138,6 +143,34 @@ Do not:
 - treat a worked case as universal proof;
 - manufacture examples to make a framework look mature;
 - paste private source contents when a pointer suffices.
+
+## Consequential claim-to-evidence audit (candidate)
+
+For consequential recommendations, reports, audits, releases, quantitative results, or synthesized conclusions, build claim-to-evidence links while investigating and producing the work rather than reconstructing plausible support after the prose is polished. A claim is **load-bearing** when its falsity would materially change the recommendation, decision, reported result, or verification conclusion.
+
+For each load-bearing claim, retain only what makes it inspectable and repairable:
+
+- the claim's exact wording and scope;
+- a stable source or artifact identity plus a decision-relevant locator such as a page, section, line range, result row, log span, run identifier, or content hash;
+- whether support is direct, derived, inferred, or absent;
+- limitations, contradiction, and confidence;
+- the verification method and result, including whether review was genuinely independent;
+- what evidence would change or retire the claim.
+
+Audit **completeness** and **correctness** separately. Completeness asks whether every load-bearing claim in the final output resolves to evidence or is explicitly marked unsupported; inspect the output for claims missing from the record rather than checking only records already created. Correctness asks whether the declared evidence supports the claim's actual wording, scope, and strength.
+
+Record each relevant audit class as `performed`, `not applicable — rationale`, or `blocked — reason`:
+
+1. **Reference:** verify source existence, identity, locator, and attributed support.
+2. **Result:** independently rerun decision-bearing calculations, queries, tests, or code when feasible.
+3. **Specification:** test the actual objective and constraints rather than a convenient proxy or evaluator loophole.
+4. **Method–artifact:** compare described methods, configuration, and procedures with what actually executed.
+
+When evidence does not carry the claim, preserve the mismatch and narrow the wording, label the inference, or mark the claim unsupported. Do not make the conclusion appear cleaner by erasing contradiction or uncertainty. A second pass by the same model can detect discrepancies but is not independent proof.
+
+Do not impose this as a universal ledger. Routine authoritative-source lookup, casual explanation, and reversible low-stakes work should not incur formal recordkeeping when it would not improve verification or repair. Commands, schemas, and automation belong in runtime-specific skills or runbooks.
+
+This candidate is adapted from the Chain-of-Evidence approach described in Google Research's [Science One Framework](https://research.google/blog/science-one-framework-a-verifiable-autonomous-research-framework-via-chain-of-evidence/) and Meng et al.'s [ScientistOne preprint](https://arxiv.org/abs/2605.26340). It transfers a bounded verification practice, not the paper's research pipeline or a claim that traceability eliminates hallucination.
 
 ## Documentation stop rule
 

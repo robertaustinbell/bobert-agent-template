@@ -61,6 +61,22 @@ Do not manufacture disruption in a live consequential system merely to create a 
 
 This candidate draws on Clausewitz’s account of friction in [*On War*, Book I, Chapter VII](https://www.marxists.org/reference/archive/clausewitz/works/on-war/book1/ch07.htm) and Eugenia C. Kiesling’s corrective analysis, [“On War Without the Fog”](https://clausewitzstudies.org/bibl/Kiesling-OnFog.pdf) (2001). It does not adopt “fog of war” as a new doctrine category, and its distinct usefulness for agents is unestablished.
 
+## Claim-to-evidence audit candidate test
+
+For a consequential evidence-bearing task where unsupported or overstated claims could materially change a recommendation, decision, reported result, audit, or release:
+
+1. State why the task is consequential enough to justify a claim-level record and what ordinary review would otherwise do.
+2. Build evidence links while investigating and producing the work. For each load-bearing claim, preserve exact wording, stable source or artifact identity, a decision-relevant locator, support type, limitations, verification result, reviewer independence, and revision condition.
+3. After drafting, audit completeness by scanning the final output for material claims absent from the record. Do not inspect only the records already created.
+4. Audit correctness by testing whether each evidence item supports the claim's actual wording, scope, and strength.
+5. Record reference, result, specification, and method–artifact checks as `performed`, `not applicable — rationale`, or `blocked — reason`.
+6. Repair mismatches conservatively: narrow the claim, label inference, preserve contradiction, or mark it unsupported rather than silently deleting the problem.
+7. Compare the result with ordinary citation checking, tests, release review, or source-grounded analysis. A useful result catches or repairs a material omission, support mismatch, proxy-compliance error, unverifiable result, or method–artifact inconsistency. A clean null result includes finding that the record added ceremony without improving verification or repair.
+
+A second pass by the same model is useful discrepancy detection but not independent proof. Do not manufacture consequential work to test the candidate, and do not impose a formal ledger on routine authoritative-source lookup, casual explanation, or reversible low-stakes work.
+
+This candidate adapts the completeness/correctness distinction and reference, result, specification, and method–artifact audit classes described in Google Research's [Science One Framework](https://research.google/blog/science-one-framework-a-verifiable-autonomous-research-framework-via-chain-of-evidence/) and Meng et al., [“ScientistOne: Towards Human-Level Autonomous Research via Chain-of-Evidence”](https://arxiv.org/abs/2605.26340) (May 2026). The source is an author-reported preprint evaluating 75 generated papers across selected technical tasks. Its method–code alignment metric is LLM-judged; human reviewers validated only a sample, and the reported scores were not systematically corrected from that review. Its reported zero phantom references means 0 of 337 references in that evaluated sample, not a general guarantee. Treat the framework as experimental and test whether this bounded practice earns its carrying cost.
+
 ## Report the result
 
 A useful report includes:

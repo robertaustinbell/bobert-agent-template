@@ -58,11 +58,11 @@ Model other actors' responses, information, incentives, commitments, and selecti
 
 ### [Decision Records and Operational Documentation](doctrine/design/decision-records-and-operational-documentation.md)
 
-Record durable choices and operational knowledge at the minimum detail needed for safe future change, ownership, verification, and rollback.
+Record durable choices and consequential evidence claims at the minimum detail needed for safe future change, verification, repair, and rollback.
 
-**Consult when:** making a durable architecture, authority, integration, product, or governance choice; a future operator needs rationale, constraints, rollback, or ownership to change the system safely; documentation is duplicated, stale, or competing with a canonical source; a migration must prove semantic survival rather than merely preserve files.
+**Consult when:** making a durable architecture, authority, integration, product, or governance choice; a consequential recommendation, report, audit, or release depends materially on evidence-bearing claims; a future operator needs rationale, constraints, rollback, or ownership to change the system safely; documentation is duplicated, stale, or competing with a canonical source.
 
-**Do not use when:** the task is temporary session work with no durable decision or handoff; a canonical source already answers the question and another summary would only drift.
+**Do not use when:** the task is temporary session work with no durable decision or handoff; a canonical source already answers the question and another summary would only drift; routine authoritative-source lookup or reversible low-stakes work would not become easier to verify or repair through a formal record.
 
 ### [Right-Sized Change](doctrine/design/right-sized-change.md)
 

@@ -2,6 +2,15 @@
 
 Record only material doctrine failures, contradictions, retrieval misses, scope or confidence changes, and architecture revisions. Ordinary success does not require an entry.
 
+## 2026-07-31 — Added consequential claim-to-evidence auditing as a field-test candidate
+
+- **Doctrine:** `doctrine/design/decision-records-and-operational-documentation.md` — `Consequential claim-to-evidence audit (candidate)`; `FIELD-TESTING.md` — `Claim-to-evidence audit candidate test`
+- **Decision effect:** tests whether building claim links during consequential evidence-bearing work, then auditing completeness separately from support correctness, exposes material omissions, overstatement, proxy compliance, unverifiable results, or method–artifact mismatch before presentation
+- **Scope:** recommendations, reports, audits, releases, quantitative results, and synthesized conclusions where a false claim would materially change the decision; not a universal ledger for routine authoritative lookup, casual explanation, or reversible low-stakes work
+- **Evidence:** Google Research, “Science One Framework: A Verifiable Autonomous Research Framework via Chain-of-Evidence”; Meng et al., “ScientistOne: Towards Human-Level Autonomous Research via Chain-of-Evidence,” arXiv:2605.26340
+- **Limit:** the May 2026 source is an author-reported preprint evaluating 75 generated papers across selected technical tasks; its method–code alignment metric is LLM-judged, with human validation limited to a sample and no systematic score correction from that review, and 0 phantom references among 337 checked references is a sample result rather than an architectural guarantee
+- **Remaining uncertainty:** the candidate may duplicate good source review or add reconstructed provenance and carrying cost; retain, narrow, or remove it according to material errors caught, repair enabled, clean null results, and excess ceremony
+
 ## 2026-07-30 — Added critical-capability mapping as a field-test candidate
 
 - **Protocol:** `FIELD-TESTING.md` — `Critical-capability mapping candidate test`

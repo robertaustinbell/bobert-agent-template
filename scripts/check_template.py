@@ -27,12 +27,133 @@ required_fragments={
  '.github/ISSUE_TEMPLATE/concept-field-test.yml':['Concept field test','template_version','Strongest alternative explanation or confound','runtime state and dumps','do not reconstruct one'],
  '.github/workflows/validate.yml':['permissions:','contents: read','git diff --exit-code -- index.md','python3 scripts/check_template.py'],
 }
+required_sections={
+ 'FIELD-TESTING.md':{
+  'Claim-to-evidence audit candidate test':[
+   'audit completeness by scanning the final output',
+   'Audit correctness by testing whether each evidence item supports the claim\'s actual wording, scope, and strength',
+   'performed`, `not applicable — rationale`, or `blocked — reason',
+   'A second pass by the same model is useful discrepancy detection but not independent proof',
+   'zero phantom references means 0 of 337 references in that evaluated sample, not a general guarantee',
+  ],
+ },
+ 'doctrine/design/decision-records-and-operational-documentation.md':{
+  'Consequential claim-to-evidence audit (candidate)':[
+   'A claim is **load-bearing** when its falsity would materially change',
+   'Audit **completeness** and **correctness** separately',
+   'inspect the output for claims missing from the record rather than checking only records already created',
+   'Reference:** verify source existence, identity, locator, and attributed support',
+   'Specification:** test the actual objective and constraints rather than a convenient proxy or evaluator loophole',
+   'Method–artifact:** compare described methods, configuration, and procedures with what actually executed',
+   'A second pass by the same model can detect discrepancies but is not independent proof',
+   'Do not impose this as a universal ledger',
+  ],
+ },
+}
+forbidden_section_fragments={
+ 'FIELD-TESTING.md':{
+  'Claim-to-evidence audit candidate test':[
+   'A second pass by the same model is independent proof',
+   'zero phantom references is a general guarantee',
+  ],
+ },
+ 'doctrine/design/decision-records-and-operational-documentation.md':{
+  'Consequential claim-to-evidence audit (candidate)':[
+   'A second pass by the same model can provide independent proof',
+   'A second pass by the same model is independent proof',
+   'Impose this as a universal ledger',
+   'Do not inspect the output for claims missing from the record',
+  ],
+ },
+}
+
+def active_markdown(text):
+    """Remove comments and fenced examples that do not express active guidance."""
+    text=re.sub(r'<!--.*?(?:-->|$)','',text,flags=re.S)
+    active=[]
+    fence_character=None
+    fence_length=0
+    for line in text.splitlines(keepends=True):
+        if fence_character is None:
+            opener=re.match(r'^ {0,3}(`{3,}|~{3,})',line)
+            if opener:
+                marker=opener.group(1)
+                fence_character=marker[0]
+                fence_length=len(marker)
+                continue
+            active.append(line)
+            continue
+        if re.match(rf'^ {{0,3}}{re.escape(fence_character)}{{{fence_length},}}\s*$',line):
+            fence_character=None
+            fence_length=0
+    return ''.join(active)
+
+def atx_heading(line):
+    """Return a CommonMark ATX heading's level and normalized title."""
+    match=re.match(r'^ {0,3}(#{1,6})[ \t]+(.+?)[ \t]*$',line)
+    if not match:
+        return None
+    title=re.sub(r'[ \t]+#+[ \t]*$','',match.group(2)).strip()
+    return len(match.group(1)),title
+
+def markdown_sections(text,heading):
+    """Return active level-two section bodies, excluding later top-level sections."""
+    lines=active_markdown(text).splitlines()
+    sections=[]
+    start=None
+    for index,line in enumerate(lines):
+        parsed=atx_heading(line)
+        if parsed and parsed==(2,heading):
+            if start is not None:
+                sections.append('\n'.join(lines[start:index]))
+            start=index+1
+            continue
+        if start is not None and parsed and parsed[0]<=2:
+            sections.append('\n'.join(lines[start:index]))
+            start=None
+    if start is not None:
+        sections.append('\n'.join(lines[start:]))
+    return sections
+
+def has_same_model_independence_claim(section):
+    """Detect direct positive claims that same-model review is independent proof."""
+    sentences=re.split(r'(?<=[.!?])(?:\s+|$)|\n+',section)
+    for sentence in sentences:
+        lower=sentence.lower()
+        if not re.search(r'\b(?:same[- ]model|second pass by the same model)\b',lower):
+            continue
+        if 'independent proof' not in lower:
+            continue
+        if re.search(r'\b(?:not|isn.t|cannot|can.t|does not|doesn.t)\b[^.!?]{0,45}\bindependent proof\b',lower):
+            continue
+        if re.search(r'\b(?:is|provides?|constitutes?|offers?|counts as|establishes?)\b[^.!?]{0,60}\bindependent proof\b',lower):
+            return True
+    return False
+
 for name,fragments in required_fragments.items():
     path=ROOT/name
     if not path.is_file(): continue
     text=path.read_text()
     for fragment in fragments:
         if fragment not in text: errors.append(f'{name} missing required guidance: {fragment}')
+# Location-sensitive static preservation canaries. They establish that active
+# guidance remains in its owning section, not runtime compliance or semantic proof.
+for name,sections in required_sections.items():
+    path=ROOT/name
+    if not path.is_file(): continue
+    text=path.read_text()
+    for heading,fragments in sections.items():
+        matches=markdown_sections(text,heading)
+        if len(matches)!=1:
+            errors.append(f'{name} must contain exactly one active {heading!r} section; found {len(matches)}')
+            continue
+        section=matches[0]
+        for fragment in fragments:
+            if fragment not in section: errors.append(f'{name} section {heading!r} missing required guidance: {fragment}')
+        for fragment in forbidden_section_fragments.get(name,{}).get(heading,[]):
+            if fragment in section: errors.append(f'{name} section {heading!r} contains contradictory guidance: {fragment}')
+        if has_same_model_independence_claim(section):
+            errors.append(f'{name} section {heading!r} claims same-model review is independent proof')
 issue_form=ROOT/'.github/ISSUE_TEMPLATE/concept-field-test.yml'
 if issue_form.is_file():
     form=issue_form.read_text()
