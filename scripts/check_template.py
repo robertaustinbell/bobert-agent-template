@@ -10,7 +10,7 @@ for name in required:
 required_fragments={
  'ADOPT.md':['Replace source identities before activation','Repository attribution may remain'],
  'CUSTOMIZE.md':['Identity handoff checklist','Search for the repository owner'],
- 'FIELD-TESTING.md':['Situational-understanding starter test','Privacy and authority boundary'],
+ 'FIELD-TESTING.md':['Situational-understanding starter test','Critical-capability mapping candidate test','Do not force one decisive centre','Do not label a person as a vulnerability','Its usefulness for agents is unestablished','Privacy and authority boundary'],
  '.github/ISSUE_TEMPLATE/concept-field-test.yml':['Concept field test','Strongest alternative explanation or confound','runtime state and dumps','do not reconstruct one'],
 }
 for name,fragments in required_fragments.items():

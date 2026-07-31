@@ -27,6 +27,23 @@ For a consequential task where relevant state can change:
 
 A test becomes informative when it shows a material decision effect, a useful failure, or a clean null result against a prior prediction—not merely when the vocabulary can be applied after the fact.
 
+## Critical-capability mapping candidate test
+
+For a consequential task where the objective may depend on a concentrated capability or enabling condition:
+
+1. State the objective, decision owner, and time horizon.
+2. Name the capability or jointly necessary set of capabilities that must exist for the objective to remain achievable. Do not begin with the most visible component or actor.
+3. Identify the process, component, or role that performs the capability.
+4. Map the capability's critical requirements: resources, information, authority, coordination, infrastructure, and feedback it depends on.
+5. Identify conditional vulnerabilities: requirements whose deficiency or loss would materially impair the capability in this context.
+6. Challenge concentration before acting. Look for substitutes, redundancy, jointly necessary elements, adaptation, and changes in the objective or horizon. Do not force one decisive centre.
+7. Record what the map is expected to change—protection, strengthening, simplification, redundancy, bypass, instrumentation, sequencing, or explicit risk acceptance—and what result would disconfirm the map.
+8. Compare the result with ordinary critical-path or bottleneck analysis. A clean null result includes finding that the map only renamed an already-known dependency.
+
+Importance is not vulnerability, and vulnerability does not establish causal sufficiency. Do not label a person as a vulnerability or convert the analysis into attack-first framing; describe the capability, role, dependency, and rights-preserving intervention instead.
+
+This candidate adapts critical-factor analysis discussed in Eystein L. Meyer, [“The Centre of Gravity Concept: Contemporary Theories, Comparison, and Implications”](https://doi.org/10.1080/14702436.2022.2030715) (2022). Meyer concludes that “centre of gravity” is terminologically polluted across competing theories. The candidate therefore retains the capability–requirement–vulnerability map without presuming a universal, singular, or decisive centre. Its usefulness for agents is unestablished.
+
 ## Report the result
 
 A useful report includes:

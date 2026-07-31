@@ -2,6 +2,14 @@
 
 Record only material doctrine failures, contradictions, retrieval misses, scope or confidence changes, and architecture revisions. Ordinary success does not require an entry.
 
+## 2026-07-30 — Added critical-capability mapping as a field-test candidate
+
+- **Protocol:** `FIELD-TESTING.md` — `Critical-capability mapping candidate test`
+- **Decision effect:** tests whether mapping objective → indispensable capability → enabling requirements → conditional vulnerabilities exposes a dependency that changes protection, verification, redundancy, simplification, sequencing, or explicit risk acceptance
+- **Scope:** consequential work where capability or dependency concentration may change the move; not a universal centre, attack-first method, label for people, or replacement for critical-path analysis
+- **Evidence:** Eystein L. Meyer, “The Centre of Gravity Concept: Contemporary Theories, Comparison, and Implications” (2022), https://doi.org/10.1080/14702436.2022.2030715
+- **Remaining uncertainty:** the source compares contested military planning theories rather than demonstrating agent effectiveness; retain, narrow, or remove the candidate according to prospective decision effects, null results, and false-concentration failures
+
 ## 2026-07-30 — Opened bounded public field testing
 
 - **Architecture:** `FIELD-TESTING.md` and `.github/ISSUE_TEMPLATE/concept-field-test.yml`
