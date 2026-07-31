@@ -10,7 +10,8 @@ for name in required:
 required_fragments={
  'ADOPT.md':['Replace source identities before activation','Repository attribution may remain'],
  'CUSTOMIZE.md':['Identity handoff checklist','Search for the repository owner'],
- 'FIELD-TESTING.md':['Situational-understanding starter test','Critical-capability mapping candidate test','Do not force one decisive centre','Do not label a person as a vulnerability','Its usefulness for agents is unestablished','Privacy and authority boundary'],
+ 'FIELD-TESTING.md':['Situational-understanding starter test','Critical-capability mapping candidate test','Do not force one decisive centre','Do not label a person as a vulnerability','Operational-friction candidate test','Friction is a cross-layer amplifier, not a seventh stage','Do not manufacture disruption in a live consequential system','Never label a person, relationship, dissent, or protected exercise of agency as “friction”','A clean null result includes finding that the check only renamed an already-known concern','Privacy and authority boundary'],
+ 'doctrine/design/right-sized-change.md':['Operational-friction check (candidate)','Friction is a **cross-layer amplifier**, not a seventh stage','manufactured disruption in a live consequential system','Never label a person, relationship, dissent, or protected exercise of agency as “friction”','Count the check as a null result when it only renames an already-known preflight, critical-path, or resilience concern','Local discretion remains bounded by authority, rights, competence, and recovery conditions'],
  '.github/ISSUE_TEMPLATE/concept-field-test.yml':['Concept field test','Strongest alternative explanation or confound','runtime state and dumps','do not reconstruct one'],
 }
 for name,fragments in required_fragments.items():

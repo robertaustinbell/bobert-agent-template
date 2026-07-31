@@ -10,6 +10,15 @@ Record only material doctrine failures, contradictions, retrieval misses, scope 
 - **Evidence:** Eystein L. Meyer, “The Centre of Gravity Concept: Contemporary Theories, Comparison, and Implications” (2022), https://doi.org/10.1080/14702436.2022.2030715
 - **Remaining uncertainty:** the source compares contested military planning theories rather than demonstrating agent effectiveness; retain, narrow, or remove the candidate according to prospective decision effects, null results, and false-concentration failures
 
+## 2026-07-30 — Added operational friction as a field-test candidate
+
+- **Protocol:** `FIELD-TESTING.md` — `Operational-friction candidate test`; `doctrine/design/right-sized-change.md` — `Operational-friction check (candidate)`
+- **Decision effect:** tests whether individually tolerable delays, handoffs, state mismatches, degraded conditions, or capacity limits interact or compound across the real operating path enough to change simplification, margin, rehearsal, recovery, or read-back
+- **Scope:** consequential multi-step work where cumulative practical resistance may change the move; not a seventh situational-awareness stage, exhaustive hazard inventory, mandatory checklist, label for people, manufactured live disruption, or commander-centric doctrine
+- **Evidence:** Clausewitz, *On War*, Book I, Chapter VII; Eugenia C. Kiesling, “On War Without the Fog” (2001)
+- **Correction:** independent review caught two release blockers before publication: the generated index had displaced the established stable-component-removal trigger, and the validator protected field-test safeguards without protecting the same load-bearing active-doctrine text. The trigger was consolidated and both surfaces now carry lexical regression canaries; these remain deletion/drift checks, not semantic proof.
+- **Remaining uncertainty:** the candidate may only rename existing preflight, critical-path, resilience, and situational-understanding controls; retain, narrow, or remove it according to prospective decision effects and clean null, negative, harmful, or confounded results
+
 ## 2026-07-30 — Opened bounded public field testing
 
 - **Architecture:** `FIELD-TESTING.md` and `.github/ISSUE_TEMPLATE/concept-field-test.yml`

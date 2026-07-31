@@ -4,15 +4,16 @@ type: doctrine
 title: Right-Sized Change
 status: active
 authority: advisory
-confidence: high
+confidence: mixed
 confidence_basis:
   - The core guidance reflects established engineering practice and repeated local failures from excess state, premature abstraction, unbounded iteration, and incomplete verification.
   - Exact thresholds remain system- and consequence-dependent.
+  - The operational-friction check is a low-confidence candidate until it changes a consequential design, rehearsal, recovery path, or verification beyond existing preflight and resilience guidance.
 scope:
   - architecture, system changes, iteration, complexity, resilience, refactoring, automation, and operational fit
 consult_when:
   - adding, replacing, integrating, automating, or refactoring a meaningful component
-  - complexity, configuration states, dependencies, failure recovery, or long-term maintenance may dominate the local benefit
+  - complexity, configuration states, dependencies, cumulative variance across a multi-step operating path, failure recovery, or long-term maintenance may dominate the local benefit
   - the task is dynamic enough that feedback should shape the next step
   - a stable convention or component is being removed
   - scale, network participation, or redundancy is proposed as an inherent good
@@ -23,6 +24,7 @@ router_summary: Design the smallest operationally complete change; preserve reve
 decision_effect:
   - subtract before adding and inspect the fence before removal
   - prefer bounded reversible feedback over speculative full build-out
+  - test whether individually tolerable impediments can interact or compound before detection
   - optimize for the next safe change rather than elegance without operational value
 implemented_by: []
 lineage: LINEAGE.md
@@ -31,13 +33,15 @@ known_failures:
   - adding configuration and fallback states that exceed the benefit
   - confusing a stable equilibrium with a good design
   - unbounded iteration without stop conditions or independent verification
+  - validating only the happy path while ordinary impediments compound across handoffs and feedback delays
   - refactoring beyond the smallest safe behavior-preserving change
 review_when:
   - a supposedly simple change repeatedly fails in operations
   - the feedback loop oscillates, drifts, or cannot verify its own output
   - carrying cost exceeds the value of optionality or redundancy
+  - the operational-friction check adds pessimistic enumeration without changing design, rehearsal, recovery, or verification
   - a removed component reveals a load-bearing function that was not understood
-last_material_revision: 2026-07-29
+last_material_revision: 2026-07-30
 ---
 
 # Right-Sized Change
@@ -143,6 +147,23 @@ Prefer the smallest useful reversible step, observe the result, and adapt. Do no
 - retries compound external side effects;
 - the loop has no cost budget or stop condition;
 - success criteria change to fit the latest output.
+
+## Operational-friction check (candidate)
+
+**Local confidence: low.** A design can be valid at every individual step and still be fragile as a whole when ordinary impediments interact or accumulate across the real operating path. Here, **operational friction** means that cumulative practical resistance—not merely “things go wrong”—makes intended action slower, less reliable, more costly, or harder to recover than the plan assumes.
+
+Use this check only for consequential multi-step work where handoffs, dependencies, runtime state, coordination, timing, capacity, or degraded conditions could materially change the move:
+
+1. State the objective and minimum acceptable result.
+2. Trace the real operating path, including dependencies, handoffs, review, execution, and feedback—not only the designed procedure.
+3. Name a few plausible ordinary impediments: delay, state mismatch, degraded tools, interrupted communication, constrained attention or capacity, or partial completion.
+4. Test interaction and accumulation. Ask whether individually tolerable impediments share a failure domain, amplify one another, or can compound before detection.
+5. Choose the smallest justified treatment: remove a handoff or state, add proportionate margin, preflight a load-bearing assumption, rehearse one safe degraded condition, preserve bounded local discretion, contain failure, establish recovery, or add independent read-back.
+6. Record the expected decision effect and a disconfirming result. Count the check as a null result when it only renames an already-known preflight, critical-path, or resilience concern.
+
+Friction is a **cross-layer amplifier**, not a seventh stage in `perception → comprehension → projection → decision → execution → feedback`. Missing, delayed, distorted, or misinterpreted state remains a situational-understanding problem. Friction concerns cumulative resistance along the operating path and may also degrade the feedback needed to diagnose it.
+
+Do not turn the check into an exhaustive hazard inventory, generic pessimism, redundant fallbacks, or manufactured disruption in a live consequential system. Never label a person, relationship, dissent, or protected exercise of agency as “friction”; describe the process, dependency, handoff, state, or constraint instead. Local discretion remains bounded by authority, rights, competence, and recovery conditions.
 
 ## Resilience before antifragility
 

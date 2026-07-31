@@ -44,6 +44,23 @@ Importance is not vulnerability, and vulnerability does not establish causal suf
 
 This candidate adapts critical-factor analysis discussed in Eystein L. Meyer, [“The Centre of Gravity Concept: Contemporary Theories, Comparison, and Implications”](https://doi.org/10.1080/14702436.2022.2030715) (2022). Meyer concludes that “centre of gravity” is terminologically polluted across competing theories. The candidate therefore retains the capability–requirement–vulnerability map without presuming a universal, singular, or decisive centre. Its usefulness for agents is unestablished.
 
+## Operational-friction candidate test
+
+For a consequential multi-step task where ordinary variance across the real operating path may compound:
+
+1. State the objective and minimum acceptable result.
+2. Trace the real operating path, including dependencies, handoffs, runtime state, coordination, review, execution, and feedback—not only the designed procedure.
+3. Name a few plausible ordinary impediments: delay, state mismatch, degraded tools, interrupted communication, constrained attention or capacity, or partial completion.
+4. Test interaction and accumulation. Ask whether individually tolerable impediments share a failure domain, amplify one another, or can compound before detection.
+5. Record what the check is expected to change: removal of a handoff or state, proportionate margin, preflight of a load-bearing assumption, safe degraded-condition rehearsal, bounded local discretion, containment, recovery, or independent read-back.
+6. Record a disconfirming result and compare the result with ordinary preflight, critical-path, and resilience analysis. A clean null result includes finding that the check only renamed an already-known concern.
+
+Friction is a cross-layer amplifier, not a seventh stage in situational understanding. Missing, delayed, distorted, or misinterpreted state remains a perception, comprehension, or projection problem; operational friction concerns cumulative resistance along the operating path and may also degrade feedback.
+
+Do not manufacture disruption in a live consequential system merely to create a test. Do not turn the candidate into an exhaustive hazard inventory, generic pessimism, or redundant fallbacks. Never label a person, relationship, dissent, or protected exercise of agency as “friction”; describe the process, dependency, handoff, state, or constraint instead. Local discretion remains bounded by authority, rights, competence, and recovery conditions.
+
+This candidate draws on Clausewitz’s account of friction in [*On War*, Book I, Chapter VII](https://www.marxists.org/reference/archive/clausewitz/works/on-war/book1/ch07.htm) and Eugenia C. Kiesling’s corrective analysis, [“On War Without the Fog”](https://clausewitzstudies.org/bibl/Kiesling-OnFog.pdf) (2001). It does not adopt “fog of war” as a new doctrine category, and its distinct usefulness for agents is unestablished.
+
 ## Report the result
 
 A useful report includes:

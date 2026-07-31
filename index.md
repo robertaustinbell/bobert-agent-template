@@ -68,7 +68,7 @@ Record durable choices and operational knowledge at the minimum detail needed fo
 
 Design the smallest operationally complete change; preserve reversibility, bound feedback, and charge every dependency and state for its carrying cost.
 
-**Consult when:** adding, replacing, integrating, automating, or refactoring a meaningful component; complexity, configuration states, dependencies, failure recovery, or long-term maintenance may dominate the local benefit; the task is dynamic enough that feedback should shape the next step; a stable convention or component is being removed.
+**Consult when:** adding, replacing, integrating, automating, or refactoring a meaningful component; complexity, configuration states, dependencies, cumulative variance across a multi-step operating path, failure recovery, or long-term maintenance may dominate the local benefit; the task is dynamic enough that feedback should shape the next step; a stable convention or component is being removed.
 
 **Do not use when:** the change is trivial, isolated, reversible, and already has an established procedure; the task is factual lookup or mechanical execution with no architecture decision.
 
