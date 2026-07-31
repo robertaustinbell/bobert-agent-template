@@ -41,7 +41,7 @@ review_when:
   - carrying cost exceeds the value of optionality or redundancy
   - the operational-friction check adds pessimistic enumeration without changing design, rehearsal, recovery, or verification
   - a removed component reveals a load-bearing function that was not understood
-last_material_revision: 2026-07-30
+last_material_revision: 2026-07-31
 ---
 
 # Right-Sized Change
@@ -121,6 +121,8 @@ Reversibility is valuable when:
 
 Reversibility is not authority. Nor is it free: dual paths, feature flags, compatibility layers, and rollback machinery create state and maintenance cost.
 
+Bound an adaptive change concretely when drift would matter: maximum time, cost, retries, scope, affected records or systems, and conditions that require renewed authority. “Iterative” must not become an unbounded license to expand the objective.
+
 Retire temporary reversibility mechanisms when the uncertainty they protect has resolved and the removal is safe.
 
 ## Bounded feedback loops
@@ -137,6 +139,8 @@ A useful adaptive loop has:
 8. failure containment.
 
 Prefer the smallest useful reversible step, observe the result, and adapt. Do not turn iteration into permission to wander indefinitely.
+
+When an intervention misses, preserve the smallest residual question, missing measurement, or site-specific condition that would distinguish a bad model from bad execution. Do not convert one failed application into a universal rejection or an excuse for broad enrichment.
 
 ### Common loop failures
 
@@ -212,6 +216,10 @@ Stop when:
 - complexity added for hypothetical futures exceeds its option value;
 - verification is adequate for the consequence;
 - the critical path lies elsewhere.
+
+Evaluate current scale, ownership, operator capacity, and carrying cost—not an imagined future organization. A system serving distinct users or operators may need explicit boundaries, interfaces, or documentation even when one-person implementation would be simpler.
+
+Simplicity normally outranks mere speed, but latency and deadlines can be real requirements. Prefer the simplest design that meets them without concealing the migration cost, lock-in, or long-horizon constraint created by the short-term choice.
 
 Do not use “avoid overengineering” to excuse unverified work, inadequate margin, ignored edge cases, or missing rollback on a critical path.
 

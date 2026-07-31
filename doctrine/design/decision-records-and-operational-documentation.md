@@ -34,7 +34,7 @@ review_when:
   - documentation survives while the behavior it describes changes
   - maintaining the document costs more than its decision or recovery value
   - a generated view and canonical source disagree
-last_material_revision: 2026-07-29
+last_material_revision: 2026-07-31
 ---
 
 # Decision Records and Operational Documentation
@@ -75,6 +75,8 @@ A durable record should usually answer:
 10. **Reconsideration:** what evidence or condition should trigger review?
 
 Not every record needs a novel. Include detail in proportion to consequence and future ambiguity.
+
+Design for the next reader and task. Start with the decision, owner, consequence, and next action; let readers zoom into rationale, evidence, and mechanics only as needed. Prefer plain text when sequence, ownership, and branching are already clear. Use a diagram only when spatial structure, state transitions, interfaces, or concurrency would otherwise be materially harder to understand, and keep the decisive labels readable without decorative tooling.
 
 ## Operational documentation
 

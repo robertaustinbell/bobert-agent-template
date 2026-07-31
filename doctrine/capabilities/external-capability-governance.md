@@ -36,7 +36,7 @@ review_when:
   - repeated real use shows no material decision effect
   - configuration, provider behavior, or tool surface changes materially
   - carrying cost, noise, privacy exposure, or routing confusion exceeds value
-last_material_revision: 2026-07-29
+last_material_revision: 2026-07-31
 ---
 
 # External Capability Governance
@@ -154,6 +154,8 @@ Send only the inputs needed for the operation. Prefer:
 - local computation when external data adds no value;
 - canonical domain systems for personal records.
 
+For cameras, microphones, location, occupancy, biometrics, or other high-inference sensors, prefer event metadata or a narrow answer over raw media or continuous history. Do not retain embeddings, transcripts, clips, or derived identity signals merely because the connector can produce them.
+
 External calculators and research systems do not become sources of record merely because they return polished answers.
 
 ## Unattended automation
@@ -170,6 +172,8 @@ Unattended operation requires more than a successful manual run:
 - stop/disable path;
 - no silent expansion from read to write;
 - clear notification semantics.
+
+Continuous watchers, polling loops, and background capture are disabled by default unless an authorized recurring job has a named purpose, minimum necessary scope, bounded retention, failure visibility, and an explicit stop path.
 
 Do not automate a workflow whose manual failure and recovery are not yet understood.
 

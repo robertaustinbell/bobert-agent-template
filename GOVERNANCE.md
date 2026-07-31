@@ -27,7 +27,7 @@ review_when:
   - important doctrine is not retrieved in a real decision
   - routine work repeatedly incurs ceremony without changing the action
   - the ownership architecture cannot place a materially new artifact cleanly
-last_material_revision: 2026-07-29
+last_material_revision: 2026-07-31
 ---
 
 # Agent Ops governance
@@ -146,6 +146,8 @@ Prefer rules when:
 - the implementation must be interoperable or mechanically verifiable.
 
 Do not convert every insight into a rule. Do not call a hard boundary a principle merely to preserve discretion. When a rule becomes obsolete, revise or remove it explicitly rather than quietly ignoring it.
+
+“Use judgment” is not a substitute for assigning responsibility. Discretion requires task-relevant competence, enough observability to notice error, and authority to make the choice. For high-consequence recurring work, prefer a mechanically checked safe default with exceptions that are narrow, visible, justified, and reviewable; do not rely on invisible improvisation or prohibit legitimate exceptions merely for uniformity.
 
 ## Retrieval contract
 

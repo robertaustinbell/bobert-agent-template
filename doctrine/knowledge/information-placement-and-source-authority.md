@@ -37,7 +37,7 @@ review_when:
   - two current canonical systems legitimately govern different dimensions of the same claim
   - retrieval repeatedly selects a convenient secondary source over the decisive one
   - an ownership or identity error escapes into advice or external communication
-last_material_revision: 2026-07-29
+last_material_revision: 2026-07-31
 ---
 
 # Information Placement and Source Authority
@@ -128,6 +128,8 @@ When the principal provides a URL, file path, repository, message thread, accoun
 4. if the direct source is inaccessible, say why before falling back.
 
 Session history records what was said. It is not evidence about what an external source currently contains.
+
+When the decisive source is incomplete, prefer one residual question, one missing measurement, or one bounded follow-up that could change the decision. Do not answer a narrow gap by building a universal graph, dossier, reranker, typed-edge ontology, or new retrieval platform before repeated misses establish that infrastructure is necessary.
 
 ## Conflict handling
 

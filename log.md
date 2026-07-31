@@ -7,7 +7,7 @@ Record only material doctrine failures, contradictions, retrieval misses, scope 
 - **Protocol:** `FIELD-TESTING.md` — `Critical-capability mapping candidate test`
 - **Decision effect:** tests whether mapping objective → indispensable capability → enabling requirements → conditional vulnerabilities exposes a dependency that changes protection, verification, redundancy, simplification, sequencing, or explicit risk acceptance
 - **Scope:** consequential work where capability or dependency concentration may change the move; not a universal centre, attack-first method, label for people, or replacement for critical-path analysis
-- **Evidence:** Eystein L. Meyer, “The Centre of Gravity Concept: Contemporary Theories, Comparison, and Implications” (2022), https://doi.org/10.1080/14702436.2022.2030715
+- **Evidence:** Eystein L. Meyer, “The Centre of Gravity Concept: Contemporary Theories, Comparison, and Implications” (2022), [DOI 10.1080/14702436.2022.2030715](https://doi.org/10.1080/14702436.2022.2030715)
 - **Remaining uncertainty:** the source compares contested military planning theories rather than demonstrating agent effectiveness; retain, narrow, or remove the candidate according to prospective decision effects, null results, and false-concentration failures
 
 ## 2026-07-30 — Added operational friction as a field-test candidate
@@ -35,3 +35,11 @@ Record only material doctrine failures, contradictions, retrieval misses, scope 
 - **Scope:** consequential dynamic work where changing state or projection can alter the action; not a mandatory checklist for routine factual or mechanical tasks
 - **Evidence:** `evidence/sources/situational-awareness-munir-aved-blasch-2022.md`
 - **Remaining uncertainty:** language-model transfer is an operational extrapolation and should be narrowed or removed if it adds ceremony without changing observation, action, verification, or repair
+
+## 2026-07-31 — Strengthened cross-domain operating safeguards
+
+- **Doctrine:** Right-Sized Change, Decision Quality, External Capability Governance, Decision Records, Strategic Response, Information Placement, and Governance
+- **Decision effect:** adds compact bounds, negative triggers, evidence/value separation, competence checks, sensor minimization, and exception conditions to the active doctrine users consult directly
+- **Scope:** portable cross-domain judgment only; no personal product contract, machine state, live integration status, or archived source-agent authority
+- **Correction:** file preservation or destination mapping does not by itself prove that behavior-changing meaning remains active; compare triggers, boundaries, exceptions, failure modes, confidence qualifiers, and implementation ownership proposition by proposition
+- **Remaining uncertainty:** the additions are structurally and semantically reviewable but remain guidance rather than proof of improved outcomes; future field evidence should narrow or remove wording that adds ceremony without changing decisions or repairs

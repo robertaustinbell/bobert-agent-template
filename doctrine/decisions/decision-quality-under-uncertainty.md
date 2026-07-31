@@ -48,7 +48,7 @@ review_when:
   - an outcome exposes a missing actor, option, mechanism, constraint, or causal path
   - perception, comprehension, and projection failures cannot be distinguished reliably enough to prescribe different repairs
   - the same estimate class repeatedly misses in a directional way
-last_material_revision: 2026-07-30
+last_material_revision: 2026-07-31
 ---
 
 # Decision Quality Under Uncertainty
@@ -73,6 +73,8 @@ Before collecting more data, identify:
 - what is outside scope;
 - what outcome would count as success or failure.
 
+Trace the means–ends chain when the proposed action is not obviously tied to the objective: action → immediate output → intermediate capability or behavior → desired outcome. Name the weakest link and do not optimize a means after it has stopped serving the end.
+
 Challenge the framing when it is load-bearing. Steelman the reasonable interpretation first. Reductio is useful only after charity and only when it clarifies the structure rather than winning a theatrical argument.
 
 ### Framing failure modes
@@ -93,6 +95,15 @@ Separate:
 - the agent's interpretations;
 - subjective forecasts;
 - unknowns.
+
+Also label the claim mode when confusion would change the decision:
+
+- **descriptive:** what is or was true;
+- **interpretive:** what the evidence means;
+- **forecast:** what is expected to happen;
+- **normative or prescriptive:** what should matter or what should be done.
+
+Record material evidence processing—not only the final citation. Distinguish direct observation from extraction, transformation, filtering, summarization, model output, and inference; preserve enough provenance to reproduce or challenge the load-bearing step. Treat directional evidence, disconfirming evidence, ambiguous evidence, and absence of evidence differently rather than collapsing them into one confidence label.
 
 For a load-bearing generalization, record proportionally:
 
@@ -146,6 +157,14 @@ Distinguish:
 
 When outcomes or observations do not fit, ask whether to update a parameter or revise the model itself.
 
+Keep three registers separate when values could contaminate prediction:
+
+1. **Feasibility:** what actions or outcomes are actually possible under the constraints.
+2. **Belief or forecast:** what is likely, with assumptions and evidence.
+3. **Preference or objective:** what the principal values or chooses among feasible outcomes.
+
+Desirability is not evidence that an outcome is likely, and an unattractive forecast is not invalid merely because it is inconvenient.
+
 ### Model-admission questions
 
 - What does the model omit?
@@ -191,6 +210,8 @@ Warning signs:
 ## 6. Keep uncertainty useful
 
 An uncertainty range should separate decisions, not merely span everything conceivable.
+
+For a range-based recommendation, state the decision threshold and which segment of the range changes the action. If no plausible value crosses a threshold, additional precision has no immediate decision value.
 
 ### Vacuous intervals
 

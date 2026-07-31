@@ -40,7 +40,7 @@ review_when:
   - repeated use adds suspicion or complexity without improving recommendations
   - new evidence contradicts the assumed actors, options, payoffs, information, or response sequence
   - an important strategic class repeatedly produces no distinct decision effect
-last_material_revision: 2026-07-29
+last_material_revision: 2026-07-31
 ---
 
 # Strategic Response and Incentives
@@ -118,12 +118,16 @@ A commitment is credible when the actor has both:
 
 Cheap declarations without cost, enforcement, or aligned incentives are weak evidence. Do not promise the agent's own fallback, escalation, consequence, or recovery unless it is authorized, feasible, safe, and worthwhile when the time comes.
 
+Review a commitment when circumstances materially change, the observed path departs from the modeled path, enforcement becomes disproportionate, or uncertainty makes a reversible commitment more legitimate than a rigid one. Credibility does not require carrying out a now-harmful threat for theatrical consistency.
+
 ## Signaling and screening
 
 - **Signal:** an action intended to convey private information.
 - **Screen:** a choice architecture designed to cause different types to reveal themselves through their selections.
 
 Assess whether the signal is costly or difficult for the wrong type to imitate. A polished claim anyone can make carries less information than verifiable behavior.
+
+Costliness can increase diagnostic value, but cost alone does not prove truth. Self-reports and reputational claims remain evidence to verify against artifacts, behavior, and the relevant domain. Treat reputation as a narrow prior for a specific claim and context—never as a global score for a person.
 
 Use screening transparently and proportionally. Do not construct deceptive traps or exploit vulnerabilities merely because they reveal information.
 
