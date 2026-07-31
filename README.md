@@ -23,6 +23,7 @@ That instruction is intentionally conservative: a reusable identity should trans
 | `ADOPT.md` | Safe bootstrap procedure for a blank agent |
 | `CUSTOMIZE.md` | Questions and rules for making the starter genuinely yours |
 | `FIRST-WEEK.md` | Conservative initial behavior, expectations, and correction path |
+| `FIELD-TESTING.md` | Bounded tests and a privacy-safe path for reporting useful, null, and negative results |
 | `SYNC.md` | Curated private-to-public projection policy |
 | `scripts/` | Deterministic generation and integrity checks |
 
@@ -38,6 +39,12 @@ Procedures, live domain facts, credentials, permissions, and personal memory do 
 - right-sized change
 - decision records and operational documentation
 - external capability governance
+
+## Test and improve the concepts
+
+The doctrine is active but revisable. If you use a concept in real work, [FIELD-TESTING.md](FIELD-TESTING.md) explains how to record a bounded prospective or retrospective test, distinguish decision effect from outcome, protect private operational data, and submit useful feedback through the repository's issue form.
+
+Positive results are not the only useful reports. Null effects, failures, excess ceremony, confounds, and evidence that a concept should be narrowed are especially valuable.
 
 ## Quick start
 

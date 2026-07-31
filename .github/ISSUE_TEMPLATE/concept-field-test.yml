@@ -1,0 +1,108 @@
+name: Concept field test
+description: Report a useful result, null result, failure, or cost from applying one of the repository's concepts.
+title: "[Field test]: "
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Thank you for testing the doctrine in real work. Report the minimum evidence needed to evaluate the claim. Do not include credentials, personal records, private messages, proprietary code, machine paths, account identifiers, or authorization details.
+
+  - type: input
+    id: concept
+    attributes:
+      label: Concept tested
+      description: Give the repository path and heading or a precise claim.
+      placeholder: doctrine/decisions/decision-quality-under-uncertainty.md — Situational understanding in dynamic work
+    validations:
+      required: true
+
+  - type: dropdown
+    id: design
+    attributes:
+      label: Test design
+      options:
+        - Prospective — prediction recorded before the result
+        - Retrospective — diagnosis after the result
+        - Natural observation — no intervention
+    validations:
+      required: true
+
+  - type: textarea
+    id: context
+    attributes:
+      label: Sanitized task context
+      description: Describe the task, stakes, and decision owner at the minimum safe granularity.
+    validations:
+      required: true
+
+  - type: textarea
+    id: prediction
+    attributes:
+      label: Prediction and expected decision effect
+      description: What was expected to happen, and what observation, recommendation, action, verification, or repair was the concept expected to change?
+    validations:
+      required: true
+
+  - type: textarea
+    id: result
+    attributes:
+      label: Observed result and evidence
+      description: What happened? Distinguish verified observations from interpretation and outcome.
+    validations:
+      required: true
+
+  - type: textarea
+    id: effect
+    attributes:
+      label: Material effect of the concept
+      description: What changed because the concept was used? A null or harmful effect is useful evidence.
+    validations:
+      required: true
+
+  - type: dropdown
+    id: failure_layer
+    attributes:
+      label: Earliest supported failed layer, if applicable
+      options:
+        - Not applicable or no material failure
+        - Perception
+        - Comprehension
+        - Projection
+        - Decision
+        - Execution
+        - Feedback
+        - Ambiguous between multiple layers
+    validations:
+      required: true
+
+  - type: textarea
+    id: objection
+    attributes:
+      label: Strongest alternative explanation or confound
+      description: Could ordinary care, better tools, extra attention, selection effects, hindsight, or another mechanism explain the result?
+    validations:
+      required: true
+
+  - type: textarea
+    id: cost
+    attributes:
+      label: Failure, null result, or cost
+      description: Note excess ceremony, delay, confusion, missed alternatives, overreach, or other downside. Write "none observed" only if that is accurate.
+    validations:
+      required: true
+
+  - type: textarea
+    id: revision
+    attributes:
+      label: Suggested revision or follow-up
+      description: Optional. What should be narrowed, changed, tested next, or left alone?
+
+  - type: checkboxes
+    id: boundary
+    attributes:
+      label: Public-boundary confirmation
+      options:
+        - label: I removed credentials, personal records, private communications, proprietary material, machine paths, account identifiers, and sensitive authorization details.
+          required: true
+        - label: The test did not require action outside authority already granted by the system owner.
+          required: true

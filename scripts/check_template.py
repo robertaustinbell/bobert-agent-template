@@ -4,12 +4,14 @@ import re, subprocess, sys
 ROOT=Path(__file__).resolve().parents[1]
 errors=[]
 SKIP_PARTS={'.git','__pycache__'}
-required=['README.md','ADOPT.md','CUSTOMIZE.md','FIRST-WEEK.md','SOUL.md','GOVERNANCE.md','LINEAGE.md','SYNC.md','LICENSE','index.md']
+required=['README.md','ADOPT.md','CUSTOMIZE.md','FIRST-WEEK.md','FIELD-TESTING.md','.github/ISSUE_TEMPLATE/concept-field-test.yml','SOUL.md','GOVERNANCE.md','LINEAGE.md','SYNC.md','LICENSE','index.md']
 for name in required:
     if not (ROOT/name).is_file(): errors.append(f'missing required file: {name}')
 required_fragments={
  'ADOPT.md':['Replace source identities before activation','Repository attribution may remain'],
  'CUSTOMIZE.md':['Identity handoff checklist','Search for the repository owner'],
+ 'FIELD-TESTING.md':['Situational-understanding starter test','Privacy and authority boundary'],
+ '.github/ISSUE_TEMPLATE/concept-field-test.yml':['Concept field test','Strongest alternative explanation or confound'],
 }
 for name,fragments in required_fragments.items():
     path=ROOT/name

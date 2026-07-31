@@ -2,6 +2,14 @@
 
 Record only material doctrine failures, contradictions, retrieval misses, scope or confidence changes, and architecture revisions. Ordinary success does not require an entry.
 
+## 2026-07-30 — Opened bounded public field testing
+
+- **Architecture:** `FIELD-TESTING.md` and `.github/ISSUE_TEMPLATE/concept-field-test.yml`
+- **Decision effect:** gives adopters a structured path to report prospective, retrospective, positive, null, negative, and confounded results from real work
+- **Scope:** active doctrine in this starter; situational understanding is the initial worked protocol, not a universal or mandatory checklist
+- **Boundary:** public reports must contain sanitized minimum-necessary evidence and remain inside already-granted authority
+- **Remaining uncertainty:** reports may be self-selected, correlated, or influenced by extra attention; volume alone does not establish general validity
+
 ## 2026-07-30 — Added situational-understanding diagnostics
 
 - **Doctrine:** `doctrine/decisions/decision-quality-under-uncertainty.md`
