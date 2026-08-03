@@ -25,10 +25,15 @@ That instruction is intentionally conservative: a reusable identity should trans
 | `FIRST-WEEK.md` | Conservative initial behavior, expectations, and correction path |
 | `FIELD-TESTING.md` | Bounded tests and a privacy-safe path for reporting useful, null, and negative results |
 | `RUNTIMES.md` | Runtime installation decisions, degradation behavior, and a bounded verification probe |
+| `OPTIONAL-TOOLS.md` | Curated examples from Bobert's optional capability menu, with adoption and authority boundaries |
 | `SYNC.md` | Curated private-to-public projection policy |
 | `scripts/` | Deterministic generation and integrity checks |
 
 Procedures, live domain facts, credentials, permissions, and personal memory do **not** belong here. They must be created in their runtime-specific governed homes.
+
+## Optional implementation ideas
+
+The starter intentionally does not bundle Bobert's live tool configuration. [OPTIONAL-TOOLS.md](OPTIONAL-TOOLS.md) publishes a sanitized, non-prescriptive menu of capabilities Bobert uses or deliberately maintains as escalation paths—including Firecrawl, Wolfram, research and documentation MCP servers, browser automation, maps, development tools, and privacy-sensitive connector patterns—so adopters can evaluate useful options without inheriting Bobert's accounts, permissions, or machine state.
 
 ## Doctrine domains
 

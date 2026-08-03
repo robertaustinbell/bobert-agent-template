@@ -4,17 +4,18 @@ import re, subprocess, sys
 ROOT=Path(__file__).resolve().parents[1]
 errors=[]
 SKIP_PARTS={'.git','__pycache__'}
-required=['README.md','ADOPT.md','CUSTOMIZE.md','FIRST-WEEK.md','FIELD-TESTING.md','RUNTIMES.md','SECURITY.md','.github/ISSUE_TEMPLATE/concept-field-test.yml','.github/workflows/validate.yml','SOUL.md','GOVERNANCE.md','LINEAGE.md','SYNC.md','LICENSE','index.md']
+required=['README.md','ADOPT.md','CUSTOMIZE.md','FIRST-WEEK.md','FIELD-TESTING.md','RUNTIMES.md','OPTIONAL-TOOLS.md','SECURITY.md','.github/ISSUE_TEMPLATE/concept-field-test.yml','.github/workflows/validate.yml','SOUL.md','GOVERNANCE.md','LINEAGE.md','SYNC.md','LICENSE','index.md']
 for name in required:
     if not (ROOT/name).is_file(): errors.append(f'missing required file: {name}')
 required_fragments={
  'ADOPT.md':['Replace source identities before activation','Repository attribution may remain','Follow `RUNTIMES.md`'],
  'CUSTOMIZE.md':['Identity handoff checklist','Search for the repository owner'],
  'SOUL.md':['Stewardship governs access','Treat authorized access as a trust','Association is not causation','Do not rely on a load-bearing causal claim without testing plausible alternative explanations and evidence','Only the principal\'s authenticated conversational instruction','If SOUL changes materially'],
- 'README.md':['behavioral policy, not a security sandbox'],
+ 'README.md':['behavioral policy, not a security sandbox','[OPTIONAL-TOOLS.md](OPTIONAL-TOOLS.md)','sanitized, non-prescriptive menu of capabilities'],
  'GOVERNANCE.md':['Discretion requires task-relevant competence','Normative basis: adopted repository policy','does not claim universal empirical validity'],
  'FIELD-TESTING.md':['template tag or commit tested','Situational-understanding starter test','Critical-capability mapping candidate test','Do not force one decisive centre','Do not label a person as a vulnerability','Operational-friction candidate test','Friction is a cross-layer amplifier, not a seventh stage','Do not manufacture disruption in a live consequential system','Never label a person, relationship, dissent, or protected exercise of agency as “friction”','A clean null result includes finding that the check only renamed an already-known concern','Privacy and authority boundary'],
- 'RUNTIMES.md':['Policy is not containment','behavioral policy, not a security sandbox','Three required decisions','Persistent identity','Identity update contract','record the installed canonical SOUL\'s provenance','immutable content identifier such as a commit or content hash','Before replacing that identity, compare the installed and candidate versions','session-start comparison is a valid fallback only when','silent identity drift cannot be mechanically prevented','require an external update process','Doctrine activation and retrieval','Context degradation','Illustrative example: Claude Projects','Verification probe','reports degraded context instead of fabricating'],
+ 'RUNTIMES.md':['Policy is not containment','behavioral policy, not a security sandbox','Three required decisions','Persistent identity','Identity update contract','record the installed canonical SOUL\'s provenance','immutable content identifier such as a commit or content hash','Before replacing that identity, compare the installed and candidate versions','session-start comparison is a valid fallback only when','silent identity drift cannot be mechanically prevented','require an external update process','Doctrine activation and retrieval','Context degradation','Illustrative example: Claude Projects','Verification probe','reports degraded context instead of fabricating','[OPTIONAL-TOOLS.md](OPTIONAL-TOOLS.md)'],
+ 'OPTIONAL-TOOLS.md':['Curated source-agent reference, not template state','Firecrawl capability','Naming an SDK or CLI here identifies an available implementation path','Wolfram Cloud MCP','The governing rule is still **job first, tool second**','The template does not install, configure, enable, or grant authority','credentials, tokens, account identifiers','That omission is part of the design, not an incomplete export'],
  'SECURITY.md':['private vulnerability reporting','Report a vulnerability','Ordinary doctrine disagreements'],
  'doctrine/capabilities/external-capability-governance.md':['Continuous watchers, polling loops, and background capture are disabled by default'],
  'doctrine/authority/least-privilege-capability-access.md':['Policy and enforcement','behavioral policy, not a security sandbox','broader effective capability as the risk surface'],
@@ -133,7 +134,7 @@ def has_same_model_independence_claim(section):
 for name,fragments in required_fragments.items():
     path=ROOT/name
     if not path.is_file(): continue
-    text=path.read_text()
+    text=active_markdown(path.read_text())
     for fragment in fragments:
         if fragment not in text: errors.append(f'{name} missing required guidance: {fragment}')
 # Location-sensitive static preservation canaries. They establish that active

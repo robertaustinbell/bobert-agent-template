@@ -58,3 +58,7 @@ Before relying on the installation:
 5. Confirm that the agent reports degraded context instead of fabricating the missing guidance.
 
 Record the runtime, template tag or commit, and observed result. A successful probe establishes only the tested loading path; it does not prove judgment quality or future runtime behavior.
+
+## Optional capability menu
+
+After identity loading, doctrine retrieval, and degraded-context behavior are verified, consult [OPTIONAL-TOOLS.md](OPTIONAL-TOOLS.md) for a curated, non-prescriptive list of tools used or validated in Bobert's source system. Nothing on that page is installed or authorized by this template. Evaluate each capability through [External Capability Governance](doctrine/capabilities/external-capability-governance.md) before connecting it.
