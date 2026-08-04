@@ -2,7 +2,7 @@
 
 > **Curated source-agent reference, not template state.** This is a privacy-safe list of tools or capability patterns Bobert uses or deliberately maintains as task-triggered escalation paths. The template does not install, configure, enable, or grant authority to any of them. Adopters must choose their own tools, inspect current official documentation, provide their own credentials, and verify their actual runtime.
 >
-> Last reviewed: 2026-08-02.
+> Last reviewed: 2026-08-04.
 
 ## Why this list exists
 
@@ -16,6 +16,7 @@ The governing rule is still **job first, tool second**. More integrations can re
 |---|---|---|
 | [Hermes Agent native web and browser tools](https://hermes-agent.nousresearch.com/docs/) | Ordinary search, page extraction, PDFs, browser interaction, and source inspection | Runtime-specific; usually the first retrieval path before adding another service |
 | [Firecrawl capability](https://docs.firecrawl.dev/quickstarts/python), available through the Python SDK (`firecrawl-py`), CLI, or API | Multi-page crawling, site maps, structured extraction, difficult JavaScript pages, and repeatable web-research pipelines | Adds site egress, credentials or managed-service dependence, possible usage cost, and maintenance; use only when native retrieval is insufficient |
+| [AnyDoc](https://github.com/firecrawl/anydoc) local document-to-Markdown conversion | Convert supported office documents and ebooks locally when Markdown is useful downstream and private source files should remain on-device | Format coverage and structure fidelity vary; this is neither OCR nor a replacement for page-aware PDF extraction or native spreadsheet inspection. Verify a representative input before relying on output |
 | [Consensus MCP](https://docs.consensus.app/docs/mcp) | Discover peer-reviewed literature and build a research trail | Search results are discovery evidence, not a substitute for reading and citing the underlying papers |
 | [Context7 MCP](https://context7.com/) | Retrieve current, version-specific library documentation and examples | Package documentation changes; verify examples against the project's actual dependency version |
 | [CourtListener MCP](https://mcp.courtlistener.com/) | Search legal opinions, dockets, judges, and related public legal material | Legal research requires jurisdiction, date, citation, and authority checks; tool output is not legal advice |
