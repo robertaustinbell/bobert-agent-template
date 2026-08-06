@@ -2,6 +2,13 @@
 
 Record only material doctrine failures, contradictions, retrieval misses, scope or confidence changes, and architecture revisions. Ordinary success does not require an entry.
 
+## 2026-08-06 — Hardened the same-model independence canary
+
+- **Surface:** `scripts/check_template.py`, `scripts/test_check_template.py`, and `.github/workflows/validate.yml`
+- **Failure:** punctuation-only sentence splitting treated abbreviations such as `e.g.` and `i.e.` as sentence boundaries, allowing a contradictory same-model independence claim to evade the lexical tripwire; the detector also rejected the negative construction “Nothing about … is independent proof.”
+- **Repair:** preserve common abbreviations and initials during bounded sentence segmentation, recognize additional negative constructions, label the detector as a heuristic lexical tripwire rather than semantic proof, and run adversarial regression tests in CI
+- **Boundary:** the canary detects a narrow contradiction class; it does not establish semantic compliance or independent verification
+
 ## 2026-07-31 — Added consequential claim-to-evidence auditing as a field-test candidate
 
 - **Doctrine:** `doctrine/design/decision-records-and-operational-documentation.md` — `Consequential claim-to-evidence audit (candidate)`; `FIELD-TESTING.md` — `Claim-to-evidence audit candidate test`

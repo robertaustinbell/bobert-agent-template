@@ -26,7 +26,7 @@ required_fragments={
  'doctrine/design/right-sized-change.md':['Operational-friction check (candidate)','Friction is a **cross-layer amplifier**, not a seventh stage','manufactured disruption in a live consequential system','Never label a person, relationship, dissent, or protected exercise of agency as “friction”','Count the check as a null result when it only renames an already-known preflight, critical-path, or resilience concern','Local discretion remains bounded by authority, rights, competence, and recovery conditions','maximum time, cost, retries'],
  'doctrine/knowledge/information-placement-and-source-authority.md':['prefer one residual question, one missing measurement, or one bounded follow-up'],
  '.github/ISSUE_TEMPLATE/concept-field-test.yml':['Concept field test','template_version','Strongest alternative explanation or confound','runtime state and dumps','do not reconstruct one'],
- '.github/workflows/validate.yml':['permissions:','contents: read','git diff --exit-code -- index.md','python3 scripts/check_template.py'],
+ '.github/workflows/validate.yml':['permissions:','contents: read','git diff --exit-code -- index.md','python3 -m unittest scripts/test_check_template.py','python3 scripts/check_template.py'],
 }
 required_sections={
  'doctrine/decisions/decision-quality-under-uncertainty.md':{
@@ -133,16 +133,31 @@ def markdown_sections(text,heading):
         sections.append('\n'.join(lines[start:]))
     return sections
 
+def prose_sentences(text):
+    """Split prose for lexical canaries without treating common abbreviations as boundaries."""
+    sentinel='\x00'
+    protected=re.sub(
+        r'(?i)\b(?:e\.g|i\.e|mr|mrs|ms|dr|prof|sr|jr|vs)\.',
+        lambda match: match.group(0).replace('.',sentinel),
+        text,
+    )
+    protected=re.sub(
+        r'\b[A-Z]\.(?=\s+[A-Z])',
+        lambda match: match.group(0).replace('.',sentinel),
+        protected,
+    )
+    parts=re.split(r'(?<=[.!?])[\]\)"\'”’]*?(?:\s+|$)|\n+',protected)
+    return [part.replace(sentinel,'.') for part in parts if part.strip()]
+
 def has_same_model_independence_claim(section):
-    """Detect direct positive claims that same-model review is independent proof."""
-    sentences=re.split(r'(?<=[.!?])(?:\s+|$)|\n+',section)
-    for sentence in sentences:
+    """Heuristic lexical tripwire, not a semantic proof of doctrine compliance."""
+    for sentence in prose_sentences(section):
         lower=sentence.lower()
         if not re.search(r'\b(?:same[- ]model|second pass by the same model)\b',lower):
             continue
         if 'independent proof' not in lower:
             continue
-        if re.search(r'\b(?:not|isn.t|cannot|can.t|does not|doesn.t)\b[^.!?]{0,45}\bindependent proof\b',lower):
+        if re.search(r'\b(?:no|not|nothing|neither|isn.t|cannot|can.t|does not|doesn.t)\b[^.!?]{0,80}\bindependent proof\b',lower):
             continue
         if re.search(r'\b(?:is|provides?|constitutes?|offers?|counts as|establishes?)\b[^.!?]{0,60}\bindependent proof\b',lower):
             return True
