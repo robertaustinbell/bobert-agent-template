@@ -7,6 +7,7 @@ authority: advisory
 confidence: mixed
 confidence_basis:
   - Basic source, causal, base-rate, sensitivity, and uncertainty hygiene has broad methodological support.
+  - Formal-inference boundaries reflect standard distinctions among representation, validity, soundness, and countermodels; adopters should validate any executable procedure separately.
   - Baron-derived bounded-search guidance has low confidence and no recorded agent application.
   - Binmore-derived model-adequacy guidance has low confidence and no recorded agent application.
   - The situational-awareness failure taxonomy is an operational extrapolation; adopters should judge it by changed decisions or repairs rather than conceptual neatness.
@@ -20,17 +21,20 @@ consult_when:
   - the model may omit actors, options, mechanisms, constraints, or feedback
   - current state may change during the task, several observations must be integrated, or a near-future projection materially determines the move
   - downside, irreversibility, opportunity cost, or update timing is material
+  - an argument's validity depends on representation, quantifiers, identity, relation direction, scoped assumptions, or multi-step derivation
 do_not_use_when:
   - an authoritative source directly answers a low-stakes factual question
   - the task is mechanical and already decided
   - uncertainty cannot change the action and further analysis would only decorate the answer
   - a current authoritative source resolves the relevant state and further situation modeling cannot alter the authorized action
   - casual language, jokes, vents, or brainstorming do not make a load-bearing claim
-router_summary: Test the framing, evidence, causal story, model adequacy, precision, alternatives, and stopping point of consequential decisions.
+  - formalizing the claim cannot change the decision or would erase causal, temporal, probabilistic, normative, or authorization-relevant structure
+router_summary: Test framing, evidence, inference boundaries, causal stories, model adequacy, alternatives, and stopping points in consequential decisions.
 decision_effect:
   - choose the right question and model before optimizing inside them
   - earn precision from evidence rather than hiding uncertainty in numbers
   - stop analysis when its expected decision value falls below its cost
+  - separate representation, derivation, premise truth, causal support, decision support, and authority rather than allowing one layer to launder another
 implemented_by: []
 lineage: LINEAGE.md
 known_failures:
@@ -42,13 +46,16 @@ known_failures:
   - mistaking information volume, confidence, fluent explanation, or a successful outcome for situational understanding
   - checklist theater that names awareness stages without changing observation, projection, action, or repair
   - analysis that continues after it can no longer change the move
+  - proving a nearby proposition after a lossy translation of the actual claim
+  - treating failed or bounded proof search as invalidity, or formal validity as premise truth, causation, decision quality, or authority
 review_when:
   - a real application produces a materially worse decision than a simpler approach
   - repeated retrieval adds ceremony without changing the recommendation
   - an outcome exposes a missing actor, option, mechanism, constraint, or causal path
   - perception, comprehension, and projection failures cannot be distinguished reliably enough to prescribe different repairs
   - the same estimate class repeatedly misses in a directional way
-last_material_revision: 2026-07-31
+  - formal-inference auditing repeatedly adds ceremony without catching a material representation, scope, witness, assumption, or search-status error
+last_material_revision: 2026-08-06
 ---
 
 # Decision Quality Under Uncertainty
@@ -119,6 +126,33 @@ For a load-bearing generalization, record proportionally:
 Actively seek credible counterexamples and inconvenient evidence before defending the preferred conclusion. One domain-relevant counterexample can narrow a universal claim; it need not erase a bounded rule that explicitly excludes the case.
 
 Do not formalize colloquial “all,” “never,” or “always” unless the quantifier actually carries the argument.
+
+## Formal-inference boundaries
+
+Use a formal-inference audit only when an argument's structure is load-bearing. Its first job is not to prove the conclusion but to preserve the proposition being evaluated.
+
+Keep six statuses separate:
+
+1. **Representation fidelity:** the formal or normalized claim preserves the original domain, time, unit, quantifiers, identity, relation direction, modality, grouping, and relevant open conditions.
+2. **Derivational validity:** the exact conclusion follows under the declared assumptions, semantics, and formal system.
+3. **Premise support:** the premises are current and warranted for the represented world rather than merely available to a proof.
+4. **Causal support:** the evidence supports causal dependence rather than material implication, sequence, or association alone.
+5. **Decision support:** objectives, alternatives, tradeoffs, uncertainty, downside, reversibility, and opportunity cost support the move.
+6. **Authority and values:** the decision owner is authorized to choose, disclose, commit, and set any normative premise.
+
+No layer silently licenses the next. Validity cannot manufacture true premises; true premises plus a valid derivation do not by themselves establish causation, a wise decision, authorization, or legitimacy.
+
+Before deriving, preserve the exact conclusion and reverse-render any formalization into ordinary language. Reject the representation when it erases load-bearing causal, counterfactual, temporal, epistemic, deontic, probabilistic, vague, or normative structure. Make hidden bridge premises visible. A restatement or presupposition of the conclusion is not independent warrant.
+
+Scope temporary assumptions and every dependent claim. A result derived only within a hypothetical frame remains conditional unless a valid discharge rule licenses its exported form. Give each existential claim a fresh witness; do not merge witnesses, identify them with named entities, count them as distinct, or generalize from them without explicit identity, inequality, or dependency evidence. Preserve quantifier order and relation direction.
+
+Label transformations as alpha-renaming, equivalence under named semantics, identity substitution, definitional expansion, one-way entailment, defeasible paraphrase, or operational summary. Only a transformation whose type licenses substitution may replace a claim inside a derivation.
+
+Categorical formal results require receipts. A validity claim needs a derivation certificate; invalidity needs a countermodel that makes every premise true and the exact conclusion false. Classify search as exhaustive for a declared finite space, bounded model search, heuristic proof search, resource-limited, nonterminated, or not applicable. Failure to find a proof is not invalidity; failure to find a countermodel within a bound is not unrestricted validity.
+
+Before using reductio, check whether the original premises are already inconsistent. If they are, report `vacuously valid — premise set inconsistent` and localize the conflict rather than treating contradiction as independent support or permitting arbitrary world claims.
+
+An adopter may implement these controls as a bounded skill or checklist. The implementation must not expand the doctrine boundaries or trigger on routine, low-stakes, mechanically settled work.
 
 ## 3. Causal hygiene
 

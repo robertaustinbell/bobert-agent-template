@@ -29,6 +29,15 @@ required_fragments={
  '.github/workflows/validate.yml':['permissions:','contents: read','git diff --exit-code -- index.md','python3 scripts/check_template.py'],
 }
 required_sections={
+ 'doctrine/decisions/decision-quality-under-uncertainty.md':{
+  'Formal-inference boundaries':[
+   'Its first job is not to prove the conclusion but to preserve the proposition being evaluated',
+   'No layer silently licenses the next',
+   'Failure to find a proof is not invalidity',
+   'failure to find a countermodel within a bound is not unrestricted validity',
+   'vacuously valid — premise set inconsistent',
+  ],
+ },
  'FIELD-TESTING.md':{
   'Claim-to-evidence audit candidate test':[
    'audit completeness by scanning the final output',
@@ -52,6 +61,14 @@ required_sections={
  },
 }
 forbidden_section_fragments={
+ 'doctrine/decisions/decision-quality-under-uncertainty.md':{
+  'Formal-inference boundaries':[
+   'Validity establishes that the premises are true',
+   'Failure to find a proof establishes invalidity',
+   'Failure to find a countermodel establishes unrestricted validity',
+   'Formal validity establishes causation',
+  ],
+ },
  'FIELD-TESTING.md':{
   'Claim-to-evidence audit candidate test':[
    'A second pass by the same model is independent proof',

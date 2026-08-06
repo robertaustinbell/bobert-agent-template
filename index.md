@@ -40,7 +40,7 @@ Decide what source governs a claim, where knowledge belongs, and how to handle c
 
 ### [Decision Quality Under Uncertainty](doctrine/decisions/decision-quality-under-uncertainty.md)
 
-Test the framing, evidence, causal story, model adequacy, precision, alternatives, and stopping point of consequential decisions.
+Test framing, evidence, inference boundaries, causal stories, model adequacy, alternatives, and stopping points in consequential decisions.
 
 **Consult when:** the framing or option set may determine the recommendation; evidence conflicts, selection is unclear, or a generalization is load-bearing; a quantitative estimate, probability, deadline, forecast, or causal claim changes the move; the model may omit actors, options, mechanisms, constraints, or feedback.
 
