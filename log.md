@@ -2,6 +2,15 @@
 
 Record only material doctrine failures, contradictions, retrieval misses, scope or confidence changes, and architecture revisions. Ordinary success does not require an entry.
 
+## 2026-08-06 — Added bounded systems-feedback refinements
+
+- **Doctrine:** Decision Quality Under Uncertainty, External Capability Governance, Decision Records and Operational Documentation, and `FIELD-TESTING.md`
+- **Decision effect:** distinguishes propagation and settling from failure, labels how load-bearing boundaries are known, checks material translation loss at heterogeneous interfaces, and binds consequential recommendations to the system state actually inspected
+- **Scope:** consequential recurring loops, heterogeneous interfaces, and evolving systems where these distinctions could alter action or verification; not a universal systems-analysis checklist or physical-control model for people
+- **Evidence:** George E. Mobus and Michael C. Kalton, *Principles of Systems Science* (Springer, 2015), especially PDF pp. 111–130, 406–415, 621–650, 637–641, and 750–754 in the reviewed source artifact
+- **Boundary:** source claims, operational synthesis, and template adaptations remain distinct; illustrative scientific examples are not current empirical evidence, and the qualitative transfer does not validate modern agent architectures or quantitative control design
+- **Remaining uncertainty:** no recorded agent application yet establishes a distinct decision effect; retain, narrow, or remove each refinement according to prospective positive, null, negative, harmful, and confounded results
+
 ## 2026-08-06 — Hardened the same-model independence canary
 
 - **Surface:** `scripts/check_template.py`, `scripts/test_check_template.py`, and `.github/workflows/validate.yml`

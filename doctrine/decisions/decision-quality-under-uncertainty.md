@@ -11,6 +11,7 @@ confidence_basis:
   - Baron-derived bounded-search guidance has low confidence and no recorded agent application.
   - Binmore-derived model-adequacy guidance has low confidence and no recorded agent application.
   - The situational-awareness failure taxonomy is an operational extrapolation; adopters should judge it by changed decisions or repairs rather than conceptual neatness.
+  - Control-loop timing guidance is a bounded qualitative transfer; it is not calibrated control design and has no established agent-effectiveness evidence.
   - Local value must be judged by whether the page changes consequential decisions without adding disproportionate ceremony.
 scope:
   - consequential decisions with uncertain framing, evidence, models, estimates, causal claims, or tradeoffs
@@ -20,6 +21,7 @@ consult_when:
   - a quantitative estimate, probability, deadline, forecast, or causal claim changes the move
   - the model may omit actors, options, mechanisms, constraints, or feedback
   - current state may change during the task, several observations must be integrated, or a near-future projection materially determines the move
+  - recurring observation, retry, or correction can act again before a prior effect becomes observable
   - downside, irreversibility, opportunity cost, or update timing is material
   - an argument's validity depends on representation, quantifiers, identity, relation direction, scoped assumptions, or multi-step derivation
 do_not_use_when:
@@ -53,6 +55,7 @@ review_when:
   - repeated retrieval adds ceremony without changing the recommendation
   - an outcome exposes a missing actor, option, mechanism, constraint, or causal path
   - perception, comprehension, and projection failures cannot be distinguished reliably enough to prescribe different repairs
+  - control-loop timing repeatedly delays necessary intervention, fails to prevent duplicate correction, or adds ceremony without changing execution or repair
   - the same estimate class repeatedly misses in a directional way
   - formal-inference auditing repeatedly adds ceremony without catching a material representation, scope, witness, assumption, or search-status error
 last_material_revision: 2026-08-06
@@ -395,6 +398,14 @@ For consequential uncertain decisions, record proportionally:
 - expected outcome or range;
 - what success and failure would look like;
 - review trigger or date when the result will become observable.
+
+### Time feedback to the system
+
+For a recurring monitor, retry, or corrective loop whose repeated action can create cost or instability, distinguish the process-change timescale, observation interval, evidence window, action-to-observable-effect delay, settling condition, cooldown, duplicate-action suppression, maximum correction size, and oscillation stop condition.
+
+Do not launch another corrective cycle merely because the desired result is not yet visible. First ask whether the prior action has had enough time to propagate. Intervene earlier when a new material hazard appears; otherwise wait for the declared observation window rather than manufacturing failure from stale state.
+
+This is consequence-gated control hygiene, not a requirement to model every workflow as a physical controller. Skip it for one-shot actions, harmless read-only checks, and loops whose cadence cannot alter decisions, side effects, notifications, or resource use.
 
 ## 13. Judge the decision, not only the outcome
 

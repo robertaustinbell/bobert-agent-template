@@ -61,6 +61,22 @@ Do not manufacture disruption in a live consequential system merely to create a 
 
 This candidate draws on Clausewitz’s account of friction in [*On War*, Book I, Chapter VII](https://www.marxists.org/reference/archive/clausewitz/works/on-war/book1/ch07.htm) and Eugenia C. Kiesling’s corrective analysis, [“On War Without the Fog”](https://clausewitzstudies.org/bibl/Kiesling-OnFog.pdf) (2001). It does not adopt “fog of war” as a new doctrine category, and its distinct usefulness for agents is unestablished.
 
+## Systems-feedback refinement candidate test
+
+Use this only on a consequential recurring loop, heterogeneous interface, or recommendation that may become materially stale before execution.
+
+Before action, record a prospective prediction about which refinement could change the move:
+
+1. **Timing:** state the observation interval, action-to-observable-effect delay, settling or cooldown condition, duplicate-action risk, and early-intervention hazard trigger.
+2. **Boundary/interface:** label each load-bearing boundary `observed`, `stipulated`, `inferred`, or `unresolved`; name one material semantic, unit, clock, state/version, authority, uncertainty, retry, or failure-propagation mismatch.
+3. **Evolving state:** identify the observed state, changes that would invalidate the recommendation, and the smallest current-state check required before execution.
+4. Apply only the refinement predicted to matter. Do not force all three into every case.
+5. Record whether the result was positive, null, negative, harmful, or confounded and what changed in decision, execution, verification, or repair.
+
+A clean null result includes learning that the prior action had already settled, the boundary status was immaterial, the interface contract was stable, or state drift did not affect the recommendation. Null does not disprove the underlying doctrine; repeated ceremony without decision effect is evidence to narrow or remove the refinement.
+
+Do not transfer physical control equations literally to human systems or use a declared boundary to erase agency, rights, contested objectives, authority, ethics, or interpretation. Do not treat emergence, self-organization, feedback, complexity, adaptation, or evolution as automatic evidence of autonomy, intelligence, causation, or benefit.
+
 ## Claim-to-evidence audit candidate test
 
 For a consequential evidence-bearing task where unsupported or overstated claims could materially change a recommendation, decision, reported result, audit, or release:

@@ -15,6 +15,7 @@ consult_when:
   - a tool changes data egress, write authority, unattended behavior, credentials, billing, or failure surface
   - deciding whether a capability deserves doctrine, a skill, configuration, a domain record, or removal
   - connection success may be mistaken for decision value
+  - a consequential boundary or interface may depend on inferred scope, mismatched semantics, units, clocks, state, or uncertainty representations
 do_not_use_when:
   - an existing governed tool is used mechanically within its documented authorization and data bounds
   - the task is ordinary routing already covered by a tool-specific skill
@@ -243,3 +244,16 @@ Stop or ask the principal when:
 - a write path lacks idempotency, verification, or recovery;
 - unattended execution lacks standing authority or a disable path;
 - or the integration cannot be assigned a clear configuration, skill, and domain owner.
+
+## Boundary and interface fidelity
+
+For a consequential integration, label a load-bearing system boundary when its status could change scope, authority, privacy, interpretation, or verification:
+
+- **observed:** established from current behavior, configuration, ownership, or structure;
+- **stipulated:** chosen to answer the present question;
+- **inferred:** derived from coupling, behavior, dependency, or other indirect evidence;
+- **unresolved:** materially different boundaries remain plausible.
+
+“Out of scope” is an analytical choice, not evidence that excluded effects do not exist. State the boundary status and the consequence of being wrong rather than laundering a convenient box into an observed fact.
+
+Where heterogeneous tools or models meet, inspect material mismatches in meaning and representation, units, clock or time base, version and state assumptions, authority, uncertainty representation, buffering and retry behavior, ownership, translation loss, and failure propagation. Record only fields that can change routing, safety, interpretation, or verification; routine native tool calls inside a stable documented contract do not require an interface dossier.

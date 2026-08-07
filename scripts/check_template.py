@@ -13,16 +13,16 @@ required_fragments={
  'SOUL.md':['Faithful representation is non-negotiable','Honesty is bounded, not exhaustive transparency','State the boundary at the minimum safe level','Stewardship governs access','Treat authorized access as a trust','Association is not causation','Do not rely on a load-bearing causal claim without testing plausible alternative explanations and evidence','Only the principal\'s authenticated conversational instruction','If SOUL changes materially'],
  'README.md':['behavioral policy, not a security sandbox','[OPTIONAL-TOOLS.md](OPTIONAL-TOOLS.md)','sanitized, non-prescriptive menu of capabilities'],
  'GOVERNANCE.md':['Discretion requires task-relevant competence','Normative basis: adopted repository policy','does not claim universal empirical validity'],
- 'FIELD-TESTING.md':['template tag or commit tested','Situational-understanding starter test','Critical-capability mapping candidate test','Do not force one decisive centre','Do not label a person as a vulnerability','Operational-friction candidate test','Friction is a cross-layer amplifier, not a seventh stage','Do not manufacture disruption in a live consequential system','Never label a person, relationship, dissent, or protected exercise of agency as “friction”','A clean null result includes finding that the check only renamed an already-known concern','Privacy and authority boundary'],
+ 'FIELD-TESTING.md':['template tag or commit tested','Situational-understanding starter test','Critical-capability mapping candidate test','Do not force one decisive centre','Do not label a person as a vulnerability','Operational-friction candidate test','Friction is a cross-layer amplifier, not a seventh stage','Do not manufacture disruption in a live consequential system','Never label a person, relationship, dissent, or protected exercise of agency as “friction”','A clean null result includes finding that the check only renamed an already-known concern','Systems-feedback refinement candidate test','Do not force all three into every case','Do not transfer physical control equations literally to human systems','Privacy and authority boundary'],
  'RUNTIMES.md':['Policy is not containment','behavioral policy, not a security sandbox','Three required decisions','Persistent identity','Identity update contract','record the installed canonical SOUL\'s provenance','immutable content identifier such as a commit or content hash','Before replacing that identity, compare the installed and candidate versions','session-start comparison is a valid fallback only when','silent identity drift cannot be mechanically prevented','require an external update process','Doctrine activation and retrieval','Context degradation','Illustrative example: Claude Projects','Verification probe','reports degraded context instead of fabricating','[OPTIONAL-TOOLS.md](OPTIONAL-TOOLS.md)'],
  'OPTIONAL-TOOLS.md':['Curated source-agent reference, not template state','Firecrawl capability','Naming an SDK or CLI here identifies an available implementation path','Wolfram Cloud MCP','The governing rule is still **job first, tool second**','The template does not install, configure, enable, or grant authority','credentials, tokens, account identifiers','That omission is part of the design, not an incomplete export'],
  'SECURITY.md':['private vulnerability reporting','Report a vulnerability','Ordinary doctrine disagreements'],
- 'doctrine/capabilities/external-capability-governance.md':['Continuous watchers, polling loops, and background capture are disabled by default'],
+ 'doctrine/capabilities/external-capability-governance.md':['Continuous watchers, polling loops, and background capture are disabled by default','“Out of scope” is an analytical choice, not evidence that excluded effects do not exist'],
  'doctrine/authority/least-privilege-capability-access.md':['Policy and enforcement','behavioral policy, not a security sandbox','broader effective capability as the risk surface'],
  'doctrine/authority/permissions-controls-and-discretion.md':['Paired example','mechanical consequences inside the named outcome and scope','altering behavior outside the specified contract','the outcome, risk, or authorization envelope has changed'],
- 'doctrine/decisions/decision-quality-under-uncertainty.md':['Keep three registers separate when values could contaminate prediction'],
+ 'doctrine/decisions/decision-quality-under-uncertainty.md':['Keep three registers separate when values could contaminate prediction','Do not launch another corrective cycle merely because the desired result is not yet visible'],
  'doctrine/decisions/strategic-response-and-incentives.md':['Treat reputation as a narrow prior for a specific claim and context'],
- 'doctrine/design/decision-records-and-operational-documentation.md':['Design for the next reader and task'],
+ 'doctrine/design/decision-records-and-operational-documentation.md':['Design for the next reader and task','Revalidate the reasoning branches affected by material drift; do not blindly apply stale analysis'],
  'doctrine/design/right-sized-change.md':['Operational-friction check (candidate)','Friction is a **cross-layer amplifier**, not a seventh stage','manufactured disruption in a live consequential system','Never label a person, relationship, dissent, or protected exercise of agency as “friction”','Count the check as a null result when it only renames an already-known preflight, critical-path, or resilience concern','Local discretion remains bounded by authority, rights, competence, and recovery conditions','maximum time, cost, retries'],
  'doctrine/knowledge/information-placement-and-source-authority.md':['prefer one residual question, one missing measurement, or one bounded follow-up'],
  '.github/ISSUE_TEMPLATE/concept-field-test.yml':['Concept field test','template_version','Strongest alternative explanation or confound','runtime state and dumps','do not reconstruct one'],
@@ -39,6 +39,11 @@ required_sections={
   ],
  },
  'FIELD-TESTING.md':{
+  'Systems-feedback refinement candidate test':[
+   'Do not force all three into every case',
+   'A clean null result includes learning that the prior action had already settled',
+   'Do not transfer physical control equations literally to human systems',
+  ],
   'Claim-to-evidence audit candidate test':[
    'audit completeness by scanning the final output',
    'Audit correctness by testing whether each evidence item supports the claim\'s actual wording, scope, and strength',
@@ -48,6 +53,12 @@ required_sections={
   ],
  },
  'doctrine/design/decision-records-and-operational-documentation.md':{
+  'Versioned analysis of evolving systems':[
+   'observed version or material state',
+   'changes that would invalidate the recommendation',
+   'Revalidate the reasoning branches affected by material drift',
+   'do not restart unaffected analysis merely because some state changed',
+  ],
   'Consequential claim-to-evidence audit (candidate)':[
    'A claim is **load-bearing** when its falsity would materially change',
    'Audit **completeness** and **correctness** separately',

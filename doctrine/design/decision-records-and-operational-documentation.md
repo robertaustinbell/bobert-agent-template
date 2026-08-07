@@ -15,6 +15,7 @@ consult_when:
   - a future operator needs rationale, constraints, rollback, or ownership to change the system safely
   - documentation is duplicated, stale, or competing with a canonical source
   - a migration must prove semantic survival rather than merely preserve files
+  - consequential analysis may become stale because the inspected system changes before execution
 do_not_use_when:
   - the task is temporary session work with no durable decision or handoff
   - a canonical source already answers the question and another summary would only drift
@@ -33,13 +34,14 @@ known_failures:
   - duplicate summaries drifting from their source of record
   - decision records missing authority, alternatives, assumptions, or reconsideration triggers
   - generated indexes edited as canonical prose
+  - analysis applied to a materially different system state than the one inspected
 review_when:
   - future work repeatedly cannot determine why a choice was made
   - claim-to-evidence records add ceremony without catching errors or improving repair
   - documentation survives while the behavior it describes changes
   - maintaining the document costs more than its decision or recovery value
   - a generated view and canonical source disagree
-last_material_revision: 2026-07-31
+last_material_revision: 2026-08-06
 ---
 
 # Decision Records and Operational Documentation
@@ -171,6 +173,19 @@ When evidence does not carry the claim, preserve the mismatch and narrow the wor
 Do not impose this as a universal ledger. Routine authoritative-source lookup, casual explanation, and reversible low-stakes work should not incur formal recordkeeping when it would not improve verification or repair. Commands, schemas, and automation belong in runtime-specific skills or runbooks.
 
 This candidate is adapted from the Chain-of-Evidence approach described in Google Research's [Science One Framework](https://research.google/blog/science-one-framework-a-verifiable-autonomous-research-framework-via-chain-of-evidence/) and Meng et al.'s [ScientistOne preprint](https://arxiv.org/abs/2605.26340). It transfers a bounded verification practice, not the paper's research pipeline or a claim that traceability eliminates hallucination.
+
+## Versioned analysis of evolving systems
+
+When the inspected system can change before a consequential recommendation is executed, bind the analysis proportionally to:
+
+- the observed version or material state;
+- observation time when freshness matters;
+- the analysis boundary and its observed, stipulated, inferred, or unresolved status when load-bearing;
+- assumptions about what remains stable;
+- changes that would invalidate the recommendation;
+- the current-state check required before execution.
+
+Before acting, compare current canonical state with the analyzed state. Revalidate the reasoning branches affected by material drift; do not blindly apply stale analysis, and do not restart unaffected analysis merely because some state changed. A document can faithfully preserve an earlier observation without remaining current authority for the present system.
 
 ## Documentation stop rule
 
