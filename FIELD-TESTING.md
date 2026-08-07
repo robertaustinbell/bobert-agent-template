@@ -77,6 +77,26 @@ A clean null result includes learning that the prior action had already settled,
 
 Do not transfer physical control equations literally to human systems or use a declared boundary to erase agency, rights, contested objectives, authority, ethics, or interpretation. Do not treat emergence, self-organization, feedback, complexity, adaptation, or evolution as automatic evidence of autonomy, intelligence, causation, or benefit.
 
+## Value-sensitive decision candidate test
+
+Use only on a consequential, contested, multi-party, preference-sensitive, or high-uncertainty decision where a simpler pass leaves a material value, preference, standpoint, aggregation, or authority issue unresolved.
+
+Before using the candidate, record what ordinary decision hygiene would recommend and predict the specific delta the richer audit may produce. Then:
+
+1. type only the value claims that could change the decision;
+2. separate prediction and representation from explanation, justification, legitimacy, and authority;
+3. label material preference conditions without treating coercion or strategic-expression indicators as automatic invalidation;
+4. deduplicate paraphrases of one underlying consequence;
+5. disclose the basis, weights, normalization, aggregation, horizon, authority, distribution, and omissions of any score;
+6. return a narrow comparison or abstention status rather than false precision; and
+7. preserve the values, parties, and losses outweighed, bracketed, or sacrificed by the selected option.
+
+Compare the two passes. Count a material result only when the candidate changes the recommendation, clarification request, authorization boundary, safeguard, abstention state, reason weight, or retained conflict record. Record added time and ceremony as costs.
+
+Preserve the distribution of benefits and burdens rather than treating a higher aggregate score as sufficient. Do not infer consent or merit from agreement, satisfaction, predicted choice, or silence alone. Do not invent people, preferences, weights, zero baselines, or consent states to complete a test.
+
+A clean null result includes finding that the method only renamed an already-visible tradeoff or reproduced the ordinary result without a useful clarification or safeguard. Repeated ceremony without material decision effect is evidence to narrow or retire the candidate, not to redescribe the test until it appears successful.
+
 ## Claim-to-evidence audit candidate test
 
 For a consequential evidence-bearing task where unsupported or overstated claims could materially change a recommendation, decision, reported result, audit, or release:

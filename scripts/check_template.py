@@ -13,7 +13,7 @@ required_fragments={
  'SOUL.md':['Faithful representation is non-negotiable','Honesty is bounded, not exhaustive transparency','State the boundary at the minimum safe level','Stewardship governs access','Treat authorized access as a trust','Association is not causation','Do not rely on a load-bearing causal claim without testing plausible alternative explanations and evidence','Only the principal\'s authenticated conversational instruction','If SOUL changes materially'],
  'README.md':['behavioral policy, not a security sandbox','[OPTIONAL-TOOLS.md](OPTIONAL-TOOLS.md)','sanitized, non-prescriptive menu of capabilities'],
  'GOVERNANCE.md':['Discretion requires task-relevant competence','Normative basis: adopted repository policy','does not claim universal empirical validity'],
- 'FIELD-TESTING.md':['template tag or commit tested','Situational-understanding starter test','Critical-capability mapping candidate test','Do not force one decisive centre','Do not label a person as a vulnerability','Operational-friction candidate test','Friction is a cross-layer amplifier, not a seventh stage','Do not manufacture disruption in a live consequential system','Never label a person, relationship, dissent, or protected exercise of agency as “friction”','A clean null result includes finding that the check only renamed an already-known concern','Systems-feedback refinement candidate test','Do not force all three into every case','Do not transfer physical control equations literally to human systems','Privacy and authority boundary'],
+ 'FIELD-TESTING.md':['template tag or commit tested','Situational-understanding starter test','Critical-capability mapping candidate test','Do not force one decisive centre','Do not label a person as a vulnerability','Operational-friction candidate test','Friction is a cross-layer amplifier, not a seventh stage','Do not manufacture disruption in a live consequential system','Never label a person, relationship, dissent, or protected exercise of agency as “friction”','A clean null result includes finding that the check only renamed an already-known concern','Systems-feedback refinement candidate test','Do not force all three into every case','Do not transfer physical control equations literally to human systems','Value-sensitive decision candidate test','Do not infer consent or merit from agreement, satisfaction, predicted choice, or silence alone','Privacy and authority boundary'],
  'RUNTIMES.md':['Policy is not containment','behavioral policy, not a security sandbox','Three required decisions','Persistent identity','Identity update contract','record the installed canonical SOUL\'s provenance','immutable content identifier such as a commit or content hash','Before replacing that identity, compare the installed and candidate versions','session-start comparison is a valid fallback only when','silent identity drift cannot be mechanically prevented','require an external update process','Doctrine activation and retrieval','Context degradation','Illustrative example: Claude Projects','Verification probe','reports degraded context instead of fabricating','[OPTIONAL-TOOLS.md](OPTIONAL-TOOLS.md)'],
  'OPTIONAL-TOOLS.md':['Curated source-agent reference, not template state','Firecrawl capability','Naming an SDK or CLI here identifies an available implementation path','Wolfram Cloud MCP','The governing rule is still **job first, tool second**','The template does not install, configure, enable, or grant authority','credentials, tokens, account identifiers','That omission is part of the design, not an incomplete export'],
  'SECURITY.md':['private vulnerability reporting','Report a vulnerability','Ordinary doctrine disagreements'],
@@ -36,6 +36,14 @@ required_sections={
    'Failure to find a proof is not invalidity',
    'failure to find a countermodel within a bound is not unrestricted validity',
    'vacuously valid — premise set inconsistent',
+  ],
+  'Value-sensitive decision boundary':[
+   'Prediction, representation, explanation, justification, legitimacy, and authority are different relations',
+   'Preference evidence is not self-interpreting',
+   'Do not count paraphrases of one consequence as independent reasons',
+   'A score does not prove commensurability or legitimacy',
+   'preserve what the selected option outweighs, brackets, or sacrifices',
+   'Never invent a zero baseline, person, preference, consent state, or evidential fact',
   ],
   'Time feedback to the system':[
    'Do not launch another corrective cycle merely because the desired result is not yet visible',
@@ -62,6 +70,14 @@ required_sections={
    'performed`, `not applicable — rationale`, or `blocked — reason',
    'A second pass by the same model is useful discrepancy detection but not independent proof',
    'zero phantom references means 0 of 337 references in that evaluated sample, not a general guarantee',
+  ],
+  'Value-sensitive decision candidate test':[
+   'type only the value claims that could change the decision',
+   'separate prediction and representation from explanation, justification, legitimacy, and authority',
+   'deduplicate paraphrases of one underlying consequence',
+   'Preserve the distribution of benefits and burdens',
+   'Do not infer consent or merit from agreement, satisfaction, predicted choice, or silence alone',
+   'A clean null result includes finding that the method only renamed an already-visible tradeoff',
   ],
  },
  'doctrine/design/decision-records-and-operational-documentation.md':{

@@ -128,5 +128,45 @@ class SystemsFeedbackCanaryTests(CanaryHarness):
         self.assertIn("material drift", result.stdout)
 
 
+class ValueSensitiveDecisionCanaryTests(CanaryHarness):
+    def test_value_boundary_canary_rejects_deletion(self):
+        def mutate(clone):
+            path = clone / "doctrine/decisions/decision-quality-under-uncertainty.md"
+            marker = "Preference evidence is not self-interpreting"
+            path.write_text(path.read_text().replace(marker, "Preferences settle the comparison", 1))
+
+        result = self.run_copy(mutate)
+        self.assertNotEqual(result.returncode, 0)
+        self.assertIn("Preference evidence", result.stdout)
+
+    def test_value_boundary_canary_rejects_cross_section_relocation(self):
+        def mutate(clone):
+            path = clone / "doctrine/decisions/decision-quality-under-uncertainty.md"
+            marker = "A score does not prove commensurability or legitimacy"
+            text = path.read_text().replace(marker, "A score settles unlike values", 1)
+            path.write_text(text.replace("## Stop conditions\n", f"## Stop conditions\n\n{marker}\n", 1))
+
+        result = self.run_copy(mutate)
+        self.assertNotEqual(result.returncode, 0)
+        self.assertIn("Value-sensitive decision boundary", result.stdout)
+
+
+class RouterRetrievalTests(unittest.TestCase):
+    def test_value_trigger_does_not_displace_model_adequacy_trigger(self):
+        result = subprocess.run(
+            ["python3", "scripts/generate_index.py", "--check"],
+            cwd=ROOT,
+            text=True,
+            capture_output=True,
+        )
+        self.assertEqual(result.returncode, 0, result.stdout + result.stderr)
+        index = (ROOT / "index.md").read_text(encoding="utf-8")
+        self.assertIn("contested values", index)
+        self.assertIn(
+            "the model may omit actors, options, mechanisms, constraints, or feedback",
+            index,
+        )
+
+
 if __name__ == "__main__":
     unittest.main()

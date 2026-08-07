@@ -12,11 +12,12 @@ confidence_basis:
   - Binmore-derived model-adequacy guidance has low confidence and no recorded agent application.
   - The situational-awareness failure taxonomy is an operational extrapolation; adopters should judge it by changed decisions or repairs rather than conceptual neatness.
   - Control-loop timing guidance is a bounded qualitative transfer; it is not calibrated control design and has no established agent-effectiveness evidence.
+  - Value-sensitive comparison guidance is a bounded operational synthesis of contested theories. It does not establish a universal value theory or a master value.
   - Local value must be judged by whether the page changes consequential decisions without adding disproportionate ceremony.
 scope:
   - consequential decisions with uncertain framing, evidence, models, estimates, causal claims, or tradeoffs
 consult_when:
-  - the framing or option set may determine the recommendation
+  - the framing, option set, contested values, preference or consent interpretation, aggregation, or objective proxy may determine the recommendation
   - evidence conflicts, selection is unclear, or a generalization is load-bearing
   - a quantitative estimate, probability, deadline, forecast, or causal claim changes the move
   - the model may omit actors, options, mechanisms, constraints, or feedback
@@ -31,7 +32,8 @@ do_not_use_when:
   - a current authoritative source resolves the relevant state and further situation modeling cannot alter the authorized action
   - casual language, jokes, vents, or brainstorming do not make a load-bearing claim
   - formalizing the claim cannot change the decision or would erase causal, temporal, probabilistic, normative, or authorization-relevant structure
-router_summary: Test framing, evidence, inference boundaries, causal stories, model adequacy, alternatives, and stopping points in consequential decisions.
+  - the choice is routine, low-stakes, mechanically settled, or a richer value audit cannot change the move
+router_summary: Test framing, values, preference authority, evidence, inference, causal stories, models, alternatives, and stopping points in consequential decisions.
 decision_effect:
   - choose the right question and model before optimizing inside them
   - earn precision from evidence rather than hiding uncertainty in numbers
@@ -58,7 +60,8 @@ review_when:
   - control-loop timing repeatedly delays necessary intervention, fails to prevent duplicate correction, or adds ceremony without changing execution or repair
   - the same estimate class repeatedly misses in a directional way
   - formal-inference auditing repeatedly adds ceremony without catching a material representation, scope, witness, assumption, or search-status error
-last_material_revision: 2026-08-06
+  - value-sensitive auditing repeatedly renames obvious tradeoffs without changing a decision, clarification, safeguard, abstention, or conflict record
+last_material_revision: 2026-08-07
 ---
 
 # Decision Quality Under Uncertainty
@@ -156,6 +159,26 @@ Categorical formal results require receipts. A validity claim needs a derivation
 Before using reductio, check whether the original premises are already inconsistent. If they are, report `vacuously valid — premise set inconsistent` and localize the conflict rather than treating contradiction as independent support or permitting arbitrary world claims.
 
 An adopter may implement these controls as a bounded skill or checklist. The implementation must not expand the doctrine boundaries or trigger on routine, low-stakes, mechanically settled work.
+
+## Value-sensitive decision boundary
+
+Use this boundary only when a consequential, contested, multi-party, preference-sensitive, or high-uncertainty choice depends on what matters, whose standpoint counts, whether expressed preference is authoritative, or whether unlike values can be compared. Routine tasks stay lightweight.
+
+Type only claims that could change the choice. Distinguish descriptive, evaluative, reason-giving, deontic, and authorization claims; intrinsic, instrumental, constitutive, final, or unresolved value roles; and personal, relational, role-relative, moral, impartial, or unresolved standpoints. Goodness is not automatically a reason, and a reason is not automatically permission, obligation, prohibition, consent, or authority.
+
+Prediction, representation, explanation, justification, legitimacy, and authority are different relations. A model may predict or reproduce a judgment without explaining it; an explanation need not justify it; a justification does not by itself establish legitimacy or authority to act. Keep these statuses explicit when collapsing them could change the move.
+
+Preference evidence is not self-interpreting. When material, label a preference as actual, informed, hypothetical, adaptive, manipulated, coerced, constrained, or unresolved. Treat coercion, strategic expression, politeness, resignation, misinformation, and constrained options as investigation signals—not automatic grounds to dismiss the person's expressed preference or override them. Do not infer consent, merit, welfare, or authority from agreement, satisfaction, silence, or predicted choice alone.
+
+Before counting reasons, trace each through underlying facts, causal consequences, and evaluative classifications. Do not count paraphrases of one consequence as independent reasons. Preserve temporal order when a reason's force changes over time or depends on an earlier condition.
+
+Use numerical comparison only for a bounded, explicit decision. Disclose the comparison basis, weights, normalization, aggregation rule, time horizon, authority to choose them, distribution of benefits and burdens, and material omissions. A score does not prove commensurability or legitimacy. Never invent a zero baseline, person, preference, consent state, or evidential fact to complete the model.
+
+Return one narrow comparison status when it matters: `compared under declared assumptions`; `partially ordered`; `incommensurable on the current basis`; `insufficient authority`; `insufficient evidence`; `deferred — value of information exceeds delay cost`; or `abstain — unresolved legitimacy or rights constraint`. Uncertainty need not force abstention, and abstention is not a substitute for preserving authorized reversible options.
+
+After a consequential selection, preserve what the selected option outweighs, brackets, or sacrifices; who bears that loss; and whether it is temporary, conditional, revisitable, or irreversible. Record conflict without implying that one choice erased the rejected value.
+
+This boundary does not adopt pleasure, desire satisfaction, welfare, money, health, relationships, security, autonomy, equality, freedom, nature, existence, aggregation, or any other candidate as a universal master value. It does not require a universal ontology, one numerical score, or philosophy ceremony for ordinary work.
 
 ## 3. Causal hygiene
 
