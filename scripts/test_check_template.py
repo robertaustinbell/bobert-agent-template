@@ -81,6 +81,17 @@ class SystemsFeedbackCanaryTests(CanaryHarness):
         self.assertNotEqual(result.returncode, 0)
         self.assertIn("corrective cycle", result.stdout)
 
+    def test_timing_canary_rejects_cross_section_relocation(self):
+        def mutate(clone):
+            path = clone / "doctrine/decisions/decision-quality-under-uncertainty.md"
+            marker = "Do not launch another corrective cycle merely because the desired result is not yet visible."
+            text = path.read_text().replace(marker, "Repeated action may occur.", 1)
+            path.write_text(text.replace("## Stop conditions\n", f"## Stop conditions\n\n{marker}\n", 1))
+
+        result = self.run_copy(mutate)
+        self.assertNotEqual(result.returncode, 0)
+        self.assertIn("Time feedback to the system", result.stdout)
+
     def test_boundary_canary_ignores_fenced_marker(self):
         def mutate(clone):
             path = clone / "doctrine/capabilities/external-capability-governance.md"
@@ -91,6 +102,17 @@ class SystemsFeedbackCanaryTests(CanaryHarness):
         result = self.run_copy(mutate)
         self.assertNotEqual(result.returncode, 0)
         self.assertIn("Out of scope", result.stdout)
+
+    def test_boundary_canary_rejects_cross_section_relocation(self):
+        def mutate(clone):
+            path = clone / "doctrine/capabilities/external-capability-governance.md"
+            marker = "“Out of scope” is an analytical choice, not evidence that excluded effects do not exist"
+            text = path.read_text().replace(marker, "A declared boundary defines the complete system", 1)
+            path.write_text(text.replace("## Stop conditions\n", f"## Stop conditions\n\n{marker}\n", 1))
+
+        result = self.run_copy(mutate)
+        self.assertNotEqual(result.returncode, 0)
+        self.assertIn("Boundary and interface fidelity", result.stdout)
 
     def test_versioned_analysis_canary_rejects_comment_only_marker(self):
         def mutate(clone):

@@ -17,10 +17,10 @@ required_fragments={
  'RUNTIMES.md':['Policy is not containment','behavioral policy, not a security sandbox','Three required decisions','Persistent identity','Identity update contract','record the installed canonical SOUL\'s provenance','immutable content identifier such as a commit or content hash','Before replacing that identity, compare the installed and candidate versions','session-start comparison is a valid fallback only when','silent identity drift cannot be mechanically prevented','require an external update process','Doctrine activation and retrieval','Context degradation','Illustrative example: Claude Projects','Verification probe','reports degraded context instead of fabricating','[OPTIONAL-TOOLS.md](OPTIONAL-TOOLS.md)'],
  'OPTIONAL-TOOLS.md':['Curated source-agent reference, not template state','Firecrawl capability','Naming an SDK or CLI here identifies an available implementation path','Wolfram Cloud MCP','The governing rule is still **job first, tool second**','The template does not install, configure, enable, or grant authority','credentials, tokens, account identifiers','That omission is part of the design, not an incomplete export'],
  'SECURITY.md':['private vulnerability reporting','Report a vulnerability','Ordinary doctrine disagreements'],
- 'doctrine/capabilities/external-capability-governance.md':['Continuous watchers, polling loops, and background capture are disabled by default','“Out of scope” is an analytical choice, not evidence that excluded effects do not exist'],
+ 'doctrine/capabilities/external-capability-governance.md':['Continuous watchers, polling loops, and background capture are disabled by default'],
  'doctrine/authority/least-privilege-capability-access.md':['Policy and enforcement','behavioral policy, not a security sandbox','broader effective capability as the risk surface'],
  'doctrine/authority/permissions-controls-and-discretion.md':['Paired example','mechanical consequences inside the named outcome and scope','altering behavior outside the specified contract','the outcome, risk, or authorization envelope has changed'],
- 'doctrine/decisions/decision-quality-under-uncertainty.md':['Keep three registers separate when values could contaminate prediction','Do not launch another corrective cycle merely because the desired result is not yet visible'],
+ 'doctrine/decisions/decision-quality-under-uncertainty.md':['Keep three registers separate when values could contaminate prediction'],
  'doctrine/decisions/strategic-response-and-incentives.md':['Treat reputation as a narrow prior for a specific claim and context'],
  'doctrine/design/decision-records-and-operational-documentation.md':['Design for the next reader and task','Revalidate the reasoning branches affected by material drift; do not blindly apply stale analysis'],
  'doctrine/design/right-sized-change.md':['Operational-friction check (candidate)','Friction is a **cross-layer amplifier**, not a seventh stage','manufactured disruption in a live consequential system','Never label a person, relationship, dissent, or protected exercise of agency as “friction”','Count the check as a null result when it only renames an already-known preflight, critical-path, or resilience concern','Local discretion remains bounded by authority, rights, competence, and recovery conditions','maximum time, cost, retries'],
@@ -36,6 +36,18 @@ required_sections={
    'Failure to find a proof is not invalidity',
    'failure to find a countermodel within a bound is not unrestricted validity',
    'vacuously valid — premise set inconsistent',
+  ],
+  'Time feedback to the system':[
+   'Do not launch another corrective cycle merely because the desired result is not yet visible',
+   'whether the prior action has had enough time to propagate',
+   'consequence-gated control hygiene',
+  ],
+ },
+ 'doctrine/capabilities/external-capability-governance.md':{
+  'Boundary and interface fidelity':[
+   '“Out of scope” is an analytical choice, not evidence that excluded effects do not exist',
+   'State the boundary status and the consequence of being wrong',
+   'translation loss, and failure propagation',
   ],
  },
  'FIELD-TESTING.md':{
@@ -126,18 +138,20 @@ def atx_heading(line):
     return len(match.group(1)),title
 
 def markdown_sections(text,heading):
-    """Return active level-two section bodies, excluding later top-level sections."""
+    """Return active bodies for a uniquely titled ATX section at any level."""
     lines=active_markdown(text).splitlines()
     sections=[]
     start=None
+    target_level=None
     for index,line in enumerate(lines):
         parsed=atx_heading(line)
-        if parsed and parsed==(2,heading):
+        if parsed and parsed[1]==heading:
             if start is not None:
                 sections.append('\n'.join(lines[start:index]))
+            target_level=parsed[0]
             start=index+1
             continue
-        if start is not None and parsed and parsed[0]<=2:
+        if start is not None and parsed and target_level is not None and parsed[0]<=target_level:
             sections.append('\n'.join(lines[start:index]))
             start=None
     if start is not None:
