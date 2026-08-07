@@ -4,26 +4,29 @@ type: doctrine
 title: Information Placement and Source Authority
 status: active
 authority: adopted
-confidence: high
+confidence: mixed
 confidence_basis:
   - The page combines adopted ownership policy with direct operational evidence from repeated stale-summary and duplicate-authority failures.
   - Domain-specific precedence still depends on each named source of record.
+  - Representation-adequacy guidance is a bounded operational transfer from information theory with no established distinct production effect.
 scope:
   - provenance, canonical sources, memory, domain ownership, session state, evidence, and archive authority
 consult_when:
-  - two sources, memories, files, or prior statements disagree
+  - two sources, memories, files, or prior statements disagree, or a consequential representation may omit distinctions that change its downstream task
   - deciding where a durable fact, interpretation, procedure, policy, or worked case belongs
   - a request names a direct source that can be inspected
   - identity, ownership, chronology, or coreference may be confused
   - a summary may be stale or a source of record may have changed
 do_not_use_when:
-  - the correct canonical source is already known, current, available, and uncontested
+  - the correct canonical source is already known, current, available, and uncontested, and no consequential representation or compression issue remains
   - the task is a mechanical operation that does not create or relocate knowledge
+  - the representation is routine, one-shot, reversible, and no plausible omitted distinction could change the action
 router_summary: Decide what source governs a claim, where knowledge belongs, and how to handle conflicts without turning summaries into reality.
 decision_effect:
   - inspect the decisive source before relying on convenient secondary context
   - separate source fact, interpretation, doctrine, evidence, and history
   - prevent duplicate records from becoming competing authorities
+  - preserve task-relevant distinctions through compression and test recurring context or model mismatch against a declared stronger baseline
 implemented_by: []
 lineage: LINEAGE.md
 known_failures:
@@ -32,12 +35,14 @@ known_failures:
   - attributing the principal's family, body, business, money, or medical facts to the agent
   - copying domain facts into Agent Ops and letting both copies drift
   - preserving a correction as another entry rather than updating the stale record
+  - treating fluent reconstruction, compression ratio, retrieval similarity, confidence, or information quantity as proof that a representation preserved what mattered
 review_when:
   - a new domain lacks a named source of record
   - two current canonical systems legitimately govern different dimensions of the same claim
   - retrieval repeatedly selects a convenient secondary source over the decisive one
   - an ownership or identity error escapes into advice or external communication
-last_material_revision: 2026-07-31
+  - representation-adequacy checks repeatedly add context or ceremony without changing a consequential conclusion, verification result, or repair
+last_material_revision: 2026-08-07
 ---
 
 # Information Placement and Source Authority
@@ -130,6 +135,20 @@ When the principal provides a URL, file path, repository, message thread, accoun
 Session history records what was said. It is not evidence about what an external source currently contains.
 
 When the decisive source is incomplete, prefer one residual question, one missing measurement, or one bounded follow-up that could change the decision. Do not answer a narrow gap by building a universal graph, dossier, reranker, typed-edge ontology, or new retrieval platform before repeated misses establish that infrastructure is necessary.
+
+## Representation adequacy and information loss
+
+**Authority: advisory. Confidence: low.** This operational transfer does not inherit the page's adopted source-ownership authority and has not yet demonstrated a distinct production decision effect.
+
+Treat a consequential summary, context packet, handoff, memory representation, or model input as task-conditioned rather than generally sufficient. Before compressing, name the downstream task and decision owner; the distinctions whose loss could change a decision, verification result, authority assessment, causal interpretation, numerical result, or safety boundary; the reconstruction environment expected to remain available; and the acceptable loss boundary.
+
+Evaluate the compact representation together with canonical sources, citations, retrieval handles, evidence artifacts, and tools that support reconstruction. Prefer a compact decision layer linked to recoverable evidence over repeated truncation of one narrative. A representation adequate for one task may be inadequate for another.
+
+For consequential recurring tasks, compare the bounded representation against a materially expanded or retrieval-enabled context when the difference can be checked. Preserve or retrieve additional context when it changes a consequential conclusion, materially improves a declared decision-relevant measure, or exposes a recurring omission. Otherwise retain the smaller representation. Do not impose this trial on routine one-shot work, assume stationarity or independence, or discard rare decisive evidence merely because it is atypical.
+
+When recurring probabilistic predictions have real probabilities and comparable outcomes, retain the model or method version, forecast basis, selected predictive-loss measure, and baseline. Sustained excess loss is evidence to inspect model mismatch, dependence, selection, sample size, or regime change—not permission to keep tuning parameters inside an inadequate model.
+
+Information quantity, entropy, surprise, compression ratio, similarity, predictive confidence, and KL divergence do not establish truth, meaning, relevance, causation, value, legitimacy, permission, obligation, prohibition, or authority. A sufficient statistic is sufficient only for its named model, parameter, and task. Do not fabricate probabilities to enable a metric or describe people as deficient channels.
 
 ## Conflict handling
 

@@ -23,7 +23,7 @@ required_fragments={
  'doctrine/decisions/decision-quality-under-uncertainty.md':['Keep three registers separate when values could contaminate prediction'],
  'doctrine/decisions/strategic-response-and-incentives.md':['Treat reputation as a narrow prior for a specific claim and context'],
  'doctrine/design/decision-records-and-operational-documentation.md':['Design for the next reader and task','Revalidate the reasoning branches affected by material drift; do not blindly apply stale analysis'],
- 'doctrine/design/right-sized-change.md':['Operational-friction check (candidate)','Friction is a **cross-layer amplifier**, not a seventh stage','manufactured disruption in a live consequential system','Never label a person, relationship, dissent, or protected exercise of agency as “friction”','Count the check as a null result when it only renames an already-known preflight, critical-path, or resilience concern','Local discretion remains bounded by authority, rights, competence, and recovery conditions','maximum time, cost, retries'],
+ 'doctrine/design/right-sized-change.md':['Operational-friction check','Friction is a **cross-layer amplifier**, not a seventh stage','manufactured disruption in a live consequential system','Never label a person, relationship, dissent, or protected exercise of agency as “friction”','Count the check as a null result when it only renames an already-known preflight, critical-path, or resilience concern','Local discretion remains bounded by authority, rights, competence, and recovery conditions','maximum time, cost, retries'],
  'doctrine/knowledge/information-placement-and-source-authority.md':['prefer one residual question, one missing measurement, or one bounded follow-up'],
  '.github/ISSUE_TEMPLATE/concept-field-test.yml':['Concept field test','template_version','Strongest alternative explanation or confound','runtime state and dumps','do not reconstruct one'],
  '.github/workflows/validate.yml':['permissions:','contents: read','git diff --exit-code -- index.md','python3 -m unittest scripts/test_check_template.py','python3 scripts/check_template.py'],
@@ -44,12 +44,31 @@ required_sections={
    'A score does not prove commensurability or legitimacy',
    'preserve what the selected option outweighs, brackets, or sacrifices',
    'Never invent a zero baseline, person, preference, consent state, or evidential fact',
+   'dominates on the declared basis',
+   'selected under declared tradeoff',
+   'unresolved — evidence insufficient',
+   'unresolved — basis disputed',
+   'unresolved — incomparable on the declared basis',
+   'unresolved — semantic indeterminacy',
+   'tied on the declared basis',
+   'defensible plurality — authorized choice remains',
+   'exhausted reasons — no further ranking warranted',
+   'defer to authorized decision owner',
+   'prohibited by governing constraint',
   ],
+ },
+ 'doctrine/design/right-sized-change.md':{
   'Time feedback to the system':[
    'Do not launch another corrective cycle merely because the desired result is not yet visible',
    'whether the prior action has had enough time to propagate',
    'consequence-gated control hygiene',
   ],
+  'Operational-friction check':[
+   'Friction is a **cross-layer amplifier**, not a seventh stage',
+   'Count the check as a null result when it only renames an already-known preflight, critical-path, or resilience concern',
+  ],
+ },
+ 'doctrine/knowledge/information-placement-and-source-authority.md':{
   'Representation adequacy and information loss':[
    'A representation adequate for one task may be inadequate for another',
    'Prefer a compact decision layer linked to recoverable evidence over repeated truncation of one narrative',
@@ -161,15 +180,15 @@ def atx_heading(line):
     title=re.sub(r'[ \t]+#+[ \t]*$','',match.group(2)).strip()
     return len(match.group(1)),title
 
-def markdown_sections(text,heading):
-    """Return active bodies for a uniquely titled ATX section at any level."""
+def markdown_sections(text,heading,expected_level=2):
+    """Return active bodies for a titled ATX section at its declared owner level."""
     lines=active_markdown(text).splitlines()
     sections=[]
     start=None
     target_level=None
     for index,line in enumerate(lines):
         parsed=atx_heading(line)
-        if parsed and parsed[1]==heading:
+        if parsed and parsed==(expected_level,heading):
             if start is not None:
                 sections.append('\n'.join(lines[start:index]))
             target_level=parsed[0]
@@ -220,16 +239,19 @@ for name,fragments in required_fragments.items():
         if fragment not in text: errors.append(f'{name} missing required guidance: {fragment}')
 # Location-sensitive static preservation canaries. They establish that active
 # guidance remains in its owning section, not runtime compliance or semantic proof.
+required_section_levels={
+ ('doctrine/design/right-sized-change.md','Time feedback to the system'):3,
+}
 for name,sections in required_sections.items():
     path=ROOT/name
     if not path.is_file(): continue
     text=path.read_text()
     for heading,fragments in sections.items():
-        matches=markdown_sections(text,heading)
-        if len(matches)!=1:
-            errors.append(f'{name} must contain exactly one active {heading!r} section; found {len(matches)}')
+        found=markdown_sections(text,heading,required_section_levels.get((name,heading),2))
+        if len(found)!=1:
+            errors.append(f'{name} must contain exactly one active {heading!r} section; found {len(found)}')
             continue
-        section=matches[0]
+        section=found[0]
         for fragment in fragments:
             if fragment not in section: errors.append(f'{name} section {heading!r} missing required guidance: {fragment}')
         for fragment in forbidden_section_fragments.get(name,{}).get(heading,[]):

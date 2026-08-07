@@ -70,7 +70,7 @@ class SystemsFeedbackCanaryTests(CanaryHarness):
 
     def test_timing_canary_rejects_deletion(self):
         def mutate(clone):
-            path = clone / "doctrine/decisions/decision-quality-under-uncertainty.md"
+            path = clone / "doctrine/design/right-sized-change.md"
             text = path.read_text().replace(
                 "Do not launch another corrective cycle merely because the desired result is not yet visible.",
                 "Repeated action may occur.",
@@ -83,7 +83,7 @@ class SystemsFeedbackCanaryTests(CanaryHarness):
 
     def test_timing_canary_rejects_cross_section_relocation(self):
         def mutate(clone):
-            path = clone / "doctrine/decisions/decision-quality-under-uncertainty.md"
+            path = clone / "doctrine/design/right-sized-change.md"
             marker = "Do not launch another corrective cycle merely because the desired result is not yet visible."
             text = path.read_text().replace(marker, "Repeated action may occur.", 1)
             path.write_text(text.replace("## Stop conditions\n", f"## Stop conditions\n\n{marker}\n", 1))
@@ -91,6 +91,30 @@ class SystemsFeedbackCanaryTests(CanaryHarness):
         result = self.run_copy(mutate)
         self.assertNotEqual(result.returncode, 0)
         self.assertIn("Time feedback to the system", result.stdout)
+
+    def test_timing_canary_rejects_same_title_at_wrong_level(self):
+        def mutate(clone):
+            path = clone / "doctrine/design/right-sized-change.md"
+            text = path.read_text().replace("### Time feedback to the system", "#### Time feedback to the system", 1)
+            path.write_text(text)
+
+        result = self.run_copy(mutate)
+        self.assertNotEqual(result.returncode, 0)
+        self.assertIn("Time feedback to the system", result.stdout)
+
+    def test_operational_friction_rejects_waiting_room_candidate_label(self):
+        def mutate(clone):
+            path = clone / "doctrine/design/right-sized-change.md"
+            text = path.read_text().replace(
+                "## Operational-friction check",
+                "## Operational-friction check (candidate)",
+                1,
+            )
+            path.write_text(text)
+
+        result = self.run_copy(mutate)
+        self.assertNotEqual(result.returncode, 0)
+        self.assertIn("Operational-friction check", result.stdout)
 
     def test_boundary_canary_ignores_fenced_marker(self):
         def mutate(clone):
@@ -154,7 +178,7 @@ class ValueSensitiveDecisionCanaryTests(CanaryHarness):
 class RepresentationAdequacyCanaryTests(CanaryHarness):
     def test_representation_boundary_rejects_deletion(self):
         def mutate(clone):
-            path = clone / "doctrine/decisions/decision-quality-under-uncertainty.md"
+            path = clone / "doctrine/knowledge/information-placement-and-source-authority.md"
             marker = "A representation adequate for one task may be inadequate for another"
             path.write_text(path.read_text().replace(marker, "One compact representation is generally adequate", 1))
 
@@ -164,7 +188,7 @@ class RepresentationAdequacyCanaryTests(CanaryHarness):
 
     def test_representation_boundary_rejects_cross_section_relocation(self):
         def mutate(clone):
-            path = clone / "doctrine/decisions/decision-quality-under-uncertainty.md"
+            path = clone / "doctrine/knowledge/information-placement-and-source-authority.md"
             marker = "Do not fabricate probabilities to enable a metric or describe people as deficient channels"
             text = path.read_text().replace(marker, "Always quantify the representation", 1)
             path.write_text(text.replace("## Stop conditions\n", f"## Stop conditions\n\n{marker}\n", 1))
@@ -189,7 +213,7 @@ class RouterRetrievalTests(unittest.TestCase):
             "the model may omit actors, options, mechanisms, constraints, or feedback",
             index,
         )
-        self.assertIn("consequential compression", index)
+        self.assertIn("a consequential representation may omit distinctions that change its downstream task", index)
 
 
 if __name__ == "__main__":

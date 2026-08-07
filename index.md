@@ -32,9 +32,9 @@ Determine whether the agent may inspect, reason, draft, execute, communicate, re
 
 Decide what source governs a claim, where knowledge belongs, and how to handle conflicts without turning summaries into reality.
 
-**Consult when:** two sources, memories, files, or prior statements disagree; deciding where a durable fact, interpretation, procedure, policy, or worked case belongs; a request names a direct source that can be inspected; identity, ownership, chronology, or coreference may be confused.
+**Consult when:** two sources, memories, files, or prior statements disagree, or a consequential representation may omit distinctions that change its downstream task; deciding where a durable fact, interpretation, procedure, policy, or worked case belongs; a request names a direct source that can be inspected; identity, ownership, chronology, or coreference may be confused.
 
-**Do not use when:** the correct canonical source is already known, current, available, and uncontested; the task is a mechanical operation that does not create or relocate knowledge.
+**Do not use when:** the correct canonical source is already known, current, available, and uncontested, and no consequential representation or compression issue remains; the task is a mechanical operation that does not create or relocate knowledge; the representation is routine, one-shot, reversible, and no plausible omitted distinction could change the action.
 
 ## Decision quality and strategic response
 
@@ -42,7 +42,7 @@ Decide what source governs a claim, where knowledge belongs, and how to handle c
 
 Test framing, values, preference authority, evidence, inference, causal stories, models, alternatives, and stopping points in consequential decisions.
 
-**Consult when:** the framing, option set, contested values, preference or consent interpretation, aggregation, or objective proxy may determine the recommendation; evidence conflicts, selection is unclear, or a generalization is load-bearing; a quantitative estimate, probability, deadline, forecast, causal claim, or consequential compression choice changes the move; the model may omit actors, options, mechanisms, constraints, or feedback.
+**Consult when:** the framing, option set, contested values, preference or consent interpretation, aggregation, or objective proxy may determine the recommendation; evidence conflicts, selection is unclear, or a generalization is load-bearing; a quantitative estimate, probability, deadline, forecast, or causal claim changes the move; the model may omit actors, options, mechanisms, constraints, or feedback.
 
 **Do not use when:** an authoritative source directly answers a low-stakes factual question; the task is mechanical and already decided; uncertainty cannot change the action and further analysis would only decorate the answer.
 
@@ -68,7 +68,7 @@ Record durable choices and consequential evidence claims at the minimum detail n
 
 Design the smallest operationally complete change; preserve reversibility, bound feedback, and charge every dependency and state for its carrying cost.
 
-**Consult when:** adding, replacing, integrating, automating, or refactoring a meaningful component; complexity, configuration states, dependencies, cumulative variance across a multi-step operating path, failure recovery, or long-term maintenance may dominate the local benefit; the task is dynamic enough that feedback should shape the next step; a stable convention or component is being removed.
+**Consult when:** adding, replacing, integrating, automating, or refactoring a meaningful component, or mapping concentration in a capability required for the objective; complexity, configuration states, dependencies, cumulative variance across a multi-step operating path, failure recovery, or long-term maintenance may dominate the local benefit; the task is dynamic enough that feedback should shape the next step; recurring observation, retry, or correction can act again before a prior effect becomes observable.
 
 **Do not use when:** the change is trivial, isolated, reversible, and already has an established procedure; the task is factual lookup or mechanical execution with no architecture decision.
 

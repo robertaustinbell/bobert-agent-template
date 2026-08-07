@@ -8,13 +8,15 @@ confidence: mixed
 confidence_basis:
   - The core guidance reflects established engineering practice and repeated local failures from excess state, premature abstraction, unbounded iteration, and incomplete verification.
   - Exact thresholds remain system- and consequence-dependent.
-  - The operational-friction check is a low-confidence candidate until it changes a consequential design, rehearsal, recovery path, or verification beyond existing preflight and resilience guidance.
+  - The operational-friction check has low confidence until it changes a consequential design, rehearsal, recovery path, or verification beyond existing preflight and resilience guidance.
+  - Control-loop timing is a bounded qualitative transfer with no established distinct production effect.
 scope:
   - architecture, system changes, iteration, complexity, resilience, refactoring, automation, and operational fit
 consult_when:
-  - adding, replacing, integrating, automating, or refactoring a meaningful component
+  - adding, replacing, integrating, automating, or refactoring a meaningful component, or mapping concentration in a capability required for the objective
   - complexity, configuration states, dependencies, cumulative variance across a multi-step operating path, failure recovery, or long-term maintenance may dominate the local benefit
   - the task is dynamic enough that feedback should shape the next step
+  - recurring observation, retry, or correction can act again before a prior effect becomes observable
   - a stable convention or component is being removed
   - scale, network participation, or redundancy is proposed as an inherent good
 do_not_use_when:
@@ -24,6 +26,7 @@ router_summary: Design the smallest operationally complete change; preserve reve
 decision_effect:
   - subtract before adding and inspect the fence before removal
   - prefer bounded reversible feedback over speculative full build-out
+  - time repeated correction to observable system response rather than stale state
   - test whether individually tolerable impediments can interact or compound before detection
   - optimize for the next safe change rather than elegance without operational value
 implemented_by: []
@@ -33,15 +36,17 @@ known_failures:
   - adding configuration and fallback states that exceed the benefit
   - confusing a stable equilibrium with a good design
   - unbounded iteration without stop conditions or independent verification
+  - duplicate correction or oscillation caused by acting before prior effects become observable
   - validating only the happy path while ordinary impediments compound across handoffs and feedback delays
   - refactoring beyond the smallest safe behavior-preserving change
 review_when:
   - a supposedly simple change repeatedly fails in operations
   - the feedback loop oscillates, drifts, or cannot verify its own output
+  - control-loop timing delays necessary intervention, fails to prevent duplicate correction, or adds ceremony without changing execution or repair
   - carrying cost exceeds the value of optionality or redundancy
   - the operational-friction check adds pessimistic enumeration without changing design, rehearsal, recovery, or verification
   - a removed component reveals a load-bearing function that was not understood
-last_material_revision: 2026-07-31
+last_material_revision: 2026-08-07
 ---
 
 # Right-Sized Change
@@ -152,7 +157,17 @@ When an intervention misses, preserve the smallest residual question, missing me
 - the loop has no cost budget or stop condition;
 - success criteria change to fit the latest output.
 
-## Operational-friction check (candidate)
+### Time feedback to the system
+
+For a recurring monitor, retry, or corrective loop whose repeated action can create cost or instability, distinguish the process-change timescale, observation interval, evidence window, computation latency, action-to-observable-effect delay, settling condition, cooldown, duplicate-action suppression, maximum correction size, and oscillation stop condition.
+
+Do not launch another corrective cycle merely because the desired result is not yet visible. First ask whether the prior action has had enough time to propagate. Intervene earlier when a new material hazard appears; otherwise wait for the declared observation window rather than manufacturing failure from stale state.
+
+This is consequence-gated control hygiene, not calibrated control design or a requirement to model every workflow as a physical controller. Skip it for one-shot actions, harmless read-only checks, and loops whose cadence cannot alter decisions, side effects, notifications, or resource use.
+
+**Confidence: low.** The timing distinction has not yet demonstrated a distinct production decision effect.
+
+## Operational-friction check
 
 **Local confidence: low.** A design can be valid at every individual step and still be fragile as a whole when ordinary impediments interact or accumulate across the real operating path. Here, **operational friction** means that cumulative practical resistance—not merely “things go wrong”—makes intended action slower, less reliable, more costly, or harder to recover than the plan assumes.
 
