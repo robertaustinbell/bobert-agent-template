@@ -13,18 +13,20 @@ confidence_basis:
   - The situational-awareness failure taxonomy is an operational extrapolation; adopters should judge it by changed decisions or repairs rather than conceptual neatness.
   - Control-loop timing guidance is a bounded qualitative transfer; it is not calibrated control design and has no established agent-effectiveness evidence.
   - Value-sensitive comparison guidance is a bounded operational synthesis of contested theories. It does not establish a universal value theory or a master value.
+  - Representation-adequacy guidance is a bounded operational transfer from information theory; its application to agent context and handoffs is advisory and has no established agent-effectiveness evidence.
   - Local value must be judged by whether the page changes consequential decisions without adding disproportionate ceremony.
 scope:
   - consequential decisions with uncertain framing, evidence, models, estimates, causal claims, or tradeoffs
 consult_when:
   - the framing, option set, contested values, preference or consent interpretation, aggregation, or objective proxy may determine the recommendation
   - evidence conflicts, selection is unclear, or a generalization is load-bearing
-  - a quantitative estimate, probability, deadline, forecast, or causal claim changes the move
+  - a quantitative estimate, probability, deadline, forecast, causal claim, or consequential compression choice changes the move
   - the model may omit actors, options, mechanisms, constraints, or feedback
   - current state may change during the task, several observations must be integrated, or a near-future projection materially determines the move
   - recurring observation, retry, or correction can act again before a prior effect becomes observable
   - downside, irreversibility, opportunity cost, or update timing is material
   - an argument's validity depends on representation, quantifiers, identity, relation direction, scoped assumptions, or multi-step derivation
+  - recurring predictions permit comparison between a bounded model or context and a materially stronger baseline
 do_not_use_when:
   - an authoritative source directly answers a low-stakes factual question
   - the task is mechanical and already decided
@@ -33,12 +35,15 @@ do_not_use_when:
   - casual language, jokes, vents, or brainstorming do not make a load-bearing claim
   - formalizing the claim cannot change the decision or would erase causal, temporal, probabilistic, normative, or authorization-relevant structure
   - the choice is routine, low-stakes, mechanically settled, or a richer value audit cannot change the move
+  - the representation is routine, one-shot, reversible, and no plausible omitted distinction could change the action
+  - no real probabilities, comparable outcomes, or meaningful predictive-loss measure exist
 router_summary: Test framing, values, preference authority, evidence, inference, causal stories, models, alternatives, and stopping points in consequential decisions.
 decision_effect:
   - choose the right question and model before optimizing inside them
   - earn precision from evidence rather than hiding uncertainty in numbers
   - stop analysis when its expected decision value falls below its cost
   - separate representation, derivation, premise truth, causal support, decision support, and authority rather than allowing one layer to launder another
+  - preserve task-relevant distinctions through compression and test recurring context or model mismatch against a declared stronger baseline
 implemented_by: []
 lineage: LINEAGE.md
 known_failures:
@@ -52,6 +57,7 @@ known_failures:
   - analysis that continues after it can no longer change the move
   - proving a nearby proposition after a lossy translation of the actual claim
   - treating failed or bounded proof search as invalidity, or formal validity as premise truth, causation, decision quality, or authority
+  - treating fluent reconstruction, compression ratio, retrieval similarity, confidence, or information quantity as proof that a representation preserved what mattered
 review_when:
   - a real application produces a materially worse decision than a simpler approach
   - repeated retrieval adds ceremony without changing the recommendation
@@ -61,6 +67,7 @@ review_when:
   - the same estimate class repeatedly misses in a directional way
   - formal-inference auditing repeatedly adds ceremony without catching a material representation, scope, witness, assumption, or search-status error
   - value-sensitive auditing repeatedly renames obvious tradeoffs without changing a decision, clarification, safeguard, abstention, or conflict record
+  - representation-adequacy checks repeatedly add context or ceremony without changing a consequential conclusion, verification result, or repair
 last_material_revision: 2026-08-07
 ---
 
@@ -300,6 +307,18 @@ Test, when relevant:
 - inclusion or omission of outside options.
 
 Sensitivity is information. It may show that the choice depends on a real value judgment. Do not average representations merely to manufacture stability.
+
+### Representation adequacy and information loss
+
+Treat a consequential summary, context packet, handoff, memory representation, or model input as task-conditioned rather than generally sufficient. Before compressing, name the downstream task and decision owner; the distinctions whose loss could change a decision, verification result, authority assessment, causal interpretation, numerical result, or safety boundary; the canonical sources, citations, retrieval handles, evidence artifacts, and tools expected to remain available; and the acceptable loss boundary.
+
+Evaluate the compact representation together with that reconstruction support. Prefer a compact decision layer linked to recoverable evidence over repeated truncation of one narrative. A representation adequate for one task may be inadequate for another.
+
+For consequential recurring tasks, compare the bounded representation against a materially expanded or retrieval-enabled context when the difference can be checked. Preserve or retrieve additional context when it changes a consequential conclusion, materially improves a declared decision-relevant measure, or exposes a recurring omission. Otherwise retain the smaller representation. Do not impose this trial on routine one-shot work, assume stationarity or independence, or discard rare decisive evidence merely because it is atypical.
+
+When recurring probabilistic predictions have real probabilities and comparable outcomes, retain the model or method version, forecast basis, selected predictive-loss measure, and baseline. Sustained excess loss is evidence to inspect model mismatch, dependence, selection, sample size, or regime change—not permission to keep tuning parameters inside an inadequate model.
+
+Information quantity, entropy, surprise, compression ratio, similarity, predictive confidence, and KL divergence do not establish truth, meaning, relevance, causation, value, legitimacy, permission, obligation, prohibition, or authority. A sufficient statistic is sufficient only for its named model, parameter, and task. Do not fabricate probabilities to enable a metric or describe people as deficient channels.
 
 ## 8. Reject assertion quotas and arity theater
 

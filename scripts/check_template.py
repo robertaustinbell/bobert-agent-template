@@ -50,6 +50,14 @@ required_sections={
    'whether the prior action has had enough time to propagate',
    'consequence-gated control hygiene',
   ],
+  'Representation adequacy and information loss':[
+   'A representation adequate for one task may be inadequate for another',
+   'Prefer a compact decision layer linked to recoverable evidence over repeated truncation of one narrative',
+   'Do not impose this trial on routine one-shot work',
+   'Sustained excess loss is evidence to inspect model mismatch',
+   'do not establish truth, meaning, relevance, causation, value, legitimacy, permission, obligation, prohibition, or authority',
+   'Do not fabricate probabilities to enable a metric or describe people as deficient channels',
+  ],
  },
  'doctrine/capabilities/external-capability-governance.md':{
   'Boundary and interface fidelity':[

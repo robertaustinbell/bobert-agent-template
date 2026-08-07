@@ -151,6 +151,29 @@ class ValueSensitiveDecisionCanaryTests(CanaryHarness):
         self.assertIn("Value-sensitive decision boundary", result.stdout)
 
 
+class RepresentationAdequacyCanaryTests(CanaryHarness):
+    def test_representation_boundary_rejects_deletion(self):
+        def mutate(clone):
+            path = clone / "doctrine/decisions/decision-quality-under-uncertainty.md"
+            marker = "A representation adequate for one task may be inadequate for another"
+            path.write_text(path.read_text().replace(marker, "One compact representation is generally adequate", 1))
+
+        result = self.run_copy(mutate)
+        self.assertNotEqual(result.returncode, 0)
+        self.assertIn("Representation adequacy and information loss", result.stdout)
+
+    def test_representation_boundary_rejects_cross_section_relocation(self):
+        def mutate(clone):
+            path = clone / "doctrine/decisions/decision-quality-under-uncertainty.md"
+            marker = "Do not fabricate probabilities to enable a metric or describe people as deficient channels"
+            text = path.read_text().replace(marker, "Always quantify the representation", 1)
+            path.write_text(text.replace("## Stop conditions\n", f"## Stop conditions\n\n{marker}\n", 1))
+
+        result = self.run_copy(mutate)
+        self.assertNotEqual(result.returncode, 0)
+        self.assertIn("Representation adequacy and information loss", result.stdout)
+
+
 class RouterRetrievalTests(unittest.TestCase):
     def test_value_trigger_does_not_displace_model_adequacy_trigger(self):
         result = subprocess.run(
@@ -166,6 +189,7 @@ class RouterRetrievalTests(unittest.TestCase):
             "the model may omit actors, options, mechanisms, constraints, or feedback",
             index,
         )
+        self.assertIn("consequential compression", index)
 
 
 if __name__ == "__main__":

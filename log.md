@@ -2,6 +2,15 @@
 
 Record only material doctrine failures, contradictions, retrieval misses, scope or confidence changes, and architecture revisions. Ordinary success does not require an entry.
 
+## 2026-08-07 — Added task-conditioned representation adequacy
+
+- **Doctrine:** Decision Quality Under Uncertainty
+- **Decision effect:** evaluates consequential compression relative to a downstream task, loss-sensitive distinctions, and recoverable evidence; permits bounded-versus-expanded context comparison and measured predictive-loss checks only where recurring cases make the difference checkable
+- **Scope:** consequential summaries, handoffs, memory representations, context selection, and recurring probabilistic predictions; not a mandatory checklist for one-shot work or a rule to maximize information
+- **Evidence:** Thomas M. Cover and Joy A. Thomas, *Elements of Information Theory*, 2nd ed. (Wiley, 2006), especially relative entropy, entropy rate and Markov context, rate-distortion theory, and universal coding
+- **Boundary:** information quantity, entropy, similarity, confidence, KL divergence, and compression ratio do not establish truth, meaning, value, causation, legitimacy, permission, or authority; mathematical source claims and the agent-operations synthesis remain distinct
+- **Remaining uncertainty:** no recorded agent application yet establishes a distinct decision or repair effect; narrow or remove the refinement if it repeatedly adds context or ceremony without material value
+
 ## 2026-08-06 — Added bounded systems-feedback refinements
 
 - **Doctrine:** Decision Quality Under Uncertainty, External Capability Governance, Decision Records and Operational Documentation, and `FIELD-TESTING.md`
