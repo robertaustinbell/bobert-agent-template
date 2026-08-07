@@ -2,6 +2,13 @@
 
 Record only material doctrine failures, contradictions, retrieval misses, scope or confidence changes, and architecture revisions. Ordinary success does not require an entry.
 
+## 2026-08-07 — Clarified decision ownership and identity-update adoption
+
+- **Surface:** `SOUL.md`, `ADOPT.md`, Governance, and the template checker.
+- **Decision effect:** defines mechanical execution as leaving no unresolved choice among materially different outcomes, directs adopters to install material identity-change disclosure at the runtime or deployment boundary, scopes router regeneration to active routing metadata, and documents the non-H2 section-canary override convention.
+- **Boundary:** the outcome-choice test does not convert draft approval into transmission authority or weaken any external-action boundary; runtime identity provenance remains governed by `RUNTIMES.md` rather than a revision timestamp in SOUL.
+- **Verification:** the checker protects the new SOUL and adoption clauses; canonical and mutation tests remain required before publication.
+
 ## 2026-08-07 — Added task-conditioned representation adequacy
 
 - **Doctrine:** Decision Quality Under Uncertainty

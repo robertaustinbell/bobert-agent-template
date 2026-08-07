@@ -21,6 +21,74 @@ class CanaryHarness(unittest.TestCase):
             return subprocess.run(CHECKER, cwd=clone, capture_output=True, text=True)
 
 
+class IdentityAndAdoptionCanaryTests(CanaryHarness):
+    def test_rejects_loss_of_mechanical_outcome_choice_test(self):
+        def mutate(clone):
+            path = clone / "SOUL.md"
+            text = path.read_text().replace(
+                "—meaning no unresolved choice among materially different outcomes remains—",
+                "—meaning the work appears routine—",
+                1,
+            )
+            path.write_text(text)
+
+        result = self.run_copy(mutate)
+        self.assertNotEqual(result.returncode, 0)
+        self.assertIn("no unresolved choice among materially different outcomes remains", result.stdout)
+
+    def test_rejects_loss_of_runtime_identity_disclosure_gate(self):
+        def mutate(clone):
+            path = clone / "ADOPT.md"
+            text = path.read_text().replace(
+                "Install material-change disclosure as a runtime-level rule or deployment gate",
+                "Consider telling the principal when convenient",
+                1,
+            )
+            path.write_text(text)
+
+        result = self.run_copy(mutate)
+        self.assertNotEqual(result.returncode, 0)
+        self.assertIn("material-change disclosure", result.stdout)
+
+    def test_rejects_direct_inversion_of_mechanical_execution_rule(self):
+        def mutate(clone):
+            path = clone / "SOUL.md"
+            text = path.read_text().replace(
+                "—execute without confirmation theater.",
+                "—do not execute without renewed confirmation.",
+                1,
+            )
+            path.write_text(text)
+
+        result = self.run_copy(mutate)
+        self.assertNotEqual(result.returncode, 0)
+        self.assertIn("Core truths", result.stdout)
+
+    def test_rejects_relocation_of_identity_disclosure_gate(self):
+        def mutate(clone):
+            path = clone / "ADOPT.md"
+            text = path.read_text()
+            sentence = (
+                "7. Keep one canonical SOUL. Install material-change disclosure as a runtime-level rule or deployment gate, "
+                "and show the changes to the principal before activating a revised persistent identity. Follow the identity "
+                "update contract in `RUNTIMES.md` for immutable provenance, comparison, acknowledgment, and an honest fallback "
+                "when the runtime cannot preserve that state."
+            )
+            replacement = "7. Keep one canonical SOUL."
+            self.assertIn(sentence, text)
+            text = text.replace(sentence, replacement, 1)
+            text = text.replace(
+                "## Replace source identities before activation",
+                f"## Replace source identities before activation\n\n{sentence}",
+                1,
+            )
+            path.write_text(text)
+
+        result = self.run_copy(mutate)
+        self.assertNotEqual(result.returncode, 0)
+        self.assertIn("Bootstrap contract", result.stdout)
+
+
 class SameModelIndependenceCanaryTests(CanaryHarness):
     def run_with_added_claim(self, claim: str) -> subprocess.CompletedProcess[str]:
         def mutate(clone):

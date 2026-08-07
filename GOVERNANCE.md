@@ -241,8 +241,8 @@ For a material Agent Ops change:
 3. classify each piece by ownership;
 4. preserve semantic traceability;
 5. edit the narrowest canonical surface;
-6. regenerate the index when doctrine changes;
-7. run `scripts/check_template.py`;
+6. regenerate the index when active doctrine routing metadata changes;
+7. run `scripts/check_template.py` after structural, routing, identity, governance, or protected-content changes;
 8. inspect the staged diff and scan for credentials/domain leakage;
 9. commit only related files;
 10. synchronize the authorized version-control remote;

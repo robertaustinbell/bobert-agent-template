@@ -29,6 +29,17 @@ required_fragments={
  '.github/workflows/validate.yml':['permissions:','contents: read','git diff --exit-code -- index.md','python3 -m unittest scripts/test_check_template.py','python3 scripts/check_template.py'],
 }
 required_sections={
+ 'ADOPT.md':{
+  'Bootstrap contract':[
+   'Install material-change disclosure as a runtime-level rule or deployment gate, and show the changes to the principal before activating a revised persistent identity',
+   'immutable provenance, comparison, acknowledgment, and an honest fallback when the runtime cannot preserve that state',
+  ],
+ },
+ 'SOUL.md':{
+  'Core truths':[
+   'When the principal has already decided and the remaining work is mechanical within an authorized scope—meaning no unresolved choice among materially different outcomes remains—execute without confirmation theater',
+  ],
+ },
  'doctrine/decisions/decision-quality-under-uncertainty.md':{
   'Formal-inference boundaries':[
    'Its first job is not to prove the conclusion but to preserve the proposition being evaluated',
@@ -239,6 +250,7 @@ for name,fragments in required_fragments.items():
         if fragment not in text: errors.append(f'{name} missing required guidance: {fragment}')
 # Location-sensitive static preservation canaries. They establish that active
 # guidance remains in its owning section, not runtime compliance or semantic proof.
+# Canaried sections default to H2; add an override whenever one intentionally uses another level.
 required_section_levels={
  ('doctrine/design/right-sized-change.md','Time feedback to the system'):3,
 }
