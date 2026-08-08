@@ -1,0 +1,100 @@
+name: Adoption or runtime problem
+description: Report a loading, customization, retrieval, degradation, verification, or runtime-integration problem.
+title: "[Adoption/runtime]: "
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Report the smallest sanitized reproduction. Do not include credentials, private prompts, personal records, runtime dumps, account identifiers, machine paths, or sensitive authorization state.
+
+  - type: input
+    id: version
+    attributes:
+      label: Template version or commit
+      description: Give the release tag or commit tested. Write "unknown" rather than guessing.
+      placeholder: v0.2.0 or 6cdf2cd
+    validations:
+      required: true
+
+  - type: input
+    id: runtime
+    attributes:
+      label: Runtime and version
+      description: Name the agent framework, product, or integration and its version when known.
+      placeholder: Runtime name and version
+    validations:
+      required: true
+
+  - type: textarea
+    id: setup
+    attributes:
+      label: Sanitized setup
+      description: Which adoption and runtime steps were completed? Describe where persistent identity, router, and doctrine were installed or made retrievable without exposing local paths or private configuration.
+    validations:
+      required: true
+
+  - type: textarea
+    id: expected
+    attributes:
+      label: Expected behavior
+      description: What did the repository or runtime documentation lead you to expect?
+    validations:
+      required: true
+
+  - type: textarea
+    id: observed
+    attributes:
+      label: Observed behavior
+      description: What actually happened? Separate direct observation from interpretation.
+    validations:
+      required: true
+
+  - type: dropdown
+    id: surface
+    attributes:
+      label: Earliest affected surface
+      options:
+        - Adoption or customization
+        - Persistent identity loading
+        - Identity update comparison or acknowledgment
+        - Router loading or doctrine retrieval
+        - Context degradation reporting
+        - Untrusted-content boundary
+        - Integrity checker or generated index
+        - Other or uncertain
+    validations:
+      required: true
+
+  - type: textarea
+    id: reproduction
+    attributes:
+      label: Minimal sanitized reproduction
+      description: Give the smallest safe sequence that reproduces the problem, including relevant commands or prompts with private values removed.
+    validations:
+      required: true
+
+  - type: textarea
+    id: degradation
+    attributes:
+      label: Degraded-context behavior
+      description: If identity, router, doctrine, or state was unavailable, did the agent report the gap, fabricate content, proceed, or stop?
+    validations:
+      required: true
+
+  - type: textarea
+    id: evidence
+    attributes:
+      label: Verification performed
+      description: List checks actually run and their sanitized results. Do not paste full runtime dumps or secrets.
+    validations:
+      required: true
+
+  - type: checkboxes
+    id: boundary
+    attributes:
+      label: Public-boundary confirmation
+      options:
+        - label: I removed credentials, personal records, private prompts or messages, proprietary material, runtime dumps, machine paths, account identifiers, and sensitive authorization details.
+          required: true
+        - label: The reproduction did not require unauthorized external action or disclosure.
+          required: true

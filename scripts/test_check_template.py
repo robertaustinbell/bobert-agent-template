@@ -21,6 +21,46 @@ class CanaryHarness(unittest.TestCase):
             return subprocess.run(CHECKER, cwd=clone, capture_output=True, text=True)
 
 
+class ContributorIntakeCanaryTests(CanaryHarness):
+    REQUIRED_INTAKE = (
+        ".github/ISSUE_TEMPLATE/idea-proposal.yml",
+        ".github/ISSUE_TEMPLATE/adoption-runtime-problem.yml",
+        ".github/PULL_REQUEST_TEMPLATE.md",
+    )
+
+    def test_requires_each_contributor_intake_surface(self):
+        for relative_path in self.REQUIRED_INTAKE:
+            with self.subTest(relative_path=relative_path):
+                def mutate(clone, path=relative_path):
+                    target = clone / path
+                    if target.exists():
+                        target.unlink()
+
+                result = self.run_copy(mutate)
+                self.assertNotEqual(result.returncode, 0, result.stdout + result.stderr)
+                self.assertIn(f"missing required file: {relative_path}", result.stdout)
+
+    def test_rejects_loss_of_issue_form_privacy_boundary(self):
+        def mutate(clone):
+            path = clone / ".github/ISSUE_TEMPLATE/adoption-runtime-problem.yml"
+            marker = "I removed credentials, personal records, private prompts or messages"
+            path.write_text(path.read_text().replace(marker, "I reviewed the report", 1))
+
+        result = self.run_copy(mutate)
+        self.assertNotEqual(result.returncode, 0, result.stdout + result.stderr)
+        self.assertIn("adoption-runtime-problem.yml", result.stdout)
+
+    def test_rejects_loss_of_agent_submission_authority_boundary(self):
+        def mutate(clone):
+            path = clone / "CONTRIBUTING.md"
+            marker = "An agent must not open an issue, submit a pull request, disclose runtime context, accept a commitment, or communicate externally unless its principal or an authorized workflow permits that action."
+            path.write_text(path.read_text().replace(marker, "An agent may submit whenever useful.", 1))
+
+        result = self.run_copy(mutate)
+        self.assertNotEqual(result.returncode, 0, result.stdout + result.stderr)
+        self.assertIn("CONTRIBUTING.md", result.stdout)
+
+
 class IdentityAndAdoptionCanaryTests(CanaryHarness):
     def test_rejects_loss_of_installed_candidate_comparison(self):
         def mutate(clone):

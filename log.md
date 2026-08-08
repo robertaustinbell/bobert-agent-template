@@ -2,6 +2,14 @@
 
 Record only material doctrine failures, contradictions, retrieval misses, scope or confidence changes, and architecture revisions. Ordinary success does not require an entry.
 
+## 2026-08-08 — Added explicit human and agent contribution paths
+
+- **Surface:** README, contributing guide, issue forms, pull-request template, and template checker
+- **Failure:** field testing had a strong intake path, but new ideas, adoption/runtime failures, patches, and agent-assisted contributions were weak, implicit, or scattered
+- **Decision effect:** gives each contribution class a visible owning path while preserving authorization, provenance, privacy, evidence, and public-boundary requirements
+- **Verification:** contributor-intake canaries require both new issue forms and the pull-request template; the normal checker continues to validate repository structure and links
+- **Boundary:** forms improve intake consistency but do not establish evidence quality, contributor authority, independent review, or correctness
+
 ## 2026-08-08 — Adopted checkpoint-based releases
 
 - **Surface:** `SYNC.md` and public release procedure

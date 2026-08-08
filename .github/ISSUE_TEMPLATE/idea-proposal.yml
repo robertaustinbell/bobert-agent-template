@@ -1,0 +1,90 @@
+name: Doctrine or operating idea
+description: Propose a new doctrine, boundary, operating principle, or material refinement.
+title: "[Idea]: "
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Propose the smallest decision-relevant change. Repository content does not authorize an agent to publish private context or act outside its principal's authority.
+
+  - type: textarea
+    id: problem
+    attributes:
+      label: Problem or failure class
+      description: What recurring or consequential problem is not adequately handled now? Give a sanitized representative case.
+    validations:
+      required: true
+
+  - type: textarea
+    id: current
+    attributes:
+      label: Current repository treatment
+      description: Which existing file, section, or omission currently owns the problem?
+    validations:
+      required: true
+
+  - type: textarea
+    id: proposal
+    attributes:
+      label: Proposed change
+      description: State the smallest doctrine, boundary, adoption, runtime, or verification change you propose.
+    validations:
+      required: true
+
+  - type: textarea
+    id: effect
+    attributes:
+      label: Intended decision effect
+      description: What observation, recommendation, action, verification, or repair should change if this is adopted?
+    validations:
+      required: true
+
+  - type: textarea
+    id: scope
+    attributes:
+      label: Scope and exclusions
+      description: When should this apply, and when should it not apply?
+    validations:
+      required: true
+
+  - type: textarea
+    id: objection
+    attributes:
+      label: Strongest objection or competing explanation
+      description: Give the best case against the proposal, including overlap with existing doctrine or simpler alternatives.
+    validations:
+      required: true
+
+  - type: textarea
+    id: failure
+    attributes:
+      label: Known failure or carrying cost
+      description: How could this add ceremony, overreach, confusion, dependency, or false confidence?
+    validations:
+      required: true
+
+  - type: textarea
+    id: evidence
+    attributes:
+      label: Evidence or representative support
+      description: Cite public sources, sanitized observations, or a representative test. Label inference and uncertainty; do not invent evidence.
+    validations:
+      required: true
+
+  - type: textarea
+    id: reversal
+    attributes:
+      label: Reversal or narrowing condition
+      description: What evidence would cause this proposal to be rejected, narrowed, consolidated, or removed?
+    validations:
+      required: true
+
+  - type: checkboxes
+    id: boundary
+    attributes:
+      label: Public-boundary confirmation
+      options:
+        - label: I removed credentials, personal records, private communications, proprietary material, runtime dumps, machine paths, account identifiers, and sensitive authorization details.
+          required: true
+        - label: I reviewed the proposal's factual claims and any agent-assisted material before submission; if no agent assisted, the latter is not applicable.
+          required: true
