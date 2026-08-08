@@ -2,6 +2,14 @@
 
 Record only material doctrine failures, contradictions, retrieval misses, scope or confidence changes, and architecture revisions. Ordinary success does not require an entry.
 
+## 2026-08-08 — Added untrusted-content and information-transfer boundaries
+
+- **Surface:** authority, source-placement, and capability doctrine; `RUNTIMES.md`; `FIELD-TESTING.md`; checker canaries and mutation tests.
+- **Decision effect:** separates authenticated task authority, attributed source evidence, and independently validated action; preserves provenance through summaries and handoffs; tests that useful facts remain available while source instructions cannot expand authority, supply consequential arguments, or create persistence.
+- **Scope:** retrieved content, tool output, consequential execution, publication, aggregation, and durable retention. The transfer check is proportional and does not apply ceremonial hazard review to routine low-stakes communication.
+- **Boundary:** labels and prompts are behavioral policy, not technical containment. Hazard identification does not create censorship authority, justify concealing material truth, or override the principal's rights and agency. A blanket refusal is not a clean test success.
+- **Verification:** section-aware canaries protect instruction promotion, independent argument validation, source-versus-control provenance, information-transfer limits, runtime free-form execution rejection, and field-test negative controls; focused inversion, relocation, and deletion mutations must fail.
+
 ## 2026-08-07 — Removed doctrine-count quota and bound identity updates to reviewed content
 
 - **Surface:** `RUNTIMES.md`, Governance, and the template checker.

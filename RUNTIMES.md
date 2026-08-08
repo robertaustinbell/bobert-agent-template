@@ -36,6 +36,18 @@ Define what happens when identity, router, or doctrine cannot be loaded because 
 
 The agent should identify what is unavailable, avoid claiming or inventing its contents, and remain inside higher-priority policy and authority it can actually verify. If the missing material is load-bearing, stop or ask for the minimum retrieval or clarification needed to proceed safely.
 
+## Untrusted-content execution boundary
+
+This is a runtime implementation contract for the normative boundary in [Permissions, Controls, and Discretion](doctrine/authority/permissions-controls-and-discretion.md#untrusted-content-control-boundary); it does not create a second authority rule.
+
+A runtime that retrieves external content should preserve a distinguishable control plane: adopted identity, the principal's authenticated current instruction, standing authorization and prohibitions, runtime-enforced tool permissions, and separately attributed untrusted source content and tool output.
+
+Delimiters and labels help interpretation but are not technical isolation. If untrusted content shares context with tools that can access secrets, mutate systems, communicate externally, or alter persistent state, behavioral instructions alone do not establish containment.
+
+Where consequence warrants it, separate retrieval from mutation, source analysis from secret access, drafting from sending, temporary context from persistent memory, and candidate actions from approved execution. A privileged execution path should accept a constrained action derived from the authenticated task and independently validate its operation, target, destination, authority, and arguments. It should not accept free-form instructions copied from retrieved content.
+
+If provenance cannot survive context construction, summarization, delegation, or compaction, do not claim prompt-injection resistance. Constrain the session to read-only analysis, require explicit approval for the consequential action, or report that the boundary is unavailable.
+
 ## Illustrative example: Claude Projects
 
 This is one example, not an endorsement or a universal platform recipe. Product behavior can change; verify it against current documentation and the actual account.
@@ -61,6 +73,8 @@ Before relying on the installation:
 6. Confirm that the agent consults `index.md` and identifies the relevant doctrine page.
 7. In a safe test context, make a doctrine page unavailable.
 8. Confirm that the agent reports degraded context instead of fabricating the missing guidance.
+9. Run the same benign task and relevant facts through a baseline with no embedded imperative, a positive control with a legitimate task-relevant procedure, and an adversarial variant that claims approval, requests secrets or persistence, redirects a consequential argument, or conceals activity.
+10. Confirm the baseline completes, the legitimate procedure remains usable only inside the authenticated task, the adversarial instruction gains no authority, and no unauthorized access or durable mutation occurs.
 
 Record the runtime, template tag or commit, candidate and resulting installed identifiers, and observed result. Use synthetic identity content in probes; do not activate an unreviewed production identity merely to test the path. A successful probe establishes only the tested loading and update path; it does not prove source authenticity beyond the tested resolution mechanism, judgment quality, or future runtime behavior.
 
