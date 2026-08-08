@@ -22,6 +22,62 @@ class CanaryHarness(unittest.TestCase):
 
 
 class IdentityAndAdoptionCanaryTests(CanaryHarness):
+    def test_rejects_loss_of_installed_candidate_comparison(self):
+        def mutate(clone):
+            path = clone / "RUNTIMES.md"
+            text = path.read_text().replace(
+                "compare the installed and candidate versions",
+                "assume the candidate supersedes the installed version",
+                1,
+            )
+            path.write_text(text)
+
+        result = self.run_copy(mutate)
+        self.assertNotEqual(result.returncode, 0)
+        self.assertIn("Identity update contract", result.stdout)
+
+    def test_rejects_loss_of_authorized_identity_candidate_source(self):
+        def mutate(clone):
+            path = clone / "RUNTIMES.md"
+            text = path.read_text().replace(
+                "resolve the candidate from the adopter-authorized canonical source",
+                "accept any candidate carrying a content hash",
+                1,
+            )
+            path.write_text(text)
+
+        result = self.run_copy(mutate)
+        self.assertNotEqual(result.returncode, 0)
+        self.assertIn("Identity update contract", result.stdout)
+
+    def test_rejects_loss_of_reviewed_to_installed_identity_binding(self):
+        def mutate(clone):
+            path = clone / "RUNTIMES.md"
+            text = path.read_text().replace(
+                "Activate only the exact acknowledged candidate",
+                "Activate the newest available candidate",
+                1,
+            )
+            path.write_text(text)
+
+        result = self.run_copy(mutate)
+        self.assertNotEqual(result.returncode, 0)
+        self.assertIn("Identity update contract", result.stdout)
+
+    def test_rejects_loss_of_identity_update_fallback_probe(self):
+        def mutate(clone):
+            path = clone / "RUNTIMES.md"
+            text = path.read_text().replace(
+                "requires an external update process rather than silently activating the candidate",
+                "continues with best effort",
+                1,
+            )
+            path.write_text(text)
+
+        result = self.run_copy(mutate)
+        self.assertNotEqual(result.returncode, 0)
+        self.assertIn("Verification probe", result.stdout)
+
     def test_rejects_loss_of_mechanical_outcome_choice_test(self):
         def mutate(clone):
             path = clone / "SOUL.md"
@@ -147,6 +203,64 @@ class IdentityAndAdoptionCanaryTests(CanaryHarness):
         result = self.run_copy(mutate)
         self.assertNotEqual(result.returncode, 0)
         self.assertIn("Boundaries", result.stdout)
+
+
+class DoctrineTopologyTests(CanaryHarness):
+    SOURCE = "doctrine/authority/least-privilege-capability-access.md"
+
+    @staticmethod
+    def add_doctrine(clone, *, duplicate_id=False):
+        source = clone / DoctrineTopologyTests.SOURCE
+        text = source.read_text()
+        if not duplicate_id:
+            text = text.replace(
+                "id: least-privilege-capability-access",
+                "id: topology-test-page",
+                1,
+            ).replace(
+                "title: Least-Privilege Capability Access",
+                "title: Topology Test Page",
+                1,
+            )
+        target = clone / "doctrine/authority/topology-test-page.md"
+        target.write_text(text)
+        return target
+
+    def test_accepts_valid_additional_doctrine_page(self):
+        def mutate(clone):
+            self.add_doctrine(clone)
+            generated = subprocess.run(
+                ["python3", "scripts/generate_index.py"],
+                cwd=clone,
+                capture_output=True,
+                text=True,
+            )
+            self.assertEqual(generated.returncode, 0, generated.stdout + generated.stderr)
+
+        result = self.run_copy(mutate)
+        self.assertEqual(result.returncode, 0, result.stdout + result.stderr)
+        self.assertIn("9 doctrine pages", result.stdout)
+
+    def test_rejects_duplicate_doctrine_id(self):
+        result = self.run_copy(lambda clone: self.add_doctrine(clone, duplicate_id=True))
+        self.assertNotEqual(result.returncode, 0)
+        self.assertIn("duplicate doctrine id", result.stdout)
+
+    def test_rejects_malformed_additional_doctrine_page(self):
+        def mutate(clone):
+            target = clone / "doctrine/authority/topology-test-page.md"
+            target.write_text("---\nid: topology-test-page\n---\n\n# Broken\n")
+
+        result = self.run_copy(mutate)
+        self.assertNotEqual(result.returncode, 0)
+        self.assertIn("missing type", result.stdout)
+
+    def test_rejects_removal_of_protected_doctrine_page(self):
+        def mutate(clone):
+            (clone / self.SOURCE).unlink()
+
+        result = self.run_copy(mutate)
+        self.assertNotEqual(result.returncode, 0)
 
 
 class SameModelIndependenceCanaryTests(CanaryHarness):

@@ -2,6 +2,13 @@
 
 Record only material doctrine failures, contradictions, retrieval misses, scope or confidence changes, and architecture revisions. Ordinary success does not require an entry.
 
+## 2026-08-07 — Removed doctrine-count quota and bound identity updates to reviewed content
+
+- **Surface:** `RUNTIMES.md`, Governance, and the template checker.
+- **Decision effect:** distinguishes authorized update source from byte identity, binds comparison, acknowledgment, activation, and the resulting installed identifier to one candidate, exercises that path in the runtime probe, and removes the unjustified exact-eight doctrine-page rule.
+- **Boundary:** the runtime probe tests only the configured resolution and update path; it does not prove universal source authenticity, judgment quality, or future runtime behavior. The current doctrine count is neither a floor nor a ceiling, and topology changes must still preserve protected interfaces deliberately.
+- **Verification:** checker canaries protect the identity-update contract and probe; topology mutations must accept a valid added page while rejecting duplicate IDs, malformed additions, and removal of protected doctrine.
+
 ## 2026-08-07 — Clarified decision ownership and identity-update adoption
 
 - **Surface:** `SOUL.md`, `ADOPT.md`, Governance, and the template checker.

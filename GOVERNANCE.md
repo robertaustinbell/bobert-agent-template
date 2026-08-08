@@ -184,6 +184,8 @@ Do not preserve author names or formal vocabulary merely as prestige. Preserve s
 
 Low-confidence doctrine carries evidence debt. Do not add another low-confidence refinement merely because its source is interesting when existing guidance already covers the decision effect. A new refinement must repair a demonstrated gap, replace or simplify existing guidance, or name a distinct natural production trigger and disconfirming result. When a triggered application produces a material improvement, failure, retrieval miss, or meaningful null, record it; repeated nulls are evidence for consolidation or removal. Do not manufacture cases or calendar reviews merely to age the label.
 
+The current active doctrine-page count is a repository snapshot, not a floor or ceiling. Growth, consolidation, supersession, and removal are governed by distinct ownership, decision effect, retrieval behavior, evidence debt, and carrying cost—not a numeric quota. Migrate protected interfaces and canaries deliberately when the topology changes.
+
 ## Production use and revision
 
 Production is the evaluation environment. Doctrine changes when real work exposes:

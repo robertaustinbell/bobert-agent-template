@@ -18,9 +18,11 @@ Do not silently overwrite an existing identity. Reconcile material differences w
 
 #### Identity update contract
 
-The installer or runtime integration should record the installed canonical SOUL's provenance, including an immutable content identifier such as a commit or content hash; a release tag may be recorded alongside it. Before replacing that identity, compare the installed and candidate versions and show the principal material changes to purpose, values, character, judgment posture, boundaries, authority, or continuity. Record acknowledgment so the same update is not announced in every session.
+The installer or runtime integration should record the installed canonical SOUL's provenance, including its adopter-authorized source and an immutable content identifier such as a commit or content hash; a release tag may be recorded alongside it. The source establishes update authority, while the identifier establishes which bytes were inspected; a valid identifier does not make an untrusted candidate authoritative.
 
-A session-start comparison is a valid fallback only when the runtime can access the installed identifier, candidate identity, and acknowledgment state. If the runtime cannot preserve or compare that state, say that silent identity drift cannot be mechanically prevented and require an external update process rather than pretending the notification obligation is enforced.
+Before replacing that identity, resolve the candidate from the adopter-authorized canonical source, compare the installed and candidate versions, and show the principal material changes to purpose, values, character, judgment posture, boundaries, authority, or continuity. Record acknowledgment against the candidate's immutable identifier so the same update is not announced in every session. Activate only the exact acknowledged candidate, then verify that the resulting installed identifier matches it; if that binding cannot be established, do not represent the reviewed candidate as installed.
+
+A session-start comparison is a valid fallback only when the runtime can access the installed identifier, authorized candidate source and identifier, and acknowledgment state. If the runtime cannot preserve or compare that state, say that silent identity drift cannot be mechanically prevented and require an external update process rather than pretending the notification obligation is enforced.
 
 ### 2. Doctrine activation and retrieval
 
@@ -52,12 +54,15 @@ Repository attribution may remain, but the project must not inherit Bobert's nam
 Before relying on the installation:
 
 1. Ask the agent to identify its canonical persistent identity source, installed commit or content hash, and release tag when applicable—or explicitly report that version tracking is unavailable.
-2. Present one consequential architecture or authority scenario.
-3. Confirm that it consults `index.md` and identifies the relevant doctrine page.
-4. In a safe test context, make a doctrine page unavailable.
-5. Confirm that the agent reports degraded context instead of fabricating the missing guidance.
+2. In a safe test state, provide one candidate identity from the authorized canonical source with a clearly material fixture change. Confirm that the runtime compares the installed and candidate identifiers and shows the material change before activation.
+3. Record acknowledgment, activate the candidate, and confirm that the installed identifier equals the acknowledged candidate identifier. Re-present the same candidate and confirm that acknowledgment state prevents a duplicate announcement.
+4. In a separate safe test, make the candidate source, comparison state, or acknowledgment state unavailable. Confirm that the runtime reports the enforcement gap and requires an external update process rather than silently activating the candidate.
+5. Present one consequential architecture or authority scenario.
+6. Confirm that the agent consults `index.md` and identifies the relevant doctrine page.
+7. In a safe test context, make a doctrine page unavailable.
+8. Confirm that the agent reports degraded context instead of fabricating the missing guidance.
 
-Record the runtime, template tag or commit, and observed result. A successful probe establishes only the tested loading path; it does not prove judgment quality or future runtime behavior.
+Record the runtime, template tag or commit, candidate and resulting installed identifiers, and observed result. Use synthetic identity content in probes; do not activate an unreviewed production identity merely to test the path. A successful probe establishes only the tested loading and update path; it does not prove source authenticity beyond the tested resolution mechanism, judgment quality, or future runtime behavior.
 
 ## Optional capability menu
 
