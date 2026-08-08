@@ -2,6 +2,14 @@
 
 Record only material doctrine failures, contradictions, retrieval misses, scope or confidence changes, and architecture revisions. Ordinary success does not require an entry.
 
+## 2026-08-08 — Added an interaction-structure diagnostic
+
+- **Doctrine:** Decision Quality Under Uncertainty
+- **Decision effect:** distinguishes component failure from outcomes produced by interaction topology, update dynamics, sequencing, or feedback before selecting an intervention
+- **Scope:** consequential multi-component behavior where the interaction mechanism could change fault localization or repair; not isolated failures, a universal emergence theory, or mandatory system mapping
+- **Evidence:** M. E. J. Newman, “Resource Letter CS-1: Complex Systems,” *American Journal of Physics* 79, no. 8 (2011): 800–810, DOI 10.1119/1.3590372; no general production decision effect established
+- **Revision condition:** narrow or remove the diagnostic if it adds mapping ceremony without changing intervention, verification, or repair
+
 ## 2026-08-08 — Added untrusted-content and information-transfer boundaries
 
 - **Surface:** authority, source-placement, and capability doctrine; `RUNTIMES.md`; `FIELD-TESTING.md`; checker canaries and mutation tests.

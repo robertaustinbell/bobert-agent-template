@@ -8,6 +8,7 @@ confidence: mixed
 confidence_basis:
   - Basic source, causal, base-rate, sensitivity, and uncertainty hygiene has broad methodological support.
   - Formal-inference boundaries reflect standard distinctions among representation, validity, soundness, and countermodels; adopters should validate any executable procedure separately.
+  - The interaction-structure diagnostic is a low-confidence operational translation from a complex-systems resource letter; adopters should judge it by changed fault localization, intervention, verification, or repair.
   - Baron-derived bounded-search guidance has low confidence and no recorded agent application.
   - Binmore-derived model-adequacy guidance has low confidence and no recorded agent application.
   - The situational-awareness failure taxonomy is an operational extrapolation; adopters should judge it by changed decisions or repairs rather than conceptual neatness.
@@ -19,7 +20,7 @@ consult_when:
   - the framing, option set, contested values, preference or consent interpretation, aggregation, or objective proxy may determine the recommendation
   - evidence conflicts, selection is unclear, or a generalization is load-bearing
   - a quantitative estimate, probability, deadline, forecast, or causal claim changes the move
-  - the model may omit actors, options, mechanisms, constraints, or feedback
+  - the model may omit actors, options, mechanisms, constraints, or feedback; interactions among them could change the intervention level
   - current state may change during the task, several observations must be integrated, or a near-future projection materially determines the move
   - downside, irreversibility, opportunity cost, or update timing is material
   - an argument's validity depends on representation, quantifiers, identity, relation direction, scoped assumptions, or multi-step derivation
@@ -34,6 +35,7 @@ do_not_use_when:
 router_summary: Test framing, values, preference authority, evidence, inference, causal stories, models, alternatives, and stopping points in consequential decisions.
 decision_effect:
   - choose the right question and model before optimizing inside them
+  - distinguish component failure from outcomes produced by interaction topology, update dynamics, sequencing, or feedback before selecting an intervention
   - earn precision from evidence rather than hiding uncertainty in numbers
   - stop analysis when its expected decision value falls below its cost
   - separate representation, derivation, premise truth, causal support, decision support, and authority rather than allowing one layer to launder another
@@ -50,6 +52,7 @@ known_failures:
   - analysis that continues after it can no longer change the move
   - proving a nearby proposition after a lossy translation of the actual claim
   - treating failed or bounded proof search as invalidity, or formal validity as premise truth, causation, decision quality, or authority
+  - naming behavior emergent without identifying or testing the interaction mechanism that produced it
 review_when:
   - a real application produces a materially worse decision than a simpler approach
   - repeated retrieval adds ceremony without changing the recommendation
@@ -58,7 +61,8 @@ review_when:
   - the same estimate class repeatedly misses in a directional way
   - formal-inference auditing repeatedly adds ceremony without catching a material representation, scope, witness, assumption, or search-status error
   - value-sensitive auditing repeatedly renames obvious tradeoffs without changing a decision, clarification, safeguard, abstention, or conflict record
-last_material_revision: 2026-08-07
+  - the interaction-structure diagnostic repeatedly adds mapping ceremony without changing fault localization, intervention level, verification, or repair
+last_material_revision: 2026-08-08
 ---
 
 # Decision Quality Under Uncertainty
@@ -233,6 +237,33 @@ Desirability is not evidence that an outcome is likely, and an unattractive fore
 - What observation would force a structural revision?
 
 **Confidence: low for the Binmore-derived formulation.** It has not been evaluated in recorded agent applications. Use it as a disciplined question set, not a validated house theory.
+
+### Interaction-structure diagnostic
+
+**Confidence: low.** This is a bounded operational translation from a complex-systems overview. It has not yet demonstrated a general production decision effect.
+
+When a consequential outcome may arise from several interacting components or actors, distinguish:
+
+1. **Components:** the relevant actors, services, processes, or subsystems and their local states or behaviors.
+2. **Topology:** who or what exchanges information, resources, authority, state, or effects with whom.
+3. **Dynamics:** the update rules, timing, sequencing, adaptation, delays, incentives, and feedback governing those interactions.
+4. **Collective outcome:** the system-level behavior that must be explained, including patterns not attributable to one component in isolation.
+
+Compare interventions at the level of:
+
+- an individual component;
+- an interface or handoff;
+- connection structure;
+- timing or update rules;
+- feedback;
+- incentives or objectives;
+- or system boundaries and omitted components.
+
+Do not assign the visible outcome automatically to the component nearest the final symptom. Test whether locally reasonable behavior can produce the observed failure through interaction, stale state, sequencing, feedback, or incompatible objectives.
+
+This diagnostic does not establish that behavior is emergent, intentional, inevitable, or desirable. “Emergence” names a relationship between levels of description; it does not identify the generating mechanism. Preserve competing explanations and identify what observation would distinguish them.
+
+Skip this diagnostic when a current authoritative observation identifies an isolated failure, when interactions cannot change the intervention, or when mapping the system would add vocabulary without changing the decision.
 
 ## 5. Earn precision
 
