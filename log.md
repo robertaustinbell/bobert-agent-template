@@ -2,6 +2,15 @@
 
 Record only material doctrine failures, contradictions, retrieval misses, scope or confidence changes, and architecture revisions. Ordinary success does not require an entry.
 
+## 2026-08-08 — Added a causal-question contract
+
+- **Surface:** Decision Quality Under Uncertainty, sanitized source evidence, and checker canaries
+- **Decision effect:** distinguishes observational, interventional, counterfactual, attribution, and pathway questions; defines the causal target; audits selection and adjustment; and separates structural assumptions, identification, and estimation before reporting a consequential causal answer
+- **Scope:** load-bearing causal claims where interpretation can change a recommendation, intervention, attribution, or verification plan; not routine troubleshooting, mandatory diagrams, or universal do-calculus ceremony
+- **Evidence:** complete review of Pearl and Mackenzie, *The Book of Why* (2018); no general production decision effect established
+- **Boundary:** a causal diagram exposes assumptions but does not validate them; technical causal analysis does not determine values, responsibility, consent, legitimacy, authority, agency, empathy, morality, or consciousness
+- **Revision condition:** narrow or remove the contract if it adds terminology without changing a recommendation, experiment, abstention, verification, or repair
+
 ## 2026-08-08 — Added explicit human and agent contribution paths
 
 - **Surface:** README, contributing guide, issue forms, pull-request template, and template checker

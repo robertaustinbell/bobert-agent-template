@@ -61,6 +61,61 @@ class ContributorIntakeCanaryTests(CanaryHarness):
         self.assertIn("CONTRIBUTING.md", result.stdout)
 
 
+class CausalQuestionContractCanaryTests(CanaryHarness):
+    def test_rejects_loss_of_identification_boundary(self):
+        def mutate(clone):
+            path = clone / "doctrine/decisions/decision-quality-under-uncertainty.md"
+            marker = "Separate the proposed causal model, identification, and estimation"
+            path.write_text(path.read_text().replace(marker, "Estimate the association precisely", 1))
+
+        result = self.run_copy(mutate)
+        self.assertNotEqual(result.returncode, 0, result.stdout + result.stderr)
+        self.assertIn("Causal-question contract", result.stdout)
+
+    def test_rejects_loss_of_nonidentifiability_status(self):
+        def mutate(clone):
+            path = clone / "doctrine/decisions/decision-quality-under-uncertainty.md"
+            marker = "not identifiable from present evidence"
+            path.write_text(path.read_text().replace(marker, "estimate anyway", 1))
+
+        result = self.run_copy(mutate)
+        self.assertNotEqual(result.returncode, 0, result.stdout + result.stderr)
+        self.assertIn("Causal-question contract", result.stdout)
+
+    def test_rejects_loss_of_individual_attribution_boundary(self):
+        def mutate(clone):
+            path = clone / "doctrine/decisions/decision-quality-under-uncertainty.md"
+            marker = "an average population effect does not by itself establish what caused one case"
+            path.write_text(path.read_text().replace(marker, "an average effect settles the case", 1))
+
+        result = self.run_copy(mutate)
+        self.assertNotEqual(result.returncode, 0, result.stdout + result.stderr)
+        self.assertIn("Causal-question contract", result.stdout)
+
+    def test_rejects_loss_of_identification_regime_boundary(self):
+        def mutate(clone):
+            path = clone / "doctrine/decisions/decision-quality-under-uncertainty.md"
+            marker = "specified observational or interventional data regime"
+            path.write_text(path.read_text().replace(marker, "available evidence", 1))
+
+        result = self.run_copy(mutate)
+        self.assertNotEqual(result.returncode, 0, result.stdout + result.stderr)
+        self.assertIn("Causal-question contract", result.stdout)
+
+    def test_rejects_source_synthesis_hidden_in_comment(self):
+        def mutate(clone):
+            path = clone / "evidence/sources/book-of-why-pearl-mackenzie-2018.md"
+            marker = (
+                "Causal diagrams make assumptions inspectable; they do not establish "
+                "that those assumptions describe reality."
+            )
+            path.write_text(path.read_text().replace(marker, f"<!-- {marker} -->", 1))
+
+        result = self.run_copy(mutate)
+        self.assertNotEqual(result.returncode, 0, result.stdout + result.stderr)
+        self.assertIn("Agent-design synthesis", result.stdout)
+
+
 class IdentityAndAdoptionCanaryTests(CanaryHarness):
     def test_rejects_loss_of_installed_candidate_comparison(self):
         def mutate(clone):

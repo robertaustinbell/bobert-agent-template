@@ -7,6 +7,7 @@ authority: advisory
 confidence: mixed
 confidence_basis:
   - Basic source, causal, base-rate, sensitivity, and uncertainty hygiene has broad methodological support.
+  - The causal-question distinctions and identification boundary have substantial methodological support; the compact operational contract is a bounded synthesis from a [fully reviewed 2018 popular exposition](../../evidence/sources/book-of-why-pearl-mackenzie-2018.md) and should be judged by changed recommendations, experiments, abstentions, or repairs.
   - Formal-inference boundaries reflect standard distinctions among representation, validity, soundness, and countermodels; adopters should validate any executable procedure separately.
   - The interaction-structure diagnostic is a low-confidence operational translation from a complex-systems resource letter; adopters should judge it by changed fault localization, intervention, verification, or repair.
   - Baron-derived bounded-search guidance has low confidence and no recorded agent application.
@@ -206,6 +207,22 @@ Ask what distinguishes them:
 - negative control;
 - counterfactual prediction;
 - replication in a relevant population.
+
+### Causal-question contract
+
+Use this contract only when a causal claim is load-bearing and its interpretation can change a consequential recommendation, intervention, attribution, or verification plan. Scale the depth to stakes; do not require a diagram or formal identification strategy for routine troubleshooting or a small reversible experiment.
+
+1. **Classify the query before judging the evidence.** Distinguish observation or prediction, intervention, and counterfactual questions. Evidence fit for one query does not silently answer another.
+2. **Define the causal target before selecting controls, evidence, or method.** State proportionally the exposure or action, comparator, outcome, target unit or population, time horizon, and estimand such as total, direct, indirect or pathway-specific, subgroup, treated-population, or case-specific effect. Actual-cause attribution requires case-level counterfactual assumptions; an average population effect does not by itself establish what caused one case.
+3. **Expose the proposed causal and observation structure.** State the temporal order, mechanisms, common causes, omitted or uncertain relations, interference boundaries, and structural assumptions. Also ask what caused a case, source, or record to become observable, selected, retrieved, escalated, published, or retained.
+4. **Treat selection, conditioning, and adjustment as causal operations.** Choose variables by their relation to the target model, not merely by availability or predictive power. Where load-bearing, check the proposed confounding or adjustment basis, treatment consistency and definition, measurement validity, overlap, interference, transport, mediators, colliders, descendants, proxies, and selection on survival or response. Do not invoke those labels as assurances: “control for everything” can create bias or erase the effect being asked about.
+5. **Separate the proposed causal model, identification, and estimation.** A model states assumptions; identification asks whether the target is recoverable from that model and the specified observational or interventional data regime; estimation quantifies an identified target with sampling and measurement uncertainty. Whether the assumptions credibly describe the world is a separate evidence judgment. More data or a more precise estimator does not repair non-identification.
+6. **Return an explicit status.** Report the answer as `identified under named assumptions`, `partially identified or bounded`, `model-sensitive`, `observationally equivalent explanations remain`, or `not identifiable from present evidence`. Do not compress structural uncertainty into a generic confidence score.
+7. **Name the cheapest authorized discriminator, if one exists.** When plausible models recommend different moves, identify the additional observation, negative control, sensitivity threshold, natural experiment, randomized intervention, or reversible probe most likely to distinguish them, together with its validity assumptions. If observationally equivalent models cannot be distinguished with an authorized or feasible test, say so rather than prescribing one more dataset.
+
+For a real action, test whether treating it as an ideal intervention is adequate. Check collateral mechanisms, interference between units, adaptation, treatment variation, timing and duration, assignment versus receipt, and population mismatch.
+
+A causal diagram makes assumptions inspectable; it does not make them true. Missing arrows must not silently mean “known absent” when they are merely unknown or omitted. Technical causal analysis does not determine values, responsibility, legitimacy, consent, or authority; preserve those as separate questions.
 
 Match this burden to stakes. A reversible personal experiment does not require a journal article's identification strategy; a high-stakes health or financial claim deserves more than a plausible story.
 

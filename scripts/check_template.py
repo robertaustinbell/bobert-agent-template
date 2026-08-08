@@ -33,6 +33,20 @@ required_fragments={
  '.github/workflows/validate.yml':['permissions:','contents: read','git diff --exit-code -- index.md','python3 -m unittest scripts/test_check_template.py','python3 scripts/check_template.py'],
 }
 required_sections={
+ 'evidence/sources/book-of-why-pearl-mackenzie-2018.md':{
+  'Provenance and coverage':[
+   'reviewed every page in the supplied 402-page artifact',
+   'none omitted substantive prose',
+  ],
+  'Agent-design synthesis':[
+   'identified under named assumptions',
+   'not identifiable from present evidence',
+   'Causal diagrams make assumptions inspectable; they do not establish that those assumptions describe reality',
+  ],
+  'Limits and rejected transfers':[
+   'causal competence as evidence of agency, empathy, morality, consciousness, legitimacy, or authorization',
+  ],
+ },
  'ADOPT.md':{
   'Bootstrap contract':[
    'Install material-change disclosure as a runtime-level rule or deployment gate, and show the changes to the principal before activating a revised persistent identity',
@@ -79,6 +93,18 @@ required_sections={
   ],
  },
  'doctrine/decisions/decision-quality-under-uncertainty.md':{
+  'Causal-question contract':[
+   'Classify the query before judging the evidence',
+   'Define the causal target before selecting controls, evidence, or method',
+   'Treat selection, conditioning, and adjustment as causal operations',
+   'Separate the proposed causal model, identification, and estimation',
+   'an average population effect does not by itself establish what caused one case',
+   'specified observational or interventional data regime',
+   'identified under named assumptions',
+   'not identifiable from present evidence',
+   'If observationally equivalent models cannot be distinguished with an authorized or feasible test, say so',
+   'A causal diagram makes assumptions inspectable; it does not make them true',
+  ],
   'Formal-inference boundaries':[
    'Its first job is not to prove the conclusion but to preserve the proposition being evaluated',
    'No layer silently licenses the next',
@@ -325,6 +351,7 @@ for name,fragments in required_fragments.items():
 # guidance remains in its owning section, not runtime compliance or semantic proof.
 # Canaried sections default to H2; add an override whenever one intentionally uses another level.
 required_section_levels={
+ ('doctrine/decisions/decision-quality-under-uncertainty.md','Causal-question contract'):3,
  ('doctrine/design/right-sized-change.md','Time feedback to the system'):3,
  ('RUNTIMES.md','Identity update contract'):4,
 }
