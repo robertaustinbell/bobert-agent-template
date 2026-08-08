@@ -2,6 +2,14 @@
 
 Record only material doctrine failures, contradictions, retrieval misses, scope or confidence changes, and architecture revisions. Ordinary success does not require an entry.
 
+## 2026-08-08 — Adopted checkpoint-based releases
+
+- **Surface:** `SYNC.md` and public release procedure
+- **Failure:** an optional-tool reference addition received its own numbered release, making a small documentation synchronization look like a meaningful adopter-facing checkpoint
+- **Decision effect:** separates continuous public commits from releases and reserves numbered releases for coherent adopter-facing milestones, material compatibility or security changes, migrations, or deliberate bundles
+- **Current checkpoint:** the transition from mostly private development to public sharing and external feedback justifies a new minor release covering the accumulated changes since `v0.1.5`
+- **Boundary:** release numbers communicate adopter-facing checkpoints; they do not prove behavioral quality, repository maturity, or compatibility beyond the stated release notes
+
 ## 2026-08-08 — Added an interaction-structure diagnostic
 
 - **Doctrine:** Decision Quality Under Uncertainty

@@ -2,7 +2,7 @@
 
 ## Supported versions
 
-Security and privacy-boundary fixes are supported on the latest `v0.1.x` release. Earlier snapshots may be useful provenance but do not receive fixes unless explicitly stated.
+Security and privacy-boundary fixes are supported on the latest published release. Earlier snapshots may be useful provenance but do not receive fixes unless explicitly stated.
 
 ## Reporting a vulnerability
 
