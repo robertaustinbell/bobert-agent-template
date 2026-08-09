@@ -10,6 +10,7 @@ confidence_basis:
   - The causal-question distinctions and identification boundary have substantial methodological support; the compact operational contract is a bounded synthesis from a [fully reviewed 2018 popular exposition](../../evidence/sources/book-of-why-pearl-mackenzie-2018.md) and should be judged by changed recommendations, experiments, abstentions, or repairs.
   - Formal-inference boundaries reflect standard distinctions among representation, validity, soundness, and countermodels; adopters should validate any executable procedure separately.
   - The interaction-structure diagnostic is a low-confidence operational translation from a complex-systems resource letter; adopters should judge it by changed fault localization, intervention, verification, or repair.
+  - The forecast-horizon diagnostic is a low-confidence operational synthesis from fully reviewed chaos, near-decomposability, and level-of-description sources; adopters should judge it by changed forecast targets, horizons, actions, verification plans, uncertainty reports, or repairs.
   - Baron-derived bounded-search guidance has low confidence and no recorded agent application.
   - Binmore-derived model-adequacy guidance has low confidence and no recorded agent application.
   - The situational-awareness failure taxonomy is an operational extrapolation; adopters should judge it by changed decisions or repairs rather than conceptual neatness.
@@ -20,7 +21,7 @@ scope:
 consult_when:
   - the framing, option set, contested values, preference or consent interpretation, aggregation, or objective proxy may determine the recommendation
   - evidence conflicts, selection is unclear, or a generalization is load-bearing
-  - a quantitative estimate, probability, deadline, forecast, or causal claim changes the move
+  - a quantitative estimate, probability, deadline, forecast, or causal claim changes the move, especially when plausible state or model uncertainty could alter the useful horizon, prediction target, or level of description
   - the model may omit actors, options, mechanisms, constraints, or feedback; interactions among them could change the intervention level
   - current state may change during the task, several observations must be integrated, or a near-future projection materially determines the move
   - downside, irreversibility, opportunity cost, or update timing is material
@@ -29,6 +30,7 @@ do_not_use_when:
   - an authoritative source directly answers a low-stakes factual question
   - the task is mechanical and already decided
   - uncertainty cannot change the action and further analysis would only decorate the answer
+  - nearby plausible states, alternate horizons, or coarser prediction targets cannot change the action, verification plan, or confidence claim
   - a current authoritative source resolves the relevant state and further situation modeling cannot alter the authorized action
   - casual language, jokes, vents, or brainstorming do not make a load-bearing claim
   - formalizing the claim cannot change the decision or would erase causal, temporal, probabilistic, normative, or authorization-relevant structure
@@ -38,6 +40,7 @@ decision_effect:
   - choose the right question and model before optimizing inside them
   - distinguish component failure from outcomes produced by interaction topology, update dynamics, sequencing, or feedback before selecting an intervention
   - earn precision from evidence rather than hiding uncertainty in numbers
+  - distinguish unstable detailed trajectories from stable ranges, regimes, structural properties, or decisions, and state the level at which each claim holds, before declaring a model predictive or useless
   - stop analysis when its expected decision value falls below its cost
   - separate representation, derivation, premise truth, causal support, decision support, and authority rather than allowing one layer to launder another
 implemented_by: []
@@ -54,6 +57,8 @@ known_failures:
   - proving a nearby proposition after a lossy translation of the actual claim
   - treating failed or bounded proof search as invalidity, or formal validity as premise truth, causation, decision quality, or authority
   - naming behavior emergent without identifying or testing the interaction mechanism that produced it
+  - invoking chaos, sensitivity, or emergence from unpredictability alone without evidence that the proposed dynamics or prediction target fit the system
+  - forecasting at a convenient component or aggregate level without checking whether cross-boundary interactions, omitted detail, or a scale-dependent change in effective behavior can alter the target or decision over the declared horizon
 review_when:
   - a real application produces a materially worse decision than a simpler approach
   - repeated retrieval adds ceremony without changing the recommendation
@@ -63,7 +68,9 @@ review_when:
   - formal-inference auditing repeatedly adds ceremony without catching a material representation, scope, witness, assumption, or search-status error
   - value-sensitive auditing repeatedly renames obvious tradeoffs without changing a decision, clarification, safeguard, abstention, or conflict record
   - the interaction-structure diagnostic repeatedly adds mapping ceremony without changing fault localization, intervention level, verification, or repair
-last_material_revision: 2026-08-08
+  - the forecast-horizon diagnostic repeatedly restates ordinary sensitivity analysis without changing target, horizon, action, verification, or uncertainty reporting
+  - a declared trajectory limitation is used to excuse a model that fails its predeclared range, regime, structural, distributional, or decision-level prediction
+last_material_revision: 2026-08-09
 ---
 
 # Decision Quality Under Uncertainty
@@ -280,6 +287,8 @@ Do not assign the visible outcome automatically to the component nearest the fin
 
 This diagnostic does not establish that behavior is emergent, intentional, inevitable, or desirable. “Emergence” names a relationship between levels of description; it does not identify the generating mechanism. Preserve competing explanations and identify what observation would distinguish them.
 
+When a forecast depends on a subsystem boundary or aggregate variable, treat that boundary and aggregation as horizon-dependent model claims. Test whether within-boundary interactions are materially stronger or faster than cross-boundary interactions, whether omitted detail can change the target, and whether a different defensible boundary or level changes the forecast or decision. Do not infer near decomposability from a diagram, module tree, or organizational hierarchy, and do not assume that lower-level correctness supplies the right higher-level predictive representation.
+
 Skip this diagnostic when a current authoritative observation identifies an isolated failure, when interactions cannot change the intervention, or when mapping the system would add vocabulary without changing the decision.
 
 ## 5. Earn precision
@@ -311,6 +320,36 @@ Warning signs:
 - a score whose weights were chosen after seeing the answer;
 - uncertainty expressed only in prose after a crisp recommendation;
 - “the model says” without the model's assumptions.
+
+### Forecast horizon and prediction target
+
+Use this diagnostic only when a consequential forecast concerns a dynamic system and plausible uncertainty in current state, assumptions, timing, or model structure could materially alter the projected path or recommendation. It is not evidence that the system is mathematically chaotic.
+
+Separate seven questions:
+
+1. **State-estimation uncertainty:** How precisely and currently is the relevant state known? Measurement error, stale observations, hidden variables, and model-state mismatch belong here.
+2. **Trajectory sensitivity:** Under the proposed dynamics, do nearby plausible states or assumptions remain close, diverge, cross a threshold, or enter different regimes over the relevant horizon? Ordinary uncertainty, noise, model error, adaptation, and adversarial response are alternative explanations; sensitivity alone does not establish deterministic chaos.
+3. **Prediction target:** Is the claim about an exact trajectory, range, direction, threshold crossing, regime, distribution, structural property, or decision? “Predictable” is incomplete unless the property is named.
+4. **Level of description:** Is the target defined at a component, subsystem, network, aggregate, population, institutional, or other explicit level? The lowest available level is not automatically the most useful, and a higher-level variable is not automatically independent of lower-level mechanisms.
+5. **Decomposition and aggregation validity:** Are the proposed subsystem boundary and aggregate variables adequate for this target and horizon? Treat near decomposability, hierarchy, and scale separation as empirical hypotheses, not properties proved by a diagram or convenient taxonomy.
+6. **Useful forecast horizon:** How far ahead does the available state estimate and model support the declared target at the declared level before uncertainty becomes decision-indiscriminate?
+7. **Decision stability:** Do plausible neighboring states, models, boundaries, aggregation choices, or levels recommend the same action? A trajectory can be unstable while the decision remains stable; a smooth-looking central forecast can conceal a threshold-sensitive decision.
+
+For a load-bearing use:
+
+1. **Declare the prediction target and level.** Name the property, horizon, unit or population, level of description, and what would count as success or failure.
+2. **Separate state uncertainty from trajectory sensitivity.** Report what is unknown about the present state, what behavior follows from the model, and what could instead reflect model error, randomness, adaptation, exogenous shocks, or adversarial response.
+3. **Justify decomposition and aggregation.** Ask whether interactions are materially stronger or faster within the proposed boundary than across it, whether subsystem behavior is approximately independent over the short horizon, and whether longer-run cross-boundary effects can be represented in aggregate without changing the target or decision. Treat near decomposability as a hypothesis to test, not a default property of anything drawn as a hierarchy.
+4. **Probe neighboring plausible states, models, and levels.** Vary decision-relevant measurements, assumptions, timing, structural alternatives, boundaries, and aggregation choices within justified bounds. Do not use arbitrary perturbations merely to make the result look unstable.
+5. **State the useful horizon.** Identify the longest horizon over which the available state estimate, model, and chosen level of description still discriminate among actions or testable outcomes. Beyond it, shorten the horizon, change the target or level, use scenarios, or report that the model cannot discriminate.
+6. **Test decision stability separately.** Classify the result as `trajectory-stable`, `trajectory-unstable but decision-stable`, `threshold-sensitive`, `model-sensitive`, `level-sensitive`, or `decision-unstable`. Use a different label only when it preserves a material distinction these states miss.
+7. **Predeclare verification at the supported target and level.** An unstable exact path may still support a testable range, regime, structural, or distributional prediction. Conversely, inability to predict details does not excuse failure on the coarser property or higher-level behavior the model claimed to predict. Do not change the target, level, or aggregation after seeing the result to rescue a failed forecast; record any such change as a new claim.
+
+Prefer a robust or reversible action when detailed paths diverge but the same move performs acceptably across plausible states. If plausible neighboring states recommend materially different actions, name the cheapest authorized observation or bounded probe that could discriminate; otherwise preserve the unresolved status.
+
+Do not infer from this diagnostic that human systems are chaotic, that hierarchy is natural or desirable, that higher-level behavior is irreducible in principle, that lower-level laws are predictively sufficient, or that “emergence” supplies a mechanism. Physical analogies such as broken symmetry, phase transitions, Lyapunov exponents, strange attractors, or entropy require domain-specific evidence before transfer.
+
+**Confidence: low.** The distinctions are bounded syntheses from [Crutchfield et al. (1986)](../../evidence/sources/chaos-crutchfield-farmer-packard-shaw-1986.md), [Simon (1962)](../../evidence/sources/architecture-of-complexity-simon-1962.md), and [Anderson (1972)](../../evidence/sources/more-is-different-anderson-1972.md). No natural production case yet establishes a distinct decision effect. Use the diagnostic now when triggered, but narrow, consolidate, or remove it if it adds vocabulary without changing a target, horizon, action, verification plan, uncertainty report, or repair.
 
 ## 6. Keep uncertainty useful
 

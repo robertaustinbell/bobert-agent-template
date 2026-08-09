@@ -2,6 +2,15 @@
 
 Record only material doctrine failures, contradictions, retrieval misses, scope or confidence changes, and architecture revisions. Ordinary success does not require an entry.
 
+## 2026-08-09 — Added bounded forecast-horizon and prediction-target discipline
+
+- **Surface:** Decision Quality Under Uncertainty, three sanitized source records, and checker canaries
+- **Decision effect:** separates state uncertainty, trajectory sensitivity, prediction target, level of description, aggregation validity, useful horizon, and decision stability before declaring a dynamic model predictive or useless
+- **Scope:** consequential dynamic forecasts where plausible state, model, boundary, or level choices could change the action or verification plan; not routine uncertainty, a universal chaos or emergence theory, mandatory physical mathematics, or numerical thresholds
+- **Evidence:** complete review of Crutchfield et al. (1986), Simon (1962), and Anderson (1972); no natural production decision effect established
+- **Boundary:** subsystem boundaries, aggregation, near decomposability, and higher-level variables remain model claims; detailed-path failure does not excuse failure on a predeclared coarser target, and physical analogies do not transfer to human systems without domain evidence
+- **Revision condition:** narrow, consolidate, or remove the diagnostic if it adds vocabulary without changing a target, horizon, action, verification plan, uncertainty report, or repair
+
 ## 2026-08-08 — Added a causal-question contract
 
 - **Surface:** Decision Quality Under Uncertainty, sanitized source evidence, and checker canaries

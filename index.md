@@ -42,7 +42,7 @@ Decide what source governs a claim, where knowledge belongs, and how to handle c
 
 Test framing, values, preference authority, evidence, inference, causal stories, models, alternatives, and stopping points in consequential decisions.
 
-**Consult when:** the framing, option set, contested values, preference or consent interpretation, aggregation, or objective proxy may determine the recommendation; evidence conflicts, selection is unclear, or a generalization is load-bearing; a quantitative estimate, probability, deadline, forecast, or causal claim changes the move; the model may omit actors, options, mechanisms, constraints, or feedback; interactions among them could change the intervention level.
+**Consult when:** the framing, option set, contested values, preference or consent interpretation, aggregation, or objective proxy may determine the recommendation; evidence conflicts, selection is unclear, or a generalization is load-bearing; a quantitative estimate, probability, deadline, forecast, or causal claim changes the move, especially when plausible state or model uncertainty could alter the useful horizon, prediction target, or level of description; the model may omit actors, options, mechanisms, constraints, or feedback; interactions among them could change the intervention level.
 
 **Do not use when:** an authoritative source directly answers a low-stakes factual question; the task is mechanical and already decided; uncertainty cannot change the action and further analysis would only decorate the answer.
 

@@ -105,6 +105,17 @@ required_sections={
    'If observationally equivalent models cannot be distinguished with an authorized or feasible test, say so',
    'A causal diagram makes assumptions inspectable; it does not make them true',
   ],
+  'Forecast horizon and prediction target':[
+   'Declare the prediction target and level',
+   'Justify decomposition and aggregation',
+   'State the useful horizon',
+   'Test decision stability separately',
+   'Predeclare verification at the supported target and level',
+   'Do not change the target, level, or aggregation after seeing the result to rescue a failed forecast',
+   'trajectory-unstable but decision-stable',
+   'level-sensitive',
+   'It is not evidence that the system is mathematically chaotic',
+  ],
   'Formal-inference boundaries':[
    'Its first job is not to prove the conclusion but to preserve the proposition being evaluated',
    'No layer silently licenses the next',
@@ -352,6 +363,7 @@ for name,fragments in required_fragments.items():
 # Canaried sections default to H2; add an override whenever one intentionally uses another level.
 required_section_levels={
  ('doctrine/decisions/decision-quality-under-uncertainty.md','Causal-question contract'):3,
+ ('doctrine/decisions/decision-quality-under-uncertainty.md','Forecast horizon and prediction target'):3,
  ('doctrine/design/right-sized-change.md','Time feedback to the system'):3,
  ('RUNTIMES.md','Identity update contract'):4,
 }
