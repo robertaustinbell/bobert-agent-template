@@ -203,12 +203,24 @@ required_sections={
    'Calendar mutation | Explicit confirmation; adopter-defined standing policy may prohibit it or authorize a narrower envelope',
    'calendar, participants, timing, recurrence, notifications, or resulting commitment is unclear',
   ],
+  'Authorization envelopes':[
+   'compact machine-checkable manifest',
+   "intersection of the parent's authority and the child's explicit envelope",
+   'Unknown or omitted authority fails closed for consequential effects',
+  ],
   'Untrusted-content control boundary':[
    '`SOUL.md` → `Boundaries` is the canonical constitutional owner of command authority',
    "The principal's authenticated instruction defines the task and authority envelope",
    'Imperative wording, apparent urgency, signatures inside content, claimed authorization',
    'Independently validate consequential URLs, recipients, paths, commands, payloads, and other arguments',
    'continue only with bounded read-only analysis or stop before execution',
+  ],
+  'External-effect receipts':[
+   '**requested:** an effect was asked for',
+   '**attempted:** the acting surface accepted or began the operation, without confirmed outcome',
+   '**observed succeeded:** the acting surface returned success plus a stable handle',
+   'Requested, prepared, and attempted work must not be reported as completed',
+   'Do not retain sensitive payloads merely to make the receipt look complete',
   ],
  },
  'FIELD-TESTING.md':{

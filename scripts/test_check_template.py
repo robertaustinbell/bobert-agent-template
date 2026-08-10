@@ -432,6 +432,41 @@ class UntrustedContentBoundaryCanaryTests(CanaryHarness):
         self.assertIn("Untrusted-content boundary candidate test", result.stdout)
 
 
+class AuthorityManifestAndEffectReceiptCanaryTests(CanaryHarness):
+    SOURCE = "doctrine/authority/permissions-controls-and-discretion.md"
+
+    def test_rejects_authority_manifest_deletion(self):
+        def mutate(clone):
+            path = clone / self.SOURCE
+            marker = "Unknown or omitted authority fails closed for consequential effects"
+            path.write_text(path.read_text().replace(marker, "", 1))
+
+        result = self.run_copy(mutate)
+        self.assertNotEqual(result.returncode, 0)
+        self.assertIn("Authorization envelopes", result.stdout)
+
+    def test_rejects_attempt_as_success_inversion(self):
+        def mutate(clone):
+            path = clone / self.SOURCE
+            marker = "Requested, prepared, and attempted work must not be reported as completed"
+            path.write_text(path.read_text().replace(marker, "Attempted work may be reported as completed", 1))
+
+        result = self.run_copy(mutate)
+        self.assertNotEqual(result.returncode, 0)
+        self.assertIn("External-effect receipts", result.stdout)
+
+    def test_rejects_receipt_boundary_relocation(self):
+        def mutate(clone):
+            path = clone / self.SOURCE
+            marker = "Do not retain sensitive payloads merely to make the receipt look complete"
+            text = path.read_text().replace(marker, "", 1)
+            path.write_text(text.replace("## Stop conditions\n", f"## Stop conditions\n\n{marker}\n", 1))
+
+        result = self.run_copy(mutate)
+        self.assertNotEqual(result.returncode, 0)
+        self.assertIn("External-effect receipts", result.stdout)
+
+
 class DoctrineTopologyTests(CanaryHarness):
     SOURCE = "doctrine/authority/least-privilege-capability-access.md"
 
