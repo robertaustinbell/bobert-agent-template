@@ -29,7 +29,20 @@ That instruction is intentionally conservative: a reusable identity should trans
 | `SYNC.md` | Curated private-to-public projection policy |
 | `scripts/` | Deterministic generation and integrity checks |
 
-Procedures, live domain facts, credentials, permissions, and personal memory do **not** belong here. They must be created in their runtime-specific governed homes.
+### Governed homes
+
+The starter includes explicit homes for material that should not be collapsed into identity or doctrine:
+
+| Home | Purpose | Authority boundary |
+|---|---|---|
+| `skills/` | Runtime-specific repeatable procedures | A file here is not proof that the procedure is installed or usable in the current runtime |
+| `decisions/` | Adopted local architecture or policy choices, rationale, consequences, and revision conditions | Governs only the recorded scope; it is not general doctrine |
+| `domain/` | Pointer and placement guidance for private domain sources of record | Do not put live personal or organizational records in this public repository |
+| `evidence/` | External source records, bounded cases, and failures | Evidence informs doctrine but does not govern merely by existing |
+| `archive/` | Superseded, rejected, or historical material | Preserved for traceability; carries no current authority |
+| `log.md` | Material doctrine failures, contradictions, retrieval misses, and revisions | Evidence of what changed; the owning SOUL, doctrine, or decision remains normative |
+
+Credentials, permissions, personal memory, live configuration, and current domain facts must remain in their runtime-specific governed systems rather than this public repository.
 
 ## Optional implementation ideas
 

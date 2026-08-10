@@ -61,6 +61,21 @@ class ContributorIntakeCanaryTests(CanaryHarness):
         self.assertIn("CONTRIBUTING.md", result.stdout)
 
 
+class ReadmeGovernedHomesTests(CanaryHarness):
+    REQUIRED_HOMES = ("`skills/`", "`decisions/`", "`domain/`", "`evidence/`", "`archive/`", "`log.md`")
+
+    def test_requires_every_governed_home_in_readme(self):
+        for home in self.REQUIRED_HOMES:
+            with self.subTest(home=home):
+                def mutate(clone, marker=home):
+                    path = clone / "README.md"
+                    path.write_text(path.read_text().replace(marker, "`omitted-home/`", 1))
+
+                result = self.run_copy(mutate)
+                self.assertNotEqual(result.returncode, 0, result.stdout + result.stderr)
+                self.assertIn("README.md", result.stdout)
+
+
 class RuntimeNeutralCalendarAuthorityTests(CanaryHarness):
     def test_rejects_source_specific_calendar_prohibition(self):
         def mutate(clone):

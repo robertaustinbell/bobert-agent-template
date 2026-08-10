@@ -2,6 +2,14 @@
 
 Record only material doctrine failures, contradictions, retrieval misses, scope or confidence changes, and architecture revisions. Ordinary success does not require an entry.
 
+## 2026-08-10 — Exposed governed homes in the README architecture map
+
+- **Surface:** `README.md`; checker canaries and mutation tests
+- **Failure:** the primary architecture table showed identity, doctrine, adoption, runtime, and tooling surfaces but omitted the governed homes already assigned in `GOVERNANCE.md`
+- **Decision effect:** a README-only evaluator can now distinguish procedures, local decisions, private domain records, evidence, archive material, and the change log without treating any of them as identity or doctrine
+- **Boundary:** the new map summarizes existing ownership; it does not create new directories, authority, runtime capability, or permission to place private records in the public repository
+- **Verification:** required-fragment checks and per-home mutation tests reject silent removal of any governed home
+
 ## 2026-08-10 — Removed source-specific calendar authority from the template
 
 - **Surface:** Permissions, Controls, and Discretion; `CUSTOMIZE.md`; checker canaries and mutation tests
