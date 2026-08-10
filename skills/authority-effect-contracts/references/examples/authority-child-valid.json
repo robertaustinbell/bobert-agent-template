@@ -1,12 +1,36 @@
 {
   "schema_version": "authority-manifest/v1",
   "manifest_id": "repo-inspection-child",
+  "task_id": "repo-inspection-report-v1",
   "task": "Inspect the named local repository without mutation",
-  "may": ["inspect_repository", "run_tests"],
-  "must_not": ["push", "publish", "merge", "send_message", "spend_money", "write_named_artifact"],
-  "targets": ["/tmp/authority-contract-example"],
-  "ask_before": ["scope_expansion", "new_external_effect", "write_named_artifact"],
-  "verification": ["artifact_hash_recorded", "tests_pass"],
-  "stop_on": ["ambiguous_target", "partial_external_failure", "policy_change"],
+  "may": [
+    "inspect_repository",
+    "run_tests"
+  ],
+  "must_not": [
+    "push",
+    "publish",
+    "merge",
+    "send_message",
+    "spend_money",
+    "write_named_artifact"
+  ],
+  "targets": [
+    "/tmp/authority-contract-example"
+  ],
+  "ask_before": [
+    "scope_expansion",
+    "new_external_effect",
+    "write_named_artifact"
+  ],
+  "verification": [
+    "artifact_hash_recorded",
+    "tests_pass"
+  ],
+  "stop_on": [
+    "ambiguous_target",
+    "partial_external_failure",
+    "policy_change"
+  ],
   "valid_until": "2098-12-31T23:00:00+00:00"
 }

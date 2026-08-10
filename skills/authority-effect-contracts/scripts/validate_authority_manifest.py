@@ -13,7 +13,7 @@ def main(argv: list[str]) -> int:
         return 2
     try:
         value = json.loads(Path(argv[1]).read_text())
-        validate_authority_manifest(value)
+        validate_authority_manifest(value, require_active=True)
     except (OSError, json.JSONDecodeError, ContractError) as exc:
         print(json.dumps({"valid": False, "errors": [str(exc)]}, sort_keys=True))
         return 1

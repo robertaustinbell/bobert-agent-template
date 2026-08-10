@@ -1,7 +1,7 @@
 from __future__ import annotations
 
 import re
-from datetime import datetime, timezone
+from datetime import datetime, timedelta, timezone
 from typing import Any
 
 
@@ -10,7 +10,7 @@ class ContractError(ValueError):
 
 
 MANIFEST_FIELDS = {
-    "schema_version", "manifest_id", "task", "may", "must_not", "targets",
+    "schema_version", "manifest_id", "task_id", "task", "may", "must_not", "targets",
     "ask_before", "verification", "stop_on", "valid_until",
 }
 RECEIPT_FIELDS = {
@@ -24,6 +24,10 @@ EFFECT_STATES = {
     "observed_failed", "unknown",
 }
 EVIDENCE_COMPLETENESS = {"complete", "partial", "unknown"}
+EVIDENCE_KINDS = {
+    "artifact_sha256", "read_back", "immutable_handle", "tool_receipt",
+    "http_read_back", "remote_object_id",
+}
 SENSITIVE_KEY = re.compile(r"(?:password|passwd|secret|token|api[_-]?key|private[_-]?key)", re.I)
 
 
@@ -71,16 +75,18 @@ def _timestamp(value: Any, field: str, *, nullable: bool = False) -> datetime | 
     return parsed
 
 
-def validate_authority_manifest(value: Any) -> dict[str, Any]:
+def validate_authority_manifest(value: Any, *, require_active: bool = False) -> dict[str, Any]:
     obj = _object(value, "authority manifest")
     _exact_fields(obj, MANIFEST_FIELDS, "authority manifest")
     if obj["schema_version"] != "authority-manifest/v1":
         raise ContractError("unsupported authority manifest schema_version")
-    for field in ("manifest_id", "task"):
+    for field in ("manifest_id", "task_id", "task"):
         _text(obj[field], field)
     for field in ("may", "must_not", "targets", "ask_before", "verification", "stop_on"):
         _strings(obj[field], field)
-    _timestamp(obj["valid_until"], "valid_until")
+    expires_at = _timestamp(obj["valid_until"], "valid_until")
+    if require_active and expires_at <= datetime.now(timezone.utc):
+        raise ContractError("authority manifest is expired")
     overlap = set(obj["may"]) & set(obj["must_not"])
     if overlap:
         raise ContractError(f"actions cannot be both allowed and prohibited: {sorted(overlap)}")
@@ -91,6 +97,8 @@ def check_authority_subset(parent: Any, child: Any) -> list[str]:
     p = validate_authority_manifest(parent)
     c = validate_authority_manifest(child)
     errors: list[str] = []
+    if c["task_id"] != p["task_id"]:
+        errors.append("child task_id differs from parent")
     if not set(c["may"]).issubset(p["may"]):
         errors.append(f"child may expands parent: {sorted(set(c['may']) - set(p['may']))}")
     if not set(c["targets"]).issubset(p["targets"]):
@@ -129,12 +137,18 @@ def validate_effect_receipt(value: Any) -> dict[str, Any]:
         _exact_fields(evidence, EVIDENCE_FIELDS, f"verification_evidence[{index}]")
         for field in EVIDENCE_FIELDS:
             _text(evidence[field], f"verification_evidence[{index}].{field}")
+        if evidence["kind"] not in EVIDENCE_KINDS:
+            raise ContractError(
+                f"verification_evidence[{index}].kind must be one of {sorted(EVIDENCE_KINDS)}"
+            )
     if obj["sensitive_payload_retained"] is not False:
         raise ContractError("sensitive_payload_retained must be false")
     for key in obj:
         if key != "sensitive_payload_retained" and SENSITIVE_KEY.search(key):
             raise ContractError(f"sensitive field is prohibited: {key}")
     status = obj["effect_status"]
+    if observed_at is not None and observed_at > datetime.now(timezone.utc) + timedelta(minutes=5):
+        raise ContractError("observed_at cannot be future-dated beyond five minutes of clock skew")
     if status in {"attempted", "observed_succeeded", "observed_failed"} and (surface is None or observed_at is None):
         raise ContractError(f"{status} requires acting_surface and observed_at")
     if status == "observed_succeeded" and not obj["verification_evidence"]:

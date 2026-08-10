@@ -7,10 +7,10 @@ Record only material doctrine failures, contradictions, retrieval misses, scope 
 - **Doctrine:** `doctrine/authority/permissions-controls-and-discretion.md`
 - **Trigger:** a private implementation review exposed portable ways to make delegated authority and external-effect reporting inspectable without adding another operating layer.
 - **Expected:** preserve authorization boundaries across delegation and prevent requested, prepared, or attempted work from being reported as completed.
-- **Observed:** a bounded runtime-neutral skill now validates structural conformance, child non-escalation, expiry, effect-state/evidence separation, and observed-success evidence; fifteen tests and invalid fixtures pass.
-- **Material effect:** consequential delegation may use a compact authority manifest; external effects distinguish requested, prepared, attempted, observed success, observed failure, and unknown.
-- **Evidence:** `skills/authority-effect-contracts`; the workflow runs its fixture suite. Runtime enforcement and universal emission remain intentionally unclaimed.
-- **Correction:** refined the existing authority owner and added a narrow procedure rather than another doctrine page, runtime, or ledger requirement.
+- **Observed:** independent review found modest clarity but no runtime control effect and exposed initial gaps in expiry, task binding, evidence classes, future timestamps, and claim precision; nineteen repaired tests now cover those structural paths.
+- **Material effect:** the bounded skill remains an inspectable checklist, not an authority boundary; `task_id` binds parent and child delegation identity, and effect receipts reject unknown evidence classes and materially future timestamps.
+- **Evidence:** `skills/authority-effect-contracts`; the workflow runs its fixture suite. Runtime enforcement, handle resolution, sensitive-value detection, and universal emission remain intentionally unclaimed.
+- **Correction:** refined the existing authority owner and narrow procedure, separated the real temporary-write test from the illustrative fixture, and did not add another doctrine page, runtime, or ledger requirement.
 
 ## 2026-08-10 — Exposed governed homes in the README architecture map
 

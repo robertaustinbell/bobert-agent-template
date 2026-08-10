@@ -3,17 +3,95 @@
   "$id": "authority-manifest/v1",
   "type": "object",
   "additionalProperties": false,
-  "required": ["schema_version", "manifest_id", "task", "may", "must_not", "targets", "ask_before", "verification", "stop_on", "valid_until"],
+  "required": [
+    "schema_version",
+    "manifest_id",
+    "task_id",
+    "task",
+    "may",
+    "must_not",
+    "targets",
+    "ask_before",
+    "verification",
+    "stop_on",
+    "valid_until"
+  ],
   "properties": {
-    "schema_version": {"const": "authority-manifest/v1"},
-    "manifest_id": {"type": "string", "minLength": 1},
-    "task": {"type": "string", "minLength": 1},
-    "may": {"type": "array", "items": {"type": "string", "minLength": 1}, "uniqueItems": true},
-    "must_not": {"type": "array", "items": {"type": "string", "minLength": 1}, "uniqueItems": true},
-    "targets": {"type": "array", "items": {"type": "string", "minLength": 1}, "uniqueItems": true},
-    "ask_before": {"type": "array", "items": {"type": "string", "minLength": 1}, "uniqueItems": true},
-    "verification": {"type": "array", "items": {"type": "string", "minLength": 1}, "uniqueItems": true},
-    "stop_on": {"type": "array", "items": {"type": "string", "minLength": 1}, "uniqueItems": true},
-    "valid_until": {"type": "string", "format": "date-time"}
+    "schema_version": {
+      "const": "authority-manifest/v1"
+    },
+    "manifest_id": {
+      "type": "string",
+      "minLength": 1,
+      "pattern": ".*\\S.*"
+    },
+    "task": {
+      "type": "string",
+      "minLength": 1,
+      "pattern": ".*\\S.*"
+    },
+    "may": {
+      "type": "array",
+      "items": {
+        "type": "string",
+        "minLength": 1,
+        "pattern": ".*\\S.*"
+      },
+      "uniqueItems": true
+    },
+    "must_not": {
+      "type": "array",
+      "items": {
+        "type": "string",
+        "minLength": 1,
+        "pattern": ".*\\S.*"
+      },
+      "uniqueItems": true
+    },
+    "targets": {
+      "type": "array",
+      "items": {
+        "type": "string",
+        "minLength": 1,
+        "pattern": ".*\\S.*"
+      },
+      "uniqueItems": true
+    },
+    "ask_before": {
+      "type": "array",
+      "items": {
+        "type": "string",
+        "minLength": 1,
+        "pattern": ".*\\S.*"
+      },
+      "uniqueItems": true
+    },
+    "verification": {
+      "type": "array",
+      "items": {
+        "type": "string",
+        "minLength": 1,
+        "pattern": ".*\\S.*"
+      },
+      "uniqueItems": true
+    },
+    "stop_on": {
+      "type": "array",
+      "items": {
+        "type": "string",
+        "minLength": 1,
+        "pattern": ".*\\S.*"
+      },
+      "uniqueItems": true
+    },
+    "valid_until": {
+      "type": "string",
+      "format": "date-time"
+    },
+    "task_id": {
+      "type": "string",
+      "minLength": 1,
+      "pattern": ".*\\S.*"
+    }
   }
 }

@@ -23,6 +23,7 @@ def authority(**updates):
     value = {
         "schema_version": "authority-manifest/v1",
         "manifest_id": "parent-1",
+        "task_id": "inspect-report-1",
         "task": "Inspect a named repository and write one report",
         "may": ["inspect_repository", "write_named_artifact", "run_tests"],
         "must_not": ["push", "publish", "merge", "send_message", "spend_money"],
@@ -95,12 +96,25 @@ class AuthorityContractTests(unittest.TestCase):
         )
         self.assertEqual(check_authority_subset(parent, child), [])
 
+    def test_child_cannot_change_task_identity(self):
+        parent = authority()
+        child = authority(manifest_id="child-task", task_id="different-task", task="Different prose")
+        errors = check_authority_subset(parent, child)
+        self.assertIn("child task_id differs from parent", errors)
+
+    def test_child_cannot_outlive_parent(self):
+        parent = authority(valid_until="2099-01-01T00:00:00+00:00")
+        child = authority(manifest_id="child-late", valid_until="2099-01-02T00:00:00+00:00")
+        self.assertIn("child valid_until exceeds parent", check_authority_subset(parent, child))
+
     def test_expired_authority_fails_dispatch_subset_check(self):
         parent = authority(valid_until="2020-01-01T00:00:00+00:00")
         child = authority(
             manifest_id="child-expired",
             valid_until="2020-01-01T00:00:00+00:00",
         )
+        with self.assertRaises(ContractError):
+            validate_authority_manifest(parent, require_active=True)
         errors = check_authority_subset(parent, child)
         self.assertIn("parent authority manifest is expired", errors)
         self.assertIn("child authority manifest is expired", errors)
@@ -149,6 +163,31 @@ class ReceiptContractTests(unittest.TestCase):
                     evidence_completeness="complete",
                     acting_surface="filesystem",
                     observed_at=datetime.now(timezone.utc).isoformat(),
+                )
+            )
+
+    def test_observed_success_rejects_unknown_evidence_kind(self):
+        with self.assertRaises(ContractError):
+            validate_effect_receipt(
+                receipt(
+                    effect_status="observed_succeeded",
+                    evidence_completeness="complete",
+                    acting_surface="filesystem",
+                    observed_at=datetime.now(timezone.utc).isoformat(),
+                    verification_evidence=[
+                        {"kind": "trust_me", "handle": "unrelated", "observed_result": "claimed"}
+                    ],
+                )
+            )
+
+    def test_effect_observation_cannot_be_future_dated(self):
+        with self.assertRaises(ContractError):
+            validate_effect_receipt(
+                receipt(
+                    effect_status="observed_failed",
+                    evidence_completeness="complete",
+                    acting_surface="filesystem",
+                    observed_at="2099-01-01T00:00:00+00:00",
                 )
             )
 

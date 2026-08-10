@@ -46,21 +46,23 @@ Each validator emits JSON and exits `0` on acceptance or `1` on contract failure
 ## Contract boundaries
 
 - Unknown fields fail closed.
-- Child `may` actions and targets must be subsets of the parent.
+- Parent and child must share the same `task_id`; prose may narrow the task but cannot silently rebind it to a different delegation.
+- Child `may` actions and exact-string targets must be subsets of the parent; this does not resolve paths, aliases, symlinks, or semantic resource identity.
 - Child prohibitions, approval gates, verification obligations, and stop conditions must preserve or strengthen the parent.
-- Child validity cannot outlive the parent.
+- Child validity cannot outlive the parent, and dispatch-oriented CLI validation rejects expired manifests.
 - `partial` belongs to `evidence_completeness`, never `effect_status`.
-- `observed_succeeded` requires acting-surface evidence and a stable handle or read-back.
-- Requested, prepared, and attempted states are not success.
+- `observed_succeeded` requires acting-surface metadata and a recognized evidence class with non-empty handle and observed result. The validator does not resolve the handle or prove the result.
+- Future-dated effect observations beyond five minutes of clock skew are rejected.
+- Requested, prepared, attempted, and unknown states are not success.
 - Declared sensitive payload retention is rejected; callers must still sanitize bounded metadata and evidence values because structural validation is not secret detection.
 
 ## Worked example
 
-The fixture suite performs a real reversible local write into a temporary directory, hashes the report, creates an `observed_succeeded` receipt, validates it, and removes the directory. Invalid fixtures cover action and target escalation, dropped prohibitions and approval gates, false success without evidence, state-vocabulary confusion, unknown fields, and sensitive-payload retention.
+The fixture suite performs a real reversible local write into a temporary directory, hashes the report, creates an `observed_succeeded` receipt, validates it, and removes the directory. The static success example is only a structurally valid illustration; it is not proof that its example effect occurred. Invalid fixtures and unit tests cover action and target escalation, task rebinding, expiry, future observations, dropped requirements, unknown evidence classes, false success without evidence, state-vocabulary confusion, unknown fields, and declared sensitive-payload retention.
 
 ## Verification and status
 
-This is a bounded executable spike. Passing fixtures validate the current schema and validator behavior, not Hermes runtime enforcement or production utility. Do not integrate universally until representative use shows that the fields change review or prevent scope/error ambiguity without disproportionate ceremony.
+This is a bounded executable spike and an inspectable checklist, not an authority boundary. Its first representative read-only delegation produced modest review clarity but no demonstrated runtime control effect: the manifest made limits auditable yet remained redundant with explicit instructions and was not enforced by the tool runtime. Passing fixtures validate the current schema and validator behavior, not Hermes runtime enforcement or production utility. Do not integrate universally until representative use shows that the fields change review or prevent scope/error ambiguity without disproportionate ceremony.
 
 Schemas provide portable structural contracts. The Python validators are the executable semantic authority for cross-field rules, parent-child subset checks, and state-specific receipt evidence that JSON Schema alone does not fully express.
 
