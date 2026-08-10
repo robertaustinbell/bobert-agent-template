@@ -8,6 +8,7 @@ confidence: mixed
 confidence_basis:
   - Basic source, causal, base-rate, sensitivity, and uncertainty hygiene has broad methodological support.
   - The causal-question distinctions and identification boundary have substantial methodological support; the compact operational contract is a bounded synthesis from a [fully reviewed 2018 popular exposition](../../evidence/sources/book-of-why-pearl-mackenzie-2018.md) and should be judged by changed recommendations, experiments, abstentions, or repairs.
+  - Core statistical-inference distinctions have broad methodological support; the compact statistical-evidence gate is a bounded synthesis from a [fully reviewed 2014 popular exposition](../../evidence/sources/how-not-to-be-wrong-ellenberg-2014.md) and should be judged by changed estimates, evaluation designs, recommendations, abstentions, verifications, or repairs.
   - Formal-inference boundaries reflect standard distinctions among representation, validity, soundness, and countermodels; adopters should validate any executable procedure separately.
   - The interaction-structure diagnostic is a low-confidence operational translation from a complex-systems resource letter; adopters should judge it by changed fault localization, intervention, verification, or repair.
   - The forecast-horizon diagnostic is a low-confidence operational synthesis from fully reviewed chaos, near-decomposability, and level-of-description sources; adopters should judge it by changed forecast targets, horizons, actions, verification plans, uncertainty reports, or repairs.
@@ -59,6 +60,7 @@ known_failures:
   - naming behavior emergent without identifying or testing the interaction mechanism that produced it
   - invoking chaos, sensitivity, or emergence from unpredictability alone without evidence that the proposed dynamics or prediction target fit the system
   - forecasting at a convenient component or aggregate level without checking whether cross-boundary interactions, omitted detail, or a scale-dependent change in effective behavior can alter the target or decision over the declared horizon
+  - treating a selected threshold-crossing result as the evidence while hiding the search family, effect magnitude, uncertainty, detection capability, or failed and untouched tests
 review_when:
   - a real application produces a materially worse decision than a simpler approach
   - repeated retrieval adds ceremony without changing the recommendation
@@ -69,6 +71,7 @@ review_when:
   - value-sensitive auditing repeatedly renames obvious tradeoffs without changing a decision, clarification, safeguard, abstention, or conflict record
   - the interaction-structure diagnostic repeatedly adds mapping ceremony without changing fault localization, intervention level, verification, or repair
   - the forecast-horizon diagnostic repeatedly restates ordinary sensitivity analysis without changing target, horizon, action, verification, or uncertainty reporting
+  - the statistical-evidence gate repeatedly adds terminology without changing an estimate, evaluation design, recommendation, abstention, verification, or repair
   - a declared trajectory limitation is used to excuse a model that fails its predeclared range, regime, structural, distributional, or decision-level prediction
 last_material_revision: 2026-08-09
 ---
@@ -141,6 +144,22 @@ For a load-bearing generalization, record proportionally:
 Actively seek credible counterexamples and inconvenient evidence before defending the preferred conclusion. One domain-relevant counterexample can narrow a universal claim; it need not erase a bounded rule that explicitly excludes the case.
 
 Do not formalize colloquial “all,” “never,” or “always” unless the quantifier actually carries the argument.
+
+## Statistical-evidence gate
+
+Use this gate only when a statistical result materially supports an estimate, evaluation, generalization, or consequential recommendation. Scale it to stakes; it is not a mandatory recital for descriptive counts or routine calculations whose interpretation is direct and uncontested.
+
+1. **Define the decision target.** State the estimand or quantity, population, outcome, horizon, and decision threshold. A convenient metric or reported endpoint does not silently become the target.
+2. **Audit observation and selection.** State how cases were sampled, excluded, retained, escalated, or published and whether conditioning on survival, response, significance, or another outcome could distort the visible evidence.
+3. **Separate magnitude from threshold crossing.** Report the effect size and practical threshold. “Statistically significant” does not mean important, true, causal, or worth acting on.
+4. **Expose uncertainty and detection capability.** Give a justified interval, distribution, or scenarios and ask whether the design could reliably distinguish effects large enough to change the decision. A null result may tightly bound a negligible effect or may leave several materially different effects compatible with the evidence.
+5. **Account for the full search family.** Disclose proportionally the outcomes, subgroups, prompts, models, seeds, analyses, and stopping choices searched. The polished winner is not the evidence; the process that selected it is part of the evidence.
+6. **Separate exploration from confirmation.** Label post-result choices and exploratory findings. Prefer a predeclared, independent, or untouched test before treating a selected result as confirmed. Reviews sharing a model, prompt pattern, evidence base, or failure mechanism are correlated, not independent replication.
+7. **State the decision rule and error tradeoff.** Name who selected the threshold, what false-positive and false-negative costs it balances, and whether plausible alternate thresholds change the move.
+
+Return a plain status rather than compressing these distinctions into generic confidence: `detectable and decision-relevant`, `detectable but practically negligible`, `compatible with several materially different effects`, `underpowered or too imprecise`, `selection- or multiplicity-sensitive`, `exploratory — awaiting confirmation`, or `not interpretable from the reported information`. If no defensible point estimate exists, provide a range, scenarios, or `not estimable` rather than supplying a number under pressure.
+
+The gate does not establish causation, premise truth, legitimacy, authorization, or value. Preserve those as separate questions. Skip it when uncertainty, selection, multiplicity, or threshold interpretation cannot change the action.
 
 ## Formal-inference boundaries
 

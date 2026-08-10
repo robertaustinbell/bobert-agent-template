@@ -2,6 +2,15 @@
 
 Record only material doctrine failures, contradictions, retrieval misses, scope or confidence changes, and architecture revisions. Ordinary success does not require an entry.
 
+## 2026-08-09 — Added a bounded statistical-evidence gate
+
+- **Surface:** Decision Quality Under Uncertainty, sanitized source evidence, and checker canaries
+- **Decision effect:** separates effect magnitude from threshold crossing, precise nulls from inconclusive nulls, exploration from confirmation, and selected results from the full search family that produced them
+- **Scope:** load-bearing statistical claims and agent evaluations where selection, uncertainty, detection capability, multiplicity, analysis flexibility, replication, or threshold choice could change the move; not routine descriptive counts or fixed checklist ceremony
+- **Evidence:** complete review of Jordan Ellenberg, *How Not to Be Wrong* (2014), corroborated by professional statistical guidance; no general production decision effect established
+- **Boundary:** statistical significance does not establish truth, importance, causation, legitimacy, authorization, or action-worthiness; correlated reviews are not independent confirmation, and invented numerical confidence remains prohibited
+- **Revision condition:** narrow, consolidate, or remove the gate if it adds terminology without changing an estimate, evaluation design, recommendation, abstention, verification, or repair
+
 ## 2026-08-09 — Added bounded forecast-horizon and prediction-target discipline
 
 - **Surface:** Decision Quality Under Uncertainty, three sanitized source records, and checker canaries

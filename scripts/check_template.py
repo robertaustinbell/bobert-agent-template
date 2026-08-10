@@ -93,6 +93,16 @@ required_sections={
   ],
  },
  'doctrine/decisions/decision-quality-under-uncertainty.md':{
+  'Statistical-evidence gate':[
+   'Separate magnitude from threshold crossing',
+   'Expose uncertainty and detection capability',
+   'Account for the full search family',
+   'Separate exploration from confirmation',
+   'The polished winner is not the evidence',
+   'underpowered or too imprecise',
+   'selection- or multiplicity-sensitive',
+   'not estimable',
+  ],
   'Causal-question contract':[
    'Classify the query before judging the evidence',
    'Define the causal target before selecting controls, evidence, or method',

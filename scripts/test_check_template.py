@@ -61,6 +61,28 @@ class ContributorIntakeCanaryTests(CanaryHarness):
         self.assertIn("CONTRIBUTING.md", result.stdout)
 
 
+class StatisticalEvidenceGateCanaryTests(CanaryHarness):
+    def test_rejects_loss_of_search_family_boundary(self):
+        def mutate(clone):
+            path = clone / "doctrine/decisions/decision-quality-under-uncertainty.md"
+            marker = "The polished winner is not the evidence"
+            path.write_text(path.read_text().replace(marker, "Report the best result", 1))
+
+        result = self.run_copy(mutate)
+        self.assertNotEqual(result.returncode, 0, result.stdout + result.stderr)
+        self.assertIn("Statistical-evidence gate", result.stdout)
+
+    def test_rejects_loss_of_imprecise_null_status(self):
+        def mutate(clone):
+            path = clone / "doctrine/decisions/decision-quality-under-uncertainty.md"
+            marker = "underpowered or too imprecise"
+            path.write_text(path.read_text().replace(marker, "no effect", 1))
+
+        result = self.run_copy(mutate)
+        self.assertNotEqual(result.returncode, 0, result.stdout + result.stderr)
+        self.assertIn("Statistical-evidence gate", result.stdout)
+
+
 class CausalQuestionContractCanaryTests(CanaryHarness):
     def test_rejects_loss_of_identification_boundary(self):
         def mutate(clone):
