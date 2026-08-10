@@ -61,6 +61,28 @@ class ContributorIntakeCanaryTests(CanaryHarness):
         self.assertIn("CONTRIBUTING.md", result.stdout)
 
 
+class RuntimeNeutralCalendarAuthorityTests(CanaryHarness):
+    def test_rejects_source_specific_calendar_prohibition(self):
+        def mutate(clone):
+            path = clone / "doctrine/authority/permissions-controls-and-discretion.md"
+            marker = "Explicit confirmation; adopter-defined standing policy may prohibit it or authorize a narrower envelope"
+            path.write_text(path.read_text().replace(marker, "Prohibited under current standing calendar policy", 1))
+
+        result = self.run_copy(mutate)
+        self.assertNotEqual(result.returncode, 0, result.stdout + result.stderr)
+        self.assertIn("Authority matrix", result.stdout)
+
+    def test_rejects_source_specific_customization_default(self):
+        def mutate(clone):
+            path = clone / "CUSTOMIZE.md"
+            marker = "explicit confirmation for calendar mutation and identity-bearing communication unless adopter-defined standing policy is stricter or grants a narrower authorization"
+            path.write_text(path.read_text().replace(marker, "default-deny for calendar mutation and identity-bearing communication", 1))
+
+        result = self.run_copy(mutate)
+        self.assertNotEqual(result.returncode, 0, result.stdout + result.stderr)
+        self.assertIn("CUSTOMIZE.md", result.stdout)
+
+
 class StatisticalEvidenceGateCanaryTests(CanaryHarness):
     def test_rejects_loss_of_search_family_boundary(self):
         def mutate(clone):

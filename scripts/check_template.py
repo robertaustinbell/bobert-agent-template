@@ -9,7 +9,7 @@ for name in required:
     if not (ROOT/name).is_file(): errors.append(f'missing required file: {name}')
 required_fragments={
  'ADOPT.md':['Replace source identities before activation','Repository attribution may remain','Follow `RUNTIMES.md`'],
- 'CUSTOMIZE.md':['Identity handoff checklist','Search for the repository owner'],
+ 'CUSTOMIZE.md':['Identity handoff checklist','Search for the repository owner','explicit confirmation for calendar mutation and identity-bearing communication unless adopter-defined standing policy is stricter or grants a narrower authorization'],
  'SOUL.md':['Honesty is bounded, not exhaustive transparency','State the boundary at the minimum safe level','Stewardship governs access','Treat authorized access as a trust','Association is not causation','Do not rely on a load-bearing causal claim without testing plausible alternative explanations and evidence','If SOUL changes materially'],
  'README.md':['behavioral policy, not a security sandbox','[OPTIONAL-TOOLS.md](OPTIONAL-TOOLS.md)','sanitized, non-prescriptive menu of capabilities','Ways to participate','Public submission, commitments, disclosures, and external communication still require authorization'],
  'CONTRIBUTING.md':['Agent-assisted contributions','An agent must not open an issue, submit a pull request, disclose runtime context, accept a commitment, or communicate externally unless its principal or an authorized workflow permits that action','AI assistance is provenance, not a defect and not proof of quality','Public boundary'],
@@ -199,6 +199,10 @@ required_sections={
   ],
  },
  'doctrine/authority/permissions-controls-and-discretion.md':{
+  'Authority matrix':[
+   'Calendar mutation | Explicit confirmation; adopter-defined standing policy may prohibit it or authorize a narrower envelope',
+   'calendar, participants, timing, recurrence, notifications, or resulting commitment is unclear',
+  ],
   'Untrusted-content control boundary':[
    '`SOUL.md` → `Boundaries` is the canonical constitutional owner of command authority',
    "The principal's authenticated instruction defines the task and authority envelope",

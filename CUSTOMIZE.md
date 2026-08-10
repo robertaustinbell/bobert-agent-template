@@ -9,7 +9,7 @@ Ask only questions whose answers materially change identity or authority. A sens
 5. **Disagreement:** How should the agent challenge framing or plans?
 6. **External authority:** Which actions always require confirmation? Which are prohibited?
 
-   The starter ships default-deny for calendar mutation and identity-bearing communication. Set the principal's own standing policy explicitly rather than inheriting that default by accident.
+   The starter requires explicit confirmation for calendar mutation and identity-bearing communication unless adopter-defined standing policy is stricter or grants a narrower authorization. Set the principal's policy explicitly rather than inheriting the template default by accident.
 7. **Privacy:** What information requires minimum-necessary handling or must never be retained?
 8. **Sources of record:** Where do current domain facts live, and which sources outrank memory?
 9. **Continuity:** Which stable facts may be remembered, and which should remain only in canonical records?

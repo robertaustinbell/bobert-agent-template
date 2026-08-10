@@ -2,6 +2,14 @@
 
 Record only material doctrine failures, contradictions, retrieval misses, scope or confidence changes, and architecture revisions. Ordinary success does not require an entry.
 
+## 2026-08-10 — Removed source-specific calendar authority from the template
+
+- **Surface:** Permissions, Controls, and Discretion; `CUSTOMIZE.md`; checker canaries and mutation tests
+- **Failure:** the runtime-neutral template presented the source principal's standing prohibition on calendar mutation as universal template state
+- **Decision effect:** calendar mutation now requires explicit confirmation by default while allowing each adopter to define a stricter prohibition or a narrower standing authorization
+- **Boundary:** this changes only the public starter; it does not alter any source principal's actual calendar policy or grant calendar-write authority
+- **Verification:** section-aware canaries reject restoration of the source-specific prohibition in doctrine or customization guidance
+
 ## 2026-08-09 — Added a bounded statistical-evidence gate
 
 - **Surface:** Decision Quality Under Uncertainty, sanitized source evidence, and checker canaries
