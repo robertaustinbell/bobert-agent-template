@@ -4,7 +4,7 @@ import re, subprocess, sys
 ROOT=Path(__file__).resolve().parents[1]
 errors=[]
 SKIP_PARTS={'.git','__pycache__'}
-required=['README.md','ADOPT.md','CUSTOMIZE.md','FIRST-WEEK.md','FIELD-TESTING.md','CONTRIBUTING.md','RUNTIMES.md','OPTIONAL-TOOLS.md','SECURITY.md','.github/ISSUE_TEMPLATE/concept-field-test.yml','.github/ISSUE_TEMPLATE/idea-proposal.yml','.github/ISSUE_TEMPLATE/adoption-runtime-problem.yml','.github/PULL_REQUEST_TEMPLATE.md','.github/workflows/validate.yml','SOUL.md','GOVERNANCE.md','LINEAGE.md','SYNC.md','LICENSE','index.md']
+required=['README.md','ADOPT.md','CUSTOMIZE.md','FIRST-WEEK.md','FIELD-TESTING.md','CONTRIBUTING.md','RUNTIMES.md','OPTIONAL-TOOLS.md','SECURITY.md','.github/ISSUE_TEMPLATE/concept-field-test.yml','.github/ISSUE_TEMPLATE/idea-proposal.yml','.github/ISSUE_TEMPLATE/adoption-runtime-problem.yml','.github/PULL_REQUEST_TEMPLATE.md','.github/workflows/validate.yml','SOUL.md','GOVERNANCE.md','LINEAGE.md','SYNC.md','LICENSE','index.md','skills/authority-effect-contracts/SKILL.md','skills/authority-effect-contracts/scripts/contracts.py','skills/authority-effect-contracts/scripts/test_contracts.py','skills/authority-effect-contracts/references/schemas/authority-manifest-v1.schema.json','skills/authority-effect-contracts/references/schemas/external-effect-receipt-v1.schema.json']
 for name in required:
     if not (ROOT/name).is_file(): errors.append(f'missing required file: {name}')
 required_fragments={
@@ -30,7 +30,7 @@ required_fragments={
  '.github/ISSUE_TEMPLATE/idea-proposal.yml':['Doctrine or operating idea','Strongest objection or competing explanation','Reversal or narrowing condition','I reviewed the proposal\'s factual claims and any agent-assisted material'],
  '.github/ISSUE_TEMPLATE/adoption-runtime-problem.yml':['Adoption or runtime problem','Template version or commit','Degraded-context behavior','I removed credentials, personal records, private prompts or messages'],
  '.github/PULL_REQUEST_TEMPLATE.md':['Decision effect','Strongest objection','Verification performed','Any public submission or external communication was authorized by the responsible person or organization'],
- '.github/workflows/validate.yml':['permissions:','contents: read','git diff --exit-code -- index.md','python3 -m unittest scripts/test_check_template.py','python3 scripts/check_template.py'],
+ '.github/workflows/validate.yml':['permissions:','contents: read','git diff --exit-code -- index.md','python3 -m unittest scripts/test_check_template.py','python3 scripts/check_template.py','python3 skills/authority-effect-contracts/scripts/test_contracts.py'],
 }
 required_sections={
  'evidence/sources/book-of-why-pearl-mackenzie-2018.md':{

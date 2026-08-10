@@ -1,0 +1,12 @@
+{
+  "schema_version": "external-effect-receipt/v1",
+  "receipt_id": "report-write-requested",
+  "effect_status": "requested",
+  "evidence_completeness": "unknown",
+  "target": "/tmp/authority-contract-example/report.md",
+  "operation": "write_named_artifact",
+  "acting_surface": null,
+  "observed_at": null,
+  "verification_evidence": [],
+  "sensitive_payload_retained": false
+}

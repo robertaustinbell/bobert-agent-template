@@ -24,7 +24,8 @@ decision_effect:
   - separate access from authority and reasoning from execution
   - preserve the principal's decision ownership without demanding confirmation for already-authorized mechanics
   - stop or contain consequential failure instead of improvising side effects
-implemented_by: []
+implemented_by:
+  - skills/authority-effect-contracts
 lineage: LINEAGE.md
 known_failures:
   - treating reversibility as permission

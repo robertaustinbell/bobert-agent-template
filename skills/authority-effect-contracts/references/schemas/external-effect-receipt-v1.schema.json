@@ -1,0 +1,50 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "external-effect-receipt/v1",
+  "type": "object",
+  "additionalProperties": false,
+  "required": ["schema_version", "receipt_id", "effect_status", "evidence_completeness", "target", "operation", "acting_surface", "observed_at", "verification_evidence", "sensitive_payload_retained"],
+  "properties": {
+    "schema_version": {"const": "external-effect-receipt/v1"},
+    "receipt_id": {"type": "string", "minLength": 1},
+    "effect_status": {"enum": ["requested", "prepared", "attempted", "observed_succeeded", "observed_failed", "unknown"]},
+    "evidence_completeness": {"enum": ["complete", "partial", "unknown"]},
+    "target": {"type": "string", "minLength": 1},
+    "operation": {"type": "string", "minLength": 1},
+    "acting_surface": {"type": ["string", "null"], "minLength": 1},
+    "observed_at": {"type": ["string", "null"], "format": "date-time"},
+    "verification_evidence": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": ["kind", "handle", "observed_result"],
+        "properties": {
+          "kind": {"type": "string", "minLength": 1},
+          "handle": {"type": "string", "minLength": 1},
+          "observed_result": {"type": "string", "minLength": 1}
+        }
+      }
+    },
+    "sensitive_payload_retained": {"const": false}
+  },
+  "allOf": [
+    {
+      "if": {"properties": {"effect_status": {"enum": ["attempted", "observed_succeeded", "observed_failed"]}}},
+      "then": {
+        "properties": {
+          "acting_surface": {"type": "string", "minLength": 1},
+          "observed_at": {"type": "string", "format": "date-time"}
+        }
+      }
+    },
+    {
+      "if": {"properties": {"effect_status": {"const": "observed_succeeded"}}},
+      "then": {"properties": {"verification_evidence": {"minItems": 1}}}
+    },
+    {
+      "if": {"properties": {"effect_status": {"enum": ["requested", "prepared"]}}},
+      "then": {"properties": {"verification_evidence": {"maxItems": 0}}}
+    }
+  ]
+}

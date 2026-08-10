@@ -61,6 +61,28 @@ class ContributorIntakeCanaryTests(CanaryHarness):
         self.assertIn("CONTRIBUTING.md", result.stdout)
 
 
+class AuthorityEffectContractCanaryTests(CanaryHarness):
+    REQUIRED_CONTRACT_FILES = (
+        "skills/authority-effect-contracts/SKILL.md",
+        "skills/authority-effect-contracts/scripts/contracts.py",
+        "skills/authority-effect-contracts/scripts/test_contracts.py",
+        "skills/authority-effect-contracts/references/schemas/authority-manifest-v1.schema.json",
+        "skills/authority-effect-contracts/references/schemas/external-effect-receipt-v1.schema.json",
+    )
+
+    def test_requires_each_contract_surface(self):
+        for relative_path in self.REQUIRED_CONTRACT_FILES:
+            with self.subTest(relative_path=relative_path):
+                def mutate(clone, path=relative_path):
+                    target = clone / path
+                    if target.exists():
+                        target.unlink()
+
+                result = self.run_copy(mutate)
+                self.assertNotEqual(result.returncode, 0, result.stdout + result.stderr)
+                self.assertIn(f"missing required file: {relative_path}", result.stdout)
+
+
 class ReadmeGovernedHomesTests(CanaryHarness):
     REQUIRED_HOMES = ("`skills/`", "`decisions/`", "`domain/`", "`evidence/`", "`archive/`", "`log.md`")
 

@@ -1,0 +1,12 @@
+{
+  "skill": "authority-effect-contracts",
+  "purpose": "Trigger for consequential delegation-envelope validation and structured external-effect receipt checks, not routine execution.",
+  "cases": [
+    {"id":"positive-child-envelope","prompt":"Validate that this subagent authority manifest cannot exceed the parent before dispatch.","should_trigger":true},
+    {"id":"positive-effect-receipt","prompt":"Check whether this attempted external action has enough observed evidence to be called successful.","should_trigger":true},
+    {"id":"positive-automation-contract","prompt":"Create a machine-checkable authority envelope and effect receipt for this consequential automation.","should_trigger":true},
+    {"id":"near-miss-read-only","prompt":"Read this public documentation page and summarize it.","should_trigger":false},
+    {"id":"near-miss-routine-tests","prompt":"Run the already-authorized unit tests and report the output.","should_trigger":false},
+    {"id":"near-miss-general-advice","prompt":"Explain the difference between authority and technical access.","should_trigger":false}
+  ]
+}

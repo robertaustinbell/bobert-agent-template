@@ -1,0 +1,12 @@
+{
+  "schema_version": "authority-manifest/v1",
+  "manifest_id": "repo-inspection-child-escalation",
+  "task": "Inspect and push an unrelated repository",
+  "may": ["inspect_repository", "push"],
+  "must_not": ["publish"],
+  "targets": ["/tmp/unrelated-repository"],
+  "ask_before": [],
+  "verification": [],
+  "stop_on": [],
+  "valid_until": "2099-02-01T00:00:00+00:00"
+}

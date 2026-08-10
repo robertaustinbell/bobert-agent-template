@@ -7,10 +7,10 @@ Record only material doctrine failures, contradictions, retrieval misses, scope 
 - **Doctrine:** `doctrine/authority/permissions-controls-and-discretion.md`
 - **Trigger:** a private implementation review exposed portable ways to make delegated authority and external-effect reporting inspectable without adding another operating layer.
 - **Expected:** preserve authorization boundaries across delegation and prevent requested, prepared, or attempted work from being reported as completed.
-- **Observed:** the template already owned authorization envelopes, sub-agent non-escalation, and partial-failure reporting but left their machine representation and effect-state vocabulary implicit.
+- **Observed:** a bounded runtime-neutral skill now validates structural conformance, child non-escalation, expiry, effect-state/evidence separation, and observed-success evidence; fifteen tests and invalid fixtures pass.
 - **Material effect:** consequential delegation may use a compact authority manifest; external effects distinguish requested, prepared, attempted, observed success, observed failure, and unknown.
-- **Evidence:** structural doctrine integration only; production benefit and ceremony cost remain unobserved.
-- **Correction:** refined the existing authority owner rather than adding a new doctrine page, runtime, or ledger requirement.
+- **Evidence:** `skills/authority-effect-contracts`; the workflow runs its fixture suite. Runtime enforcement and universal emission remain intentionally unclaimed.
+- **Correction:** refined the existing authority owner and added a narrow procedure rather than another doctrine page, runtime, or ledger requirement.
 
 ## 2026-08-10 — Exposed governed homes in the README architecture map
 

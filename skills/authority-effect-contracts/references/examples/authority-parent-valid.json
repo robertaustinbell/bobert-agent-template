@@ -1,0 +1,12 @@
+{
+  "schema_version": "authority-manifest/v1",
+  "manifest_id": "repo-inspection-parent",
+  "task": "Inspect the named local repository and write one bounded report",
+  "may": ["inspect_repository", "write_named_artifact", "run_tests"],
+  "must_not": ["push", "publish", "merge", "send_message", "spend_money"],
+  "targets": ["/tmp/authority-contract-example"],
+  "ask_before": ["scope_expansion", "new_external_effect"],
+  "verification": ["artifact_hash_recorded", "tests_pass"],
+  "stop_on": ["ambiguous_target", "partial_external_failure", "policy_change"],
+  "valid_until": "2099-01-01T00:00:00+00:00"
+}

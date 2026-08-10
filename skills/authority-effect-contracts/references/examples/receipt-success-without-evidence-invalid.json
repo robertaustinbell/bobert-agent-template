@@ -1,0 +1,12 @@
+{
+  "schema_version": "external-effect-receipt/v1",
+  "receipt_id": "report-write-false-success",
+  "effect_status": "observed_succeeded",
+  "evidence_completeness": "complete",
+  "target": "/tmp/authority-contract-example/report.md",
+  "operation": "write_named_artifact",
+  "acting_surface": "local_filesystem",
+  "observed_at": "2026-08-10T13:30:00+00:00",
+  "verification_evidence": [],
+  "sensitive_payload_retained": false
+}

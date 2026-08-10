@@ -29,3 +29,4 @@ jobs:
         run: |
           python3 -m unittest scripts/test_check_template.py
           python3 scripts/check_template.py
+          python3 skills/authority-effect-contracts/scripts/test_contracts.py
