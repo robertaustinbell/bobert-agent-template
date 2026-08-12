@@ -113,6 +113,16 @@ A second pass by the same model is useful discrepancy detection but not independ
 
 This candidate adapts the completeness/correctness distinction and reference, result, specification, and method–artifact audit classes described in Google Research's [Science One Framework](https://research.google/blog/science-one-framework-a-verifiable-autonomous-research-framework-via-chain-of-evidence/) and Meng et al., [“ScientistOne: Towards Human-Level Autonomous Research via Chain-of-Evidence”](https://arxiv.org/abs/2605.26340) (May 2026). The source is an author-reported preprint evaluating 75 generated papers across selected technical tasks. Its method–code alignment metric is LLM-judged; human reviewers validated only a sample, and the reported scores were not systematically corrected from that review. Its reported zero phantom references means 0 of 337 references in that evaluated sample, not a general guarantee. Treat the framework as experimental and test whether this bounded practice earns its carrying cost.
 
+## Memory-conformance candidate test
+
+Use this when changing a runtime's memory provider, retrieval placement, compaction recovery, or ambient context injection. Build the corpus from invented people, projects, sources, and scenarios; changing names in a real private situation is not synthetic evidence.
+
+Keep adapter-visible prompts and facts separate from evaluator-held expectations that the system under test cannot inspect. Include relevant-retrieval cases and quiet cases where no memory should surface, then test current canonical-source precedence over stale memory, named-subject attribution, within-session duplicate suppression, and source or tenant isolation. Score answer usefulness separately from retrieval behavior: finding the right fact does not prove that the answer used it correctly.
+
+Record injected-context cost, but do not optimize tokens ahead of correctness, isolation, or source authority. Label each result as a production seam, simulated seam, or reference-contract test; passing authored fixtures does not establish production reliability. When tuning against a visible suite, retain fresh or held-out cases owned by the evaluator and preserve failures rather than moving thresholds until the system passes.
+
+Stop or redesign the test if the adapter can read the expectations, isolation is self-certified by the system being scored, cost is only an unverified harness assertion, cases begin to mirror private situations, or repeated tuning turns the suite into benchmark theater. A clean null result includes finding that the memory change adds context or latency without improving a decision, answer, continuity failure, or repair.
+
 ## Untrusted-content boundary candidate test
 
 Use three benign fixtures around the same task and task-relevant facts:

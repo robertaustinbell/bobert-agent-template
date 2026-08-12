@@ -2,6 +2,13 @@
 
 Record only material doctrine failures, contradictions, retrieval misses, scope or confidence changes, and architecture revisions. Ordinary success does not require an entry.
 
+## 2026-08-12 — Added a memory-conformance field-test protocol
+
+- **Surface:** `FIELD-TESTING.md`; checker canaries and mutation tests
+- **Decision effect:** gives memory changes a bounded synthetic test for useful recall, quiet non-retrieval, current-source precedence, attribution, duplicate suppression, isolation, answer fidelity, and context cost
+- **Boundary:** authored fixtures and reference-contract results do not establish production reliability; evaluator expectations must remain outside the tested adapter's readable boundary, and fresh or held-out cases are required when tuning
+- **Verification:** section-aware canaries and deletion/relocation mutations protect the synthetic-corpus, evaluator-held-expectations, canonical-source, isolation, seam-labeling, and no-production-claim safeguards
+
 ## 2026-08-10 — Added machine-checkable authority and effect-state distinctions
 
 - **Doctrine:** `doctrine/authority/permissions-controls-and-discretion.md`

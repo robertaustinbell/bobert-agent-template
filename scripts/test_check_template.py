@@ -21,6 +21,47 @@ class CanaryHarness(unittest.TestCase):
             return subprocess.run(CHECKER, cwd=clone, capture_output=True, text=True)
 
 
+class MemoryConformanceCanaryTests(CanaryHarness):
+    MARKERS = (
+        "invented people, projects, sources, and scenarios",
+        "evaluator-held expectations that the system under test cannot inspect",
+        "current canonical-source precedence over stale memory",
+        "source or tenant isolation",
+        "Score answer usefulness separately from retrieval behavior",
+        "passing authored fixtures does not establish production reliability",
+        "fresh or held-out cases owned by the evaluator",
+    )
+
+    def test_requires_each_memory_conformance_safeguard(self):
+        for marker in self.MARKERS:
+            with self.subTest(marker=marker):
+                def mutate(clone, value=marker):
+                    path = clone / "FIELD-TESTING.md"
+                    path.write_text(path.read_text().replace(value, "removed safeguard", 1))
+
+                result = self.run_copy(mutate)
+                self.assertNotEqual(result.returncode, 0, result.stdout + result.stderr)
+                self.assertIn("Memory-conformance candidate test", result.stdout)
+
+    def test_rejects_cross_section_relocation(self):
+        marker = "passing authored fixtures does not establish production reliability"
+
+        def mutate(clone):
+            path = clone / "FIELD-TESTING.md"
+            text = path.read_text()
+            text = text.replace(marker, "authored fixtures are limited", 1)
+            text = text.replace(
+                "## Untrusted-content boundary candidate test",
+                f"## Untrusted-content boundary candidate test\n\n{marker}.",
+                1,
+            )
+            path.write_text(text)
+
+        result = self.run_copy(mutate)
+        self.assertNotEqual(result.returncode, 0, result.stdout + result.stderr)
+        self.assertIn("Memory-conformance candidate test", result.stdout)
+
+
 class ContributorIntakeCanaryTests(CanaryHarness):
     REQUIRED_INTAKE = (
         ".github/ISSUE_TEMPLATE/idea-proposal.yml",

@@ -258,6 +258,17 @@ required_sections={
    'A second pass by the same model is useful discrepancy detection but not independent proof',
    'zero phantom references means 0 of 337 references in that evaluated sample, not a general guarantee',
   ],
+  'Memory-conformance candidate test':[
+   'invented people, projects, sources, and scenarios',
+   'evaluator-held expectations that the system under test cannot inspect',
+   'current canonical-source precedence over stale memory',
+   'source or tenant isolation',
+   'Score answer usefulness separately from retrieval behavior',
+   'production seam, simulated seam, or reference-contract test',
+   'passing authored fixtures does not establish production reliability',
+   'fresh or held-out cases owned by the evaluator',
+   'benchmark theater',
+  ],
   'Value-sensitive decision candidate test':[
    'type only the value claims that could change the decision',
    'separate prediction and representation from explanation, justification, legitimacy, and authority',
