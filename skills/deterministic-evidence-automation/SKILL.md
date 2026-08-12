@@ -69,6 +69,8 @@ Keep these fields separate where applicable:
 
 An override records an authorized acceptance decision; it does not alter the observed verification result or manufacture evidence.
 
+For how evidence packets, verification receipts, authority manifests, effect receipts, and stable handles cross skill boundaries, follow the shared [Composition contract](../COMPOSITION.md). The packet must not become a self-certifying substitute for the downstream read-back.
+
 ## Claim-to-Evidence Contract
 
 For consequential evidence-bearing outputs—not routine low-stakes summaries—construct claim links while producing the output rather than reconstructing provenance afterward. A claim is **load-bearing** when its falsity would materially change the recommendation, decision, reported result, or verification conclusion.

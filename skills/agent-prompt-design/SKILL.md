@@ -187,6 +187,8 @@ For reproducible evaluations or consequential handoffs, package the reviewed con
 
 For external writes, require a verifiable handle and independently read it back when possible.
 
+For the producer/consumer wiring among authority manifests, input manifests, verification packets, effect receipts, handles, and the final claim, follow the shared [Composition contract](../COMPOSITION.md). Do not invent a parallel handoff protocol inside a task prompt.
+
 ## Compact Prompt Template
 
 ```markdown

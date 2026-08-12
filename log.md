@@ -2,6 +2,15 @@
 
 Record only material doctrine failures, contradictions, retrieval misses, scope or confidence changes, and architecture revisions. Ordinary success does not require an entry.
 
+## 2026-08-12 — Document and check cross-skill composition
+
+- Added one shared composition contract for authority manifests, reproducible input manifests, producer claims, verification packets, external-effect receipts, stable handles, and bounded final claims.
+- Added producer/consumer ownership, lifecycle order, correlation and staleness rules, failure behavior, and a synthetic end-to-end example; linked all four participating skills to that owner.
+- Added a canonical structured untrusted-content fixture set with one synthetic authenticated task, constant invented facts, three complete source payloads, and per-case expected outcomes; `RUNTIMES.md` and `FIELD-TESTING.md` share its IDs, while the checker rejects missing/vacuous payloads and cross-surface ID drift.
+- Added light structural checks for public source-evidence records. These checks establish required provenance fields, source identity syntax, coverage-section presence, and a limits section for full-coverage claims; they do not prove that inspection or coverage claims are true.
+- Normalized adopter-policy wording in the authority matrix, removed two stray blank lines, and made missing-section diagnostics name the expected and nearby active headings.
+- The static checks still do not prove runtime behavioral effect or adversarial robustness. A hidden-fixture or human red-team field test remains necessary before stronger claims.
+
 ## 2026-08-12 — Added a memory-conformance field-test protocol
 
 - **Surface:** `FIELD-TESTING.md`; checker canaries and mutation tests

@@ -404,7 +404,6 @@ Test, when relevant:
 
 Sensitivity is information. It may show that the choice depends on a real value judgment. Do not average representations merely to manufacture stability.
 
-
 ## 8. Reject assertion quotas and arity theater
 
 ### Assertion quotas
@@ -525,7 +524,6 @@ For consequential uncertain decisions, record proportionally:
 - expected outcome or range;
 - what success and failure would look like;
 - review trigger or date when the result will become observable.
-
 
 ## 13. Judge the decision, not only the outcome
 

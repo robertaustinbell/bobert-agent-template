@@ -70,9 +70,9 @@ Do not flatten these into “preserve agency”:
 | Reason and compare options | Allowed | a missing fact makes the recommendation materially different and cannot be retrieved |
 | Draft privately for the principal | Allowed when requested or clearly useful | draft contains sensitive third-party content or implies a commitment |
 | Execute reversible internal mechanics | Allowed inside explicit scope | mechanics choose among materially different outcomes or expand systems/files |
-| Send identity-bearing communication | Explicit confirmation unless standing policy says otherwise | recipient, channel, wording, attachments, or identity is unclear |
+| Send identity-bearing communication | Explicit confirmation; adopter-defined standing policy may prohibit it or authorize a narrower envelope | recipient, channel, wording, attachments, or identity is unclear |
 | Calendar mutation | Explicit confirmation; adopter-defined standing policy may prohibit it or authorize a narrower envelope | calendar, participants, timing, recurrence, notifications, or resulting commitment is unclear |
-| Purchase, money movement, paid signup | Explicit confirmation | amount, terms, renewal, account, or cancellation is unclear |
+| Purchase, money movement, paid signup | Explicit confirmation; adopter-defined standing policy may prohibit it or authorize a narrower envelope | amount, terms, renewal, account, or cancellation is unclear |
 | Create or alter external commitment | Explicit confirmation | always before commitment unless a specific standing envelope exists |
 | Destructive or irreversible action | Explicit confirmation and verified target | recovery, blast radius, or ownership is uncertain |
 | Expand task scope | Not implicit | new object, recipient, system, permission, or public effect is material |

@@ -32,6 +32,8 @@ Use only when a consequential delegated or automated task benefits from machine-
 5. Treat a valid receipt as a structurally conforming claim. Independently verify its handle or read-back when consequential.
 6. Revalidate when task, target, executor, policy, requested effect, or contract version changes.
 
+Use the shared [Composition contract](../COMPOSITION.md) for artifact ownership, lifecycle order, task/run correlation, downstream handle resolution, staleness, and failure behavior. These validators own only their stated structural checks.
+
 ## Commands
 
 ```bash

@@ -1,10 +1,10 @@
 #!/usr/bin/env python3
 from pathlib import Path
-import re, subprocess, sys
+import json, re, subprocess, sys
 ROOT=Path(__file__).resolve().parents[1]
 errors=[]
 SKIP_PARTS={'.git','__pycache__'}
-required=['README.md','ADOPT.md','CUSTOMIZE.md','FIRST-WEEK.md','FIELD-TESTING.md','CONTRIBUTING.md','RUNTIMES.md','OPTIONAL-TOOLS.md','SECURITY.md','.github/ISSUE_TEMPLATE/concept-field-test.yml','.github/ISSUE_TEMPLATE/idea-proposal.yml','.github/ISSUE_TEMPLATE/adoption-runtime-problem.yml','.github/PULL_REQUEST_TEMPLATE.md','.github/workflows/validate.yml','SOUL.md','GOVERNANCE.md','LINEAGE.md','SYNC.md','LICENSE','index.md','skills/README.md','skills/agent-prompt-design/SKILL.md','skills/artifact-verification/SKILL.md','skills/artifact-verification/references/fresh-local-verification.md','skills/deterministic-evidence-automation/SKILL.md','skills/authority-effect-contracts/SKILL.md','skills/authority-effect-contracts/scripts/contracts.py','skills/authority-effect-contracts/scripts/test_contracts.py','skills/authority-effect-contracts/references/schemas/authority-manifest-v1.schema.json','skills/authority-effect-contracts/references/schemas/external-effect-receipt-v1.schema.json']
+required=['README.md','ADOPT.md','CUSTOMIZE.md','FIRST-WEEK.md','FIELD-TESTING.md','CONTRIBUTING.md','RUNTIMES.md','OPTIONAL-TOOLS.md','SECURITY.md','.github/ISSUE_TEMPLATE/concept-field-test.yml','.github/ISSUE_TEMPLATE/idea-proposal.yml','.github/ISSUE_TEMPLATE/adoption-runtime-problem.yml','.github/PULL_REQUEST_TEMPLATE.md','.github/workflows/validate.yml','SOUL.md','GOVERNANCE.md','LINEAGE.md','SYNC.md','LICENSE','index.md','skills/README.md','skills/COMPOSITION.md','evidence/fixtures/untrusted-content-v1.json','skills/agent-prompt-design/SKILL.md','skills/artifact-verification/SKILL.md','skills/artifact-verification/references/fresh-local-verification.md','skills/deterministic-evidence-automation/SKILL.md','skills/authority-effect-contracts/SKILL.md','skills/authority-effect-contracts/scripts/contracts.py','skills/authority-effect-contracts/scripts/test_contracts.py','skills/authority-effect-contracts/references/schemas/authority-manifest-v1.schema.json','skills/authority-effect-contracts/references/schemas/external-effect-receipt-v1.schema.json']
 for name in required:
     if not (ROOT/name).is_file(): errors.append(f'missing required file: {name}')
 required_fragments={
@@ -13,13 +13,15 @@ required_fragments={
  'SOUL.md':['Honesty is bounded, not exhaustive transparency','State the boundary at the minimum safe level','Stewardship governs access','Treat authorized access as a trust','Association is not causation','Do not rely on a load-bearing causal claim without testing plausible alternative explanations and evidence','If SOUL changes materially'],
  'README.md':['behavioral policy, not a security sandbox','[OPTIONAL-TOOLS.md](OPTIONAL-TOOLS.md)','sanitized, non-prescriptive menu of capabilities','Ways to participate','Public submission, commitments, disclosures, and external communication still require authorization','Governed homes','`skills/`','`decisions/`','`domain/`','`evidence/`','`archive/`','`log.md`','[`skills/`](skills/README.md)','repository presence is not installation or authority'],
  'skills/README.md':['portable, sanitized procedures','does **not** mean they are installed, enabled, connected to tools, or granted authority','[`agent-prompt-design`](agent-prompt-design/SKILL.md)','[`artifact-verification`](artifact-verification/SKILL.md)','[`deterministic-evidence-automation`](deterministic-evidence-automation/SKILL.md)','Private paths, case histories, live capability state, credentials, schedules, domain records, and standing permissions are excluded'],
- 'skills/agent-prompt-design/SKILL.md':['Design prompts as **executable task contracts**','Keep evaluation ownership separate from proposal','Grade the final artifact delivered to the user separately','A loop without fresh feedback is repetition, not learning'],
- 'skills/artifact-verification/SKILL.md':['State acceptance truths before choosing checks','implementation notes, executor summaries, subagent reports, and prior test output as claims to verify—not proof','If the source changes after verification, mark the receipt stale'],
- 'skills/deterministic-evidence-automation/SKILL.md':['deterministic code collects, normalizes, bounds, validates, and receipts evidence','Missing means unknown, never empty','monitoring may not silently rewrite the acceptance standard','Audit two properties separately','If any bound source changes, the receipt becomes stale','An override records an authorized acceptance decision; it does not alter the observed verification result or manufacture evidence'],
+ 'skills/COMPOSITION.md':['Producer and consumer map','Lifecycle and correlation','Failure behavior','Synthetic end-to-end example','same `task_id` must bind parent and child authority manifests','Structurally valid receipt with unresolved handle'],
+ 'skills/agent-prompt-design/SKILL.md':['Design prompts as **executable task contracts**','Keep evaluation ownership separate from proposal','Grade the final artifact delivered to the user separately','A loop without fresh feedback is repetition, not learning','[Composition contract](../COMPOSITION.md)'],
+ 'skills/artifact-verification/SKILL.md':['State acceptance truths before choosing checks','implementation notes, executor summaries, subagent reports, and prior test output as claims to verify—not proof','If the source changes after verification, mark the receipt stale','[Composition contract](../COMPOSITION.md)'],
+ 'skills/deterministic-evidence-automation/SKILL.md':['deterministic code collects, normalizes, bounds, validates, and receipts evidence','Missing means unknown, never empty','monitoring may not silently rewrite the acceptance standard','Audit two properties separately','If any bound source changes, the receipt becomes stale','An override records an authorized acceptance decision; it does not alter the observed verification result or manufacture evidence','[Composition contract](../COMPOSITION.md)'],
+ 'skills/authority-effect-contracts/SKILL.md':['[Composition contract](../COMPOSITION.md)'],
  'CONTRIBUTING.md':['Agent-assisted contributions','An agent must not open an issue, submit a pull request, disclose runtime context, accept a commitment, or communicate externally unless its principal or an authorized workflow permits that action','AI assistance is provenance, not a defect and not proof of quality','Public boundary'],
  'GOVERNANCE.md':['Discretion requires task-relevant competence','Normative basis: adopted repository policy','does not claim universal empirical validity'],
- 'FIELD-TESTING.md':['template tag or commit tested','Situational-understanding starter test','Critical-capability mapping candidate test','Do not force one decisive centre','Do not label a person as a vulnerability','Operational-friction candidate test','Friction is a cross-layer amplifier, not a seventh stage','Do not manufacture disruption in a live consequential system','Never label a person, relationship, dissent, or protected exercise of agency as “friction”','A clean null result includes finding that the check only renamed an already-known concern','Systems-feedback refinement candidate test','Do not force all three into every case','Do not transfer physical control equations literally to human systems','Value-sensitive decision candidate test','Do not infer consent or merit from agreement, satisfaction, predicted choice, or silence alone','Privacy and authority boundary','Untrusted-content boundary candidate test'],
- 'RUNTIMES.md':['Policy is not containment','behavioral policy, not a security sandbox','Three required decisions','Persistent identity','Identity update contract','record the installed canonical SOUL\'s provenance','immutable content identifier such as a commit or content hash','session-start comparison is a valid fallback only when','silent identity drift cannot be mechanically prevented','require an external update process','Doctrine activation and retrieval','Context degradation','Untrusted-content execution boundary','Illustrative example: Claude Projects','Verification probe','reports degraded context instead of fabricating','[OPTIONAL-TOOLS.md](OPTIONAL-TOOLS.md)'],
+ 'FIELD-TESTING.md':['template tag or commit tested','Situational-understanding starter test','Critical-capability mapping candidate test','Do not force one decisive centre','Do not label a person as a vulnerability','Operational-friction candidate test','Friction is a cross-layer amplifier, not a seventh stage','Do not manufacture disruption in a live consequential system','Never label a person, relationship, dissent, or protected exercise of agency as “friction”','A clean null result includes finding that the check only renamed an already-known concern','Systems-feedback refinement candidate test','Do not force all three into every case','Do not transfer physical control equations literally to human systems','Value-sensitive decision candidate test','Do not infer consent or merit from agreement, satisfaction, predicted choice, or silence alone','Privacy and authority boundary','Untrusted-content boundary candidate test','UTC-BASELINE','UTC-POSITIVE-CONTROL','UTC-ADVERSARIAL'],
+ 'RUNTIMES.md':['Policy is not containment','behavioral policy, not a security sandbox','Three required decisions','Persistent identity','Identity update contract','record the installed canonical SOUL\'s provenance','immutable content identifier such as a commit or content hash','session-start comparison is a valid fallback only when','silent identity drift cannot be mechanically prevented','require an external update process','Doctrine activation and retrieval','Context degradation','Untrusted-content execution boundary','Illustrative example: Claude Projects','Verification probe','reports degraded context instead of fabricating','[OPTIONAL-TOOLS.md](OPTIONAL-TOOLS.md)','UTC-BASELINE','UTC-POSITIVE-CONTROL','UTC-ADVERSARIAL'],
  'OPTIONAL-TOOLS.md':['Curated source-agent reference, not template state','Firecrawl capability','Naming an SDK or CLI here identifies an available implementation path','Wolfram Cloud MCP','The governing rule is still **job first, tool second**','The template does not install, configure, enable, or grant authority','credentials, tokens, account identifiers','That omission is part of the design, not an incomplete export'],
  'SECURITY.md':['private vulnerability reporting','Report a vulnerability','Ordinary doctrine disagreements'],
  'doctrine/capabilities/external-capability-governance.md':['Continuous watchers, polling loops, and background capture are disabled by default'],
@@ -381,6 +383,14 @@ def markdown_sections(text,heading,expected_level=2):
         sections.append('\n'.join(lines[start:]))
     return sections
 
+def active_headings(text,level=None):
+    headings=[]
+    for line in active_markdown(text).splitlines():
+        parsed=atx_heading(line)
+        if parsed and (level is None or parsed[0]==level):
+            headings.append(parsed)
+    return headings
+
 def prose_sentences(text):
     """Split prose for lexical canaries without treating common abbreviations as boundaries."""
     sentinel='\x00'
@@ -433,7 +443,13 @@ for name,sections in required_sections.items():
     for heading,fragments in sections.items():
         found=markdown_sections(text,heading,required_section_levels.get((name,heading),2))
         if len(found)!=1:
-            errors.append(f'{name} must contain exactly one active {heading!r} section; found {len(found)}')
+            level=required_section_levels.get((name,heading),2)
+            nearby=[title for found_level,title in active_headings(text,level)]
+            marker='#'*level
+            errors.append(
+                f"{name} expected heading {marker + ' ' + heading!r} exactly once; "
+                f"found {len(found)} matching sections; nearby active headings: {nearby}"
+            )
             continue
         section=found[0]
         for fragment in fragments:
@@ -452,6 +468,98 @@ if issue_form.is_file():
     if len(field_ids)!=len(set(field_ids)): errors.append('issue form has duplicate field ids')
     for field_type in ['markdown','input','dropdown','textarea','checkboxes']:
         if not re.search(rf'(?m)^  - type:\s*{field_type}\s*$',form): errors.append(f'issue form missing field type: {field_type}')
+
+fixture_path=ROOT/'evidence/fixtures/untrusted-content-v1.json'
+fixture_ids=[]
+if fixture_path.is_file():
+    try:
+        fixture=json.loads(fixture_path.read_text())
+    except (json.JSONDecodeError,OSError) as exc:
+        errors.append(f'invalid untrusted-content fixture JSON: {exc}')
+    else:
+        if fixture.get('schema_version')!='untrusted-content-fixture-set/v1':
+            errors.append('untrusted-content fixture has wrong schema_version')
+        task=fixture.get('authenticated_task')
+        facts=fixture.get('task_facts')
+        invariants=fixture.get('invariants')
+        rows=fixture.get('fixtures')
+        if not isinstance(task,dict) or not all(isinstance(task.get(key),str) and bool(task.get(key)) for key in ('task_id','instruction')):
+            errors.append('untrusted-content fixture synthetic payload requires authenticated_task task_id and instruction')
+        if not isinstance(task,dict) or not isinstance(task.get('allowed_effects'),list) or not task.get('allowed_effects') or any(not isinstance(item,str) or not item.strip() for item in task.get('allowed_effects',[])):
+            errors.append('untrusted-content fixture authenticated_task allowed_effects must be a non-empty string list')
+        if not isinstance(facts,dict) or not facts or any(not isinstance(key,str) or not key.strip() or not isinstance(value,str) or not value.strip() for key,value in facts.items()):
+            errors.append('untrusted-content fixture synthetic payload requires non-empty string task_facts')
+        required_invariants={
+            'authenticated_task_constant',
+            'task_facts_constant',
+            'synthetic_content_only',
+            'production_targets_forbidden',
+        }
+        if not isinstance(invariants,dict) or set(invariants)!=required_invariants or any(value is not True for value in invariants.values()):
+            errors.append('untrusted-content fixture invariants must contain the required true controls')
+        if not isinstance(rows,list) or not rows:
+            errors.append('untrusted-content fixture synthetic payload requires a non-empty fixtures list')
+            rows=[]
+        fixture_ids=[]
+        for index,row in enumerate(rows):
+            if not isinstance(row,dict):
+                errors.append(f'untrusted-content fixture row {index} must be an object')
+                continue
+            fixture_id=row.get('id')
+            if not isinstance(fixture_id,str) or not fixture_id:
+                errors.append(f'untrusted-content fixture row {index} needs a non-empty id')
+            else:
+                fixture_ids.append(fixture_id)
+            for key in ('source_content','embedded_imperative_class'):
+                if not isinstance(row.get(key),str) or not row.get(key).strip():
+                    errors.append(f'untrusted-content fixture {fixture_id or index} needs non-empty {key}')
+            outcomes=row.get('expected_outcomes')
+            if not isinstance(outcomes,list) or not outcomes or any(not isinstance(item,str) or not item.strip() for item in outcomes):
+                errors.append(f'untrusted-content fixture {fixture_id or index} expected_outcomes must be a non-empty string list')
+            elif len(outcomes)!=len(set(outcomes)):
+                errors.append(f'untrusted-content fixture {fixture_id or index} has duplicate expected_outcomes')
+        required_ids={'UTC-BASELINE','UTC-POSITIVE-CONTROL','UTC-ADVERSARIAL'}
+        if set(fixture_ids)!=required_ids or len(fixture_ids)!=len(required_ids):
+            errors.append(f'untrusted-content fixture IDs must exactly equal {sorted(required_ids)}')
+        for surface in ['RUNTIMES.md','FIELD-TESTING.md']:
+            path=ROOT/surface
+            if not path.is_file(): continue
+            surface_text=active_markdown(path.read_text())
+            missing=[item for item in fixture_ids if item not in surface_text]
+            if missing: errors.append(f'{surface} untrusted-content fixture drift; missing IDs: {missing}')
+
+source_required=('title','type','citation')
+full_coverage_re=re.compile(r'(?i)\b(?:complete(?:ly)?|every page|all \d+ .*pages|full[- ]coverage)\b')
+for path in sorted((ROOT/'evidence/sources').glob('*.md')):
+    text=path.read_text()
+    relative=path.relative_to(ROOT)
+    if not text.startswith('---\n') or '\n---\n' not in text[4:]:
+        errors.append(f'bad source evidence frontmatter: {relative}')
+        continue
+    frontmatter,body=text[4:].split('\n---\n',1)
+    fields={}
+    for line in frontmatter.splitlines():
+        if ':' in line and not line.startswith((' ','\t')):
+            key,value=line.split(':',1)
+            fields[key.strip()]=value.strip()
+    for key in source_required:
+        if not fields.get(key): errors.append(f'{relative} source evidence missing {key}')
+    if fields.get('type')!='source-evidence': errors.append(f'{relative} source evidence type must be source-evidence')
+    if not fields.get('artifact'): errors.append(f'{relative} source evidence missing artifact')
+    if not fields.get('source_url') and not fields.get('sha256'):
+        errors.append(f'{relative} source evidence needs source_url or sha256 identity')
+    if 'sha256' in fields and not re.fullmatch(r'[0-9a-f]{64}',fields['sha256']):
+        errors.append(f'{relative} source evidence has invalid sha256')
+    coverage=markdown_sections(body,'Provenance and coverage',2)
+    if len(coverage)!=1: errors.append(f'{relative} source evidence requires one Provenance and coverage section')
+    limits=markdown_sections(body,'Limits and rejected transfers',2)
+    if full_coverage_re.search('\n'.join(coverage)):
+        has_nonblank_limits=(
+            len(limits)==1
+            and any(line.strip() and not line.lstrip().startswith('#') for line in limits[0].splitlines()[1:])
+        )
+        if not has_nonblank_limits:
+            errors.append(f'{relative} full-coverage claim requires a nonblank Limits and rejected transfers section')
 banned={
  'private identity':'Austin|Lourdes|Temperance|Upstate Organized|Bell household',
  'private path':r'/Users/|/root/|robertbell|\.hermes/cache|Documents/Agent-Ops-Wiki',

@@ -1,4 +1,5 @@
 #!/usr/bin/env python3
+import json
 import shutil
 import subprocess
 import tempfile
@@ -124,6 +125,118 @@ class AuthorityEffectContractCanaryTests(CanaryHarness):
                 self.assertIn(f"missing required file: {relative_path}", result.stdout)
 
 
+class CompositionContractTests(CanaryHarness):
+    REQUIRED_FILES = (
+        "skills/COMPOSITION.md",
+        "evidence/fixtures/untrusted-content-v1.json",
+    )
+
+    def test_requires_composition_contract_and_shared_fixture(self):
+        for relative_path in self.REQUIRED_FILES:
+            with self.subTest(relative_path=relative_path):
+                def mutate(clone, name=relative_path):
+                    target = clone / name
+                    if target.exists():
+                        target.unlink()
+
+                result = self.run_copy(mutate)
+                self.assertNotEqual(result.returncode, 0, result.stdout + result.stderr)
+                self.assertIn(f"missing required file: {relative_path}", result.stdout)
+
+    def test_rejects_skill_link_loss(self):
+        for relative_path in (
+            "skills/agent-prompt-design/SKILL.md",
+            "skills/artifact-verification/SKILL.md",
+            "skills/deterministic-evidence-automation/SKILL.md",
+            "skills/authority-effect-contracts/SKILL.md",
+        ):
+            with self.subTest(relative_path=relative_path):
+                def mutate(clone, name=relative_path):
+                    path = clone / name
+                    path.write_text(path.read_text().replace("[Composition contract]", "Composition notes", 1))
+
+                result = self.run_copy(mutate)
+                self.assertNotEqual(result.returncode, 0, result.stdout + result.stderr)
+                self.assertIn(relative_path, result.stdout)
+
+    def test_rejects_cross_surface_fixture_drift(self):
+        def mutate(clone):
+            path = clone / "FIELD-TESTING.md"
+            path.write_text(path.read_text().replace("UTC-BASELINE", "LOCAL-BASELINE", 1))
+
+        result = self.run_copy(mutate)
+        self.assertNotEqual(result.returncode, 0, result.stdout + result.stderr)
+        self.assertIn("untrusted-content fixture", result.stdout)
+
+    def test_rejects_fixture_without_synthetic_payloads(self):
+        def mutate(clone):
+            path = clone / "evidence/fixtures/untrusted-content-v1.json"
+            data = json.loads(path.read_text())
+            data.pop("authenticated_task", None)
+            data.pop("task_facts", None)
+            data.pop("fixtures", None)
+            path.write_text(json.dumps(data, indent=2) + "\n")
+
+        result = self.run_copy(mutate)
+        self.assertNotEqual(result.returncode, 0, result.stdout + result.stderr)
+        self.assertIn("synthetic payload", result.stdout)
+
+    def test_rejects_empty_fixture_expectations(self):
+        def mutate(clone):
+            path = clone / "evidence/fixtures/untrusted-content-v1.json"
+            data = json.loads(path.read_text())
+            data["fixtures"][0]["expected_outcomes"] = []
+            path.write_text(json.dumps(data, indent=2) + "\n")
+
+        result = self.run_copy(mutate)
+        self.assertNotEqual(result.returncode, 0, result.stdout + result.stderr)
+        self.assertIn("expected_outcomes", result.stdout)
+
+
+class SourceEvidenceStructureTests(CanaryHarness):
+    def test_rejects_missing_required_source_field(self):
+        def mutate(clone):
+            path = clone / "evidence/sources/chaos-crutchfield-farmer-packard-shaw-1986.md"
+            path.write_text(path.read_text().replace("artifact: public HTML transcription of the Scientific American article\n", "", 1))
+
+        result = self.run_copy(mutate)
+        self.assertNotEqual(result.returncode, 0, result.stdout + result.stderr)
+        self.assertIn("source evidence missing artifact", result.stdout)
+
+    def test_rejects_coverage_claim_without_limits_section(self):
+        def mutate(clone):
+            path = clone / "evidence/sources/chaos-crutchfield-farmer-packard-shaw-1986.md"
+            path.write_text(path.read_text().replace("## Limits and rejected transfers", "## Caveats", 1))
+
+        result = self.run_copy(mutate)
+        self.assertNotEqual(result.returncode, 0, result.stdout + result.stderr)
+        self.assertIn("full-coverage claim requires", result.stdout)
+
+    def test_rejects_empty_limits_section_for_full_coverage_claim(self):
+        def mutate(clone):
+            path = clone / "evidence/sources/chaos-crutchfield-farmer-packard-shaw-1986.md"
+            text = path.read_text()
+            start = text.index("## Limits and rejected transfers")
+            end = text.index("\n## Disposition", start)
+            path.write_text(text[:start] + "## Limits and rejected transfers\n\n" + text[end + 1:])
+
+        result = self.run_copy(mutate)
+        self.assertNotEqual(result.returncode, 0, result.stdout + result.stderr)
+        self.assertIn("nonblank Limits and rejected transfers", result.stdout)
+
+
+class CheckerDiagnosticTests(CanaryHarness):
+    def test_missing_section_error_names_expected_heading_and_discovered_headings(self):
+        def mutate(clone):
+            path = clone / "FIELD-TESTING.md"
+            path.write_text(path.read_text().replace("## Memory-conformance candidate test", "## Memory conformance test", 1))
+
+        result = self.run_copy(mutate)
+        self.assertNotEqual(result.returncode, 0, result.stdout + result.stderr)
+        self.assertIn("expected heading '## Memory-conformance candidate test'", result.stdout)
+        self.assertIn("nearby active headings", result.stdout)
+
+
 class ArtifactVerificationCanaryTests(CanaryHarness):
     REQUIRED_FILES = (
         "skills/artifact-verification/SKILL.md",
@@ -217,8 +330,8 @@ class RuntimeNeutralCalendarAuthorityTests(CanaryHarness):
     def test_rejects_source_specific_calendar_prohibition(self):
         def mutate(clone):
             path = clone / "doctrine/authority/permissions-controls-and-discretion.md"
-            marker = "Explicit confirmation; adopter-defined standing policy may prohibit it or authorize a narrower envelope"
-            path.write_text(path.read_text().replace(marker, "Prohibited under current standing calendar policy", 1))
+            marker = "| Calendar mutation | Explicit confirmation; adopter-defined standing policy may prohibit it or authorize a narrower envelope |"
+            path.write_text(path.read_text().replace(marker, "| Calendar mutation | Prohibited under current standing calendar policy |", 1))
 
         result = self.run_copy(mutate)
         self.assertNotEqual(result.returncode, 0, result.stdout + result.stderr)

@@ -35,6 +35,6 @@ A requested point estimate can acquire unwarranted authority when no principled 
 
 The intended decision effect is to prevent a selected, polished, or threshold-crossing result from being treated as stronger evidence than the full process that produced it. Confidence in the compact operational gate remains low until naturally triggered work demonstrates a distinct changed recommendation, evaluation design, abstention, verification, or repair.
 
-## Limits and disposition
+## Limits and rejected transfers
 
 This is a popular mathematics exposition, not current specialist authority for its dated empirical examples. The transfer does not establish causation, value, legitimacy, authorization, model-internal cognition, or the correctness of majority-agent aggregation. It supports one bounded amendment to Decision Quality Under Uncertainty, not a standalone statistics doctrine, identity change, or mandatory checklist.

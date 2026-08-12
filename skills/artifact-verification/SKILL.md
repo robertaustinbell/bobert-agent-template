@@ -56,6 +56,8 @@ Record, at minimum:
 
 Keep the record concise. The evidence should let a later agent reproduce the important checks without preserving credentials, private content, or a one-off transcript.
 
+When the artifact came from delegated work or supports an external-effect claim, use the shared [Composition contract](../COMPOSITION.md) to identify the producer claim, bound source/run, receipt or handle, downstream verifier, and final reporting owner.
+
 ## Semantic canaries and evidence receipts
 
 When static validators preserve required guidance or evidence metadata:
