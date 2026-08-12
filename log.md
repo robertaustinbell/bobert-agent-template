@@ -2,6 +2,13 @@
 
 Record only material doctrine failures, contradictions, retrieval misses, scope or confidence changes, and architecture revisions. Ordinary success does not require an entry.
 
+## 2026-08-12 — Added bounded runtime portability and decision intake
+
+- Added a runtime-adapter boundary: canonical doctrine remains the owner; client adapters may normalize native payloads and report exercised capability, but may not add standing authority or advertise speculative compatibility.
+- Added startup-context observability guidance that keeps the approved manifest independent of observed counts and hashes, while explicitly denying full-prompt, token, attention, retrieval, or behavioral proof.
+- Added an optional consequential-decision brief for remaining material choices; it is not required for routine work or execution after the responsible person has decided.
+- Kept the experimental forecast schema and validator private pending natural field use. This public delta is portable guidance, not evidence that any runtime implements it.
+
 ## 2026-08-12 — Hardened high-blast-radius boundaries and local skill guidance
 
 - Promoted section-aware canaries for the SOUL credentials and external-actions clauses and the RUNTIMES honest context-degradation fallback; coverage intentionally stops there rather than pinning every sentence.

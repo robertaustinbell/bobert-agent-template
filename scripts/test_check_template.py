@@ -22,6 +22,29 @@ class CanaryHarness(unittest.TestCase):
             return subprocess.run(CHECKER, cwd=clone, capture_output=True, text=True)
 
 
+class GovernanceHarvestCanaryTests(CanaryHarness):
+    def test_requires_decision_brief(self):
+        result = self.run_copy(lambda clone: (clone / "DECISION-BRIEF.md").unlink())
+        self.assertNotEqual(result.returncode, 0)
+        self.assertIn("missing required file: DECISION-BRIEF.md", result.stdout)
+
+    def test_rejects_runtime_adapter_boundary_loss(self):
+        def mutate(clone):
+            path = clone / "RUNTIMES.md"
+            path.write_text(path.read_text().replace("must not introduce universal policy, standing authority", "may add policy", 1))
+        result = self.run_copy(mutate)
+        self.assertNotEqual(result.returncode, 0)
+        self.assertIn("RUNTIMES.md", result.stdout)
+
+    def test_rejects_context_limit_loss(self):
+        def mutate(clone):
+            path = clone / "RUNTIMES.md"
+            path.write_text(path.read_text().replace("not a complete runtime-prompt", "complete runtime measurement", 1))
+        result = self.run_copy(mutate)
+        self.assertNotEqual(result.returncode, 0)
+        self.assertIn("RUNTIMES.md", result.stdout)
+
+
 class MemoryConformanceCanaryTests(CanaryHarness):
     MARKERS = (
         "invented people, projects, sources, and scenarios",

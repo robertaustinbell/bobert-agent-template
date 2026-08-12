@@ -36,6 +36,18 @@ Define what happens when identity, router, or doctrine cannot be loaded because 
 
 The agent should identify what is unavailable, avoid claiming or inventing its contents, and remain inside higher-priority policy and authority it can actually verify. If the missing material is load-bearing, stop or ask for the minimum retrieval or clarification needed to proceed safely.
 
+## Runtime adapter boundary
+
+Treat every genuinely supported runtime as a separate compatibility boundary. Keep universal identity and doctrine canonical; a thin adapter may provide only native discovery, payload normalization, and capability mapping. It must not introduce universal policy, standing authority, or a capability claim derived only from documentation.
+
+For each supported runtime, maintain a dated capability truth table, immutable canonical-source identity, known gaps, and evidence from native fixtures. Where applicable, test malformed input, missing authority, hostile retrieved instructions, post-approval action mutation, unavailable tools, tool-reported success without read-back, and effects verified through an independent handle or observation. Verify adapter drift from the canonical source mechanically. Do not ship speculative adapters for clients that have not been exercised, and do not infer universal mediation from one tested path.
+
+## Startup-context observability
+
+Inventory the declared always-loaded identity and router surfaces by stable path, count, and content hash. Keep the approved startup manifest independent of the observed inventory so an undeclared surface or stale baseline fails visibly. Review growth and duplication rather than inheriting a universal size quota.
+
+This measures declared files only. It is not a complete runtime-prompt, tokenizer, attention, retrieval, or behavioral-quality measurement; a clean inventory does not prove that the runtime loaded the files or followed them.
+
 ## Untrusted-content execution boundary
 
 This is a runtime implementation contract for the normative boundary in [Permissions, Controls, and Discretion](doctrine/authority/permissions-controls-and-discretion.md#untrusted-content-control-boundary); it does not create a second authority rule.
