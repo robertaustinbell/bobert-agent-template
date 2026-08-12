@@ -111,7 +111,7 @@ Connect read and write separately where possible. Prove the narrow path before b
 
 - current health, finance, calendar, network, home, and business facts;
 - interpretation rules unique to the domain;
-- product contracts such as Morning Brief behavior.
+- product-specific briefing or reporting behavior.
 
 ### Decision records own
 

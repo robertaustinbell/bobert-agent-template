@@ -1,13 +1,13 @@
 ---
 name: deterministic-evidence-automation
 description: Use when automating recurring evidence-heavy agent work.
-version: 1.4.0
+version: 1.5.0
 author: Bobert
 license: MIT
 metadata:
   hermes:
     tags: [automation, evidence-packet, context-engineering, cron, verification]
-    related_skills: [agent-prompt-design]
+    related_skills: [agent-prompt-design, operating-knowledge-maintenance]
 ---
 
 # Deterministic Evidence Automation
@@ -20,8 +20,6 @@ Convert recurring agent work from repeated retrieval and parsing into a two-stag
 2. a narrowly prompted model applies materiality, conflict resolution, prioritization, recommendations, privacy judgment, and wording.
 
 Use when a recurring job repeatedly revisits the same sources and spends model context on mechanical work.
-
-The procedure was refined through one bounded real-world application, not universally validated. Treat transfer to another domain, runtime, or workload as a hypothesis requiring local baseline, dry-run, and observed-delivery evidence.
 
 ## Design Procedure
 
@@ -52,6 +50,24 @@ For recurring observation or correction whose replay can create cost, duplicate 
 - maximum correction size, retry bound, and oscillation stop.
 
 Do not replay a correction merely because its result is not yet observable. First determine whether the prior action had enough time to propagate. A new material hazard may justify earlier intervention; stale state alone does not. Skip this timing contract for one-shot jobs and harmless read-only collection whose cadence cannot alter decisions, side effects, notifications, or resource use.
+
+## Outcome-backward verification and source binding
+
+For consequential artifact or automation claims, define the acceptance truths before selecting checks. Work backward from each truth through required artifacts and wiring to observed behavior. A producer, executor, or subagent summary is a claim; it may point to evidence but cannot certify itself. Runtime-behavior claims require behavioral evidence or an explicit `blocked`/`unresolved` result rather than symbol or file presence alone.
+
+Bind each verification receipt to the narrowest stable source identity available: repository commit plus dirty-state description, changed-path/content hashes, generated-artifact hash, input packet receipt, or another versioned source snapshot. Record the evidence-schema version. If any bound source changes, the receipt becomes stale for the changed truth and must not be reused as current proof. Prefer atomic receipt writes so interrupted generation fails loud rather than leaving a plausible partial record.
+
+Keep these fields separate where applicable:
+
+- acceptance truth and result: `verified | failed | blocked | unresolved`;
+- producer claim versus independently resolved evidence;
+- source identity and dirty/untracked state relevant to the result;
+- evidence references and verification method;
+- deviations and unresolved uncertainty;
+- external-effect state and receipt;
+- override actor, authority scope, reason, timestamp, expiry, and affected truth IDs.
+
+An override records an authorized acceptance decision; it does not alter the observed verification result or manufacture evidence.
 
 ## Claim-to-Evidence Contract
 
@@ -111,6 +127,20 @@ A production candidate passes only when:
 - **Trace correctness mistaken for artifact correctness:** inspect the final delivered output separately; correct internal state or tool use can still end in a stale, omitted, or incorrect user-facing claim.
 - **Evaluation-monitoring collapse:** a passing authored set is reported as production reliability, or production monitoring changes the standard instead of revealing behavior under a different sample.
 - **Premature corrective replay:** the loop treats action-to-effect delay as failure and issues duplicate or opposing corrections before the prior action settles. Repair the observation window, cooldown, deduplication, and oscillation stop rather than adding blind retries.
+
+## Evaluation hooks
+
+When evaluating a run, inspect the adopting environment's current governing sources rather than relying on remembered guidance. At minimum test:
+
+- smallest useful reversible step;
+- bounded adaptation and feedback loops;
+- critical-path focus;
+- configuration state-space cost;
+- subtraction before addition;
+- fail-loud and explicit partial state;
+- operational evidence versus documentation alone.
+
+Persist only distinctions that change future decisions, in the adopting environment's canonical source.
 
 ## Verification Record Template
 

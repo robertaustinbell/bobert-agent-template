@@ -83,6 +83,80 @@ class AuthorityEffectContractCanaryTests(CanaryHarness):
                 self.assertIn(f"missing required file: {relative_path}", result.stdout)
 
 
+class ArtifactVerificationCanaryTests(CanaryHarness):
+    REQUIRED_FILES = (
+        "skills/artifact-verification/SKILL.md",
+        "skills/artifact-verification/references/fresh-local-verification.md",
+    )
+    PROCEDURE_MARKERS = (
+        "Capture the narrowest stable source identity available",
+        "If the source changes after verification, mark the receipt stale",
+    )
+
+    def test_requires_each_artifact_verification_surface(self):
+        for relative_path in self.REQUIRED_FILES:
+            with self.subTest(relative_path=relative_path):
+                def mutate(clone, path=relative_path):
+                    target = clone / path
+                    if target.exists():
+                        target.unlink()
+
+                result = self.run_copy(mutate)
+                self.assertNotEqual(result.returncode, 0, result.stdout + result.stderr)
+                self.assertIn(f"missing required file: {relative_path}", result.stdout)
+
+    def test_rejects_loss_of_source_binding(self):
+        def mutate(clone):
+            path = clone / "skills/artifact-verification/SKILL.md"
+            marker = "If the source changes after verification, mark the receipt stale"
+            path.write_text(path.read_text().replace(marker, "Verification remains current after changes", 1))
+
+        result = self.run_copy(mutate)
+        self.assertNotEqual(result.returncode, 0, result.stdout + result.stderr)
+        self.assertIn("artifact-verification/SKILL.md", result.stdout)
+
+    def test_rejects_each_source_binding_clause_relocated_outside_procedure(self):
+        for marker in self.PROCEDURE_MARKERS:
+            with self.subTest(marker=marker):
+                def mutate(clone, phrase=marker):
+                    path = clone / "skills/artifact-verification/SKILL.md"
+                    text = path.read_text()
+                    line = next(line for line in text.splitlines() if phrase in line)
+                    text = text.replace(line, "", 1)
+                    text += f"\n## Unrelated notes\n\n{line}\n"
+                    path.write_text(text)
+
+                result = self.run_copy(mutate)
+                self.assertNotEqual(result.returncode, 0, result.stdout + result.stderr)
+                self.assertIn("section 'Procedure' missing required guidance", result.stdout)
+
+
+class DeterministicEvidenceSourceBindingCanaryTests(CanaryHarness):
+    MARKERS = (
+        "A producer, executor, or subagent summary is a claim",
+        "Bind each verification receipt to the narrowest stable source identity available",
+        "Record the evidence-schema version",
+        "If any bound source changes, the receipt becomes stale",
+        "override actor, authority scope, reason, timestamp, expiry, and affected truth IDs",
+        "An override records an authorized acceptance decision; it does not alter the observed verification result or manufacture evidence",
+    )
+
+    def test_rejects_each_source_binding_clause_relocated_outside_owner(self):
+        for marker in self.MARKERS:
+            with self.subTest(marker=marker):
+                def mutate(clone, phrase=marker):
+                    path = clone / "skills/deterministic-evidence-automation/SKILL.md"
+                    text = path.read_text()
+                    line = next(line for line in text.splitlines() if phrase in line)
+                    text = text.replace(line, "", 1)
+                    text += f"\n## Unrelated notes\n\n{line}\n"
+                    path.write_text(text)
+
+                result = self.run_copy(mutate)
+                self.assertNotEqual(result.returncode, 0, result.stdout + result.stderr)
+                self.assertIn("section 'Outcome-backward verification and source binding' missing required guidance", result.stdout)
+
+
 class ReadmeGovernedHomesTests(CanaryHarness):
     REQUIRED_HOMES = ("`skills/`", "`decisions/`", "`domain/`", "`evidence/`", "`archive/`", "`log.md`")
 
