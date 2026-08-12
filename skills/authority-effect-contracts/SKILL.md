@@ -50,6 +50,7 @@ Each validator emits JSON and exits `0` on acceptance or `1` on contract failure
 - Unknown fields fail closed.
 - Parent and child must share the same `task_id`; prose may narrow the task but cannot silently rebind it to a different delegation.
 - Child `may` actions and exact-string targets must be subsets of the parent; this does not resolve paths, aliases, symlinks, or semantic resource identity.
+- **Path-semantics pitfall:** target subset checks compare strings only. For example, `./output` and `/project/output` may resolve to the same location while validation treats them as unrelated targets; a passing subset check is not proof of distinct or semantically narrowed resources.
 - Child prohibitions, approval gates, verification obligations, and stop conditions must preserve or strengthen the parent.
 - Child validity cannot outlive the parent, and dispatch-oriented CLI validation rejects expired manifests.
 - `partial` belongs to `evidence_completeness`, never `effect_status`.

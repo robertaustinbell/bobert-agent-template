@@ -4,6 +4,7 @@ This directory contains portable, sanitized procedures that an adopting runtime 
 
 Included packages:
 
+- [`COMPOSITION.md`](COMPOSITION.md) — the handoff contract between skills and their artifacts, distinct from the procedures owned by each individual skill page.
 - [`agent-prompt-design`](agent-prompt-design/SKILL.md) — executable task contracts, bounded agent graphs and loops, verification, and evaluation discipline.
 - [`artifact-verification`](artifact-verification/SKILL.md) — outcome-backward, source-bound verification for local artifacts.
 - [`deterministic-evidence-automation`](deterministic-evidence-automation/SKILL.md) — deterministic collection plus bounded model judgment for recurring evidence-heavy work.

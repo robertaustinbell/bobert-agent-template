@@ -2,6 +2,14 @@
 
 Record only material doctrine failures, contradictions, retrieval misses, scope or confidence changes, and architecture revisions. Ordinary success does not require an entry.
 
+## 2026-08-12 — Hardened high-blast-radius boundaries and local skill guidance
+
+- Promoted section-aware canaries for the SOUL credentials and external-actions clauses and the RUNTIMES honest context-degradation fallback; coverage intentionally stops there rather than pinning every sentence.
+- Clarified that a same-model advisor provides structural discipline, not independent error detection, because advisor and worker errors remain correlated.
+- Named the authority-target path-semantics failure mode: exact-string subset validation does not resolve aliases, relative paths, symlinks, or semantic resource identity.
+- Indexed `skills/COMPOSITION.md` from the skills README so the cross-skill handoff contract is discoverable separately from the four procedure pages.
+- The prior composition and executable fixture work remains recorded in the entry immediately below; this follow-up narrows the remaining local-reading and drift risks without claiming runtime compliance.
+
 ## 2026-08-12 — Document and check cross-skill composition
 
 - Added one shared composition contract for authority manifests, reproducible input manifests, producer claims, verification packets, external-effect receipts, stable handles, and bounded final claims.

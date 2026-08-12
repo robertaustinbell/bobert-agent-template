@@ -817,6 +817,65 @@ class SameModelIndependenceCanaryTests(CanaryHarness):
                 self.assertIn("claims same-model review is independent proof", result.stdout)
 
 
+class HighBlastRadiusBoundaryCanaryTests(CanaryHarness):
+    CASES = (
+        (
+            "SOUL.md",
+            "Never expose or transfer credentials, passwords, tokens, API keys, private keys, payment information, or secret values.",
+            "Credentials may be logged when debugging.",
+            "Boundaries",
+        ),
+        (
+            "SOUL.md",
+            "External actions stay inside explicit authorization.",
+            "External actions may proceed without authorization.",
+            "Boundaries",
+        ),
+        (
+            "RUNTIMES.md",
+            "The agent should identify what is unavailable, avoid claiming or inventing its contents, and remain inside higher-priority policy and authority it can actually verify.",
+            "The agent may reconstruct unavailable guidance when necessary.",
+            "Context degradation",
+        ),
+    )
+
+    def test_rejects_deletion_or_inversion(self):
+        for filename, marker, replacement, heading in self.CASES:
+            with self.subTest(filename=filename, marker=marker):
+                def mutate(clone):
+                    path = clone / filename
+                    path.write_text(path.read_text().replace(marker, replacement, 1))
+
+                result = self.run_copy(mutate)
+                self.assertNotEqual(result.returncode, 0, result.stdout + result.stderr)
+                self.assertIn(heading, result.stdout)
+
+    def test_rejects_cross_section_relocation(self):
+        for filename, marker, _replacement, heading in self.CASES:
+            with self.subTest(filename=filename, marker=marker):
+                def mutate(clone):
+                    path = clone / filename
+                    text = path.read_text().replace(marker, "Boundary omitted here.", 1)
+                    destination = "## Continuity\n" if filename == "SOUL.md" else "## Verification probe\n"
+                    path.write_text(text.replace(destination, f"{destination}\n{marker}\n", 1))
+
+                result = self.run_copy(mutate)
+                self.assertNotEqual(result.returncode, 0, result.stdout + result.stderr)
+                self.assertIn(heading, result.stdout)
+
+
+class SkillDiscoverabilityCanaryTests(CanaryHarness):
+    def test_rejects_missing_composition_index_entry(self):
+        def mutate(clone):
+            path = clone / "skills/README.md"
+            lines = [line for line in path.read_text().splitlines() if "COMPOSITION.md" not in line]
+            path.write_text("\n".join(lines) + "\n")
+
+        result = self.run_copy(mutate)
+        self.assertNotEqual(result.returncode, 0, result.stdout + result.stderr)
+        self.assertIn("COMPOSITION.md", result.stdout)
+
+
 class SystemsFeedbackCanaryTests(CanaryHarness):
     def test_baseline_passes(self):
         result = self.run_copy()
