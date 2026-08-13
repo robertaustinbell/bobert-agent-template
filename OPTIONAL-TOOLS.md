@@ -21,7 +21,7 @@ The governing rule is still **job first, tool second**. More integrations can re
 | [Context7 MCP](https://context7.com/) | Retrieve current, version-specific library documentation and examples | Package documentation changes; verify examples against the project's actual dependency version |
 | [CourtListener MCP](https://mcp.courtlistener.com/) | Search legal opinions, dockets, judges, and related public legal material | Legal research requires jurisdiction, date, citation, and authority checks; tool output is not legal advice |
 
-Naming an SDK or CLI here identifies an available implementation path; it does not claim that package is installed in Bobert's current runtime or in an adopter's environment.
+Naming an SDK or CLI here identifies an available implementation path; it does not claim that package is installed in Bobert's current runtime or in an adopter's environment. For consequential work, keep the actual instrument path observable: distinguish the preferred capability from the one that was available and used, report material fallback transitions, identify the authoritative source ultimately inspected, and name the computation or verification method. Do not imply use of a preferred tool when a fallback produced the result.
 
 ## Computation and maps
 
