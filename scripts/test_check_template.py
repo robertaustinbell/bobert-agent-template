@@ -36,13 +36,47 @@ class GovernanceHarvestCanaryTests(CanaryHarness):
         self.assertNotEqual(result.returncode, 0)
         self.assertIn("RUNTIMES.md", result.stdout)
 
-    def test_rejects_context_limit_loss(self):
+    def test_rejects_loss_of_context_limit(self):
         def mutate(clone):
             path = clone / "RUNTIMES.md"
             path.write_text(path.read_text().replace("not a complete runtime-prompt", "complete runtime measurement", 1))
         result = self.run_copy(mutate)
         self.assertNotEqual(result.returncode, 0)
         self.assertIn("RUNTIMES.md", result.stdout)
+
+    def test_rejects_loss_of_boundary_router_activation(self):
+        for relative_path, marker in (
+            ("SOUL.md", "Consult Agent Ops before consequential claims or actions involving representation, causal inference, authority or effects, outcome verification, correction, retention, or stopping"),
+            ("RUNTIMES.md", "Re-enter at any such boundary and load only the matching doctrine or skill; skip routine lookup and already-decided mechanics"),
+        ):
+            with self.subTest(relative_path=relative_path):
+                def mutate(clone, name=relative_path, phrase=marker):
+                    path = clone / name
+                    path.write_text(path.read_text().replace(phrase, "removed boundary activation", 1))
+
+                result = self.run_copy(mutate)
+                self.assertNotEqual(result.returncode, 0, result.stdout + result.stderr)
+                self.assertIn(relative_path, result.stdout)
+
+    def test_rejects_source_identity_in_operational_runtime(self):
+        def mutate(clone):
+            path = clone / "RUNTIMES.md"
+            source_agent_name = "Bo" + "bert"
+            path.write_text(path.read_text() + f"\n{source_agent_name} runtime residue\n")
+
+        result = self.run_copy(mutate)
+        self.assertNotEqual(result.returncode, 0, result.stdout + result.stderr)
+        self.assertIn("source-agent identity residue in RUNTIMES.md", result.stdout)
+
+    def test_rejects_truncation_markers(self):
+        def mutate(clone):
+            path = clone / "SOUL.md"
+            marker = "[" + "truncated" + "]"
+            path.write_text(path.read_text() + f"\n{marker}\n")
+
+        result = self.run_copy(mutate)
+        self.assertNotEqual(result.returncode, 0, result.stdout + result.stderr)
+        self.assertIn("truncation marker in SOUL.md", result.stdout)
 
 
 class MemoryConformanceCanaryTests(CanaryHarness):

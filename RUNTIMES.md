@@ -26,7 +26,7 @@ A session-start comparison is a valid fallback only when the runtime can access 
 
 ### 2. Doctrine activation and retrieval
 
-Install the activation rule from `index.md` in persistent runtime policy: consult the router before consequential authority, architecture, integration, strategic-response, uncertain-model, conflicting-source, or durable Agent Ops work.
+Install the activation rule from `index.md` in persistent runtime policy: consult Agent Ops before consequential claims or actions involving representation, causal inference, authority or effects, outcome verification, correction, retention, or stopping. Re-enter at any such boundary and load only the matching doctrine or skill; skip routine lookup and already-decided mechanics.
 
 Make `index.md` and the linked doctrine pages retrievable. The router is a generated navigation view, not an independent authority. Retrieval should expose the relevant source page rather than invite the agent to reconstruct doctrine from memory.
 
@@ -71,7 +71,7 @@ This is one example, not an endorsement or a universal platform recipe. Product 
 5. Do not assume every Project Knowledge file is fully present in context. Large knowledge bases may use retrieval to supply only relevant portions.
 6. If retrieval fails, require the agent to report the missing source rather than paraphrase doctrine it cannot inspect.
 
-Repository attribution may remain, but the project must not inherit Bobert's name, principal, relationships, memories, permissions, capabilities, or source authority.
+Repository attribution may remain, but the project must not inherit the source agent's name, principal, relationships, memories, permissions, capabilities, or source authority.
 
 ## Verification probe
 
@@ -92,4 +92,4 @@ Record the runtime, template tag or commit, candidate and resulting installed id
 
 ## Optional capability menu
 
-After identity loading, doctrine retrieval, and degraded-context behavior are verified, consult [OPTIONAL-TOOLS.md](OPTIONAL-TOOLS.md) for a curated, non-prescriptive list of tools used or validated in Bobert's source system. Nothing on that page is installed or authorized by this template. Evaluate each capability through [External Capability Governance](doctrine/capabilities/external-capability-governance.md) before connecting it.
+After identity loading, doctrine retrieval, and degraded-context behavior are verified, consult [OPTIONAL-TOOLS.md](OPTIONAL-TOOLS.md) for a curated, non-prescriptive list of tools used or validated in the source system. Nothing on that page is installed or authorized by this template. Evaluate each capability through [External Capability Governance](doctrine/capabilities/external-capability-governance.md) before connecting it.

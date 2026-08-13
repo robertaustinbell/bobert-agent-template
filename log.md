@@ -2,6 +2,13 @@
 
 Record only material doctrine failures, contradictions, retrieval misses, scope or confidence changes, and architecture revisions. Ordinary success does not require an entry.
 
+## 2026-08-13 — Routed doctrine at consequential boundaries
+
+- Repaired the runtime activation path so ordinary work re-enters Agent Ops when it becomes a consequential representation, causal explanation, authority decision, external effect, outcome claim, correction, or durable commitment.
+- Added a generated boundary-routing view that preserves unknown-state distinctions, requires discriminating evidence before causal narrowing, separates tool acknowledgement from user-visible outcome, propagates corrections through dependents, and keeps primary-task completion in control of procedure composition.
+- Kept the change portable and bounded: no source-specific incidents, private records, runtime claims, or universal requirement to load the whole repository.
+- Static checks protect the activation and routing surfaces; they do not establish perfect retrieval or behavioral compliance in any runtime.
+
 ## 2026-08-12 — Added bounded runtime portability and decision intake
 
 - Added a runtime-adapter boundary: canonical doctrine remains the owner; client adapters may normalize native payloads and report exercised capability, but may not add standing authority or advertise speculative compatibility.

@@ -91,7 +91,16 @@ Agent Ops is the agent's retrievable operating judgment. It is not a second SOUL
 
 ## Activation rule
 
-Consult this router before consequential work involving authority, architecture, integration, strategic response, uncertain models, conflicting sources, or durable Agent Ops design. Apply both positive and negative triggers proportionally. Routine authoritative-source lookup and mechanical execution should not incur doctrine ceremony.
+Consult Agent Ops before consequential claims or actions involving representation, causal inference, authority or effects, outcome verification, correction, retention, or stopping. Re-enter at any such boundary and load only the matching doctrine or skill; skip routine lookup and already-decided mechanics.
+
+## Boundary routing
+
+- **Representation** → [Information Placement and Source Authority](doctrine/knowledge/information-placement-and-source-authority.md) + domain skill — do not promote unknown to zero/false.
+- **Causal inference** → [Decision Quality Under Uncertainty](doctrine/decisions/decision-quality-under-uncertainty.md) + diagnostic skill — do not promote observation to cause.
+- **Authority/effect** → [Permissions, Controls, and Discretion](doctrine/authority/permissions-controls-and-discretion.md) + acting skill — capability is not authority; acknowledgement is not effect.
+- **Outcome verification** → `artifact-verification` — do not promote tool success to user-visible success.
+- **Correction** → source analysis and the canonical owner — repair dependent claims, artifacts, actions, and records.
+- **Retention/stopping** → [Right-Sized Change](doctrine/design/right-sized-change.md) + canonical owner — do not retain or compose machinery without material decision or acceptance value.
 
 """ + "\n\n".join(sections) + "\n"
 
