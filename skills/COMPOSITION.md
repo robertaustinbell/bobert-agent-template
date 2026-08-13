@@ -2,6 +2,8 @@
 
 This page owns the handoff between the portable workflow skills. It documents an inspectable protocol; it is not a workflow engine, authorization grant, secret store, or proof that an external effect occurred.
 
+The primary task owner retains the user-facing acceptance condition. Adding a producer, verifier, receipt, monitor, or supporting procedure does not transfer completion ownership or authorize adjacent work; stop composition when the requested acceptance truth is resolved or further machinery would not materially change the decision, correctness, safety, or repairability.
+
 Use it only when consequential delegated work actually needs machine-checkable authority or an independently verified external-effect claim. Routine read-only or already-authorized mechanical work should skip this ceremony.
 
 ## Producer and consumer map

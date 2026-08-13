@@ -28,13 +28,30 @@ class GovernanceHarvestCanaryTests(CanaryHarness):
         self.assertNotEqual(result.returncode, 0)
         self.assertIn("missing required file: DECISION-BRIEF.md", result.stdout)
 
-    def test_rejects_runtime_adapter_boundary_loss(self):
+    def test_requires_decision_brief_discoverability(self):
         def mutate(clone):
-            path = clone / "RUNTIMES.md"
-            path.write_text(path.read_text().replace("must not introduce universal policy, standing authority", "may add policy", 1))
+            path = clone / "README.md"
+            path.write_text(path.read_text().replace("[`DECISION-BRIEF.md`](DECISION-BRIEF.md)", "DECISION-BRIEF", 1))
+
         result = self.run_copy(mutate)
         self.assertNotEqual(result.returncode, 0)
-        self.assertIn("RUNTIMES.md", result.stdout)
+        self.assertIn("README.md", result.stdout)
+
+    def test_rejects_runtime_adapter_boundary_loss(self):
+        mutations = (
+            ("must not introduce universal policy, standing authority", "may add policy"),
+            ("adapter's runtime-owned repository or governed operational record—not in this universal starter", "this repository"),
+            ("Do not ship speculative adapters or their live capability tables here", "Ship adapter tables here"),
+        )
+        for marker, replacement in mutations:
+            with self.subTest(marker=marker):
+                def mutate(clone, phrase=marker, substitute=replacement):
+                    path = clone / "RUNTIMES.md"
+                    path.write_text(path.read_text().replace(phrase, substitute, 1))
+
+                result = self.run_copy(mutate)
+                self.assertNotEqual(result.returncode, 0)
+                self.assertIn("RUNTIMES.md", result.stdout)
 
     def test_rejects_loss_of_context_limit(self):
         def mutate(clone):
@@ -57,6 +74,38 @@ class GovernanceHarvestCanaryTests(CanaryHarness):
                 result = self.run_copy(mutate)
                 self.assertNotEqual(result.returncode, 0, result.stdout + result.stderr)
                 self.assertIn(relative_path, result.stdout)
+
+    def test_rejects_loss_of_boundary_router_rows_after_regeneration(self):
+        rows = (
+            "- **Correction** → source analysis and the canonical owner — repair dependent claims, artifacts, actions, and records.\n",
+            "- **Retention/stopping** → [Right-Sized Change](doctrine/design/right-sized-change.md) + canonical owner — do not retain or compose machinery without material decision or acceptance value.\n",
+        )
+        for row in rows:
+            with self.subTest(row=row):
+                def mutate(clone, target=row):
+                    generator = clone / "scripts" / "generate_index.py"
+                    text = generator.read_text()
+                    self.assertIn(target, text)
+                    generator.write_text(text.replace(target, "", 1))
+                    subprocess.run(["python3", "scripts/generate_index.py"], cwd=clone, check=True)
+
+                result = self.run_copy(mutate)
+                self.assertNotEqual(result.returncode, 0, result.stdout + result.stderr)
+                self.assertIn("index.md missing required boundary row", result.stdout)
+
+    def test_rejects_stale_adoption_activation_rule(self):
+        def mutate(clone):
+            path = clone / "ADOPT.md"
+            text = path.read_text().replace(
+                "Consult `index.md` before consequential claims or actions involving representation, causal inference, authority or effects, outcome verification, correction, retention, or stopping",
+                "Consult `index.md` for consequential design and architecture work",
+                1,
+            )
+            path.write_text(text)
+
+        result = self.run_copy(mutate)
+        self.assertNotEqual(result.returncode, 0, result.stdout + result.stderr)
+        self.assertIn("ADOPT.md", result.stdout)
 
     def test_rejects_source_identity_in_operational_runtime(self):
         def mutate(clone):
@@ -215,6 +264,22 @@ class CompositionContractTests(CanaryHarness):
                 result = self.run_copy(mutate)
                 self.assertNotEqual(result.returncode, 0, result.stdout + result.stderr)
                 self.assertIn(relative_path, result.stdout)
+
+    def test_rejects_primary_task_completion_owner_loss(self):
+        markers = (
+            "The primary task owner retains the user-facing acceptance condition",
+            "does not transfer completion ownership or authorize adjacent work",
+            "stop composition when the requested acceptance truth is resolved",
+        )
+        for marker in markers:
+            with self.subTest(marker=marker):
+                def mutate(clone, phrase=marker):
+                    path = clone / "skills" / "COMPOSITION.md"
+                    path.write_text(path.read_text().replace(phrase, "removed composition ownership rule", 1))
+
+                result = self.run_copy(mutate)
+                self.assertNotEqual(result.returncode, 0, result.stdout + result.stderr)
+                self.assertIn("skills/COMPOSITION.md", result.stdout)
 
     def test_rejects_cross_surface_fixture_drift(self):
         def mutate(clone):

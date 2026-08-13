@@ -2,6 +2,13 @@
 
 Record only material doctrine failures, contradictions, retrieval misses, scope or confidence changes, and architecture revisions. Ordinary success does not require an entry.
 
+## 2026-08-13 — Closed public routing and adoption canary gaps
+
+- Confirmed that Correction and Retention/stopping were present in the generated boundary router, but a coordinated deletion from the generator and `index.md` still passed the checker.
+- Added active-section validation for all six exact boundary rows and mutation tests proving that regenerated loss of Correction or Retention/stopping now fails closed; added a protected composition invariant keeping the user-facing acceptance condition with the primary task owner.
+- Updated stale adoption guidance to the boundary-based activation contract, linked the optional decision brief from the main architecture table, and made explicit that exercised adapter capability tables belong in runtime-owned governed records rather than this universal starter.
+- Verification passed with 85 template tests, 19 authority/effect contract tests, generated-index consistency, the canonical template checker, Python compilation, and diff hygiene. These checks protect the public contract; they do not prove runtime retrieval or behavioral compliance.
+
 ## 2026-08-13 — Routed doctrine at consequential boundaries
 
 - Repaired the runtime activation path so ordinary work re-enters Agent Ops when it becomes a consequential representation, causal explanation, authority decision, external effect, outcome claim, correction, or durable commitment.

@@ -25,6 +25,7 @@ That instruction is intentionally conservative: a reusable identity should trans
 | `FIRST-WEEK.md` | Conservative initial behavior, expectations, and correction path |
 | `FIELD-TESTING.md` | Bounded tests and a privacy-safe path for reporting useful, null, and negative results |
 | `RUNTIMES.md` | Runtime installation decisions, degradation behavior, and a bounded verification probe |
+| [`DECISION-BRIEF.md`](DECISION-BRIEF.md) | Optional worksheet for consequential choices with materially different options still open |
 | `OPTIONAL-TOOLS.md` | Curated examples from Bobert's optional capability menu, with adoption and authority boundaries |
 | [`skills/`](skills/README.md) | Portable sanitized procedures; repository presence is not installation or authority |
 | `SYNC.md` | Curated private-to-public projection policy |

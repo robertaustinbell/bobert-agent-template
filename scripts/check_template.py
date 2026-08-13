@@ -21,12 +21,12 @@ source_agent_name = 'Bo' + 'bert'
 if re.search(rf"\b{source_agent_name}(?:'s)?\b", operational_runtime):
     errors.append('source-agent identity residue in RUNTIMES.md')
 required_fragments={
- 'ADOPT.md':['Replace source identities before activation','Repository attribution may remain','Follow `RUNTIMES.md`'],
+ 'ADOPT.md':['Replace source identities before activation','Repository attribution may remain','Follow `RUNTIMES.md`','Consult `index.md` before consequential claims or actions involving representation, causal inference, authority or effects, outcome verification, correction, retention, or stopping','Re-enter at any such boundary and load only the matching doctrine or skill; skip routine factual lookup and already-decided mechanical execution'],
  'CUSTOMIZE.md':['Identity handoff checklist','Search for the repository owner','explicit confirmation for calendar mutation and identity-bearing communication unless adopter-defined standing policy is stricter or grants a narrower authorization'],
  'SOUL.md':['Honesty is bounded, not exhaustive transparency','State the boundary at the minimum safe level','Stewardship governs access','Treat authorized access as a trust','Association is not causation','Do not rely on a load-bearing causal claim without testing plausible alternative explanations and evidence','Keep Agent Ops doctrine on the causal path to consequential work','Consult Agent Ops before consequential claims or actions involving representation, causal inference, authority or effects, outcome verification, correction, retention, or stopping','Re-enter at any such boundary and load only the matching doctrine or skill; skip routine lookup and already-decided mechanics','If SOUL changes materially'],
- 'README.md':['behavioral policy, not a security sandbox','[OPTIONAL-TOOLS.md](OPTIONAL-TOOLS.md)','sanitized, non-prescriptive menu of capabilities','Ways to participate','Public submission, commitments, disclosures, and external communication still require authorization','Governed homes','`skills/`','`decisions/`','`domain/`','`evidence/`','`archive/`','`log.md`','[`skills/`](skills/README.md)','repository presence is not installation or authority'],
+ 'README.md':['behavioral policy, not a security sandbox','[OPTIONAL-TOOLS.md](OPTIONAL-TOOLS.md)','sanitized, non-prescriptive menu of capabilities','Ways to participate','Public submission, commitments, disclosures, and external communication still require authorization','Governed homes','`skills/`','`decisions/`','`domain/`','`evidence/`','`archive/`','`log.md`','[`skills/`](skills/README.md)','repository presence is not installation or authority','[`DECISION-BRIEF.md`](DECISION-BRIEF.md)','Optional worksheet for consequential choices'],
  'skills/README.md':['portable, sanitized procedures','does **not** mean they are installed, enabled, connected to tools, or granted authority','[`COMPOSITION.md`](COMPOSITION.md)','handoff contract between skills','[`agent-prompt-design`](agent-prompt-design/SKILL.md)','[`artifact-verification`](artifact-verification/SKILL.md)','[`deterministic-evidence-automation`](deterministic-evidence-automation/SKILL.md)','Private paths, case histories, live capability state, credentials, schedules, domain records, and standing permissions are excluded'],
- 'skills/COMPOSITION.md':['Producer and consumer map','Lifecycle and correlation','Failure behavior','Synthetic end-to-end example','same `task_id` must bind parent and child authority manifests','Structurally valid receipt with unresolved handle'],
+ 'skills/COMPOSITION.md':['Producer and consumer map','Lifecycle and correlation','Failure behavior','Synthetic end-to-end example','same `task_id` must bind parent and child authority manifests','Structurally valid receipt with unresolved handle','The primary task owner retains the user-facing acceptance condition','does not transfer completion ownership or authorize adjacent work','stop composition when the requested acceptance truth is resolved'],
  'skills/agent-prompt-design/SKILL.md':['Design prompts as **executable task contracts**','Keep evaluation ownership separate from proposal','Grade the final artifact delivered to the user separately','A loop without fresh feedback is repetition, not learning','When advisor and worker share a model, their errors are correlated','structural discipline—not independent error detection','[Composition contract](../COMPOSITION.md)'],
  'skills/artifact-verification/SKILL.md':['State acceptance truths before choosing checks','implementation notes, executor summaries, subagent reports, and prior test output as claims to verify—not proof','If the source changes after verification, mark the receipt stale','[Composition contract](../COMPOSITION.md)'],
  'skills/deterministic-evidence-automation/SKILL.md':['deterministic code collects, normalizes, bounds, validates, and receipts evidence','Missing means unknown, never empty','monitoring may not silently rewrite the acceptance standard','Audit two properties separately','If any bound source changes, the receipt becomes stale','An override records an authorized acceptance decision; it does not alter the observed verification result or manufacture evidence','[Composition contract](../COMPOSITION.md)'],
@@ -415,6 +415,23 @@ def active_headings(text,level=None):
             headings.append(parsed)
     return headings
 
+required_boundary_rows = (
+    "- **Representation** → [Information Placement and Source Authority](doctrine/knowledge/information-placement-and-source-authority.md) + domain skill — do not promote unknown to zero/false.",
+    "- **Causal inference** → [Decision Quality Under Uncertainty](doctrine/decisions/decision-quality-under-uncertainty.md) + diagnostic skill — do not promote observation to cause.",
+    "- **Authority/effect** → [Permissions, Controls, and Discretion](doctrine/authority/permissions-controls-and-discretion.md) + acting skill — capability is not authority; acknowledgement is not effect.",
+    "- **Outcome verification** → `artifact-verification` — do not promote tool success to user-visible success.",
+    "- **Correction** → source analysis and the canonical owner — repair dependent claims, artifacts, actions, and records.",
+    "- **Retention/stopping** → [Right-Sized Change](doctrine/design/right-sized-change.md) + canonical owner — do not retain or compose machinery without material decision or acceptance value.",
+)
+boundary_sections = markdown_sections((ROOT/'index.md').read_text(), 'Boundary routing')
+if len(boundary_sections) != 1:
+    errors.append(f'index.md expected exactly one active Boundary routing section, found {len(boundary_sections)}')
+else:
+    boundary_lines = {line.strip() for line in boundary_sections[0].splitlines() if line.strip()}
+    for row in required_boundary_rows:
+        if row not in boundary_lines:
+            errors.append(f'index.md missing required boundary row: {row}')
+
 def prose_sentences(text):
     """Split prose for lexical canaries without treating common abbreviations as boundaries."""
     sentinel='\x00'
@@ -451,6 +468,12 @@ for name,fragments in required_fragments.items():
     text=active_markdown(path.read_text())
     for fragment in fragments:
         if fragment not in text: errors.append(f'{name} missing required guidance: {fragment}')
+for fragment in (
+    "adapter's runtime-owned repository or governed operational record—not in this universal starter",
+    "Do not ship speculative adapters or their live capability tables here",
+):
+    if fragment not in active_markdown((ROOT/'RUNTIMES.md').read_text()):
+        errors.append(f'RUNTIMES.md missing adapter-placement boundary: {fragment}')
 # Location-sensitive static preservation canaries. They establish that active
 # guidance remains in its owning section, not runtime compliance or semantic proof.
 # Canaried sections default to H2; add an override whenever one intentionally uses another level.
