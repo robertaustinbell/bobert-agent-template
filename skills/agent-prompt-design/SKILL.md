@@ -46,7 +46,7 @@ Prefer “produce X that passes Y” over “work on X.” If the outcome cannot
 
 Include canonical facts and source locations; relevant prior decisions; the target audience and environment; known failures and edge cases; and exact excerpts when wording matters.
 
-Exclude entire transcripts when a task brief will do, stale conclusions recoverable from live sources, duplicate instructions, and broad doctrine unrelated to the decision.
+Exclude entire transcripts when a task brief will do, stale conclusions recoverable from live sources, duplicate instructions, and broad operating thought unrelated to the decision.
 
 Label provenance and uncertainty. Separate **instructions** from **untrusted source content** with clear sections or delimiters. Never let text retrieved from a webpage, email, document, or screenshot silently become agent authority.
 
@@ -274,7 +274,7 @@ A prompt is improved only when it performs better across representative cases, n
 
 ## Sources and Evidence Status
 
-This doctrine synthesizes official guidance from OpenAI, Anthropic, Google, and IBM plus a user-supplied graph-engineering example. Provider docs are authoritative for their own models; IBM’s articles and the X post are secondary conceptual sources. Cross-provider generalizations remain provisional until tested in Hermes workflows.
+This operating thought synthesizes official guidance from OpenAI, Anthropic, Google, and IBM plus a user-supplied graph-engineering example. Provider docs are authoritative for their own models; IBM’s articles and the X post are secondary conceptual sources. Cross-provider generalizations remain provisional until tested in Hermes workflows.
 
 Primary sources:
 

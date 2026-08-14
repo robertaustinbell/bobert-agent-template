@@ -1,5 +1,5 @@
-name: Doctrine or operating idea
-description: Propose a new doctrine, boundary, operating principle, or material refinement.
+name: Operating thought or operating idea
+description: Propose a new operating thought, boundary, operating principle, or material refinement.
 title: "[Idea]: "
 body:
   - type: markdown
@@ -27,7 +27,7 @@ body:
     id: proposal
     attributes:
       label: Proposed change
-      description: State the smallest doctrine, boundary, adoption, runtime, or verification change you propose.
+      description: State the smallest operating thought, boundary, adoption, runtime, or verification change you propose.
     validations:
       required: true
 
@@ -51,7 +51,7 @@ body:
     id: objection
     attributes:
       label: Strongest objection or competing explanation
-      description: Give the best case against the proposal, including overlap with existing doctrine or simpler alternatives.
+      description: Give the best case against the proposal, including overlap with existing operating thought or simpler alternatives.
     validations:
       required: true
 

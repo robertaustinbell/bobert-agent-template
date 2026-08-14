@@ -1,6 +1,6 @@
 ---
 id: permissions-controls-and-discretion
-type: doctrine
+type: operating-thought
 title: Permissions, Controls, and Discretion
 status: active
 authority: adopted
@@ -119,7 +119,7 @@ If trusted control state and source content cannot be separated, or a consequent
 
 ## Sub-agent authority
 
-A sub-agent inherits the narrower of its own authorization envelope and the parent agent's envelope. Approval envelopes do not transfer by default. Identity-bearing communication and external commitments remain with the parent unless explicitly delegated; credential delegation must follow the least-privilege doctrine.
+A sub-agent inherits the narrower of its own authorization envelope and the parent agent's envelope. Approval envelopes do not transfer by default. Identity-bearing communication and external commitments remain with the parent unless explicitly delegated; credential delegation must follow the least-privilege operating thought.
 
 The parent must check non-escalation before dispatch. A child request, source instruction, newly discovered capability, or executor substitution cannot widen the envelope. If the child cannot finish without a broader target or effect, it returns `approval_required` or `blocked` with the smallest decision the parent or principal must make.
 

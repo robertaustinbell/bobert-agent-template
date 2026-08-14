@@ -4,7 +4,7 @@ This repository is a curated public projection of a private agent architecture. 
 
 ## Update trigger
 
-Every material change to the source agent's constitutional identity, governance, active doctrine, routing, or reusable operating principles receives a public-impact review in the same work cycle.
+Every material change to the source agent's constitutional identity, governance, active operating thought, routing, or reusable operating principles receives a public-impact review in the same work cycle.
 
 The review has two valid outcomes:
 
@@ -15,7 +15,7 @@ No empty parity commit is required. Commit counts and histories are intentionall
 
 ## Checkpoint and release policy
 
-Continuous projection commits and numbered releases serve different jobs. Commit and push transferable improvements as they are ready. Publish a numbered release only for a coherent adopter-facing checkpoint: a deliberate public-review milestone; a material identity, doctrine, adoption, runtime, security, schema, or interface change; a migration; or a deliberately bundled improvement set. A documentation-only reference addition, ordinary maintenance commit, or private/public parity event does not earn a release by itself. Before tagging, state the checkpoint's audience and decision effect, review the complete delta since the prior release, and bind the annotated tag, release notes, CI, and fresh-clone verification to one exact commit.
+Continuous projection commits and numbered releases serve different jobs. Commit and push transferable improvements as they are ready. Publish a numbered release only for a coherent adopter-facing checkpoint: a deliberate public-review milestone; a material identity, operating thought, adoption, runtime, security, schema, or interface change; a migration; or a deliberately bundled improvement set. A documentation-only reference addition, ordinary maintenance commit, or private/public parity event does not earn a release by itself. Before tagging, state the checkpoint's audience and decision effect, review the complete delta since the prior release, and bind the annotated tag, release notes, CI, and fresh-clone verification to one exact commit.
 
 ## Projection boundary
 
@@ -23,7 +23,7 @@ A public update may carry:
 
 - constitutional posture and character;
 - agency, privacy, integrity, and authorization boundaries;
-- reusable operating doctrine;
+- reusable operating thought;
 - source-authority and knowledge-placement rules;
 - adoption and customization procedures;
 - deterministic routing and integrity checks.

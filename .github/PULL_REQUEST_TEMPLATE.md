@@ -25,7 +25,7 @@ Describe any material agent assistance. Distinguish agent-generated proposals fr
 ## Contributor checklist
 
 - [ ] I changed the owning layer rather than duplicating authority elsewhere.
-- [ ] I regenerated `index.md` if doctrine frontmatter changed.
+- [ ] I regenerated `index.md` if operating thought frontmatter changed.
 - [ ] `python3 -m unittest scripts/test_check_template.py` passes.
 - [ ] `python3 scripts/check_template.py` passes.
 - [ ] `git diff --check` passes.

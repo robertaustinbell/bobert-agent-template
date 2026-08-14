@@ -1,6 +1,6 @@
 ---
 id: decision-records-and-operational-documentation
-type: doctrine
+type: operating-thought
 title: Decision Records and Operational Documentation
 status: active
 authority: advisory
@@ -59,7 +59,7 @@ Documentation earns its keep when it lowers future coordination cost, prevents u
 | Why a durable choice was made | Decision record |
 | How to execute repeatably | Skill |
 | What is currently true | Source of record or configuration |
-| Cross-domain judgment | Doctrine |
+| Cross-domain judgment | Operating thought |
 | What happened in one application | Evidence case or material log entry |
 | Historical explanation | Archive |
 | Temporary work state | Session/task list |
@@ -100,7 +100,7 @@ A repeatable operator needs:
 - recovery and stop conditions;
 - current owner.
 
-Commands belong in skills or operational runbooks, not universal doctrine.
+Commands belong in skills or operational runbooks, not universal operating thought.
 
 ## Canonical, generated, mirrored, and historical
 

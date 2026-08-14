@@ -19,7 +19,7 @@ Generate and deterministically validate two versioned contracts:
 - `authority-manifest/v1` makes a consequential delegation envelope inspectable and supports parent-to-child non-escalation checks.
 - `external-effect-receipt/v1` keeps request, preparation, attempt, observation, and evidence completeness distinct.
 
-Doctrine remains the semantic owner. This skill validates representation and subset rules; it is not a security sandbox and does not itself grant authority or prove that an external effect occurred.
+Operating thought remains the semantic owner. This skill validates representation and subset rules; it is not a security sandbox and does not itself grant authority or prove that an external effect occurred.
 
 ## When to Use
 

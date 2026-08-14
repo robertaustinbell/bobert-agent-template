@@ -6,7 +6,7 @@ This starter is runtime-neutral, but adoption is not complete until the runtime 
 
 Prompt-level identity, privacy, and authorization rules are behavioral policy, not a security sandbox. They can guide normal agent behavior, but they cannot by themselves constrain a compromised runtime, a manipulated model, or a tool whose effective capability is broader than the task.
 
-Back consequential boundaries with technical controls proportionate to the downside: scoped credentials, brokered operations, governed secret storage, OS or cloud permissions, egress controls, and independent authorization checks. Treat the platform's effective capability—not the narrower operation the prompt requests—as the risk surface. See [Least-Privilege Capability Access](doctrine/authority/least-privilege-capability-access.md).
+Back consequential boundaries with technical controls proportionate to the downside: scoped credentials, brokered operations, governed secret storage, OS or cloud permissions, egress controls, and independent authorization checks. Treat the platform's effective capability—not the narrower operation the prompt requests—as the risk surface. See [Least-Privilege Capability Access](operating-thought/authority/least-privilege-capability-access.md).
 
 ## Three required decisions
 
@@ -24,21 +24,21 @@ Before replacing that identity, resolve the candidate from the adopter-authorize
 
 A session-start comparison is a valid fallback only when the runtime can access the installed identifier, authorized candidate source and identifier, and acknowledgment state. If the runtime cannot preserve or compare that state, say that silent identity drift cannot be mechanically prevented and require an external update process rather than pretending the notification obligation is enforced.
 
-### 2. Doctrine activation and retrieval
+### 2. Operating thought activation and retrieval
 
-Install the activation rule from `index.md` in persistent runtime policy: consult Agent Ops before consequential claims or actions involving representation, causal inference, authority or effects, outcome verification, correction, retention, or stopping. Re-enter at any such boundary and load only the matching doctrine or skill; skip routine lookup and already-decided mechanics.
+Install the activation rule from `index.md` in persistent runtime policy: consult Agent Ops before consequential claims or actions involving representation, causal inference, authority or effects, outcome verification, correction, retention, or stopping. Re-enter at any such boundary and load only the matching operating thought or skill; skip routine lookup and already-decided mechanics.
 
-Make `index.md` and the linked doctrine pages retrievable. The router is a generated navigation view, not an independent authority. Retrieval should expose the relevant source page rather than invite the agent to reconstruct doctrine from memory.
+Make `index.md` and the linked operating thought pages retrievable. The router is a generated navigation view, not an independent authority. Retrieval should expose the relevant source page rather than invite the agent to reconstruct operating thought from memory.
 
 ### 3. Context degradation
 
-Define what happens when identity, router, or doctrine cannot be loaded because of context limits, retrieval failure, missing files, or runtime behavior.
+Define what happens when identity, router, or operating thought cannot be loaded because of context limits, retrieval failure, missing files, or runtime behavior.
 
 The agent should identify what is unavailable, avoid claiming or inventing its contents, and remain inside higher-priority policy and authority it can actually verify. If the missing material is load-bearing, stop or ask for the minimum retrieval or clarification needed to proceed safely.
 
 ## Runtime adapter boundary
 
-Treat every genuinely supported runtime as a separate compatibility boundary. Keep universal identity and doctrine canonical; a thin adapter may provide only native discovery, payload normalization, and capability mapping. It must not introduce universal policy, standing authority, or a capability claim derived only from documentation.
+Treat every genuinely supported runtime as a separate compatibility boundary. Keep universal identity and operating thought canonical; a thin adapter may provide only native discovery, payload normalization, and capability mapping. It must not introduce universal policy, standing authority, or a capability claim derived only from documentation.
 
 For each supported runtime, maintain a dated capability truth table, immutable canonical-source identity, known gaps, and evidence from native fixtures in that adapter's runtime-owned repository or governed operational record—not in this universal starter. Where applicable, test malformed input, missing authority, hostile retrieved instructions, post-approval action mutation, unavailable tools, tool-reported success without read-back, and effects verified through an independent handle or observation. Verify adapter drift from the canonical source mechanically. Do not ship speculative adapters or their live capability tables here for clients that have not been exercised, and do not infer universal mediation from one tested path.
 
@@ -50,7 +50,7 @@ This measures declared files only. It is not a complete runtime-prompt, tokenize
 
 ## Untrusted-content execution boundary
 
-This is a runtime implementation contract for the normative boundary in [Permissions, Controls, and Discretion](doctrine/authority/permissions-controls-and-discretion.md#untrusted-content-control-boundary); it does not create a second authority rule.
+This is a runtime implementation contract for the normative boundary in [Permissions, Controls, and Discretion](operating-thought/authority/permissions-controls-and-discretion.md#untrusted-content-control-boundary); it does not create a second authority rule.
 
 A runtime that retrieves external content should preserve a distinguishable control plane: adopted identity, the principal's authenticated current instruction, standing authorization and prohibitions, runtime-enforced tool permissions, and separately attributed untrusted source content and tool output.
 
@@ -66,10 +66,10 @@ This is one example, not an endorsement or a universal platform recipe. Product 
 
 1. Customize the starter before activation.
 2. Put the customized constitutional instructions and the `index.md` activation rule in **Project Instructions**.
-3. Add `index.md` and the doctrine files to **Project Knowledge**.
-4. Require the agent to retrieve the router and relevant doctrine for matching consequential work.
+3. Add `index.md` and the operating thought files to **Project Knowledge**.
+4. Require the agent to retrieve the router and relevant operating thought for matching consequential work.
 5. Do not assume every Project Knowledge file is fully present in context. Large knowledge bases may use retrieval to supply only relevant portions.
-6. If retrieval fails, require the agent to report the missing source rather than paraphrase doctrine it cannot inspect.
+6. If retrieval fails, require the agent to report the missing source rather than paraphrase operating thought it cannot inspect.
 
 Repository attribution may remain, but the project must not inherit the source agent's name, principal, relationships, memories, permissions, capabilities, or source authority.
 
@@ -82,8 +82,8 @@ Before relying on the installation:
 3. Record acknowledgment, activate the candidate, and confirm that the installed identifier equals the acknowledged candidate identifier. Re-present the same candidate and confirm that acknowledgment state prevents a duplicate announcement.
 4. In a separate safe test, make the candidate source, comparison state, or acknowledgment state unavailable. Confirm that the runtime reports the enforcement gap and requires an external update process rather than silently activating the candidate.
 5. Present one consequential architecture or authority scenario.
-6. Confirm that the agent consults `index.md` and identifies the relevant doctrine page.
-7. In a safe test context, make a doctrine page unavailable.
+6. Confirm that the agent consults `index.md` and identifies the relevant operating thought page.
+7. In a safe test context, make an operating thought page unavailable.
 8. Confirm that the agent reports degraded context instead of fabricating the missing guidance.
 9. Run the shared untrusted-content fixture set in `evidence/fixtures/untrusted-content-v1.json`: `UTC-BASELINE`, `UTC-POSITIVE-CONTROL`, and `UTC-ADVERSARIAL`. Keep the authenticated task and relevant facts constant where possible.
 10. Confirm each fixture meets its declared expected outcomes. The baseline completes, the legitimate procedure remains usable only inside the authenticated task, the adversarial instruction gains no authority, and no unauthorized access or durable mutation occurs.
@@ -92,4 +92,4 @@ Record the runtime, template tag or commit, candidate and resulting installed id
 
 ## Optional capability menu
 
-After identity loading, doctrine retrieval, and degraded-context behavior are verified, consult [OPTIONAL-TOOLS.md](OPTIONAL-TOOLS.md) for a curated, non-prescriptive list of tools used or validated in the source system. Nothing on that page is installed or authorized by this template. Evaluate each capability through [External Capability Governance](doctrine/capabilities/external-capability-governance.md) before connecting it.
+After identity loading, operating thought retrieval, and degraded-context behavior are verified, consult [OPTIONAL-TOOLS.md](OPTIONAL-TOOLS.md) for a curated, non-prescriptive list of tools used or validated in the source system. Nothing on that page is installed or authorized by this template. Evaluate each capability through [External Capability Governance](operating-thought/capabilities/external-capability-governance.md) before connecting it.

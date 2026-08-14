@@ -83,7 +83,7 @@ Before adding any item from this page:
 9. Record the tool owner, known limitation, disable path, and removal trigger.
 10. Remove or constrain the integration if decision value does not justify its carrying cost.
 
-See [External Capability Governance](doctrine/capabilities/external-capability-governance.md) for the full decision framework. Connection proves transport; it does not prove usefulness, safety, authority, or source quality.
+See [External Capability Governance](operating-thought/capabilities/external-capability-governance.md) for the full decision framework. Connection proves transport; it does not prove usefulness, safety, authority, or source quality.
 
 ## Deliberately omitted
 

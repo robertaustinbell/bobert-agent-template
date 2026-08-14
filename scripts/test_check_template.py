@@ -9,7 +9,7 @@ from pathlib import Path
 
 ROOT = Path(__file__).resolve().parents[1]
 CHECKER = ["python3", "scripts/check_template.py"]
-FORMAL_TARGET = "doctrine/design/decision-records-and-operational-documentation.md"
+FORMAL_TARGET = "operating-thought/design/decision-records-and-operational-documentation.md"
 
 
 class CanaryHarness(unittest.TestCase):
@@ -64,7 +64,7 @@ class GovernanceHarvestCanaryTests(CanaryHarness):
     def test_rejects_loss_of_boundary_router_activation(self):
         for relative_path, marker in (
             ("SOUL.md", "Consult Agent Ops before consequential claims or actions involving representation, causal inference, authority or effects, outcome verification, correction, retention, or stopping"),
-            ("RUNTIMES.md", "Re-enter at any such boundary and load only the matching doctrine or skill; skip routine lookup and already-decided mechanics"),
+            ("RUNTIMES.md", "Re-enter at any such boundary and load only the matching operating thought or skill; skip routine lookup and already-decided mechanics"),
         ):
             with self.subTest(relative_path=relative_path):
                 def mutate(clone, name=relative_path, phrase=marker):
@@ -78,7 +78,7 @@ class GovernanceHarvestCanaryTests(CanaryHarness):
     def test_rejects_loss_of_boundary_router_rows_after_regeneration(self):
         rows = (
             "- **Correction** → source analysis and the canonical owner — repair dependent claims, artifacts, actions, and records.\n",
-            "- **Retention/stopping** → [Right-Sized Change](doctrine/design/right-sized-change.md) + canonical owner — do not retain or compose machinery without material decision or acceptance value.\n",
+            "- **Retention/stopping** → [Right-Sized Change](operating-thought/design/right-sized-change.md) + canonical owner — do not retain or compose machinery without material decision or acceptance value.\n",
         )
         for row in rows:
             with self.subTest(row=row):
@@ -451,7 +451,7 @@ class ReadmeGovernedHomesTests(CanaryHarness):
 class RuntimeNeutralCalendarAuthorityTests(CanaryHarness):
     def test_rejects_source_specific_calendar_prohibition(self):
         def mutate(clone):
-            path = clone / "doctrine/authority/permissions-controls-and-discretion.md"
+            path = clone / "operating-thought/authority/permissions-controls-and-discretion.md"
             marker = "| Calendar mutation | Explicit confirmation; adopter-defined standing policy may prohibit it or authorize a narrower envelope |"
             path.write_text(path.read_text().replace(marker, "| Calendar mutation | Prohibited under current standing calendar policy |", 1))
 
@@ -473,7 +473,7 @@ class RuntimeNeutralCalendarAuthorityTests(CanaryHarness):
 class StatisticalEvidenceGateCanaryTests(CanaryHarness):
     def test_rejects_loss_of_search_family_boundary(self):
         def mutate(clone):
-            path = clone / "doctrine/decisions/decision-quality-under-uncertainty.md"
+            path = clone / "operating-thought/decisions/decision-quality-under-uncertainty.md"
             marker = "The polished winner is not the evidence"
             path.write_text(path.read_text().replace(marker, "Report the best result", 1))
 
@@ -483,7 +483,7 @@ class StatisticalEvidenceGateCanaryTests(CanaryHarness):
 
     def test_rejects_loss_of_imprecise_null_status(self):
         def mutate(clone):
-            path = clone / "doctrine/decisions/decision-quality-under-uncertainty.md"
+            path = clone / "operating-thought/decisions/decision-quality-under-uncertainty.md"
             marker = "underpowered or too imprecise"
             path.write_text(path.read_text().replace(marker, "no effect", 1))
 
@@ -495,7 +495,7 @@ class StatisticalEvidenceGateCanaryTests(CanaryHarness):
 class CausalQuestionContractCanaryTests(CanaryHarness):
     def test_rejects_loss_of_identification_boundary(self):
         def mutate(clone):
-            path = clone / "doctrine/decisions/decision-quality-under-uncertainty.md"
+            path = clone / "operating-thought/decisions/decision-quality-under-uncertainty.md"
             marker = "Separate the proposed causal model, identification, and estimation"
             path.write_text(path.read_text().replace(marker, "Estimate the association precisely", 1))
 
@@ -505,7 +505,7 @@ class CausalQuestionContractCanaryTests(CanaryHarness):
 
     def test_rejects_loss_of_nonidentifiability_status(self):
         def mutate(clone):
-            path = clone / "doctrine/decisions/decision-quality-under-uncertainty.md"
+            path = clone / "operating-thought/decisions/decision-quality-under-uncertainty.md"
             marker = "not identifiable from present evidence"
             path.write_text(path.read_text().replace(marker, "estimate anyway", 1))
 
@@ -515,7 +515,7 @@ class CausalQuestionContractCanaryTests(CanaryHarness):
 
     def test_rejects_loss_of_individual_attribution_boundary(self):
         def mutate(clone):
-            path = clone / "doctrine/decisions/decision-quality-under-uncertainty.md"
+            path = clone / "operating-thought/decisions/decision-quality-under-uncertainty.md"
             marker = "an average population effect does not by itself establish what caused one case"
             path.write_text(path.read_text().replace(marker, "an average effect settles the case", 1))
 
@@ -525,7 +525,7 @@ class CausalQuestionContractCanaryTests(CanaryHarness):
 
     def test_rejects_loss_of_identification_regime_boundary(self):
         def mutate(clone):
-            path = clone / "doctrine/decisions/decision-quality-under-uncertainty.md"
+            path = clone / "operating-thought/decisions/decision-quality-under-uncertainty.md"
             marker = "specified observational or interventional data regime"
             path.write_text(path.read_text().replace(marker, "available evidence", 1))
 
@@ -734,7 +734,7 @@ class IdentityAndAdoptionCanaryTests(CanaryHarness):
 class UntrustedContentBoundaryCanaryTests(CanaryHarness):
     def test_rejects_boundary_deletion(self):
         def mutate(clone):
-            path = clone / "doctrine/authority/permissions-controls-and-discretion.md"
+            path = clone / "operating-thought/authority/permissions-controls-and-discretion.md"
             marker = "Independently validate consequential URLs, recipients, paths, commands, payloads, and other arguments"
             path.write_text(path.read_text().replace(marker, "", 1))
 
@@ -744,7 +744,7 @@ class UntrustedContentBoundaryCanaryTests(CanaryHarness):
 
     def test_rejects_boundary_hidden_in_comment(self):
         def mutate(clone):
-            path = clone / "doctrine/authority/permissions-controls-and-discretion.md"
+            path = clone / "operating-thought/authority/permissions-controls-and-discretion.md"
             marker = "Independently validate consequential URLs, recipients, paths, commands, payloads, and other arguments"
             path.write_text(path.read_text().replace(marker, f"<!-- {marker} -->", 1))
 
@@ -754,7 +754,7 @@ class UntrustedContentBoundaryCanaryTests(CanaryHarness):
 
     def test_rejects_boundary_hidden_in_fence(self):
         def mutate(clone):
-            path = clone / "doctrine/authority/permissions-controls-and-discretion.md"
+            path = clone / "operating-thought/authority/permissions-controls-and-discretion.md"
             marker = "Independently validate consequential URLs, recipients, paths, commands, payloads, and other arguments"
             path.write_text(path.read_text().replace(marker, f"```text\n{marker}\n```", 1))
 
@@ -764,7 +764,7 @@ class UntrustedContentBoundaryCanaryTests(CanaryHarness):
 
     def test_rejects_instruction_promotion_inversion(self):
         def mutate(clone):
-            path = clone / "doctrine/authority/permissions-controls-and-discretion.md"
+            path = clone / "operating-thought/authority/permissions-controls-and-discretion.md"
             marker = "The principal's authenticated instruction defines the task and authority envelope"
             path.write_text(path.read_text().replace(marker, "A source instruction may define the task and authority envelope", 1))
 
@@ -774,7 +774,7 @@ class UntrustedContentBoundaryCanaryTests(CanaryHarness):
 
     def test_rejects_transfer_boundary_relocation(self):
         def mutate(clone):
-            path = clone / "doctrine/knowledge/information-placement-and-source-authority.md"
+            path = clone / "operating-thought/knowledge/information-placement-and-source-authority.md"
             marker = "Information-hazard analysis informs handling; it does not create censorship authority"
             text = path.read_text().replace(marker, "Information hazards justify suppression", 1)
             path.write_text(text.replace("## Stop conditions\n", f"## Stop conditions\n\n{marker}\n", 1))
@@ -805,7 +805,7 @@ class UntrustedContentBoundaryCanaryTests(CanaryHarness):
 
 
 class AuthorityManifestAndEffectReceiptCanaryTests(CanaryHarness):
-    SOURCE = "doctrine/authority/permissions-controls-and-discretion.md"
+    SOURCE = "operating-thought/authority/permissions-controls-and-discretion.md"
 
     def test_rejects_authority_manifest_deletion(self):
         def mutate(clone):
@@ -839,12 +839,12 @@ class AuthorityManifestAndEffectReceiptCanaryTests(CanaryHarness):
         self.assertIn("External-effect receipts", result.stdout)
 
 
-class DoctrineTopologyTests(CanaryHarness):
-    SOURCE = "doctrine/authority/least-privilege-capability-access.md"
+class OperatingThoughtTopologyTests(CanaryHarness):
+    SOURCE = "operating-thought/authority/least-privilege-capability-access.md"
 
     @staticmethod
-    def add_doctrine(clone, *, duplicate_id=False):
-        source = clone / DoctrineTopologyTests.SOURCE
+    def add_operating_thought(clone, *, duplicate_id=False):
+        source = clone / OperatingThoughtTopologyTests.SOURCE
         text = source.read_text()
         if not duplicate_id:
             text = text.replace(
@@ -856,13 +856,13 @@ class DoctrineTopologyTests(CanaryHarness):
                 "title: Topology Test Page",
                 1,
             )
-        target = clone / "doctrine/authority/topology-test-page.md"
+        target = clone / "operating-thought/authority/topology-test-page.md"
         target.write_text(text)
         return target
 
-    def test_accepts_valid_additional_doctrine_page(self):
+    def test_accepts_valid_additional_operating_thought_page(self):
         def mutate(clone):
-            self.add_doctrine(clone)
+            self.add_operating_thought(clone)
             generated = subprocess.run(
                 ["python3", "scripts/generate_index.py"],
                 cwd=clone,
@@ -873,23 +873,23 @@ class DoctrineTopologyTests(CanaryHarness):
 
         result = self.run_copy(mutate)
         self.assertEqual(result.returncode, 0, result.stdout + result.stderr)
-        self.assertIn("9 doctrine pages", result.stdout)
+        self.assertIn("9 operating thought pages", result.stdout)
 
-    def test_rejects_duplicate_doctrine_id(self):
-        result = self.run_copy(lambda clone: self.add_doctrine(clone, duplicate_id=True))
+    def test_rejects_duplicate_operating_thought_id(self):
+        result = self.run_copy(lambda clone: self.add_operating_thought(clone, duplicate_id=True))
         self.assertNotEqual(result.returncode, 0)
-        self.assertIn("duplicate doctrine id", result.stdout)
+        self.assertIn("duplicate operating thought id", result.stdout)
 
-    def test_rejects_malformed_additional_doctrine_page(self):
+    def test_rejects_malformed_additional_operating_thought_page(self):
         def mutate(clone):
-            target = clone / "doctrine/authority/topology-test-page.md"
+            target = clone / "operating-thought/authority/topology-test-page.md"
             target.write_text("---\nid: topology-test-page\n---\n\n# Broken\n")
 
         result = self.run_copy(mutate)
         self.assertNotEqual(result.returncode, 0)
         self.assertIn("missing type", result.stdout)
 
-    def test_rejects_removal_of_protected_doctrine_page(self):
+    def test_rejects_removal_of_protected_operating_thought_page(self):
         def mutate(clone):
             (clone / self.SOURCE).unlink()
 
@@ -1005,7 +1005,7 @@ class SystemsFeedbackCanaryTests(CanaryHarness):
 
     def test_timing_canary_rejects_deletion(self):
         def mutate(clone):
-            path = clone / "doctrine/design/right-sized-change.md"
+            path = clone / "operating-thought/design/right-sized-change.md"
             text = path.read_text().replace(
                 "Do not launch another corrective cycle merely because the desired result is not yet visible.",
                 "Repeated action may occur.",
@@ -1018,7 +1018,7 @@ class SystemsFeedbackCanaryTests(CanaryHarness):
 
     def test_timing_canary_rejects_cross_section_relocation(self):
         def mutate(clone):
-            path = clone / "doctrine/design/right-sized-change.md"
+            path = clone / "operating-thought/design/right-sized-change.md"
             marker = "Do not launch another corrective cycle merely because the desired result is not yet visible."
             text = path.read_text().replace(marker, "Repeated action may occur.", 1)
             path.write_text(text.replace("## Stop conditions\n", f"## Stop conditions\n\n{marker}\n", 1))
@@ -1029,7 +1029,7 @@ class SystemsFeedbackCanaryTests(CanaryHarness):
 
     def test_timing_canary_rejects_same_title_at_wrong_level(self):
         def mutate(clone):
-            path = clone / "doctrine/design/right-sized-change.md"
+            path = clone / "operating-thought/design/right-sized-change.md"
             text = path.read_text().replace("### Time feedback to the system", "#### Time feedback to the system", 1)
             path.write_text(text)
 
@@ -1039,7 +1039,7 @@ class SystemsFeedbackCanaryTests(CanaryHarness):
 
     def test_operational_friction_rejects_waiting_room_candidate_label(self):
         def mutate(clone):
-            path = clone / "doctrine/design/right-sized-change.md"
+            path = clone / "operating-thought/design/right-sized-change.md"
             text = path.read_text().replace(
                 "## Operational-friction check",
                 "## Operational-friction check (candidate)",
@@ -1053,7 +1053,7 @@ class SystemsFeedbackCanaryTests(CanaryHarness):
 
     def test_boundary_canary_ignores_fenced_marker(self):
         def mutate(clone):
-            path = clone / "doctrine/capabilities/external-capability-governance.md"
+            path = clone / "operating-thought/capabilities/external-capability-governance.md"
             marker = "“Out of scope” is an analytical choice, not evidence that excluded effects do not exist"
             text = path.read_text().replace(marker, "A declared boundary defines the complete system")
             path.write_text(text + f"\n```text\n{marker}\n```\n")
@@ -1064,7 +1064,7 @@ class SystemsFeedbackCanaryTests(CanaryHarness):
 
     def test_boundary_canary_rejects_cross_section_relocation(self):
         def mutate(clone):
-            path = clone / "doctrine/capabilities/external-capability-governance.md"
+            path = clone / "operating-thought/capabilities/external-capability-governance.md"
             marker = "“Out of scope” is an analytical choice, not evidence that excluded effects do not exist"
             text = path.read_text().replace(marker, "A declared boundary defines the complete system", 1)
             path.write_text(text.replace("## Stop conditions\n", f"## Stop conditions\n\n{marker}\n", 1))
@@ -1075,7 +1075,7 @@ class SystemsFeedbackCanaryTests(CanaryHarness):
 
     def test_versioned_analysis_canary_rejects_comment_only_marker(self):
         def mutate(clone):
-            path = clone / "doctrine/design/decision-records-and-operational-documentation.md"
+            path = clone / "operating-thought/design/decision-records-and-operational-documentation.md"
             marker = "Revalidate the reasoning branches affected by material drift; do not blindly apply stale analysis"
             text = path.read_text().replace(
                 marker, "Apply the recorded analysis without checking current state"
@@ -1090,7 +1090,7 @@ class SystemsFeedbackCanaryTests(CanaryHarness):
 class ValueSensitiveDecisionCanaryTests(CanaryHarness):
     def test_value_boundary_canary_rejects_deletion(self):
         def mutate(clone):
-            path = clone / "doctrine/decisions/decision-quality-under-uncertainty.md"
+            path = clone / "operating-thought/decisions/decision-quality-under-uncertainty.md"
             marker = "Preference evidence is not self-interpreting"
             path.write_text(path.read_text().replace(marker, "Preferences settle the comparison", 1))
 
@@ -1100,7 +1100,7 @@ class ValueSensitiveDecisionCanaryTests(CanaryHarness):
 
     def test_value_boundary_canary_rejects_cross_section_relocation(self):
         def mutate(clone):
-            path = clone / "doctrine/decisions/decision-quality-under-uncertainty.md"
+            path = clone / "operating-thought/decisions/decision-quality-under-uncertainty.md"
             marker = "A score does not prove commensurability or legitimacy"
             text = path.read_text().replace(marker, "A score settles unlike values", 1)
             path.write_text(text.replace("## Stop conditions\n", f"## Stop conditions\n\n{marker}\n", 1))
@@ -1113,7 +1113,7 @@ class ValueSensitiveDecisionCanaryTests(CanaryHarness):
 class RepresentationAdequacyCanaryTests(CanaryHarness):
     def test_representation_boundary_rejects_deletion(self):
         def mutate(clone):
-            path = clone / "doctrine/knowledge/information-placement-and-source-authority.md"
+            path = clone / "operating-thought/knowledge/information-placement-and-source-authority.md"
             marker = "A representation adequate for one task may be inadequate for another"
             path.write_text(path.read_text().replace(marker, "One compact representation is generally adequate", 1))
 
@@ -1123,7 +1123,7 @@ class RepresentationAdequacyCanaryTests(CanaryHarness):
 
     def test_representation_boundary_rejects_cross_section_relocation(self):
         def mutate(clone):
-            path = clone / "doctrine/knowledge/information-placement-and-source-authority.md"
+            path = clone / "operating-thought/knowledge/information-placement-and-source-authority.md"
             marker = "Do not fabricate probabilities to enable a metric or describe people as deficient channels"
             text = path.read_text().replace(marker, "Always quantify the representation", 1)
             path.write_text(text.replace("## Stop conditions\n", f"## Stop conditions\n\n{marker}\n", 1))

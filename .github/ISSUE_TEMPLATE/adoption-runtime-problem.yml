@@ -29,7 +29,7 @@ body:
     id: setup
     attributes:
       label: Sanitized setup
-      description: Which adoption and runtime steps were completed? Describe where persistent identity, router, and doctrine were installed or made retrievable without exposing local paths or private configuration.
+      description: Which adoption and runtime steps were completed? Describe where persistent identity, router, and operating thought were installed or made retrievable without exposing local paths or private configuration.
     validations:
       required: true
 
@@ -57,7 +57,7 @@ body:
         - Adoption or customization
         - Persistent identity loading
         - Identity update comparison or acknowledgment
-        - Router loading or doctrine retrieval
+        - Router loading or operating thought retrieval
         - Context degradation reporting
         - Untrusted-content boundary
         - Integrity checker or generated index
@@ -77,7 +77,7 @@ body:
     id: degradation
     attributes:
       label: Degraded-context behavior
-      description: If identity, router, doctrine, or state was unavailable, did the agent report the gap, fabricate content, proceed, or stop?
+      description: If identity, router, operating thought, or state was unavailable, did the agent report the gap, fabricate content, proceed, or stop?
     validations:
       required: true
 

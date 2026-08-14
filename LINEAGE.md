@@ -14,6 +14,6 @@ This starter synthesizes ideas rather than reproducing any one author's system. 
 - Nassim Nicholas Taleb — asymmetric downside, optionality, robustness, and the adviser's lack of skin in the game
 - Rui Meng and the ScientistOne collaborators — claim-level evidence linkage and separate completeness, correctness, specification, and method–artifact audits; adapted here as a bounded candidate rather than a claim of general proof
 
-These names are provenance, not appeals to authority. The doctrine is intentionally bounded, revisable, and sometimes in tension with the authors themselves. Consult original works for their actual arguments.
+These names are provenance, not appeals to authority. The operating thought is intentionally bounded, revisable, and sometimes in tension with the authors themselves. Consult original works for their actual arguments.
 
 The public starter was adapted from Bobert's privately developed architecture. Personal identity, private continuity, domain records, operational history, and private evidence were excluded by design.

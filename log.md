@@ -1,6 +1,14 @@
 # Material operating log
 
-Record only material doctrine failures, contradictions, retrieval misses, scope or confidence changes, and architecture revisions. Ordinary success does not require an entry.
+## 2026-08-14 — Renamed doctrine to operating thought
+
+- **Trigger:** `doctrine` carried dogmatic and restrictive connotations inconsistent with the starter's intended use of accumulated human reasoning tools.
+- **Decision:** renamed the active category and its paths, metadata, routing language, validators, skills, and SOUL references to `operating thought` / `operating-thought`.
+- **Meaning:** Agent Ops is a living body of retrievable operating judgment intended to improve perception, invention, judgment, and action—not merely a stability or compliance layer.
+- **Boundary:** this terminology migration does not make stored guidance unquestionable. Evidence, scope, confidence, revision conditions, and the adopting user's authority remain controlling.
+- **Verification:** generated routing, 85 regression tests, and the template integrity checker passed after migration.
+
+Record only material operating thought failures, contradictions, retrieval misses, scope or confidence changes, and architecture revisions. Ordinary success does not require an entry.
 
 ## 2026-08-13 — Closed public routing and adoption canary gaps
 
@@ -9,7 +17,7 @@ Record only material doctrine failures, contradictions, retrieval misses, scope 
 - Updated stale adoption guidance to the boundary-based activation contract, linked the optional decision brief from the main architecture table, and made explicit that exercised adapter capability tables belong in runtime-owned governed records rather than this universal starter.
 - Verification passed with 85 template tests, 19 authority/effect contract tests, generated-index consistency, the canonical template checker, Python compilation, and diff hygiene. These checks protect the public contract; they do not prove runtime retrieval or behavioral compliance.
 
-## 2026-08-13 — Routed doctrine at consequential boundaries
+## 2026-08-13 — Routed operating thought at consequential boundaries
 
 - Repaired the runtime activation path so ordinary work re-enters Agent Ops when it becomes a consequential representation, causal explanation, authority decision, external effect, outcome claim, correction, or durable commitment.
 - Added a generated boundary-routing view that preserves unknown-state distinctions, requires discriminating evidence before causal narrowing, separates tool acknowledgement from user-visible outcome, propagates corrections through dependents, and keeps primary-task completion in control of procedure composition.
@@ -18,7 +26,7 @@ Record only material doctrine failures, contradictions, retrieval misses, scope 
 
 ## 2026-08-12 — Added bounded runtime portability and decision intake
 
-- Added a runtime-adapter boundary: canonical doctrine remains the owner; client adapters may normalize native payloads and report exercised capability, but may not add standing authority or advertise speculative compatibility.
+- Added a runtime-adapter boundary: canonical operating thought remains the owner; client adapters may normalize native payloads and report exercised capability, but may not add standing authority or advertise speculative compatibility.
 - Added startup-context observability guidance that keeps the approved manifest independent of observed counts and hashes, while explicitly denying full-prompt, token, attention, retrieval, or behavioral proof.
 - Added an optional consequential-decision brief for remaining material choices; it is not required for routine work or execution after the responsible person has decided.
 - Kept the experimental forecast schema and validator private pending natural field use. This public delta is portable guidance, not evidence that any runtime implements it.
@@ -49,19 +57,19 @@ Record only material doctrine failures, contradictions, retrieval misses, scope 
 
 ## 2026-08-10 — Added machine-checkable authority and effect-state distinctions
 
-- **Doctrine:** `doctrine/authority/permissions-controls-and-discretion.md`
+- **Operating thought:** `operating-thought/authority/permissions-controls-and-discretion.md`
 - **Trigger:** a private implementation review exposed portable ways to make delegated authority and external-effect reporting inspectable without adding another operating layer.
 - **Expected:** preserve authorization boundaries across delegation and prevent requested, prepared, or attempted work from being reported as completed.
 - **Observed:** independent review found modest clarity but no runtime control effect and exposed initial gaps in expiry, task binding, evidence classes, future timestamps, and claim precision; nineteen repaired tests now cover those structural paths.
 - **Material effect:** the bounded skill remains an inspectable checklist, not an authority boundary; `task_id` binds parent and child delegation identity, and effect receipts reject unknown evidence classes and materially future timestamps.
 - **Evidence:** `skills/authority-effect-contracts`; the workflow runs its fixture suite. Runtime enforcement, handle resolution, sensitive-value detection, and universal emission remain intentionally unclaimed.
-- **Correction:** refined the existing authority owner and narrow procedure, separated the real temporary-write test from the illustrative fixture, and did not add another doctrine page, runtime, or ledger requirement.
+- **Correction:** refined the existing authority owner and narrow procedure, separated the real temporary-write test from the illustrative fixture, and did not add another operating thought page, runtime, or ledger requirement.
 
 ## 2026-08-10 — Exposed governed homes in the README architecture map
 
 - **Surface:** `README.md`; checker canaries and mutation tests
-- **Failure:** the primary architecture table showed identity, doctrine, adoption, runtime, and tooling surfaces but omitted the governed homes already assigned in `GOVERNANCE.md`
-- **Decision effect:** a README-only evaluator can now distinguish procedures, local decisions, private domain records, evidence, archive material, and the change log without treating any of them as identity or doctrine
+- **Failure:** the primary architecture table showed identity, operating thought, adoption, runtime, and tooling surfaces but omitted the governed homes already assigned in `GOVERNANCE.md`
+- **Decision effect:** a README-only evaluator can now distinguish procedures, local decisions, private domain records, evidence, archive material, and the change log without treating any of them as identity or operating thought
 - **Boundary:** the new map summarizes existing ownership; it does not create new directories, authority, runtime capability, or permission to place private records in the public repository
 - **Verification:** required-fragment checks and per-home mutation tests reject silent removal of any governed home
 
@@ -71,7 +79,7 @@ Record only material doctrine failures, contradictions, retrieval misses, scope 
 - **Failure:** the runtime-neutral template presented the source principal's standing prohibition on calendar mutation as universal template state
 - **Decision effect:** calendar mutation now requires explicit confirmation by default while allowing each adopter to define a stricter prohibition or a narrower standing authorization
 - **Boundary:** this changes only the public starter; it does not alter any source principal's actual calendar policy or grant calendar-write authority
-- **Verification:** section-aware canaries reject restoration of the source-specific prohibition in doctrine or customization guidance
+- **Verification:** section-aware canaries reject restoration of the source-specific prohibition in operating thought or customization guidance
 
 ## 2026-08-09 — Added a bounded statistical-evidence gate
 
@@ -118,7 +126,7 @@ Record only material doctrine failures, contradictions, retrieval misses, scope 
 
 ## 2026-08-08 — Added an interaction-structure diagnostic
 
-- **Doctrine:** Decision Quality Under Uncertainty
+- **Operating thought:** Decision Quality Under Uncertainty
 - **Decision effect:** distinguishes component failure from outcomes produced by interaction topology, update dynamics, sequencing, or feedback before selecting an intervention
 - **Scope:** consequential multi-component behavior where the interaction mechanism could change fault localization or repair; not isolated failures, a universal emergence theory, or mandatory system mapping
 - **Evidence:** M. E. J. Newman, “Resource Letter CS-1: Complex Systems,” *American Journal of Physics* 79, no. 8 (2011): 800–810, DOI 10.1119/1.3590372; no general production decision effect established
@@ -126,18 +134,18 @@ Record only material doctrine failures, contradictions, retrieval misses, scope 
 
 ## 2026-08-08 — Added untrusted-content and information-transfer boundaries
 
-- **Surface:** authority, source-placement, and capability doctrine; `RUNTIMES.md`; `FIELD-TESTING.md`; checker canaries and mutation tests.
+- **Surface:** authority, source-placement, and capability operating thought; `RUNTIMES.md`; `FIELD-TESTING.md`; checker canaries and mutation tests.
 - **Decision effect:** separates authenticated task authority, attributed source evidence, and independently validated action; preserves provenance through summaries and handoffs; tests that useful facts remain available while source instructions cannot expand authority, supply consequential arguments, or create persistence.
 - **Scope:** retrieved content, tool output, consequential execution, publication, aggregation, and durable retention. The transfer check is proportional and does not apply ceremonial hazard review to routine low-stakes communication.
 - **Boundary:** labels and prompts are behavioral policy, not technical containment. Hazard identification does not create censorship authority, justify concealing material truth, or override the principal's rights and agency. A blanket refusal is not a clean test success.
 - **Verification:** section-aware canaries protect instruction promotion, independent argument validation, source-versus-control provenance, information-transfer limits, runtime free-form execution rejection, and field-test negative controls; focused inversion, relocation, and deletion mutations must fail.
 
-## 2026-08-07 — Removed doctrine-count quota and bound identity updates to reviewed content
+## 2026-08-07 — Removed operating-thought-count quota and bound identity updates to reviewed content
 
 - **Surface:** `RUNTIMES.md`, Governance, and the template checker.
-- **Decision effect:** distinguishes authorized update source from byte identity, binds comparison, acknowledgment, activation, and the resulting installed identifier to one candidate, exercises that path in the runtime probe, and removes the unjustified exact-eight doctrine-page rule.
-- **Boundary:** the runtime probe tests only the configured resolution and update path; it does not prove universal source authenticity, judgment quality, or future runtime behavior. The current doctrine count is neither a floor nor a ceiling, and topology changes must still preserve protected interfaces deliberately.
-- **Verification:** checker canaries protect the identity-update contract and probe; topology mutations must accept a valid added page while rejecting duplicate IDs, malformed additions, and removal of protected doctrine.
+- **Decision effect:** distinguishes authorized update source from byte identity, binds comparison, acknowledgment, activation, and the resulting installed identifier to one candidate, exercises that path in the runtime probe, and removes the unjustified exact-eight operating-thought-page rule.
+- **Boundary:** the runtime probe tests only the configured resolution and update path; it does not prove universal source authenticity, judgment quality, or future runtime behavior. The current operating thought count is neither a floor nor a ceiling, and topology changes must still preserve protected interfaces deliberately.
+- **Verification:** checker canaries protect the identity-update contract and probe; topology mutations must accept a valid added page while rejecting duplicate IDs, malformed additions, and removal of protected operating thought.
 
 ## 2026-08-07 — Clarified decision ownership and identity-update adoption
 
@@ -148,7 +156,7 @@ Record only material doctrine failures, contradictions, retrieval misses, scope 
 
 ## 2026-08-07 — Added task-conditioned representation adequacy
 
-- **Doctrine:** Decision Quality Under Uncertainty
+- **Operating thought:** Decision Quality Under Uncertainty
 - **Decision effect:** evaluates consequential compression relative to a downstream task, loss-sensitive distinctions, and recoverable evidence; permits bounded-versus-expanded context comparison and measured predictive-loss checks only where recurring cases make the difference checkable
 - **Scope:** consequential summaries, handoffs, memory representations, context selection, and recurring probabilistic predictions; not a mandatory checklist for one-shot work or a rule to maximize information
 - **Evidence:** Thomas M. Cover and Joy A. Thomas, *Elements of Information Theory*, 2nd ed. (Wiley, 2006), especially relative entropy, entropy rate and Markov context, rate-distortion theory, and universal coding
@@ -157,7 +165,7 @@ Record only material doctrine failures, contradictions, retrieval misses, scope 
 
 ## 2026-08-06 — Added bounded systems-feedback refinements
 
-- **Doctrine:** Decision Quality Under Uncertainty, External Capability Governance, Decision Records and Operational Documentation, and `FIELD-TESTING.md`
+- **Operating thought:** Decision Quality Under Uncertainty, External Capability Governance, Decision Records and Operational Documentation, and `FIELD-TESTING.md`
 - **Decision effect:** distinguishes propagation and settling from failure, labels how load-bearing boundaries are known, checks material translation loss at heterogeneous interfaces, and binds consequential recommendations to the system state actually inspected
 - **Scope:** consequential recurring loops, heterogeneous interfaces, and evolving systems where these distinctions could alter action or verification; not a universal systems-analysis checklist or physical-control model for people
 - **Evidence:** George E. Mobus and Michael C. Kalton, *Principles of Systems Science* (Springer, 2015), especially PDF pp. 111–130, 406–415, 621–650, 637–641, and 750–754 in the reviewed source artifact
@@ -173,7 +181,7 @@ Record only material doctrine failures, contradictions, retrieval misses, scope 
 
 ## 2026-07-31 — Added consequential claim-to-evidence auditing as a field-test candidate
 
-- **Doctrine:** `doctrine/design/decision-records-and-operational-documentation.md` — `Consequential claim-to-evidence audit (candidate)`; `FIELD-TESTING.md` — `Claim-to-evidence audit candidate test`
+- **Operating thought:** `operating-thought/design/decision-records-and-operational-documentation.md` — `Consequential claim-to-evidence audit (candidate)`; `FIELD-TESTING.md` — `Claim-to-evidence audit candidate test`
 - **Decision effect:** tests whether building claim links during consequential evidence-bearing work, then auditing completeness separately from support correctness, exposes material omissions, overstatement, proxy compliance, unverifiable results, or method–artifact mismatch before presentation
 - **Scope:** recommendations, reports, audits, releases, quantitative results, and synthesized conclusions where a false claim would materially change the decision; not a universal ledger for routine authoritative lookup, casual explanation, or reversible low-stakes work
 - **Evidence:** Google Research, “Science One Framework: A Verifiable Autonomous Research Framework via Chain-of-Evidence”; Meng et al., “ScientistOne: Towards Human-Level Autonomous Research via Chain-of-Evidence,” arXiv:2605.26340
@@ -190,25 +198,25 @@ Record only material doctrine failures, contradictions, retrieval misses, scope 
 
 ## 2026-07-30 — Added operational friction as a field-test candidate
 
-- **Protocol:** `FIELD-TESTING.md` — `Operational-friction candidate test`; `doctrine/design/right-sized-change.md` — `Operational-friction check (candidate)`
+- **Protocol:** `FIELD-TESTING.md` — `Operational-friction candidate test`; `operating-thought/design/right-sized-change.md` — `Operational-friction check (candidate)`
 - **Decision effect:** tests whether individually tolerable delays, handoffs, state mismatches, degraded conditions, or capacity limits interact or compound across the real operating path enough to change simplification, margin, rehearsal, recovery, or read-back
-- **Scope:** consequential multi-step work where cumulative practical resistance may change the move; not a seventh situational-awareness stage, exhaustive hazard inventory, mandatory checklist, label for people, manufactured live disruption, or commander-centric doctrine
+- **Scope:** consequential multi-step work where cumulative practical resistance may change the move; not a seventh situational-awareness stage, exhaustive hazard inventory, mandatory checklist, label for people, manufactured live disruption, or commander-centric operating thought
 - **Evidence:** Clausewitz, *On War*, Book I, Chapter VII; Eugenia C. Kiesling, “On War Without the Fog” (2001)
-- **Correction:** independent review caught two release blockers before publication: the generated index had displaced the established stable-component-removal trigger, and the validator protected field-test safeguards without protecting the same load-bearing active-doctrine text. The trigger was consolidated and both surfaces now carry lexical regression canaries; these remain deletion/drift checks, not semantic proof.
+- **Correction:** independent review caught two release blockers before publication: the generated index had displaced the established stable-component-removal trigger, and the validator protected field-test safeguards without protecting the same load-bearing active operating-thought text. The trigger was consolidated and both surfaces now carry lexical regression canaries; these remain deletion/drift checks, not semantic proof.
 - **Remaining uncertainty:** the candidate may only rename existing preflight, critical-path, resilience, and situational-understanding controls; retain, narrow, or remove it according to prospective decision effects and clean null, negative, harmful, or confounded results
 
 ## 2026-07-30 — Opened bounded public field testing
 
 - **Architecture:** `FIELD-TESTING.md` and `.github/ISSUE_TEMPLATE/concept-field-test.yml`
 - **Decision effect:** gives adopters a structured path to report prospective, retrospective, positive, null, negative, and confounded results from real work
-- **Scope:** active doctrine in this starter; situational understanding is the initial worked protocol, not a universal or mandatory checklist
+- **Scope:** active operating thought in this starter; situational understanding is the initial worked protocol, not a universal or mandatory checklist
 - **Boundary:** public reports must contain sanitized minimum-necessary evidence, exclude runtime state and dumps, and remain inside already-granted authority
 - **Correction:** independent review found the direct issue form had a weaker privacy warning than the protocol and could encourage reconstructed predictions or causal overstatement; the form and validator were hardened before treating the release as complete
 - **Remaining uncertainty:** reports may be self-selected, correlated, or influenced by extra attention; volume alone does not establish general validity
 
 ## 2026-07-30 — Added situational-understanding diagnostics
 
-- **Doctrine:** `doctrine/decisions/decision-quality-under-uncertainty.md`
+- **Operating thought:** `operating-thought/decisions/decision-quality-under-uncertainty.md`
 - **Decision effect:** distinguishes perception, comprehension, projection, decision, execution, and feedback failures so agents can repair the earliest supported failed layer
 - **Scope:** consequential dynamic work where changing state or projection can alter the action; not a mandatory checklist for routine factual or mechanical tasks
 - **Evidence:** `evidence/sources/situational-awareness-munir-aved-blasch-2022.md`
@@ -216,8 +224,8 @@ Record only material doctrine failures, contradictions, retrieval misses, scope 
 
 ## 2026-07-31 — Strengthened cross-domain operating safeguards
 
-- **Doctrine:** Right-Sized Change, Decision Quality, External Capability Governance, Decision Records, Strategic Response, Information Placement, and Governance
-- **Decision effect:** adds compact bounds, negative triggers, evidence/value separation, competence checks, sensor minimization, and exception conditions to the active doctrine users consult directly
+- **Operating thought:** Right-Sized Change, Decision Quality, External Capability Governance, Decision Records, Strategic Response, Information Placement, and Governance
+- **Decision effect:** adds compact bounds, negative triggers, evidence/value separation, competence checks, sensor minimization, and exception conditions to the active operating thought users consult directly
 - **Scope:** portable cross-domain judgment only; no personal product contract, machine state, live integration status, or archived source-agent authority
 - **Correction:** file preservation or destination mapping does not by itself prove that behavior-changing meaning remains active; compare triggers, boundaries, exceptions, failure modes, confidence qualifiers, and implementation ownership proposition by proposition
 - **Remaining uncertainty:** the additions are structurally and semantically reviewable but remain guidance rather than proof of improved outcomes; future field evidence should narrow or remove wording that adds ceremony without changing decisions or repairs
@@ -226,6 +234,6 @@ Record only material doctrine failures, contradictions, retrieval misses, scope 
 
 - **Architecture:** `README.md`, `RUNTIMES.md`, `SOUL.md`, Governance, Least-Privilege Capability Access, and Permissions, Controls, and Discretion
 - **Decision effect:** distinguishes prompt policy from technical containment, assigns identity-version comparison to installation or runtime integration, limits session-start comparison to runtimes with the required state, and gives adopters one paired mechanical-versus-decision example
-- **Identity change:** the public starter SOUL now separates stewardship's relational posture from the operative access boundary and keeps a compact causal reflex while detailed causal analysis remains doctrine-owned
+- **Identity change:** the public starter SOUL now separates stewardship's relational posture from the operative access boundary and keeps a compact causal reflex while detailed causal analysis remains operating-thought-owned
 - **Correction:** independent mutation review found that the initial validator guarded headings and slogans but allowed removal or inversion of load-bearing update and causal semantics; focused canaries now reject those mutations
 - **Remaining uncertainty:** technical enforcement and identity provenance remain runtime-specific, and field use may show that the paired example or update contract needs narrower wording or stronger integration guidance

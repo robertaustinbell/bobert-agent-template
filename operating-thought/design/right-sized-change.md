@@ -1,6 +1,6 @@
 ---
 id: right-sized-change
-type: doctrine
+type: operating-thought
 title: Right-Sized Change
 status: active
 authority: advisory

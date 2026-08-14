@@ -21,9 +21,9 @@ source_agent_name = 'Bo' + 'bert'
 if re.search(rf"\b{source_agent_name}(?:'s)?\b", operational_runtime):
     errors.append('source-agent identity residue in RUNTIMES.md')
 required_fragments={
- 'ADOPT.md':['Replace source identities before activation','Repository attribution may remain','Follow `RUNTIMES.md`','Consult `index.md` before consequential claims or actions involving representation, causal inference, authority or effects, outcome verification, correction, retention, or stopping','Re-enter at any such boundary and load only the matching doctrine or skill; skip routine factual lookup and already-decided mechanical execution'],
+ 'ADOPT.md':['Replace source identities before activation','Repository attribution may remain','Follow `RUNTIMES.md`','Consult `index.md` before consequential claims or actions involving representation, causal inference, authority or effects, outcome verification, correction, retention, or stopping','Re-enter at any such boundary and load only the matching operating thought or skill; skip routine factual lookup and already-decided mechanical execution'],
  'CUSTOMIZE.md':['Identity handoff checklist','Search for the repository owner','explicit confirmation for calendar mutation and identity-bearing communication unless adopter-defined standing policy is stricter or grants a narrower authorization'],
- 'SOUL.md':['Honesty is bounded, not exhaustive transparency','State the boundary at the minimum safe level','Stewardship governs access','Treat authorized access as a trust','Association is not causation','Do not rely on a load-bearing causal claim without testing plausible alternative explanations and evidence','Keep Agent Ops doctrine on the causal path to consequential work','Consult Agent Ops before consequential claims or actions involving representation, causal inference, authority or effects, outcome verification, correction, retention, or stopping','Re-enter at any such boundary and load only the matching doctrine or skill; skip routine lookup and already-decided mechanics','If SOUL changes materially'],
+ 'SOUL.md':['Honesty is bounded, not exhaustive transparency','State the boundary at the minimum safe level','Stewardship governs access','Treat authorized access as a trust','Association is not causation','Do not rely on a load-bearing causal claim without testing plausible alternative explanations and evidence','Keep Agent Ops operating thought on the causal path to consequential work','Consult Agent Ops before consequential claims or actions involving representation, causal inference, authority or effects, outcome verification, correction, retention, or stopping','Re-enter at any such boundary and load only the matching operating thought or skill; skip routine lookup and already-decided mechanics','If SOUL changes materially'],
  'README.md':['behavioral policy, not a security sandbox','[OPTIONAL-TOOLS.md](OPTIONAL-TOOLS.md)','sanitized, non-prescriptive menu of capabilities','Ways to participate','Public submission, commitments, disclosures, and external communication still require authorization','Governed homes','`skills/`','`decisions/`','`domain/`','`evidence/`','`archive/`','`log.md`','[`skills/`](skills/README.md)','repository presence is not installation or authority','[`DECISION-BRIEF.md`](DECISION-BRIEF.md)','Optional worksheet for consequential choices'],
  'skills/README.md':['portable, sanitized procedures','does **not** mean they are installed, enabled, connected to tools, or granted authority','[`COMPOSITION.md`](COMPOSITION.md)','handoff contract between skills','[`agent-prompt-design`](agent-prompt-design/SKILL.md)','[`artifact-verification`](artifact-verification/SKILL.md)','[`deterministic-evidence-automation`](deterministic-evidence-automation/SKILL.md)','Private paths, case histories, live capability state, credentials, schedules, domain records, and standing permissions are excluded'],
  'skills/COMPOSITION.md':['Producer and consumer map','Lifecycle and correlation','Failure behavior','Synthetic end-to-end example','same `task_id` must bind parent and child authority manifests','Structurally valid receipt with unresolved handle','The primary task owner retains the user-facing acceptance condition','does not transfer completion ownership or authorize adjacent work','stop composition when the requested acceptance truth is resolved'],
@@ -34,20 +34,20 @@ required_fragments={
  'CONTRIBUTING.md':['Agent-assisted contributions','An agent must not open an issue, submit a pull request, disclose runtime context, accept a commitment, or communicate externally unless its principal or an authorized workflow permits that action','AI assistance is provenance, not a defect and not proof of quality','Public boundary'],
  'GOVERNANCE.md':['Discretion requires task-relevant competence','Normative basis: adopted repository policy','does not claim universal empirical validity'],
  'FIELD-TESTING.md':['template tag or commit tested','Situational-understanding starter test','Critical-capability mapping candidate test','Do not force one decisive centre','Do not label a person as a vulnerability','Operational-friction candidate test','Friction is a cross-layer amplifier, not a seventh stage','Do not manufacture disruption in a live consequential system','Never label a person, relationship, dissent, or protected exercise of agency as “friction”','A clean null result includes finding that the check only renamed an already-known concern','Systems-feedback refinement candidate test','Do not force all three into every case','Do not transfer physical control equations literally to human systems','Value-sensitive decision candidate test','Do not infer consent or merit from agreement, satisfaction, predicted choice, or silence alone','Privacy and authority boundary','Untrusted-content boundary candidate test','UTC-BASELINE','UTC-POSITIVE-CONTROL','UTC-ADVERSARIAL'],
- 'RUNTIMES.md':['Policy is not containment','behavioral policy, not a security sandbox','Three required decisions','Persistent identity','Identity update contract','record the installed canonical SOUL\'s provenance','immutable content identifier such as a commit or content hash','session-start comparison is a valid fallback only when','silent identity drift cannot be mechanically prevented','require an external update process','Doctrine activation and retrieval','consult Agent Ops before consequential claims or actions involving representation, causal inference, authority or effects, outcome verification, correction, retention, or stopping','Re-enter at any such boundary and load only the matching doctrine or skill; skip routine lookup and already-decided mechanics','Context degradation','Runtime adapter boundary','must not introduce universal policy, standing authority','Do not ship speculative adapters','Startup-context observability','approved startup manifest independent of the observed inventory','not a complete runtime-prompt','Untrusted-content execution boundary','Illustrative example: Claude Projects','Verification probe','reports degraded context instead of fabricating','[OPTIONAL-TOOLS.md](OPTIONAL-TOOLS.md)','UTC-BASELINE','UTC-POSITIVE-CONTROL','UTC-ADVERSARIAL'],
+ 'RUNTIMES.md':['Policy is not containment','behavioral policy, not a security sandbox','Three required decisions','Persistent identity','Identity update contract','record the installed canonical SOUL\'s provenance','immutable content identifier such as a commit or content hash','session-start comparison is a valid fallback only when','silent identity drift cannot be mechanically prevented','require an external update process','Operating thought activation and retrieval','consult Agent Ops before consequential claims or actions involving representation, causal inference, authority or effects, outcome verification, correction, retention, or stopping','Re-enter at any such boundary and load only the matching operating thought or skill; skip routine lookup and already-decided mechanics','Context degradation','Runtime adapter boundary','must not introduce universal policy, standing authority','Do not ship speculative adapters','Startup-context observability','approved startup manifest independent of the observed inventory','not a complete runtime-prompt','Untrusted-content execution boundary','Illustrative example: Claude Projects','Verification probe','reports degraded context instead of fabricating','[OPTIONAL-TOOLS.md](OPTIONAL-TOOLS.md)','UTC-BASELINE','UTC-POSITIVE-CONTROL','UTC-ADVERSARIAL'],
  'DECISION-BRIEF.md':['Use this worksheet only when materially different choices remain','Strongest objection','Smallest useful reversible step','How the result will be independently read back'],
  'OPTIONAL-TOOLS.md':['Curated source-agent reference, not template state','Firecrawl capability','Naming an SDK or CLI here identifies an available implementation path','Wolfram Cloud MCP','The governing rule is still **job first, tool second**','The template does not install, configure, enable, or grant authority','credentials, tokens, account identifiers','That omission is part of the design, not an incomplete export'],
- 'SECURITY.md':['private vulnerability reporting','Report a vulnerability','Ordinary doctrine disagreements'],
- 'doctrine/capabilities/external-capability-governance.md':['Continuous watchers, polling loops, and background capture are disabled by default'],
- 'doctrine/authority/least-privilege-capability-access.md':['Policy and enforcement','behavioral policy, not a security sandbox','broader effective capability as the risk surface'],
- 'doctrine/authority/permissions-controls-and-discretion.md':['Paired example','mechanical consequences inside the named outcome and scope','altering behavior outside the specified contract','the outcome, risk, or authorization envelope has changed'],
- 'doctrine/decisions/decision-quality-under-uncertainty.md':['Keep three registers separate when values could contaminate prediction'],
- 'doctrine/decisions/strategic-response-and-incentives.md':['Treat reputation as a narrow prior for a specific claim and context'],
- 'doctrine/design/decision-records-and-operational-documentation.md':['Design for the next reader and task','Revalidate the reasoning branches affected by material drift; do not blindly apply stale analysis'],
- 'doctrine/design/right-sized-change.md':['Operational-friction check','Friction is a **cross-layer amplifier**, not a seventh stage','manufactured disruption in a live consequential system','Never label a person, relationship, dissent, or protected exercise of agency as “friction”','Count the check as a null result when it only renames an already-known preflight, critical-path, or resilience concern','Local discretion remains bounded by authority, rights, competence, and recovery conditions','maximum time, cost, retries'],
- 'doctrine/knowledge/information-placement-and-source-authority.md':['prefer one residual question, one missing measurement, or one bounded follow-up'],
+ 'SECURITY.md':['private vulnerability reporting','Report a vulnerability','Ordinary operating thought disagreements'],
+ 'operating-thought/capabilities/external-capability-governance.md':['Continuous watchers, polling loops, and background capture are disabled by default'],
+ 'operating-thought/authority/least-privilege-capability-access.md':['Policy and enforcement','behavioral policy, not a security sandbox','broader effective capability as the risk surface'],
+ 'operating-thought/authority/permissions-controls-and-discretion.md':['Paired example','mechanical consequences inside the named outcome and scope','altering behavior outside the specified contract','the outcome, risk, or authorization envelope has changed'],
+ 'operating-thought/decisions/decision-quality-under-uncertainty.md':['Keep three registers separate when values could contaminate prediction'],
+ 'operating-thought/decisions/strategic-response-and-incentives.md':['Treat reputation as a narrow prior for a specific claim and context'],
+ 'operating-thought/design/decision-records-and-operational-documentation.md':['Design for the next reader and task','Revalidate the reasoning branches affected by material drift; do not blindly apply stale analysis'],
+ 'operating-thought/design/right-sized-change.md':['Operational-friction check','Friction is a **cross-layer amplifier**, not a seventh stage','manufactured disruption in a live consequential system','Never label a person, relationship, dissent, or protected exercise of agency as “friction”','Count the check as a null result when it only renames an already-known preflight, critical-path, or resilience concern','Local discretion remains bounded by authority, rights, competence, and recovery conditions','maximum time, cost, retries'],
+ 'operating-thought/knowledge/information-placement-and-source-authority.md':['prefer one residual question, one missing measurement, or one bounded follow-up'],
  '.github/ISSUE_TEMPLATE/concept-field-test.yml':['Concept field test','template_version','Strongest alternative explanation or confound','runtime state and dumps','do not reconstruct one'],
- '.github/ISSUE_TEMPLATE/idea-proposal.yml':['Doctrine or operating idea','Strongest objection or competing explanation','Reversal or narrowing condition','I reviewed the proposal\'s factual claims and any agent-assisted material'],
+ '.github/ISSUE_TEMPLATE/idea-proposal.yml':['Operating thought or operating idea','Strongest objection or competing explanation','Reversal or narrowing condition','I reviewed the proposal\'s factual claims and any agent-assisted material'],
  '.github/ISSUE_TEMPLATE/adoption-runtime-problem.yml':['Adoption or runtime problem','Template version or commit','Degraded-context behavior','I removed credentials, personal records, private prompts or messages'],
  '.github/PULL_REQUEST_TEMPLATE.md':['Decision effect','Strongest objection','Verification performed','Any public submission or external communication was authorized by the responsible person or organization'],
  '.github/workflows/validate.yml':['permissions:','contents: read','git diff --exit-code -- index.md','python3 -m unittest scripts/test_check_template.py','python3 scripts/check_template.py','python3 skills/authority-effect-contracts/scripts/test_contracts.py'],
@@ -140,7 +140,7 @@ required_sections={
    'If provenance cannot survive context construction, summarization, delegation, or compaction, do not claim prompt-injection resistance',
   ],
  },
- 'doctrine/decisions/decision-quality-under-uncertainty.md':{
+ 'operating-thought/decisions/decision-quality-under-uncertainty.md':{
   'Statistical-evidence gate':[
    'Separate magnitude from threshold crossing',
    'Expose uncertainty and detection capability',
@@ -201,7 +201,7 @@ required_sections={
    'prohibited by governing constraint',
   ],
  },
- 'doctrine/design/right-sized-change.md':{
+ 'operating-thought/design/right-sized-change.md':{
   'Time feedback to the system':[
    'Do not launch another corrective cycle merely because the desired result is not yet visible',
    'whether the prior action has had enough time to propagate',
@@ -212,7 +212,7 @@ required_sections={
    'Count the check as a null result when it only renames an already-known preflight, critical-path, or resilience concern',
   ],
  },
- 'doctrine/knowledge/information-placement-and-source-authority.md':{
+ 'operating-thought/knowledge/information-placement-and-source-authority.md':{
   'Representation adequacy and information loss':[
    'A representation adequate for one task may be inadequate for another',
    'Prefer a compact decision layer linked to recoverable evidence over repeated truncation of one narrative',
@@ -233,7 +233,7 @@ required_sections={
    'Information-hazard analysis informs handling; it does not create censorship authority',
   ],
  },
- 'doctrine/capabilities/external-capability-governance.md':{
+ 'operating-thought/capabilities/external-capability-governance.md':{
   'Boundary and interface fidelity':[
    '“Out of scope” is an analytical choice, not evidence that excluded effects do not exist',
    'State the boundary status and the consequence of being wrong',
@@ -246,7 +246,7 @@ required_sections={
    'separate retrieval from mutation, source analysis from secret access, drafting from sending, and temporary context from persistent state',
   ],
  },
- 'doctrine/authority/permissions-controls-and-discretion.md':{
+ 'operating-thought/authority/permissions-controls-and-discretion.md':{
   'Authority matrix':[
    'Calendar mutation | Explicit confirmation; adopter-defined standing policy may prohibit it or authorize a narrower envelope',
    'calendar, participants, timing, recurrence, notifications, or resulting commitment is unclear',
@@ -313,7 +313,7 @@ required_sections={
    'A blanket refusal is not a clean success, and prompt-level compliance is not proof of runtime containment',
   ],
  },
- 'doctrine/design/decision-records-and-operational-documentation.md':{
+ 'operating-thought/design/decision-records-and-operational-documentation.md':{
   'Versioned analysis of evolving systems':[
    'observed version or material state',
    'changes that would invalidate the recommendation',
@@ -333,7 +333,7 @@ required_sections={
  },
 }
 forbidden_section_fragments={
- 'doctrine/decisions/decision-quality-under-uncertainty.md':{
+ 'operating-thought/decisions/decision-quality-under-uncertainty.md':{
   'Formal-inference boundaries':[
    'Validity establishes that the premises are true',
    'Failure to find a proof establishes invalidity',
@@ -347,7 +347,7 @@ forbidden_section_fragments={
    'zero phantom references is a general guarantee',
   ],
  },
- 'doctrine/design/decision-records-and-operational-documentation.md':{
+ 'operating-thought/design/decision-records-and-operational-documentation.md':{
   'Consequential claim-to-evidence audit (candidate)':[
    'A second pass by the same model can provide independent proof',
    'A second pass by the same model is independent proof',
@@ -416,12 +416,12 @@ def active_headings(text,level=None):
     return headings
 
 required_boundary_rows = (
-    "- **Representation** → [Information Placement and Source Authority](doctrine/knowledge/information-placement-and-source-authority.md) + domain skill — do not promote unknown to zero/false.",
-    "- **Causal inference** → [Decision Quality Under Uncertainty](doctrine/decisions/decision-quality-under-uncertainty.md) + diagnostic skill — do not promote observation to cause.",
-    "- **Authority/effect** → [Permissions, Controls, and Discretion](doctrine/authority/permissions-controls-and-discretion.md) + acting skill — capability is not authority; acknowledgement is not effect.",
+    "- **Representation** → [Information Placement and Source Authority](operating-thought/knowledge/information-placement-and-source-authority.md) + domain skill — do not promote unknown to zero/false.",
+    "- **Causal inference** → [Decision Quality Under Uncertainty](operating-thought/decisions/decision-quality-under-uncertainty.md) + diagnostic skill — do not promote observation to cause.",
+    "- **Authority/effect** → [Permissions, Controls, and Discretion](operating-thought/authority/permissions-controls-and-discretion.md) + acting skill — capability is not authority; acknowledgement is not effect.",
     "- **Outcome verification** → `artifact-verification` — do not promote tool success to user-visible success.",
     "- **Correction** → source analysis and the canonical owner — repair dependent claims, artifacts, actions, and records.",
-    "- **Retention/stopping** → [Right-Sized Change](doctrine/design/right-sized-change.md) + canonical owner — do not retain or compose machinery without material decision or acceptance value.",
+    "- **Retention/stopping** → [Right-Sized Change](operating-thought/design/right-sized-change.md) + canonical owner — do not retain or compose machinery without material decision or acceptance value.",
 )
 boundary_sections = markdown_sections((ROOT/'index.md').read_text(), 'Boundary routing')
 if len(boundary_sections) != 1:
@@ -449,7 +449,7 @@ def prose_sentences(text):
     return [part.replace(sentinel,'.') for part in parts if part.strip()]
 
 def has_same_model_independence_claim(section):
-    """Heuristic lexical tripwire, not a semantic proof of doctrine compliance."""
+    """Heuristic lexical tripwire, not a semantic proof of operating thought compliance."""
     for sentence in prose_sentences(section):
         lower=sentence.lower()
         if not re.search(r'\b(?:same[- ]model|second pass by the same model)\b',lower):
@@ -478,9 +478,9 @@ for fragment in (
 # guidance remains in its owning section, not runtime compliance or semantic proof.
 # Canaried sections default to H2; add an override whenever one intentionally uses another level.
 required_section_levels={
- ('doctrine/decisions/decision-quality-under-uncertainty.md','Causal-question contract'):3,
- ('doctrine/decisions/decision-quality-under-uncertainty.md','Forecast horizon and prediction target'):3,
- ('doctrine/design/right-sized-change.md','Time feedback to the system'):3,
+ ('operating-thought/decisions/decision-quality-under-uncertainty.md','Causal-question contract'):3,
+ ('operating-thought/decisions/decision-quality-under-uncertainty.md','Forecast horizon and prediction target'):3,
+ ('operating-thought/design/right-sized-change.md','Time feedback to the system'):3,
  ('RUNTIMES.md','Identity update contract'):4,
  ('RUNTIMES.md','3. Context degradation'):3,
 }
@@ -625,7 +625,7 @@ for p in ROOT.rglob('*'):
         if re.search(pat,text,re.I): errors.append(f'{label} in {p.relative_to(ROOT)}')
     if text and not text.endswith('\n'): errors.append(f'missing final newline: {p.relative_to(ROOT)}')
 ids=[]
-for p in sorted((ROOT/'doctrine').rglob('*.md')):
+for p in sorted((ROOT/'operating-thought').rglob('*.md')):
     text=p.read_text()
     if not text.startswith('---\n') or '\n---\n' not in text[4:]: errors.append(f'bad frontmatter: {p.relative_to(ROOT)}');continue
     fm=text.split('\n---\n',1)[0]
@@ -635,7 +635,7 @@ for p in sorted((ROOT/'doctrine').rglob('*.md')):
     if m: ids.append((m.group(1).strip(),p))
 for ident in {x for x,_ in ids}:
     ps=[str(p.relative_to(ROOT)) for x,p in ids if x==ident]
-    if len(ps)>1: errors.append(f'duplicate doctrine id {ident}: {ps}')
+    if len(ps)>1: errors.append(f'duplicate operating thought id {ident}: {ps}')
 
 link_re=re.compile(r'(?<!!)\[[^\]]+\]\(([^)]+)\)')
 for p in text_files:
@@ -658,4 +658,4 @@ if errors:
     print('Template check failed:')
     for e in errors: print('-',e)
     raise SystemExit(1)
-print(f'Template check passed: {len(ids)} doctrine pages, {len(text_files)} text files')
+print(f'Template check passed: {len(ids)} operating thought pages, {len(text_files)} text files')

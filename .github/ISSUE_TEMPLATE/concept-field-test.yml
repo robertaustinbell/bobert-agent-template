@@ -5,14 +5,14 @@ body:
   - type: markdown
     attributes:
       value: |
-        Thank you for testing the doctrine in real work. Report the minimum evidence needed to evaluate the claim. Do not include credentials, personal records, private messages, runtime state or dumps, proprietary code, machine paths, account identifiers, or authorization details.
+        Thank you for testing the operating thought in real work. Report the minimum evidence needed to evaluate the claim. Do not include credentials, personal records, private messages, runtime state or dumps, proprietary code, machine paths, account identifiers, or authorization details.
 
   - type: input
     id: concept
     attributes:
       label: Concept tested
       description: Give the repository path and heading or a precise claim.
-      placeholder: doctrine/decisions/decision-quality-under-uncertainty.md — Situational understanding in dynamic work
+      placeholder: operating-thought/decisions/decision-quality-under-uncertainty.md — Situational understanding in dynamic work
     validations:
       required: true
 

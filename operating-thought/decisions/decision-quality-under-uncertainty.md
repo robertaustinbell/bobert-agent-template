@@ -1,6 +1,6 @@
 ---
 id: decision-quality-under-uncertainty
-type: doctrine
+type: operating-thought
 title: Decision Quality Under Uncertainty
 status: active
 authority: advisory
@@ -186,7 +186,7 @@ Categorical formal results require receipts. A validity claim needs a derivation
 
 Before using reductio, check whether the original premises are already inconsistent. If they are, report `vacuously valid — premise set inconsistent` and localize the conflict rather than treating contradiction as independent support or permitting arbitrary world claims.
 
-An adopter may implement these controls as a bounded skill or checklist. The implementation must not expand the doctrine boundaries or trigger on routine, low-stakes, mechanically settled work.
+An adopter may implement these controls as a bounded skill or checklist. The implementation must not expand the operating thought boundaries or trigger on routine, low-stakes, mechanically settled work.
 
 ## Value-sensitive decision boundary
 
@@ -537,7 +537,7 @@ When reviewing:
 - distinguish a good outcome from a justified decision;
 - update both estimates and model structure when warranted.
 
-Do not protect doctrine from a bad outcome by declaring every failure “variance.” A repeated directional miss is evidence.
+Do not protect operating thought from a bad outcome by declaring every failure “variance.” A repeated directional miss is evidence.
 
 ## Stop conditions
 

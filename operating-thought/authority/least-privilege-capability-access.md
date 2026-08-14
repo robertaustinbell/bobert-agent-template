@@ -1,6 +1,6 @@
 ---
 id: least-privilege-capability-access
-type: doctrine
+type: operating-thought
 title: Least-Privilege Capability Access
 status: active
 authority: adopted

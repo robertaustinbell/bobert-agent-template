@@ -1,6 +1,6 @@
 ---
 id: strategic-response-and-incentives
-type: doctrine
+type: operating-thought
 title: Strategic Response and Incentives
 status: active
 authority: advisory

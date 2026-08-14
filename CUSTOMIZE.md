@@ -22,7 +22,7 @@ Ask only questions whose answers materially change identity or authority. A sens
 - Do not infer permissions from installed tools.
 - Do not turn preferences into permanent identity without evidence that they are stable.
 - Keep hard privacy, authorization, and integrity boundaries always loaded.
-- Put situational methods in doctrine and procedures in skills rather than bloating SOUL.
+- Put situational methods in operating thought and procedures in skills rather than bloating SOUL.
 - Label unresolved choices instead of silently choosing them.
 - Tell the principal when persistent identity changes.
 

@@ -1,12 +1,12 @@
 # Field-testing the concepts
 
-This starter contains active but revisable operating doctrine. Real work—not repository coherence—reveals whether a concept improves an agent's observation, recommendation, action, verification, or repair.
+This starter contains active but revisable operating thought. Real work—not repository coherence—reveals whether a concept improves an agent's observation, recommendation, action, verification, or repair.
 
 Field reports are welcome for useful results, null results, failures, excess ceremony, and cases where another explanation fits better.
 
 ## Choose a bounded test
 
-1. Name the doctrine section or claim being tested.
+1. Name the operating thought section or claim being tested.
 2. Use a real task where the concept could materially change a decision. Do not manufacture risk or broaden an agent's authority merely to create a test.
 3. Prefer a prospective test: record the prediction, expected decision effect, success or failure signal, stop condition, and review point before acting.
 4. Use the smallest safe action that can expose useful feedback.
@@ -59,7 +59,7 @@ Friction is a cross-layer amplifier, not a seventh stage in situational understa
 
 Do not manufacture disruption in a live consequential system merely to create a test. Do not turn the candidate into an exhaustive hazard inventory, generic pessimism, or redundant fallbacks. Never label a person, relationship, dissent, or protected exercise of agency as “friction”; describe the process, dependency, handoff, state, or constraint instead. Local discretion remains bounded by authority, rights, competence, and recovery conditions.
 
-This candidate draws on Clausewitz’s account of friction in [*On War*, Book I, Chapter VII](https://www.marxists.org/reference/archive/clausewitz/works/on-war/book1/ch07.htm) and Eugenia C. Kiesling’s corrective analysis, [“On War Without the Fog”](https://clausewitzstudies.org/bibl/Kiesling-OnFog.pdf) (2001). It does not adopt “fog of war” as a new doctrine category, and its distinct usefulness for agents is unestablished.
+This candidate draws on Clausewitz’s account of friction in [*On War*, Book I, Chapter VII](https://www.marxists.org/reference/archive/clausewitz/works/on-war/book1/ch07.htm) and Eugenia C. Kiesling’s corrective analysis, [“On War Without the Fog”](https://clausewitzstudies.org/bibl/Kiesling-OnFog.pdf) (2001). It does not adopt “fog of war” as a new operating thought category, and its distinct usefulness for agents is unestablished.
 
 ## Systems-feedback refinement candidate test
 
@@ -73,7 +73,7 @@ Before action, record a prospective prediction about which refinement could chan
 4. Apply only the refinement predicted to matter. Do not force all three into every case.
 5. Record whether the result was positive, null, negative, harmful, or confounded and what changed in decision, execution, verification, or repair.
 
-A clean null result includes learning that the prior action had already settled, the boundary status was immaterial, the interface contract was stable, or state drift did not affect the recommendation. Null does not disprove the underlying doctrine; repeated ceremony without decision effect is evidence to narrow or remove the refinement.
+A clean null result includes learning that the prior action had already settled, the boundary status was immaterial, the interface contract was stable, or state drift did not affect the recommendation. Null does not disprove the underlying operating thought; repeated ceremony without decision effect is evidence to narrow or remove the refinement.
 
 Do not transfer physical control equations literally to human systems or use a declared boundary to erase agency, rights, contested objectives, authority, ethics, or interpretation. Do not treat emergence, self-organization, feedback, complexity, adaptation, or evolution as automatic evidence of autonomy, intelligence, causation, or benefit.
 

@@ -1,6 +1,6 @@
 ---
 id: external-capability-governance
-type: doctrine
+type: operating-thought
 title: External Capability Governance
 status: active
 authority: advisory
@@ -13,7 +13,7 @@ scope:
 consult_when:
   - evaluating, connecting, enabling, broadening, automating, or removing an external capability
   - a tool changes data egress, write authority, unattended behavior, credentials, billing, or failure surface
-  - deciding whether a capability deserves doctrine, a skill, configuration, a domain record, or removal
+  - deciding whether a capability deserves operating thought, a skill, configuration, a domain record, or removal
   - connection success may be mistaken for decision value
   - a consequential boundary or interface may depend on inferred scope, mismatched semantics, units, clocks, state, or uncertainty representations
   - retrieved content or tool output could influence privileged execution, persistence, disclosure, or external communication
@@ -23,13 +23,13 @@ do_not_use_when:
 router_summary: Evaluate and govern external capabilities by job, authority, egress, verification, failure surface, carrying cost, and real decision value.
 decision_effect:
   - connect the minimum useful capability rather than the broadest tool surface
-  - keep runtime state and tool-specific procedure out of universal doctrine
+  - keep runtime state and tool-specific procedure out of universal operating thought
   - remove integrations that add carrying cost without changing real decisions
 implemented_by: []
 lineage: LINEAGE.md
 known_failures:
   - treating connection or smoke-test success as decision value
-  - duplicating tool inventories in doctrine and configuration
+  - duplicating tool inventories in operating thought and configuration
   - exporting broader personal data than the decision requires
   - enabling write or unattended execution before read-only behavior is understood
   - keeping integrations because setup effort has already been spent
@@ -83,7 +83,7 @@ Connect read and write separately where possible. Prove the narrow path before b
 
 ## Ownership split
 
-### Doctrine owns
+### Operating thought owns
 
 - cross-domain authority and egress principles;
 - value and removal criteria;
@@ -118,7 +118,7 @@ Connect read and write separately where possible. Prove the narrow path before b
 - why a material local architecture or provider was selected;
 - alternatives, consequences, exit, and reconsideration conditions.
 
-Do not create a universal doctrine page for every named integration.
+Do not create a universal operating thought page for every named integration.
 
 ## Evaluation ladder
 
@@ -238,7 +238,7 @@ Do not log credentials, raw personal payloads, or installation transcript dumps.
 
 - **Tool-first routing:** discovering a capability and inventing work for it.
 - **Connectivity fallacy:** smoke success becomes proof of decision value.
-- **Inventory duplication:** doctrine freezes a tool list that configuration already owns.
+- **Inventory duplication:** operating thought freezes a tool list that configuration already owns.
 - **Read/write collapse:** broad mutation is enabled to simplify installation.
 - **Egress blindness:** a calculation quietly exports a personal dataset.
 - **Automation leap:** one manual success becomes unattended production.
