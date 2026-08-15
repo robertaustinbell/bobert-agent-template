@@ -1,6 +1,8 @@
-# Intellectual lineage and adaptation
+# Herbert's intellectual lineage and adaptation
 
-This starter synthesizes ideas rather than reproducing any one author's system. Important influences include:
+Herbert synthesizes ideas rather than reproducing any one author's system. The name acknowledges Herbert Simon's work on bounded rationality, attention, decision-making, and complex systems. It does not imply that this project reproduces Simon's identity, endorses every conclusion he reached, or speaks for him.
+
+Important influences include:
 
 - Jonathan Baron — active open-minded thinking, search, inference, and decision quality
 - Ken Binmore — model adequacy and limits on strategic formalization
