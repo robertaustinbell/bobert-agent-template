@@ -16,6 +16,7 @@ confidence_basis:
   - Binmore-derived model-adequacy guidance has low confidence and no recorded agent application.
   - The situational-awareness failure taxonomy is an operational extrapolation; adopters should judge it by changed decisions or repairs rather than conceptual neatness.
   - Value-sensitive comparison guidance is a bounded operational synthesis of contested theories. It does not establish a universal value theory or a master value.
+  - Marginal-economics, present-choice replacement, and disconfirming-evidence disposition guidance are bounded operational translations from a [fully reviewed 2020 investment and lifelong-learning text](../../evidence/sources/joys-of-compounding-baid-2020.md); transfer beyond its source domain and distinct production value remain unestablished.
   - Local value must be judged by whether the page changes consequential decisions without adding disproportionate ceremony.
 scope:
   - consequential decisions with uncertain framing, evidence, models, estimates, causal claims, or tradeoffs
@@ -73,7 +74,7 @@ review_when:
   - the forecast-horizon diagnostic repeatedly restates ordinary sensitivity analysis without changing target, horizon, action, verification, or uncertainty reporting
   - the statistical-evidence gate repeatedly adds terminology without changing an estimate, evaluation design, recommendation, abstention, verification, or repair
   - a declared trajectory limitation is used to excuse a model that fails its predeclared range, regime, structural, distributional, or decision-level prediction
-last_material_revision: 2026-08-09
+last_material_revision: 2026-08-15
 ---
 
 # Decision Quality Under Uncertainty
@@ -456,6 +457,10 @@ Evaluate choices from this point forward.
 - Preserve prior investment only when it still changes future costs, capabilities, commitments, or options.
 - Include attention and coordination cost, not only cash.
 
+For a continuing commitment whose opportunity cost is material, run a present-choice replacement test: with current evidence and current alternatives, does retaining it still dominate after switching cost, carrying cost, uncertainty, commitments, and option value? Do not let the fresh-start framing erase real transition costs, duties, or relationships.
+
+When expanding an already successful system or capability, evaluate the next unit rather than legacy average quality. Identify fully loaded incremental cost, incremental benefit, who captures that benefit, whether capacity can serve the added load, and whether attractive marginal returns have a credible runway. A gross productivity gain is not automatically retained by the decision owner; it may pass to customers, suppliers, competitors, labor, taxes, supervision, or maintenance.
+
 Name sunk cost when it is materially distorting the decision; do not use the phrase to dismiss legitimate switching costs or identity commitments.
 
 ## 11. Critical path and value of information
@@ -492,7 +497,7 @@ When relevant state can change during analysis or execution, separate three laye
 
 Information volume is not situational understanding. More observations can reduce decision quality when they are stale, redundant, correlated, unauthoritative, irrelevant, invasive, or too costly to obtain. Allocate observation and reasoning effort according to consequence, volatility, uncertainty, authority, and expected decision value.
 
-For consequential dynamic actions, preserve proportionally the objective and owner, material verified and unobserved state, interpretation, load-bearing projection, expected result, disconfirming signal, authorization boundary, and feedback path. This is a checkpoint, not a mandatory visible recital. Skip it when live authoritative state directly resolves a low-stakes question or more modeling cannot change the authorized move.
+For consequential dynamic actions, preserve proportionally the objective and owner, material verified and unobserved state, interpretation, load-bearing projection, expected result, disconfirming signal, authorization boundary, and feedback path. If observed evidence directly opposes a load-bearing conclusion, capture it while salient and dispose of it proportionally as `rebutted`, `claim narrowed`, `claim reversed`, or `unresolved` before closure. Do not turn routine disagreement into a permanent evidence ledger. This is a checkpoint, not a mandatory visible recital. Skip it when live authoritative state directly resolves a low-stakes question or more modeling cannot change the authorized move.
 
 ### Diagnose the earliest failed layer
 

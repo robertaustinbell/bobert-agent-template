@@ -14,6 +14,7 @@ Important influences include:
 - Donella Meadows — feedback loops, information flows, constraints, and leverage points
 - Philip Tetlock — calibration, prediction, and genuine belief revision
 - Nassim Nicholas Taleb — asymmetric downside, optionality, robustness, and the adviser's lack of skin in the game
+- Gautam Baid — bounded translations of marginal reinvestment economics, current-alternative comparison, and prompt disposition of contrary evidence; the source's investment heuristics and hero-outcome examples are not universalized
 - Rui Meng and the ScientistOne collaborators — claim-level evidence linkage and separate completeness, correctness, specification, and method–artifact audits; adapted here as a bounded candidate rather than a claim of general proof
 
 These names are provenance, not appeals to authority. The operating thought is intentionally bounded, revisable, and sometimes in tension with the authors themselves. Consult original works for their actual arguments.

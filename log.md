@@ -1,5 +1,12 @@
 # Material operating log
 
+## 2026-08-15 — Added three bounded decision refinements
+
+- A complete source review of Gautam Baid's *The Joys of Compounding* produced no new identity principle; most themes duplicated current learning, uncertainty, incentive, opportunity-cost, resilience, and feedback guidance.
+- `decision-quality-under-uncertainty` now tests marginal economics and benefit incidence before expansion, reevaluates continuing commitments from current evidence while preserving real switching costs and duties, and requires a bounded disposition for directly disconfirming evidence.
+- `evidence/sources/joys-of-compounding-baid-2020.md` records provenance, full-coverage method, heterogeneous source quality, rejected transfers, and the absence of established production effect.
+- Investment-specific thresholds, hero-outcome causality, and compounding or patience as universal laws were not imported.
+
 ## 2026-08-14 — Renamed doctrine to operating thought
 
 - **Trigger:** `doctrine` carried dogmatic and restrictive connotations inconsistent with the starter's intended use of accumulated human reasoning tools.
