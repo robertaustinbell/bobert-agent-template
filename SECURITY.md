@@ -1,8 +1,8 @@
 # Security policy
 
-## Supported versions
+## Supported state
 
-Security and privacy-boundary fixes are supported on the latest published release. Earlier snapshots may be useful provenance but do not receive fixes unless explicitly stated.
+Security and privacy-boundary fixes are maintained on the current default branch. Tags and GitHub releases are immutable historical snapshots and do not receive backports unless a specific checkpoint explicitly states otherwise. Use an exact commit when reporting or reproducing a defect.
 
 ## Reporting a vulnerability
 

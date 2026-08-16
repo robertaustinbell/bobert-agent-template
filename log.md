@@ -1,5 +1,12 @@
 # Material operating log
 
+## 2026-08-15 — Made the default branch canonical and retired routine point releases
+
+- **Decision:** Herbert's maintained default branch is now the canonical public artifact; exact commits identify reproducible states.
+- **Reason:** ordinary updates to a living identity and operating-thought template do not provide package compatibility, supported release branches, migrations, or backported-fix guarantees, so routine semantic-version and point releases implied a discipline the project did not actually offer.
+- **Disposition:** existing tags and GitHub releases remain immutable historical snapshots. Future tags are reserved for a deliberately named compatibility, migration, security, archival, or major public checkpoint with explicit guarantees.
+- **Repair:** `SECURITY.md` now points support to the default branch, while synchronization and contribution guidance request exact commits instead of assuming a current numbered release.
+
 ## 2026-08-15 — Added three bounded decision refinements
 
 - A complete source review of Gautam Baid's *The Joys of Compounding* produced no new identity principle; most themes duplicated current learning, uncertainty, incentive, opportunity-cost, resilience, and feedback guidance.

@@ -13,9 +13,11 @@ The review has two valid outcomes:
 
 No empty parity commit is required. Commit counts and histories are intentionally independent.
 
-## Checkpoint and release policy
+## Canonical branch and historical checkpoints
 
-Continuous projection commits and numbered releases serve different jobs. Commit and push transferable improvements as they are ready. Publish a numbered release only for a coherent adopter-facing checkpoint: a deliberate public-review milestone; a material identity, operating thought, adoption, runtime, security, schema, or interface change; a migration; or a deliberately bundled improvement set. A documentation-only reference addition, ordinary maintenance commit, or private/public parity event does not earn a release by itself. Before tagging, state the checkpoint's audience and decision effect, review the complete delta since the prior release, and bind the annotated tag, release notes, CI, and fresh-clone verification to one exact commit.
+The current default branch is the maintained public artifact. Commit and push transferable improvements as they are ready; use an exact commit when a reproducible identity is needed. Do not create routine semantic-version or point releases. This living template does not promise package compatibility, supported release branches, or backported fixes merely because a tag exists.
+
+Existing tags and GitHub releases remain immutable historical snapshots. A future tag or release is justified only for a deliberately named compatibility, migration, security, archival, or major public checkpoint with an explicit audience and guarantee. Before creating one, review the complete intended delta and bind the tag, notes, CI, and fresh-clone verification to one exact commit.
 
 ## Projection boundary
 
@@ -37,7 +39,7 @@ It must not carry:
 - authority granted in the source relationship;
 - language that causes an adopting agent to impersonate the source agent.
 
-## Release checks
+## Public-update checks
 
 Before every public update:
 

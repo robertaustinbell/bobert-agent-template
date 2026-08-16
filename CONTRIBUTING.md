@@ -6,7 +6,7 @@ Contributions should improve a decision, boundary, adoption path, verification s
 
 - **Evidence from applying an existing concept:** follow [FIELD-TESTING.md](FIELD-TESTING.md) and use the **Concept field test** issue form. Useful reports include null results, failures, harmful effects, excess ceremony, and cases where another explanation fits better.
 - **A new operating thought or operating idea:** use the **Operating thought or operating idea** issue form before building a broad change. State the problem, intended decision effect, scope, strongest objection, known failure, supporting evidence or representative case, and reversal condition.
-- **An adoption or runtime problem:** use the **Adoption or runtime problem** issue form. Report the runtime, template version, expected and observed behavior, loading or retrieval state, and the smallest sanitized reproduction.
+- **An adoption or runtime problem:** use the **Adoption or runtime problem** issue form. Report the runtime, exact template commit or historical tag, expected and observed behavior, loading or retrieval state, and the smallest sanitized reproduction.
 - **A security or privacy-boundary defect:** follow [SECURITY.md](SECURITY.md). Do not disclose a sensitive exploit or private evidence in a public issue.
 - **A concrete repository patch:** open a pull request and complete the repository's pull-request template.
 
@@ -25,7 +25,7 @@ Do not create a new operating thought page or abstraction when an existing owner
 
 ## Patch workflow
 
-1. Start from the current default branch or identify the release tag being tested.
+1. Start from the current default branch or identify the exact historical commit or tag being tested.
 2. Reproduce the problem or state the representative case before editing.
 3. Make the smallest coherent change at the owning layer.
 4. If operating thought frontmatter changes, regenerate `index.md` with `python3 scripts/generate_index.py`.
