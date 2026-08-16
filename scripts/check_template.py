@@ -16,6 +16,13 @@ for path in ROOT.rglob('*'):
         truncation_marker = "[" + "truncated" + "]"
         if truncation_marker in text:
             errors.append(f'truncation marker in {path.relative_to(ROOT)}')
+for path in sorted((ROOT / 'evidence' / 'sources').glob('*.md')):
+    text = path.read_text(encoding='utf-8')
+    for target in re.findall(r'`((?:operating-thought|doctrine)/[^`\n]+)`', text):
+        if not (ROOT / target).is_file():
+            errors.append(
+                f'unresolved inline repository path in {path.relative_to(ROOT)}: {target}'
+            )
 operational_runtime = (ROOT / 'RUNTIMES.md').read_text()
 source_agent_name = 'Bo' + 'bert'
 if re.search(rf"\b{source_agent_name}(?:'s)?\b", operational_runtime):

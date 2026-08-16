@@ -127,6 +127,19 @@ class GovernanceHarvestCanaryTests(CanaryHarness):
         self.assertNotEqual(result.returncode, 0, result.stdout + result.stderr)
         self.assertIn("truncation marker in SOUL.md", result.stdout)
 
+    def test_rejects_unresolved_inline_operating_thought_paths_in_evidence(self):
+        def mutate(clone):
+            path = clone / "evidence" / "sources" / "book-of-why-pearl-mackenzie-2018.md"
+            path.write_text(
+                path.read_text()
+                + "\nBroken disposition: `doctrine/decisions/missing-owner.md`.\n"
+            )
+
+        result = self.run_copy(mutate)
+        self.assertNotEqual(result.returncode, 0, result.stdout + result.stderr)
+        self.assertIn("unresolved inline repository path", result.stdout)
+        self.assertIn("doctrine/decisions/missing-owner.md", result.stdout)
+
 
 class MemoryConformanceCanaryTests(CanaryHarness):
     MARKERS = (

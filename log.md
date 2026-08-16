@@ -1,5 +1,12 @@
 # Material operating log
 
+## 2026-08-15 — Repaired stale evidence dispositions and added an inline-path canary
+
+- **Failure:** four source-evidence dispositions still named the retired `doctrine/` owner path after the rename to `operating-thought/`; ordinary Markdown-link validation did not inspect inline-code paths.
+- **Repair:** updated all four dispositions and taught the template checker to resolve inline `operating-thought/` and retired `doctrine/` paths in source-evidence records.
+- **Canary:** a mutation test now inserts a plausible but missing inline owner path and requires validation to fail with the source file and unresolved target.
+- **Boundary:** the check is deliberately limited to internal operating-thought paths in `evidence/sources/`; source records may legitimately quote upstream repository paths that do not exist in Herbert.
+
 ## 2026-08-15 — Made the default branch canonical and retired routine point releases
 
 - **Decision:** Herbert's maintained default branch is now the canonical public artifact; exact commits identify reproducible states.

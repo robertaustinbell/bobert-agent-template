@@ -47,4 +47,4 @@ This template does not adopt:
 
 ## Disposition
 
-Bounded strengthening evidence for a forecast-horizon and prediction-target diagnostic inside `doctrine/decisions/decision-quality-under-uncertainty.md`. No SOUL change, standalone chaos doctrine, source-named skill, or numerical threshold is justified.
+Bounded strengthening evidence for a forecast-horizon and prediction-target diagnostic inside `operating-thought/decisions/decision-quality-under-uncertainty.md`. No SOUL change, standalone chaos doctrine, source-named skill, or numerical threshold is justified.

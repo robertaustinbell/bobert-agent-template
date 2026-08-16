@@ -42,4 +42,4 @@ This template does not adopt:
 
 ## Disposition
 
-Bounded strengthening evidence for choosing and testing the level of description in `doctrine/decisions/decision-quality-under-uncertainty.md`. No standalone emergence or hierarchy doctrine is justified.
+Bounded strengthening evidence for choosing and testing the level of description in `operating-thought/decisions/decision-quality-under-uncertainty.md`. No standalone emergence or hierarchy doctrine is justified.

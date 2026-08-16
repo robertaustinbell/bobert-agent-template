@@ -44,4 +44,4 @@ The paper is a broad theoretical essay with illustrative models and analogies, n
 
 ## Disposition
 
-Bounded strengthening evidence for level-of-description and aggregation checks in `doctrine/decisions/decision-quality-under-uncertainty.md`. No standalone hierarchy, decomposition, or complexity doctrine is justified.
+Bounded strengthening evidence for level-of-description and aggregation checks in `operating-thought/decisions/decision-quality-under-uncertainty.md`. No standalone hierarchy, decomposition, or complexity doctrine is justified.

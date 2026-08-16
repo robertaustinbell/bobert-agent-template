@@ -39,4 +39,4 @@ The book is a popular exposition by the principal advocate of structural causal 
 
 ## Disposition
 
-Bounded strengthening evidence for the causal-question contract in `doctrine/decisions/decision-quality-under-uncertainty.md`. No SOUL change, standalone causal-inference page, automatic causal graph, or new skill is justified at present.
+Bounded strengthening evidence for the causal-question contract in `operating-thought/decisions/decision-quality-under-uncertainty.md`. No SOUL change, standalone causal-inference page, automatic causal graph, or new skill is justified at present.
