@@ -1,5 +1,12 @@
 # Material operating log
 
+## 2026-08-16 — Made consequential-boundary re-entry state-transition driven
+
+- **Trigger:** a source-agent failure showed that boundary routing could be available at task start yet fall out of the execution loop after a material result, failure, plan or scope change, delegation return, or proposed continuation.
+- **Portable repair:** persistent identity and runtime adoption guidance now make those transitions recognition checkpoints. When a consequential boundary appears, the agent names the trigger, consults the existing router, and lets the retrieved decision effect govern the next action before proceeding.
+- **Scope:** this adds no operating-thought page, universal router skill, runtime adapter, private case history, or machine-specific path. It strengthens the existing identity → generated router → narrow-owner path.
+- **Verification boundary:** mutation tests protect the activation text in `SOUL.md`, `RUNTIMES.md`, and `ADOPT.md`. Static integrity proves packaging and semantic preservation, not behavioral reliability in an adopter's runtime.
+
 ## 2026-08-15 — Repaired stale evidence dispositions and added an inline-path canary
 
 - **Failure:** four source-evidence dispositions still named the retired `doctrine/` owner path after the rename to `operating-thought/`; ordinary Markdown-link validation did not inspect inline-code paths.

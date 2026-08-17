@@ -26,7 +26,7 @@ A session-start comparison is a valid fallback only when the runtime can access 
 
 ### 2. Operating thought activation and retrieval
 
-Install the activation rule from `index.md` in persistent runtime policy: consult Agent Ops before consequential claims or actions involving representation, causal inference, authority or effects, outcome verification, correction, retention, or stopping. Re-enter at any such boundary and load only the matching operating thought or skill; skip routine lookup and already-decided mechanics.
+Install the activation rule from `index.md` in persistent runtime policy: consult Agent Ops before consequential claims or actions involving representation, causal inference, authority or effects, outcome verification, correction, retention, or stopping. Re-enter at any such boundary and load only the matching operating thought or skill; skip routine lookup and already-decided mechanics. After any material result, failure, plan or scope change, delegation return, or proposed continuation, check whether one of those boundaries has appeared. If it has, name the trigger, consult the router, and let the retrieved decision effect govern the next action before proceeding.
 
 Make `index.md` and the linked operating thought pages retrievable. The router is a generated navigation view, not an independent authority. Retrieval should expose the relevant source page rather than invite the agent to reconstruct operating thought from memory.
 

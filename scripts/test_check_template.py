@@ -62,9 +62,17 @@ class GovernanceHarvestCanaryTests(CanaryHarness):
         self.assertIn("RUNTIMES.md", result.stdout)
 
     def test_rejects_loss_of_boundary_router_activation(self):
+        state_transition = "After any material result, failure, plan or scope change, delegation return, or proposed continuation, check whether one of those boundaries has appeared"
+        decision_effect = "If it has, name the trigger, consult the router, and let the retrieved decision effect govern the next action before proceeding"
         for relative_path, marker in (
             ("SOUL.md", "Consult Agent Ops before consequential claims or actions involving representation, causal inference, authority or effects, outcome verification, correction, retention, or stopping"),
+            ("SOUL.md", state_transition),
+            ("SOUL.md", decision_effect),
             ("RUNTIMES.md", "Re-enter at any such boundary and load only the matching operating thought or skill; skip routine lookup and already-decided mechanics"),
+            ("RUNTIMES.md", state_transition),
+            ("RUNTIMES.md", decision_effect),
+            ("ADOPT.md", state_transition),
+            ("ADOPT.md", decision_effect),
         ):
             with self.subTest(relative_path=relative_path):
                 def mutate(clone, name=relative_path, phrase=marker):
