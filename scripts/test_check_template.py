@@ -62,17 +62,18 @@ class GovernanceHarvestCanaryTests(CanaryHarness):
         self.assertIn("RUNTIMES.md", result.stdout)
 
     def test_rejects_loss_of_boundary_router_activation(self):
-        state_transition = "After any material result, failure, plan or scope change, delegation return, or proposed continuation, check whether one of those boundaries has appeared"
-        decision_effect = "If it has, name the trigger, consult the router, and let the retrieved decision effect govern the next action before proceeding"
+        state_transition = "proposed continuation based on new evidence, re-enter only if a decision-relevant fact"
+        decision_effect = "When a boundary appears, identify the trigger in working context, load the exact owner directly when it is already current or use the generated router to select it, and let the owner's decision effect govern the next action"
         for relative_path, marker in (
             ("SOUL.md", "Consult Agent Ops before consequential claims or actions involving representation, causal inference, authority or effects, outcome verification, correction, retention, or stopping"),
             ("SOUL.md", state_transition),
             ("SOUL.md", decision_effect),
-            ("RUNTIMES.md", "Re-enter at any such boundary and load only the matching operating thought or skill; skip routine lookup and already-decided mechanics"),
-            ("RUNTIMES.md", state_transition),
-            ("RUNTIMES.md", decision_effect),
-            ("ADOPT.md", state_transition),
-            ("ADOPT.md", decision_effect),
+            ("RUNTIMES.md", "Install the activation and re-entry rule from `SOUL.md`"),
+            ("RUNTIMES.md", "exemption for mere progress, repeated status, and already-decided mechanics"),
+            ("RUNTIMES.md", "use the generated index after activation when the exact owner is not already current"),
+            ("ADOPT.md", "`SOUL.md` owns activation and re-entry behavior"),
+            ("ADOPT.md", "re-enters only when decision-relevant state changes"),
+            ("ADOPT.md", "requires the selected owner's decision effect to govern the next action"),
         ):
             with self.subTest(relative_path=relative_path):
                 def mutate(clone, name=relative_path, phrase=marker):
@@ -82,6 +83,37 @@ class GovernanceHarvestCanaryTests(CanaryHarness):
                 result = self.run_copy(mutate)
                 self.assertNotEqual(result.returncode, 0, result.stdout + result.stderr)
                 self.assertIn(relative_path, result.stdout)
+
+    def test_soul_owns_activation_and_index_only_routes(self):
+        index = (ROOT / "index.md").read_text()
+        soul = (ROOT / "SOUL.md").read_text()
+        runtimes = (ROOT / "RUNTIMES.md").read_text()
+        adopt = (ROOT / "ADOPT.md").read_text()
+
+        self.assertIn("## Router use", index)
+        self.assertIn(
+            "Persistent SOUL owns activation and re-entry behavior",
+            index,
+        )
+        self.assertIn(
+            "Use the boundary map below when the exact owner is not already current",
+            index,
+        )
+        self.assertIn(
+            "This generated view routes owner selection; it does not own activation",
+            index,
+        )
+        self.assertNotIn("## Activation rule", index)
+        self.assertIn("decision-relevant fact", soul)
+        self.assertIn("mere progress, repeated status", soul)
+        self.assertIn("load the exact owner directly when it is already current", soul)
+        self.assertIn("Surface the trigger to the principal only when", soul)
+        self.assertIn(
+            "Install the activation and re-entry rule from `SOUL.md`",
+            runtimes,
+        )
+        self.assertNotIn("Install the activation rule from `index.md`", runtimes)
+        self.assertIn("`SOUL.md` owns activation and re-entry behavior", adopt)
 
     def test_rejects_loss_of_boundary_router_rows_after_regeneration(self):
         rows = (
@@ -104,12 +136,16 @@ class GovernanceHarvestCanaryTests(CanaryHarness):
     def test_rejects_stale_adoption_activation_rule(self):
         def mutate(clone):
             path = clone / "ADOPT.md"
-            text = path.read_text().replace(
-                "Consult `index.md` before consequential claims or actions involving representation, causal inference, authority or effects, outcome verification, correction, retention, or stopping",
-                "Consult `index.md` for consequential design and architecture work",
-                1,
+            text = path.read_text()
+            current = "`SOUL.md` owns activation and re-entry behavior"
+            self.assertIn(current, text)
+            path.write_text(
+                text.replace(
+                    current,
+                    "`index.md` owns activation and re-entry behavior",
+                    1,
+                )
             )
-            path.write_text(text)
 
         result = self.run_copy(mutate)
         self.assertNotEqual(result.returncode, 0, result.stdout + result.stderr)

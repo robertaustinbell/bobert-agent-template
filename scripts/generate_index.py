@@ -89,9 +89,9 @@ def render() -> str:
 
 Agent Ops is the agent's retrievable operating judgment. It is not a second SOUL, a tool inventory, or an encyclopedia.
 
-## Activation rule
+## Router use
 
-Consult Agent Ops before consequential claims or actions involving representation, causal inference, authority or effects, outcome verification, correction, retention, or stopping. Re-enter at any such boundary and load only the matching operating thought or skill; skip routine lookup and already-decided mechanics.
+Persistent SOUL owns activation and re-entry behavior. Use the boundary map below when the exact owner is not already current. This generated view routes owner selection; it does not own activation.
 
 ## Boundary routing
 

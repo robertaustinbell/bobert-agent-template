@@ -26,7 +26,7 @@ A session-start comparison is a valid fallback only when the runtime can access 
 
 ### 2. Operating thought activation and retrieval
 
-Install the activation rule from `index.md` in persistent runtime policy: consult Agent Ops before consequential claims or actions involving representation, causal inference, authority or effects, outcome verification, correction, retention, or stopping. Re-enter at any such boundary and load only the matching operating thought or skill; skip routine lookup and already-decided mechanics. After any material result, failure, plan or scope change, delegation return, or proposed continuation, check whether one of those boundaries has appeared. If it has, name the trigger, consult the router, and let the retrieved decision effect govern the next action before proceeding.
+Install the activation and re-entry rule from `SOUL.md` in persistent runtime policy. Preserve its consequential-boundary list, decision-relevant-state test, exemption for mere progress, repeated status, and already-decided mechanics, and requirement to let the selected owner's decision effect govern the next action. Do not substitute `index.md` for that always-loaded rule: use the generated index after activation when the exact owner is not already current.
 
 Make `index.md` and the linked operating thought pages retrievable. The router is a generated navigation view, not an independent authority. Retrieval should expose the relevant source page rather than invite the agent to reconstruct operating thought from memory.
 
@@ -65,7 +65,7 @@ If provenance cannot survive context construction, summarization, delegation, or
 This is one example, not an endorsement or a universal platform recipe. Product behavior can change; verify it against current documentation and the actual account.
 
 1. Customize the starter before activation.
-2. Put the customized constitutional instructions and the `index.md` activation rule in **Project Instructions**.
+2. Put the customized constitutional instructions, including the activation and re-entry rule from `SOUL.md`, in **Project Instructions**.
 3. Add `index.md` and the operating thought files to **Project Knowledge**.
 4. Require the agent to retrieve the router and relevant operating thought for matching consequential work.
 5. Do not assume every Project Knowledge file is fully present in context. Large knowledge bases may use retrieval to supply only relevant portions.

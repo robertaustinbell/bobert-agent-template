@@ -159,11 +159,9 @@ An operating thought page must state both:
 - **positive triggers**—conditions under which retrieval can change the decision;
 - **negative triggers**—conditions under which retrieval would add ceremony, invite a category error, or exceed the page's scope.
 
-The always-loaded activation rule in SOUL is:
+Canonical SOUL owns the always-loaded activation and re-entry rule. It activates Agent Ops before consequential claims or actions involving representation, causal inference, authority or effects, outcome verification, correction, retention, or stopping, and re-enters only when decision-relevant state changes. Mere progress, repeated status, and already-decided mechanics remain exempt. Load an already-current exact owner directly; otherwise use `index.md` to select one. The generated index routes owner selection; it does not own activation.
 
-> On consequential design, authority, architecture, integration, or Agent Ops work, consult the Agent Ops index before advising or acting. Use its positive and negative triggers proportionally; routine factual lookup and mechanical execution should not incur operating thought ceremony.
-
-A real retrieval miss is an operating thought defect. Correct the trigger, index, placement, or SOUL residue according to the cause. Do not compensate by loading the entire Wiki every time.
+A real retrieval miss is an operating thought defect. Correct the upstream activation rule, boundary cue, index, placement, or narrow owning procedure according to the cause. Do not compensate by loading the entire Wiki every time. Static router freshness proves that the map is intact; it does not prove that live work entered the router, retrieved the narrow procedure, or obeyed it before commitment.
 
 ## Source ingestion
 

@@ -1,5 +1,12 @@
 # Material operating log
 
+## 2026-08-17 — Made SOUL the activation owner and bounded re-entry by changed state
+
+- **Trigger:** independent review found that runtime guidance named generated `index.md` as the activation source while persistent SOUL carried the complete reflex, and identified ceremony risk in broad transition wording.
+- **Portable repair:** canonical SOUL now owns activation and re-entry; generated `index.md` routes owner selection only when the exact owner is not already current. Re-entry depends on changed decision-relevant state, not mere progress, repeated status, or already-decided mechanics, and trigger narration is visible only when it changes a material report or decision.
+- **Bounded source-runtime probe:** routine lookup caused no operating-thought retrieval; later ambiguous effect evidence loaded the exact verification owner and prevented an unsupported completion claim; unchanged evidence caused no reload; independent read-back changed the supported outcome. The exact owner was selected directly, so the contract was narrowed rather than forcing a ceremonial generated-index fetch.
+- **Boundary:** mutation and integrity tests protect packaging and semantic ownership. One source-runtime probe does not establish adopter-runtime reliability or isolate the wording as the cause.
+
 ## 2026-08-16 — Made consequential-boundary re-entry state-transition driven
 
 - **Trigger:** a source-agent failure showed that boundary routing could be available at task start yet fall out of the execution loop after a material result, failure, plan or scope change, delegation return, or proposed continuation.
