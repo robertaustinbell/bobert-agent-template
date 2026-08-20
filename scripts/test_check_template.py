@@ -605,6 +605,47 @@ class CausalQuestionContractCanaryTests(CanaryHarness):
 
 
 class IdentityAndAdoptionCanaryTests(CanaryHarness):
+    def test_rejects_runtime_conformance_fail_open_inversion(self):
+        def mutate(clone):
+            path = clone / "RUNTIMES.md"
+            text = path.read_text().replace(
+                "Do not replace unresolved scope with broader defaults",
+                "Use broader defaults when scope cannot be resolved",
+                1,
+            )
+            path.write_text(text)
+
+        result = self.run_copy(mutate)
+        self.assertNotEqual(result.returncode, 0)
+        self.assertIn("Runtime conformance checks", result.stdout)
+
+    def test_rejects_runtime_conformance_relocated_guidance(self):
+        def mutate(clone):
+            path = clone / "RUNTIMES.md"
+            text = path.read_text()
+            marker = "a memory or skill review must permit a null result"
+            text = text.replace(marker, "automatic review may return no change", 1)
+            text += f"\n## Unrelated example\n\n{marker}.\n"
+            path.write_text(text)
+
+        result = self.run_copy(mutate)
+        self.assertNotEqual(result.returncode, 0)
+        self.assertIn("Runtime conformance checks", result.stdout)
+
+    def test_rejects_runtime_context_size_as_behavioral_proof(self):
+        def mutate(clone):
+            path = clone / "RUNTIMES.md"
+            text = path.read_text().replace(
+                "Size is a cost and drift signal, not proof of loading, attention, correctness, or behavioral quality",
+                "Passing the size threshold proves runtime quality",
+                1,
+            )
+            path.write_text(text)
+
+        result = self.run_copy(mutate)
+        self.assertNotEqual(result.returncode, 0)
+        self.assertIn("Runtime conformance checks", result.stdout)
+
     def test_rejects_loss_of_installed_candidate_comparison(self):
         def mutate(clone):
             path = clone / "RUNTIMES.md"

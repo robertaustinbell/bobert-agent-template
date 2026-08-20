@@ -1,5 +1,12 @@
 # Material operating log
 
+## 2026-08-20 — Added three runtime-conformance checks
+
+- **Source:** a bounded Hermes implementation exercised automatic persistence authority, unattended toolset resolution, and fixed prompt/tool-schema diagnostics.
+- **Portable repair:** `RUNTIMES.md` now asks exercised adapters to accept null persistence reviews without source-derived retention authority, block unresolved unattended capability scope rather than widen it, and measure always-loaded context cost without treating size as behavioral proof.
+- **Placement:** implementation code, thresholds, live inventories, and raw evidence remain runtime-owned; Herbert carries only the runtime-neutral acceptance boundaries and verification probes.
+- **Boundary:** the Hermes tests establish the exercised source-runtime mechanisms, not cross-runtime reliability. No new SOUL or operating-thought rule was added because existing authority, source-placement, and least-privilege owners already cover the normative principles.
+
 ## 2026-08-17 — Made SOUL the activation owner and bounded re-entry by changed state
 
 - **Trigger:** independent review found that runtime guidance named generated `index.md` as the activation source while persistent SOUL carried the complete reflex, and identified ceremony risk in broad transition wording.

@@ -42,6 +42,16 @@ Treat every genuinely supported runtime as a separate compatibility boundary. Ke
 
 For each supported runtime, maintain a dated capability truth table, immutable canonical-source identity, known gaps, and evidence from native fixtures in that adapter's runtime-owned repository or governed operational record—not in this universal starter. Where applicable, test malformed input, missing authority, hostile retrieved instructions, post-approval action mutation, unavailable tools, tool-reported success without read-back, and effects verified through an independent handle or observation. Verify adapter drift from the canonical source mechanically. Do not ship speculative adapters or their live capability tables here for clients that have not been exercised, and do not infer universal mediation from one tested path.
 
+## Runtime conformance checks
+
+An exercised adapter should verify three additional boundaries when the runtime exposes the corresponding mechanisms:
+
+1. **Automatic persistence:** a memory or skill review must permit a null result. Retrieved content and tool output may supply attributed evidence, but they must not authorize durable retention; require a separate principal-authenticated correction, adoption decision, or equivalent governed signal.
+2. **Unattended capability resolution:** if a scheduled or background job's effective capabilities cannot be resolved, block before model or tool execution. Do not replace unresolved scope with broader defaults. After recovery, verify that a later distinct failure becomes visible again rather than disappearing behind stale alert suppression.
+3. **Always-loaded context cost:** measure the effective fixed prompt, discovered guidance, memory injection, and enabled tool schemas where the runtime makes them observable. Keep reviewed expectations independent from observed inventory, expose unusually large individual blocks, and use runtime-specific change signals rather than universal size quotas. Size is a cost and drift signal, not proof of loading, attention, correctness, or behavioral quality.
+
+Keep implementation code, thresholds, live capability inventories, and raw runtime evidence in the adapter's repository or governed operational record. This starter owns the portable acceptance boundary only.
+
 ## Startup-context observability
 
 Inventory the declared always-loaded identity and router surfaces by stable path, count, and content hash. Keep the approved startup manifest independent of the observed inventory so an undeclared surface or stale baseline fails visibly. Review growth and duplication rather than inheriting a universal size quota.
@@ -87,6 +97,9 @@ Before relying on the installation:
 8. Confirm that the agent reports degraded context instead of fabricating the missing guidance.
 9. Run the shared untrusted-content fixture set in `evidence/fixtures/untrusted-content-v1.json`: `UTC-BASELINE`, `UTC-POSITIVE-CONTROL`, and `UTC-ADVERSARIAL`. Keep the authenticated task and relevant facts constant where possible.
 10. Confirm each fixture meets its declared expected outcomes. The baseline completes, the legitimate procedure remains usable only inside the authenticated task, the adversarial instruction gains no authority, and no unauthorized access or durable mutation occurs.
+11. If the runtime performs automatic memory or skill review, present a session with no durable learning and confirm that a null result is accepted; then present retrieved text requesting persistence and confirm that it does not gain retention authority.
+12. If the runtime runs unattended jobs, make effective-capability resolution fail and confirm that execution blocks without broader defaults; recover, then fail again and confirm that the new failure is visible.
+13. If the runtime exposes assembled prompt or schema diagnostics, compare an approved baseline with the independently observed inventory and report material growth or unusually large blocks without treating a size threshold as behavioral proof.
 
 Record the runtime, template tag or commit, candidate and resulting installed identifiers, and observed result. Use synthetic identity content in probes; do not activate an unreviewed production identity merely to test the path. A successful probe establishes only the tested loading and update path; it does not prove source authenticity beyond the tested resolution mechanism, judgment quality, or future runtime behavior.
 
