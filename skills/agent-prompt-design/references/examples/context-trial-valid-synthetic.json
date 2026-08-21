@@ -1,0 +1,391 @@
+{
+  "schema_version": "context-trial-packet/v1",
+  "trial_id": "trial-synthetic-validator-example",
+  "task": {
+    "task_id": "task-synthetic-1",
+    "task_version": "v1",
+    "task_manifest_sha256": "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+    "family": "read_only_artifact_review",
+    "case_kind": "long_source"
+  },
+  "acceptance_truths": [
+    {
+      "truth_id": "truth-1",
+      "statement": "Required fact is preserved",
+      "expected": true
+    }
+  ],
+  "required_branches": [
+    "source-review",
+    "constraint-review"
+  ],
+  "conditions": [
+    {
+      "condition_id": "condition-baseline-v1",
+      "condition": "baseline",
+      "prompt_sha256": "bbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbb",
+      "runtime": {
+        "provider": "synthetic-provider",
+        "model": "synthetic-model",
+        "runtime": "synthetic-harness",
+        "capacity_observation_status": "not_observed",
+        "observed_usable_capacity": {
+          "kind": "range",
+          "unit": "tokens",
+          "lower": 90000,
+          "upper": 100000,
+          "method": "runtime_probe",
+          "source": "synthetic fixture; not a live observation"
+        },
+        "capacity_source": "synthetic fixture; replace with a live runtime observation before trial",
+        "truncation_compaction_behavior": "stop before observed lower bound",
+        "retrieval_behavior": "independent specialists return bounded artifacts"
+      },
+      "context": {
+        "rendered_prompt": {
+          "kind": "exact",
+          "unit": "tokens",
+          "value": 12000,
+          "method": "runtime_tokenizer"
+        },
+        "input_artifacts": {
+          "kind": "exact",
+          "unit": "tokens",
+          "value": 20000,
+          "method": "runtime_tokenizer"
+        },
+        "tool_output_reserve": {
+          "kind": "range",
+          "unit": "tokens",
+          "lower": 8000,
+          "upper": 12000,
+          "method": "bounded_reserve"
+        },
+        "verification_reserve": {
+          "kind": "range",
+          "unit": "tokens",
+          "lower": 8000,
+          "upper": 12000,
+          "method": "bounded_reserve"
+        },
+        "peak_rendered_context": {
+          "kind": "range",
+          "unit": "tokens",
+          "lower": 32000,
+          "upper": 36000,
+          "method": "runtime_tokenizer_range"
+        },
+        "observed_limit": {
+          "kind": "range",
+          "unit": "tokens",
+          "lower": 90000,
+          "upper": 100000,
+          "method": "runtime_probe"
+        },
+        "margin": {
+          "kind": "range",
+          "unit": "tokens",
+          "lower": 30000,
+          "upper": 52000,
+          "method": "derived_range"
+        },
+        "context_fit": false
+      },
+      "acceptance_results": [
+        {
+          "truth_id": "truth-1",
+          "observed": true,
+          "passed": false,
+          "evidence": "synthetic fixture assertion"
+        }
+      ],
+      "branches": [
+        {
+          "branch_id": "source-review",
+          "status": "completed",
+          "handling": "included",
+          "artifact_sha256": "cccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccc"
+        },
+        {
+          "branch_id": "constraint-review",
+          "status": "completed",
+          "handling": "included",
+          "artifact_sha256": "dddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddd"
+        }
+      ],
+      "costs": {
+        "tool_calls": 3,
+        "latency": {
+          "kind": "range",
+          "unit": "milliseconds",
+          "lower": 1000,
+          "upper": 1500,
+          "method": "monotonic_clock"
+        },
+        "monetary_cost": {
+          "status": "not_available",
+          "amount": null,
+          "currency": null
+        },
+        "merge_repair_actions": 0
+      },
+      "hard_gate_defects": [],
+      "disposition": {
+        "status": "failed",
+        "accepted": false,
+        "reasons": [
+          "synthetic validator fixture only"
+        ]
+      },
+      "condition_manifest_sha256": "5555555555555555555555555555555555555555555555555555555555555555"
+    },
+    {
+      "condition_id": "condition-append-v1",
+      "condition": "append_shared",
+      "prompt_sha256": "eeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeee",
+      "runtime": {
+        "provider": "synthetic-provider",
+        "model": "synthetic-model",
+        "runtime": "synthetic-harness",
+        "capacity_observation_status": "not_observed",
+        "observed_usable_capacity": {
+          "kind": "range",
+          "unit": "tokens",
+          "lower": 90000,
+          "upper": 100000,
+          "method": "runtime_probe",
+          "source": "synthetic fixture; not a live observation"
+        },
+        "capacity_source": "synthetic fixture; replace with a live runtime observation before trial",
+        "truncation_compaction_behavior": "stop before observed lower bound",
+        "retrieval_behavior": "append all prior prose"
+      },
+      "context": {
+        "rendered_prompt": {
+          "kind": "exact",
+          "unit": "tokens",
+          "value": 15000,
+          "method": "runtime_tokenizer"
+        },
+        "input_artifacts": {
+          "kind": "exact",
+          "unit": "tokens",
+          "value": 30000,
+          "method": "runtime_tokenizer"
+        },
+        "tool_output_reserve": {
+          "kind": "range",
+          "unit": "tokens",
+          "lower": 8000,
+          "upper": 12000,
+          "method": "bounded_reserve"
+        },
+        "verification_reserve": {
+          "kind": "range",
+          "unit": "tokens",
+          "lower": 8000,
+          "upper": 12000,
+          "method": "bounded_reserve"
+        },
+        "peak_rendered_context": {
+          "kind": "range",
+          "unit": "tokens",
+          "lower": 45000,
+          "upper": 50000,
+          "method": "runtime_tokenizer_range"
+        },
+        "observed_limit": {
+          "kind": "range",
+          "unit": "tokens",
+          "lower": 90000,
+          "upper": 100000,
+          "method": "runtime_probe"
+        },
+        "margin": {
+          "kind": "range",
+          "unit": "tokens",
+          "lower": 16000,
+          "upper": 39000,
+          "method": "derived_range"
+        },
+        "context_fit": false
+      },
+      "acceptance_results": [
+        {
+          "truth_id": "truth-1",
+          "observed": true,
+          "passed": false,
+          "evidence": "synthetic fixture assertion"
+        }
+      ],
+      "branches": [
+        {
+          "branch_id": "source-review",
+          "status": "completed",
+          "handling": "included",
+          "artifact_sha256": "ffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffff"
+        },
+        {
+          "branch_id": "constraint-review",
+          "status": "completed",
+          "handling": "included",
+          "artifact_sha256": "1111111111111111111111111111111111111111111111111111111111111111"
+        }
+      ],
+      "costs": {
+        "tool_calls": 3,
+        "latency": {
+          "kind": "range",
+          "unit": "milliseconds",
+          "lower": 1200,
+          "upper": 1800,
+          "method": "monotonic_clock"
+        },
+        "monetary_cost": {
+          "status": "not_available",
+          "amount": null,
+          "currency": null
+        },
+        "merge_repair_actions": 0
+      },
+      "hard_gate_defects": [],
+      "disposition": {
+        "status": "failed",
+        "accepted": false,
+        "reasons": [
+          "diagnostic condition is not promoted by this fixture"
+        ]
+      },
+      "condition_manifest_sha256": "6666666666666666666666666666666666666666666666666666666666666666"
+    },
+    {
+      "condition_id": "condition-typed-v1",
+      "condition": "typed_bounded",
+      "prompt_sha256": "2222222222222222222222222222222222222222222222222222222222222222",
+      "runtime": {
+        "provider": "synthetic-provider",
+        "model": "synthetic-model",
+        "runtime": "synthetic-harness",
+        "capacity_observation_status": "not_observed",
+        "observed_usable_capacity": {
+          "kind": "range",
+          "unit": "tokens",
+          "lower": 90000,
+          "upper": 100000,
+          "method": "runtime_probe",
+          "source": "synthetic fixture; not a live observation"
+        },
+        "capacity_source": "synthetic fixture; replace with a live runtime observation before trial",
+        "truncation_compaction_behavior": "stop before observed lower bound",
+        "retrieval_behavior": "named typed artifacts and role-bounded handles only"
+      },
+      "context": {
+        "rendered_prompt": {
+          "kind": "exact",
+          "unit": "tokens",
+          "value": 11000,
+          "method": "runtime_tokenizer"
+        },
+        "input_artifacts": {
+          "kind": "exact",
+          "unit": "tokens",
+          "value": 16000,
+          "method": "runtime_tokenizer"
+        },
+        "tool_output_reserve": {
+          "kind": "range",
+          "unit": "tokens",
+          "lower": 8000,
+          "upper": 12000,
+          "method": "bounded_reserve"
+        },
+        "verification_reserve": {
+          "kind": "range",
+          "unit": "tokens",
+          "lower": 8000,
+          "upper": 12000,
+          "method": "bounded_reserve"
+        },
+        "peak_rendered_context": {
+          "kind": "range",
+          "unit": "tokens",
+          "lower": 27000,
+          "upper": 31000,
+          "method": "runtime_tokenizer_range"
+        },
+        "observed_limit": {
+          "kind": "range",
+          "unit": "tokens",
+          "lower": 90000,
+          "upper": 100000,
+          "method": "runtime_probe"
+        },
+        "margin": {
+          "kind": "range",
+          "unit": "tokens",
+          "lower": 35000,
+          "upper": 57000,
+          "method": "derived_range"
+        },
+        "context_fit": false
+      },
+      "acceptance_results": [
+        {
+          "truth_id": "truth-1",
+          "observed": true,
+          "passed": false,
+          "evidence": "synthetic fixture assertion"
+        }
+      ],
+      "branches": [
+        {
+          "branch_id": "source-review",
+          "status": "completed",
+          "handling": "included",
+          "artifact_sha256": "3333333333333333333333333333333333333333333333333333333333333333"
+        },
+        {
+          "branch_id": "constraint-review",
+          "status": "completed",
+          "handling": "included",
+          "artifact_sha256": "4444444444444444444444444444444444444444444444444444444444444444"
+        }
+      ],
+      "costs": {
+        "tool_calls": 3,
+        "latency": {
+          "kind": "range",
+          "unit": "milliseconds",
+          "lower": 900,
+          "upper": 1400,
+          "method": "monotonic_clock"
+        },
+        "monetary_cost": {
+          "status": "not_available",
+          "amount": null,
+          "currency": null
+        },
+        "merge_repair_actions": 0
+      },
+      "hard_gate_defects": [],
+      "disposition": {
+        "status": "failed",
+        "accepted": false,
+        "reasons": [
+          "synthetic validator fixture only"
+        ]
+      },
+      "condition_manifest_sha256": "7777777777777777777777777777777777777777777777777777777777777777"
+    }
+  ],
+  "final_disposition": {
+    "status": "trial_only",
+    "selected_condition": null,
+    "reasons": [
+      "synthetic fixture does not authorize a real adoption decision"
+    ]
+  },
+  "limitations": [
+    "Synthetic validator fixture; no orchestration trial was run."
+  ]
+}

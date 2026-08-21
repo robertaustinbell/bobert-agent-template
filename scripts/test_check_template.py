@@ -1307,6 +1307,37 @@ class RepresentationAdequacyCanaryTests(CanaryHarness):
         self.assertIn("Representation adequacy and information loss", result.stdout)
 
 
+class ContextCapacityPackageCanaryTests(CanaryHarness):
+    REQUIRED_FILES = (
+        "skills/agent-prompt-design/references/multi-agent-context-budget-and-artifact-trial.md",
+        "skills/agent-prompt-design/references/context-trial-packet-v1.schema.json",
+        "skills/agent-prompt-design/references/examples/context-trial-valid-synthetic.json",
+        "skills/agent-prompt-design/references/examples/context-trial-invalid-duplicate-key.json",
+        "skills/agent-prompt-design/scripts/validate_context_trial_packet.py",
+        "skills/agent-prompt-design/scripts/test_context_trial_packet.py",
+    )
+
+    def test_requires_every_context_capacity_surface(self):
+        for relative_path in self.REQUIRED_FILES:
+            with self.subTest(relative_path=relative_path):
+                def mutate(clone, name=relative_path):
+                    (clone / name).unlink()
+
+                result = self.run_copy(mutate)
+                self.assertNotEqual(result.returncode, 0, result.stdout + result.stderr)
+                self.assertIn(f"missing required file: {relative_path}", result.stdout)
+
+    def test_rejects_loss_of_context_fit_boundary(self):
+        def mutate(clone):
+            path = clone / "skills/agent-prompt-design/SKILL.md"
+            marker = "Passing establishes context fit only—not quality, truth, privacy, authority, or coordination reliability"
+            path.write_text(path.read_text().replace(marker, "A passing context packet proves orchestration reliability", 1))
+
+        result = self.run_copy(mutate)
+        self.assertNotEqual(result.returncode, 0, result.stdout + result.stderr)
+        self.assertIn("context fit", result.stdout)
+
+
 class RouterRetrievalTests(unittest.TestCase):
     def test_value_trigger_does_not_displace_model_adequacy_trigger(self):
         result = subprocess.run(

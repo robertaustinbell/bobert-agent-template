@@ -1,0 +1,757 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "context-trial-packet-v1.schema.json",
+  "title": "Multi-agent context trial packet v1",
+  "description": "Representation schema only. Conformance does not prove runtime capacity, task truth, source truth, or orchestration quality. Use the stdlib validator for cross-field rules and duplicate-key rejection.",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "schema_version",
+    "trial_id",
+    "task",
+    "acceptance_truths",
+    "required_branches",
+    "conditions",
+    "final_disposition",
+    "limitations"
+  ],
+  "properties": {
+    "schema_version": {
+      "const": "context-trial-packet/v1"
+    },
+    "trial_id": {
+      "$ref": "#/$defs/nonempty"
+    },
+    "task": {
+      "$ref": "#/$defs/task"
+    },
+    "acceptance_truths": {
+      "type": "array",
+      "minItems": 1,
+      "items": {
+        "$ref": "#/$defs/truth"
+      }
+    },
+    "required_branches": {
+      "type": "array",
+      "minItems": 1,
+      "uniqueItems": true,
+      "items": {
+        "$ref": "#/$defs/nonempty"
+      }
+    },
+    "conditions": {
+      "type": "array",
+      "minItems": 3,
+      "maxItems": 3,
+      "items": {
+        "$ref": "#/$defs/condition_run"
+      }
+    },
+    "final_disposition": {
+      "$ref": "#/$defs/final_disposition"
+    },
+    "limitations": {
+      "type": "array",
+      "minItems": 1,
+      "uniqueItems": true,
+      "items": {
+        "$ref": "#/$defs/nonempty"
+      }
+    }
+  },
+  "$defs": {
+    "nonempty": {
+      "type": "string",
+      "minLength": 1
+    },
+    "sha256": {
+      "type": "string",
+      "pattern": "^[0-9a-f]{64}$"
+    },
+    "task": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "task_id",
+        "task_version",
+        "task_manifest_sha256",
+        "family",
+        "case_kind"
+      ],
+      "properties": {
+        "task_id": {
+          "$ref": "#/$defs/nonempty"
+        },
+        "task_version": {
+          "$ref": "#/$defs/nonempty"
+        },
+        "task_manifest_sha256": {
+          "$ref": "#/$defs/sha256"
+        },
+        "family": {
+          "$ref": "#/$defs/nonempty"
+        },
+        "case_kind": {
+          "$ref": "#/$defs/nonempty"
+        }
+      }
+    },
+    "truth": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "truth_id",
+        "statement",
+        "expected"
+      ],
+      "properties": {
+        "truth_id": {
+          "$ref": "#/$defs/nonempty"
+        },
+        "statement": {
+          "$ref": "#/$defs/nonempty"
+        },
+        "expected": {}
+      }
+    },
+    "measurement": {
+      "oneOf": [
+        {
+          "type": "object",
+          "additionalProperties": false,
+          "required": [
+            "kind",
+            "unit",
+            "value",
+            "method"
+          ],
+          "properties": {
+            "kind": {
+              "const": "exact"
+            },
+            "unit": {
+              "enum": [
+                "bytes",
+                "tokens",
+                "milliseconds"
+              ]
+            },
+            "value": {
+              "type": "number",
+              "minimum": 0
+            },
+            "method": {
+              "$ref": "#/$defs/nonempty"
+            },
+            "source": {
+              "$ref": "#/$defs/nonempty"
+            }
+          },
+          "allOf": [
+            {
+              "if": {
+                "properties": {
+                  "unit": {
+                    "enum": [
+                      "bytes",
+                      "tokens"
+                    ]
+                  }
+                }
+              },
+              "then": {
+                "properties": {
+                  "value": {
+                    "type": "integer",
+                    "minimum": 0
+                  }
+                }
+              }
+            }
+          ]
+        },
+        {
+          "type": "object",
+          "additionalProperties": false,
+          "required": [
+            "kind",
+            "unit",
+            "lower",
+            "upper",
+            "method"
+          ],
+          "properties": {
+            "kind": {
+              "const": "range"
+            },
+            "unit": {
+              "enum": [
+                "bytes",
+                "tokens",
+                "milliseconds"
+              ]
+            },
+            "lower": {
+              "type": "number",
+              "minimum": 0
+            },
+            "upper": {
+              "type": "number",
+              "minimum": 0
+            },
+            "method": {
+              "$ref": "#/$defs/nonempty"
+            },
+            "source": {
+              "$ref": "#/$defs/nonempty"
+            }
+          },
+          "allOf": [
+            {
+              "if": {
+                "properties": {
+                  "unit": {
+                    "enum": [
+                      "bytes",
+                      "tokens"
+                    ]
+                  }
+                }
+              },
+              "then": {
+                "properties": {
+                  "lower": {
+                    "type": "integer",
+                    "minimum": 0
+                  },
+                  "upper": {
+                    "type": "integer",
+                    "minimum": 0
+                  }
+                }
+              }
+            }
+          ]
+        },
+        {
+          "type": "object",
+          "additionalProperties": false,
+          "required": [
+            "kind",
+            "unit",
+            "method"
+          ],
+          "properties": {
+            "kind": {
+              "const": "not_measured"
+            },
+            "unit": {
+              "enum": [
+                "bytes",
+                "tokens",
+                "milliseconds"
+              ]
+            },
+            "method": {
+              "$ref": "#/$defs/nonempty"
+            },
+            "source": {
+              "$ref": "#/$defs/nonempty"
+            }
+          }
+        }
+      ]
+    },
+    "runtime": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "provider",
+        "model",
+        "runtime",
+        "observed_usable_capacity",
+        "capacity_observation_status",
+        "capacity_source",
+        "truncation_compaction_behavior",
+        "retrieval_behavior"
+      ],
+      "properties": {
+        "provider": {
+          "$ref": "#/$defs/nonempty"
+        },
+        "model": {
+          "$ref": "#/$defs/nonempty"
+        },
+        "runtime": {
+          "$ref": "#/$defs/nonempty"
+        },
+        "observed_usable_capacity": {
+          "$ref": "#/$defs/measurement"
+        },
+        "capacity_observation_status": {
+          "enum": [
+            "observed",
+            "not_observed"
+          ]
+        },
+        "capacity_source": {
+          "$ref": "#/$defs/nonempty"
+        },
+        "truncation_compaction_behavior": {
+          "$ref": "#/$defs/nonempty"
+        },
+        "retrieval_behavior": {
+          "$ref": "#/$defs/nonempty"
+        }
+      }
+    },
+    "context": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "rendered_prompt",
+        "input_artifacts",
+        "tool_output_reserve",
+        "verification_reserve",
+        "peak_rendered_context",
+        "context_fit"
+      ],
+      "properties": {
+        "rendered_prompt": {
+          "$ref": "#/$defs/measurement"
+        },
+        "input_artifacts": {
+          "$ref": "#/$defs/measurement"
+        },
+        "tool_output_reserve": {
+          "$ref": "#/$defs/measurement"
+        },
+        "verification_reserve": {
+          "$ref": "#/$defs/measurement"
+        },
+        "peak_rendered_context": {
+          "$ref": "#/$defs/measurement"
+        },
+        "observed_limit": {
+          "$ref": "#/$defs/measurement"
+        },
+        "margin": {
+          "$ref": "#/$defs/measurement"
+        },
+        "context_fit": {
+          "type": "boolean"
+        }
+      },
+      "allOf": [
+        {
+          "if": {
+            "properties": {
+              "context_fit": {
+                "const": true
+              }
+            }
+          },
+          "then": {
+            "required": [
+              "tool_output_reserve",
+              "verification_reserve",
+              "peak_rendered_context",
+              "observed_limit",
+              "margin"
+            ]
+          }
+        }
+      ]
+    },
+    "acceptance_result": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "truth_id",
+        "observed",
+        "passed",
+        "evidence"
+      ],
+      "properties": {
+        "truth_id": {
+          "$ref": "#/$defs/nonempty"
+        },
+        "observed": {},
+        "passed": {
+          "type": "boolean"
+        },
+        "evidence": {
+          "$ref": "#/$defs/nonempty"
+        }
+      }
+    },
+    "branch": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "branch_id",
+        "status",
+        "handling",
+        "artifact_sha256"
+      ],
+      "properties": {
+        "branch_id": {
+          "$ref": "#/$defs/nonempty"
+        },
+        "status": {
+          "enum": [
+            "completed",
+            "missing",
+            "degraded",
+            "blocked"
+          ]
+        },
+        "handling": {
+          "enum": [
+            "included",
+            "fail_closed",
+            "labeled_unknown",
+            "human_review"
+          ]
+        },
+        "artifact_sha256": {
+          "oneOf": [
+            {
+              "$ref": "#/$defs/sha256"
+            },
+            {
+              "type": "null"
+            }
+          ]
+        }
+      }
+    },
+    "money": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "status",
+        "amount",
+        "currency"
+      ],
+      "properties": {
+        "status": {
+          "enum": [
+            "measured",
+            "not_available"
+          ]
+        },
+        "amount": {
+          "type": [
+            "number",
+            "null"
+          ],
+          "minimum": 0
+        },
+        "currency": {
+          "type": [
+            "string",
+            "null"
+          ]
+        }
+      }
+    },
+    "costs": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "tool_calls",
+        "latency",
+        "monetary_cost",
+        "merge_repair_actions"
+      ],
+      "properties": {
+        "tool_calls": {
+          "type": "integer",
+          "minimum": 0
+        },
+        "latency": {
+          "$ref": "#/$defs/measurement"
+        },
+        "monetary_cost": {
+          "$ref": "#/$defs/money"
+        },
+        "merge_repair_actions": {
+          "type": "integer",
+          "minimum": 0
+        }
+      }
+    },
+    "defect": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "defect_id",
+        "class",
+        "severity",
+        "description"
+      ],
+      "properties": {
+        "defect_id": {
+          "$ref": "#/$defs/nonempty"
+        },
+        "class": {
+          "enum": [
+            "authority",
+            "privacy",
+            "fabricated_success",
+            "missing_branch",
+            "source_integrity",
+            "other"
+          ]
+        },
+        "severity": {
+          "enum": [
+            "severe",
+            "non_severe"
+          ]
+        },
+        "description": {
+          "$ref": "#/$defs/nonempty"
+        }
+      }
+    },
+    "condition_disposition": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "status",
+        "accepted",
+        "reasons"
+      ],
+      "properties": {
+        "status": {
+          "enum": [
+            "passed",
+            "failed",
+            "blocked",
+            "unresolved"
+          ]
+        },
+        "accepted": {
+          "type": "boolean"
+        },
+        "reasons": {
+          "type": "array",
+          "minItems": 1,
+          "uniqueItems": true,
+          "items": {
+            "$ref": "#/$defs/nonempty"
+          }
+        }
+      }
+    },
+    "condition_run": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "condition_id",
+        "condition",
+        "prompt_sha256",
+        "condition_manifest_sha256",
+        "runtime",
+        "context",
+        "acceptance_results",
+        "branches",
+        "costs",
+        "hard_gate_defects",
+        "disposition"
+      ],
+      "properties": {
+        "condition_id": {
+          "$ref": "#/$defs/nonempty"
+        },
+        "condition": {
+          "enum": [
+            "baseline",
+            "append_shared",
+            "typed_bounded"
+          ]
+        },
+        "prompt_sha256": {
+          "$ref": "#/$defs/sha256"
+        },
+        "runtime": {
+          "$ref": "#/$defs/runtime"
+        },
+        "context": {
+          "$ref": "#/$defs/context"
+        },
+        "acceptance_results": {
+          "type": "array",
+          "minItems": 1,
+          "items": {
+            "$ref": "#/$defs/acceptance_result"
+          }
+        },
+        "branches": {
+          "type": "array",
+          "minItems": 1,
+          "items": {
+            "$ref": "#/$defs/branch"
+          }
+        },
+        "costs": {
+          "$ref": "#/$defs/costs"
+        },
+        "hard_gate_defects": {
+          "type": "array",
+          "items": {
+            "$ref": "#/$defs/defect"
+          }
+        },
+        "disposition": {
+          "$ref": "#/$defs/condition_disposition"
+        },
+        "condition_manifest_sha256": {
+          "$ref": "#/$defs/sha256",
+          "description": "Digest declared to bind the complete rendered condition/input contract. The validator checks shape and cross-condition uniqueness only; it does not recompute the digest."
+        }
+      },
+      "allOf": [
+        {
+          "if": {
+            "properties": {
+              "context": {
+                "properties": {
+                  "context_fit": {
+                    "const": true
+                  }
+                }
+              }
+            }
+          },
+          "then": {
+            "properties": {
+              "runtime": {
+                "properties": {
+                  "capacity_observation_status": {
+                    "const": "observed"
+                  }
+                }
+              }
+            }
+          }
+        },
+        {
+          "if": {
+            "properties": {
+              "disposition": {
+                "anyOf": [
+                  {
+                    "properties": {
+                      "status": {
+                        "const": "passed"
+                      }
+                    }
+                  },
+                  {
+                    "properties": {
+                      "accepted": {
+                        "const": true
+                      }
+                    }
+                  }
+                ]
+              }
+            }
+          },
+          "then": {
+            "properties": {
+              "runtime": {
+                "properties": {
+                  "capacity_observation_status": {
+                    "const": "observed"
+                  }
+                }
+              }
+            }
+          }
+        }
+      ]
+    },
+    "final_disposition": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "status",
+        "selected_condition",
+        "reasons"
+      ],
+      "properties": {
+        "status": {
+          "enum": [
+            "trial_only",
+            "retain_baseline",
+            "blocked",
+            "inconclusive"
+          ]
+        },
+        "selected_condition": {
+          "type": [
+            "string",
+            "null"
+          ],
+          "enum": [
+            "baseline",
+            "append_shared",
+            "typed_bounded",
+            null
+          ]
+        },
+        "reasons": {
+          "type": "array",
+          "minItems": 1,
+          "uniqueItems": true,
+          "items": {
+            "$ref": "#/$defs/nonempty"
+          }
+        }
+      },
+      "allOf": [
+        {
+          "if": {
+            "properties": {
+              "status": {
+                "const": "retain_baseline"
+              }
+            }
+          },
+          "then": {
+            "properties": {
+              "selected_condition": {
+                "const": "baseline"
+              }
+            }
+          }
+        },
+        {
+          "if": {
+            "properties": {
+              "status": {
+                "enum": [
+                  "trial_only",
+                  "blocked",
+                  "inconclusive"
+                ]
+              }
+            }
+          },
+          "then": {
+            "properties": {
+              "selected_condition": {
+                "type": "null"
+              }
+            }
+          }
+        }
+      ]
+    }
+  }
+}

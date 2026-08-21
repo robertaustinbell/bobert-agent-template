@@ -1,7 +1,7 @@
 ---
 name: agent-prompt-design
 description: Use when prompting subagents, tools, cron jobs, or loops.
-version: 1.4.0
+version: 1.5.0
 author: Bobert
 license: MIT
 metadata:
@@ -122,6 +122,16 @@ Graph rules:
 8. Record graph-level provenance: which node produced each material claim, what checked it, and what the merger changed.
 
 More agents buy breadth and throughput, not automatically better judgment. Keep tightly coupled reasoning together when splitting would destroy the shared model.
+
+#### Multi-agent context-capacity preflight
+
+Before dispatching a multi-agent graph, run the narrow preflight in `references/multi-agent-context-budget-and-artifact-trial.md`. Name the runtime/model, observed usable context limit and its source, longest dependency path, node inputs and output bounds, duplicated fan-out context, join inputs, tool and verification reserves, growth policy, truncation/compaction behavior, role-bounded retrieval, missing-branch behavior, and degraded-runtime stop condition.
+
+Measure rendered prompts and artifacts where possible. Exact UTF-8 byte counts are exact; token counts are exact only when measured with the actual runtime tokenizer. Otherwise record a range or `not_measured` rather than inventing precision. Treat advertised context as an upper bound, not observed usable capacity.
+
+Fail preflight when the conservative longest useful path plus tool and verification margin does not fit the observed runtime and no tested bounded-retrieval or compaction path exists. Do not append every prior output to every later node by default. Prefer immutable/versioned typed artifacts and role-bounded retrieval, keep one merge owner, preserve producer/source provenance, and fail closed or retain a labeled unknown when a required branch is missing. Re-run the preflight after a material runtime, graph, tool-payload, prompt, or artifact-schema change. Passing establishes context fit only—not quality, truth, privacy, authority, or coordination reliability.
+
+The linked reference also defines a trial-only comparison among `baseline`, `append_shared`, and `typed_bounded`. Its packet validator may be used to prepare or inspect trial evidence, but preparing the harness does not authorize or execute the orchestration trial.
 
 #### Capability escalation and advisor hook
 
@@ -268,6 +278,7 @@ A prompt is improved only when it performs better across representative cases, n
 - [ ] Is the context necessary, current, and source-labeled?
 - [ ] Are authority and side-effect boundaries explicit?
 - [ ] Does the topology match real dependencies?
+- [ ] For multi-agent work, does the longest useful path fit the observed runtime with tool and verification margin, or have a tested bounded-retrieval path?
 - [ ] Are success, stop, no-progress, and escalation conditions defined?
 - [ ] Is verification based on external evidence where available?
 - [ ] Could anything be removed without reducing correctness?
