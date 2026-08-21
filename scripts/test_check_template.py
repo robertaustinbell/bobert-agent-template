@@ -1,4 +1,5 @@
 #!/usr/bin/env python3
+import ast
 import json
 import shutil
 import subprocess
@@ -27,6 +28,54 @@ class CanaryHarness(unittest.TestCase):
 
 
 class GovernanceHarvestCanaryTests(CanaryHarness):
+    def test_required_section_registry_has_no_duplicate_literal_keys(self):
+        checker_path = ROOT / "scripts/check_template.py"
+        tree = ast.parse(checker_path.read_text(encoding="utf-8"))
+        registry = None
+        for node in tree.body:
+            if not isinstance(node, ast.Assign):
+                continue
+            if any(
+                isinstance(target, ast.Name) and target.id == "required_sections"
+                for target in node.targets
+            ):
+                registry = node.value
+                break
+        if not isinstance(registry, ast.Dict):
+            self.fail("required_sections must be a literal dictionary")
+            return
+        keys = [
+            key.value
+            for key in registry.keys
+            if isinstance(key, ast.Constant) and isinstance(key.value, str)
+        ]
+        self.assertEqual(len(keys), len(set(keys)))
+
+    def test_rejects_loss_of_recovered_framework_and_backward_planning(self):
+        markers = (
+            (
+                "SOUL.md",
+                "Prefer actions and explanations that create durable progress and reusable understanding",
+            ),
+            (
+                "operating-thought/decisions/decision-quality-under-uncertainty.md",
+                "For an important goal, work backward from the desired end to the necessary preconditions, then reason forward to verify that the proposed path can produce it",
+            ),
+            (
+                "operating-thought/decisions/decision-quality-under-uncertainty.md",
+                "Use Strategic Response when other actors can adapt",
+            ),
+        )
+        for relative_path, marker in markers:
+            with self.subTest(relative_path=relative_path, marker=marker):
+                def mutate(clone, name=relative_path, phrase=marker):
+                    path = clone / name
+                    path.write_text(path.read_text().replace(phrase, "[REMOVED]", 1))
+
+                result = self.run_copy(mutate)
+                self.assertNotEqual(result.returncode, 0, result.stdout + result.stderr)
+                self.assertIn(relative_path, result.stdout)
+
     def test_requires_decision_brief(self):
         result = self.run_copy(lambda clone: (clone / "DECISION-BRIEF.md").unlink())
         self.assertNotEqual(result.returncode, 0)

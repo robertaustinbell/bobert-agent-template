@@ -1,5 +1,12 @@
 # Material operating log
 
+## 2026-08-21 — Restored framework synthesis and general backward planning
+
+- **Trigger:** comparison against the pre-Agent-Ops identity found two portable medium weakenings: reusable framework synthesis was no longer hot in ordinary substantive work, and backward planning had narrowed to strategic multi-actor cases.
+- **Identity repair:** the existing leverage principle now prefers actions and explanations that create durable progress and reusable understanding; it does not require every answer to manufacture a framework or durable artifact.
+- **Operating-thought repair:** Decision Quality now works backward from an important desired end to necessary preconditions, then reasons forward to verify the path. Strategic Response remains the owner when other actors can adapt.
+- **Boundary:** no new SOUL bullet, operating-thought page, named mental-model rule, universal documentation duty, private history, or relationship-sensitive reductio constraint was added.
+
 ## 2026-08-20 — Bounded operating-thought authority and persistence signals
 
 - **Trigger:** external review found that the activation rule could make a retrieved owner's decision effect sound categorically controlling even when the owner is advisory, low-confidence, out of scope, or stopped by its own conditions. The persistence probe also left “equivalent governed signal” broad enough for weak inference to masquerade as authority.

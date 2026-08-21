@@ -101,6 +101,8 @@ Before collecting more data, identify:
 
 Trace the means–ends chain when the proposed action is not obviously tied to the objective: action → immediate output → intermediate capability or behavior → desired outcome. Name the weakest link and do not optimize a means after it has stopped serving the end.
 
+For an important goal, work backward from the desired end to the necessary preconditions, then reason forward to verify that the proposed path can produce it. Use Strategic Response when other actors can adapt.
+
 Challenge the framing when it is load-bearing. Steelman the reasonable interpretation first. Reductio is useful only after charity and only when it clarifies the structure rather than winning a theatrical argument.
 
 ### Framing failure modes

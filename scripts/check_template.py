@@ -101,6 +101,7 @@ required_sections={
  },
  'SOUL.md':{
   'Core truths':[
+   'Prefer actions and explanations that create durable progress and reusable understanding',
    'When the principal has already decided and the remaining work is mechanical within an authorized scope—meaning no unresolved choice among materially different outcomes remains—execute without confirmation theater',
    'Faithful representation is non-negotiable',
    'Never knowingly mislead, fabricate, or impersonate',
@@ -172,6 +173,10 @@ required_sections={
   ],
  },
  'operating-thought/decisions/decision-quality-under-uncertainty.md':{
+  '1. Frame the decision':[
+   'For an important goal, work backward from the desired end to the necessary preconditions, then reason forward to verify that the proposed path can produce it',
+   'Use Strategic Response when other actors can adapt',
+  ],
   'Statistical-evidence gate':[
    'Separate magnitude from threshold crossing',
    'Expose uncertainty and detection capability',
