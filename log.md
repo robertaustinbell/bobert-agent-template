@@ -1,11 +1,20 @@
 # Material operating log
 
-## 2026-08-20 — Added three runtime-conformance checks
+## 2026-08-20 — Bounded operating-thought authority and persistence signals
 
-- **Source:** a bounded Hermes implementation exercised automatic persistence authority, unattended toolset resolution, and fixed prompt/tool-schema diagnostics.
-- **Portable repair:** `RUNTIMES.md` now asks exercised adapters to accept null persistence reviews without source-derived retention authority, block unresolved unattended capability scope rather than widen it, and measure always-loaded context cost without treating size as behavioral proof.
+- **Trigger:** external review found that the activation rule could make a retrieved owner's decision effect sound categorically controlling even when the owner is advisory, low-confidence, out of scope, or stopped by its own conditions. The persistence probe also left “equivalent governed signal” broad enough for weak inference to masquerade as authority.
+- **Identity repair:** canonical SOUL still keeps the matching owner on the causal path, but applies only the portion of its decision effect warranted by declared authority, applicable scope, confidence, and stopping conditions.
+- **Persistence repair:** the source-authority owner and runtime probes now recognize authenticated current retention requests, explicit authenticated corrections carrying durable-retention intent or adoption decisions, and principal-adopted standing retention policies with defined placement, scope, and correction/removal paths. Retrieved content, tool output, repetition, and model inference remain evidence rather than persistence authority.
+- **Adapter repair:** each portable probe now requires an explicit exercised, untested, unavailable, or intentionally unsupported disposition with dated evidence or rationale. The starter specifies the acceptance boundary; runtimes own execution and detailed evidence.
+- **Boundary:** no new operating-thought page, runtime adapter, private evidence, or universal per-memory identifier was added.
+
+## 2026-08-20 — Added three portable adapter acceptance probes
+
+- **Source:** a bounded Hermes implementation added and tested three runtime contracts using different evidence classes: prompt and continuity-prefix contract tests for persistence authority; injected resolver-failure integration tests for unattended toolset resolution; and offline, non-mutating inventory and budget tests for fixed prompt/tool-schema diagnostics.
+- **Portable repair:** `RUNTIMES.md` now asks adapters to disposition each acceptance probe explicitly, accept null persistence reviews without source-derived retention authority, block unresolved unattended capability scope rather than widen it, and measure always-loaded context cost without treating size as behavioral proof.
 - **Placement:** implementation code, thresholds, live inventories, and raw evidence remain runtime-owned; Herbert carries only the runtime-neutral acceptance boundaries and verification probes.
-- **Boundary:** the Hermes tests establish the exercised source-runtime mechanisms, not cross-runtime reliability. No new SOUL or operating-thought rule was added because existing authority, source-placement, and least-privilege owners already cover the normative principles.
+- **Evidence handles:** public source-fork commits `548fb95f2c9763eec37e3246543a0f80fbab1406`, `d2151ca5221116987a45f6c91f00d505b1ce7655`, and `fba90539ca5e75444ca0588106dec43a7c766089` on the repository author's public `hermes-agent` fork identify the tested implementation and fixtures without copying runtime evidence into Herbert.
+- **Boundary:** the unattended-resolution tests exercise blocking, recovery, and repeated-failure visibility before agent construction. The prompt diagnostic tests exercise offline inspection and source-home non-mutation. The persistence tests establish prompt and continuity-prefix contracts but do not establish end-to-end model behavior under hostile retrieved content. None establishes cross-runtime reliability.
 
 ## 2026-08-17 — Made SOUL the activation owner and bounded re-entry by changed state
 

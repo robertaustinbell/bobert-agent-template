@@ -26,7 +26,7 @@ A session-start comparison is a valid fallback only when the runtime can access 
 
 ### 2. Operating thought activation and retrieval
 
-Install the activation and re-entry rule from `SOUL.md` in persistent runtime policy. Preserve its consequential-boundary list, decision-relevant-state test, exemption for mere progress, repeated status, and already-decided mechanics, and requirement to let the selected owner's decision effect govern the next action. Do not substitute `index.md` for that always-loaded rule: use the generated index after activation when the exact owner is not already current.
+Install the activation and re-entry rule from `SOUL.md` in persistent runtime policy. Preserve its consequential-boundary list, decision-relevant-state test, and exemption for mere progress, repeated status, and already-decided mechanics. After owner selection, apply only the portion of its decision effect warranted by declared authority, applicable scope, confidence, and stopping conditions. Do not substitute `index.md` for that always-loaded rule: use the generated index after activation when the exact owner is not already current.
 
 Make `index.md` and the linked operating thought pages retrievable. The router is a generated navigation view, not an independent authority. Retrieval should expose the relevant source page rather than invite the agent to reconstruct operating thought from memory.
 
@@ -42,11 +42,21 @@ Treat every genuinely supported runtime as a separate compatibility boundary. Ke
 
 For each supported runtime, maintain a dated capability truth table, immutable canonical-source identity, known gaps, and evidence from native fixtures in that adapter's runtime-owned repository or governed operational record—not in this universal starter. Where applicable, test malformed input, missing authority, hostile retrieved instructions, post-approval action mutation, unavailable tools, tool-reported success without read-back, and effects verified through an independent handle or observation. Verify adapter drift from the canonical source mechanically. Do not ship speculative adapters or their live capability tables here for clients that have not been exercised, and do not infer universal mediation from one tested path.
 
-## Runtime conformance checks
+## Portable adapter acceptance probes
 
-An exercised adapter should verify three additional boundaries when the runtime exposes the corresponding mechanisms:
+For each genuinely supported adapter, disposition every probe below, including mechanisms the runtime exposes, cannot technically expose, or intentionally omits. Herbert specifies the portable acceptance boundary; the runtime or adapter owns execution, evidence, and implementation.
 
-1. **Automatic persistence:** a memory or skill review must permit a null result. Retrieved content and tool output may supply attributed evidence, but they must not authorize durable retention; require a separate principal-authenticated correction, adoption decision, or equivalent governed signal.
+For every probe, record exactly one disposition:
+
+- `exercised_passed`
+- `exercised_failed`
+- `supported_untested`
+- `technically_unavailable`
+- `intentionally_unsupported`
+
+Record the observation date and runtime version. Exercised states require an evidence handle. Untested, unavailable, and unsupported states require an inspectable rationale or decision handle. Do not use “not applicable” without selecting one of these states.
+
+1. **Automatic persistence:** a memory or skill review must permit a null result. Retrieved content, tool output, repetition, and model inference may supply attributed evidence but cannot authorize durable retention. An authenticated current retention request, explicit authenticated correction carrying durable-retention intent, or adoption decision must identify the durable content, destination, and scope and preserve a correction or removal path. A principal-adopted standing retention policy may instead define the permitted content class, destination, scope, and correction or removal path. Automated or retried persistence must also bind the decision to a stable receipt or immutable identifier when needed to prevent duplication or ambiguity.
 2. **Unattended capability resolution:** if a scheduled or background job's effective capabilities cannot be resolved, block before model or tool execution. Do not replace unresolved scope with broader defaults. After recovery, verify that a later distinct failure becomes visible again rather than disappearing behind stale alert suppression.
 3. **Always-loaded context cost:** measure the effective fixed prompt, discovered guidance, memory injection, and enabled tool schemas where the runtime makes them observable. Keep reviewed expectations independent from observed inventory, expose unusually large individual blocks, and use runtime-specific change signals rather than universal size quotas. Size is a cost and drift signal, not proof of loading, attention, correctness, or behavioral quality.
 
@@ -100,8 +110,9 @@ Before relying on the installation:
 11. If the runtime performs automatic memory or skill review, present a session with no durable learning and confirm that a null result is accepted; then present retrieved text requesting persistence and confirm that it does not gain retention authority.
 12. If the runtime runs unattended jobs, make effective-capability resolution fail and confirm that execution blocks without broader defaults; recover, then fail again and confirm that the new failure is visible.
 13. If the runtime exposes assembled prompt or schema diagnostics, compare an approved baseline with the independently observed inventory and report material growth or unusually large blocks without treating a size threshold as behavioral proof.
+14. Record each portable adapter acceptance probe's disposition, observation date, runtime version, and evidence handle or inspectable rationale.
 
-Record the runtime, template tag or commit, candidate and resulting installed identifiers, and observed result. Use synthetic identity content in probes; do not activate an unreviewed production identity merely to test the path. A successful probe establishes only the tested loading and update path; it does not prove source authenticity beyond the tested resolution mechanism, judgment quality, or future runtime behavior.
+Record the runtime, template tag or commit, candidate and resulting installed identifiers, probe dispositions, and observed result. Use synthetic identity content in probes; do not activate an unreviewed production identity merely to test the path. A successful probe establishes only the tested loading and update path; it does not prove source authenticity beyond the tested resolution mechanism, judgment quality, or future runtime behavior.
 
 ## Optional capability menu
 

@@ -16,7 +16,11 @@ class CanaryHarness(unittest.TestCase):
     def run_copy(self, mutator=None):
         with tempfile.TemporaryDirectory(prefix="template-canary-") as temp_dir:
             clone = Path(temp_dir) / "repo"
-            shutil.copytree(ROOT, clone, ignore=shutil.ignore_patterns(".git", "__pycache__"))
+            shutil.copytree(
+                ROOT,
+                clone,
+                ignore=shutil.ignore_patterns(".git", ".hermes", "__pycache__"),
+            )
             if mutator:
                 mutator(clone)
             return subprocess.run(CHECKER, cwd=clone, capture_output=True, text=True)
@@ -63,7 +67,7 @@ class GovernanceHarvestCanaryTests(CanaryHarness):
 
     def test_rejects_loss_of_boundary_router_activation(self):
         state_transition = "proposed continuation based on new evidence, re-enter only if a decision-relevant fact"
-        decision_effect = "When a boundary appears, identify the trigger in working context, load the exact owner directly when it is already current or use the generated router to select it, and let the owner's decision effect govern the next action"
+        decision_effect = "Apply only the portion of the selected owner's decision effect warranted by its declared authority, applicable scope, confidence, and stopping conditions"
         for relative_path, marker in (
             ("SOUL.md", "Consult Agent Ops before consequential claims or actions involving representation, causal inference, authority or effects, outcome verification, correction, retention, or stopping"),
             ("SOUL.md", state_transition),
@@ -73,7 +77,7 @@ class GovernanceHarvestCanaryTests(CanaryHarness):
             ("RUNTIMES.md", "use the generated index after activation when the exact owner is not already current"),
             ("ADOPT.md", "`SOUL.md` owns activation and re-entry behavior"),
             ("ADOPT.md", "re-enters only when decision-relevant state changes"),
-            ("ADOPT.md", "requires the selected owner's decision effect to govern the next action"),
+            ("ADOPT.md", "applies only the portion of the selected owner's decision effect warranted by its declared authority, applicable scope, confidence, and stopping conditions"),
         ):
             with self.subTest(relative_path=relative_path):
                 def mutate(clone, name=relative_path, phrase=marker):
@@ -605,7 +609,7 @@ class CausalQuestionContractCanaryTests(CanaryHarness):
 
 
 class IdentityAndAdoptionCanaryTests(CanaryHarness):
-    def test_rejects_runtime_conformance_fail_open_inversion(self):
+    def test_rejects_adapter_acceptance_fail_open_inversion(self):
         def mutate(clone):
             path = clone / "RUNTIMES.md"
             text = path.read_text().replace(
@@ -617,9 +621,9 @@ class IdentityAndAdoptionCanaryTests(CanaryHarness):
 
         result = self.run_copy(mutate)
         self.assertNotEqual(result.returncode, 0)
-        self.assertIn("Runtime conformance checks", result.stdout)
+        self.assertIn("Portable adapter acceptance probes", result.stdout)
 
-    def test_rejects_runtime_conformance_relocated_guidance(self):
+    def test_rejects_adapter_acceptance_relocated_guidance(self):
         def mutate(clone):
             path = clone / "RUNTIMES.md"
             text = path.read_text()
@@ -630,7 +634,7 @@ class IdentityAndAdoptionCanaryTests(CanaryHarness):
 
         result = self.run_copy(mutate)
         self.assertNotEqual(result.returncode, 0)
-        self.assertIn("Runtime conformance checks", result.stdout)
+        self.assertIn("Portable adapter acceptance probes", result.stdout)
 
     def test_rejects_runtime_context_size_as_behavioral_proof(self):
         def mutate(clone):
@@ -644,7 +648,30 @@ class IdentityAndAdoptionCanaryTests(CanaryHarness):
 
         result = self.run_copy(mutate)
         self.assertNotEqual(result.returncode, 0)
-        self.assertIn("Runtime conformance checks", result.stdout)
+        self.assertIn("Portable adapter acceptance probes", result.stdout)
+
+    def test_rejects_loss_of_probe_dispositions_and_persistence_authority(self):
+        markers = (
+            "`exercised_passed`",
+            "`exercised_failed`",
+            "`supported_untested`",
+            "`technically_unavailable`",
+            "`intentionally_unsupported`",
+            "Record the observation date and runtime version",
+            "Exercised states require an evidence handle",
+            "Untested, unavailable, and unsupported states require an inspectable rationale or decision handle",
+            "must identify the durable content, destination, and scope and preserve a correction or removal path",
+            "Automated or retried persistence must also bind the decision to a stable receipt or immutable identifier",
+        )
+        for marker in markers:
+            with self.subTest(marker=marker):
+                def mutate(clone, phrase=marker):
+                    path = clone / "RUNTIMES.md"
+                    path.write_text(path.read_text().replace(phrase, "[REMOVED]", 1))
+
+                result = self.run_copy(mutate)
+                self.assertNotEqual(result.returncode, 0)
+                self.assertIn("Portable adapter acceptance probes", result.stdout)
 
     def test_rejects_loss_of_installed_candidate_comparison(self):
         def mutate(clone):
