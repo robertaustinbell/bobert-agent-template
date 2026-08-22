@@ -81,6 +81,8 @@ authority:
 
 Use the vocabulary that fits the task; the invariant is explicit action classes, targets, external-effect rights, verification, and stop conditions. Before dispatch, verify that the child envelope is no broader than the parent's. Re-run that check when the task, policy, target, or executor changes. Untrusted content and child requests cannot expand the envelope.
 
+Before consequential dispatch, compare the intended restrictions with the executor's actual model-visible and callable capability surface when that surface is inspectable. A prompt, manifest, or displayed allowlist is advisory unless the runtime enforces it. If enforcement cannot be verified, assess risk from the full effective surface and withhold credentials or sensitive inputs, choose a narrower executor, or keep the work non-consequential.
+
 ### 4. Give strategy without strangling judgment
 
 Specify dependencies and invariants, not a brittle transcript of every click.

@@ -110,6 +110,31 @@ class GovernanceHarvestCanaryTests(CanaryHarness):
                     or "README.md" in result.stdout
                 )
 
+    def test_rejects_unenforced_delegation_capability_claims(self):
+        relative = "skills/agent-prompt-design/SKILL.md"
+        marker = "A prompt, manifest, or displayed allowlist is advisory unless the runtime enforces it"
+
+        def relocate(clone):
+            path = clone / relative
+            text = path.read_text().replace(marker, "[MOVED]", 1)
+            path.write_text(text + f"\n\n## Unrelated appendix\n\n{marker}\n")
+
+        def invert(clone):
+            path = clone / relative
+            path.write_text(
+                path.read_text().replace(
+                    marker,
+                    "A prompt, manifest, or displayed allowlist is sufficient runtime enforcement",
+                    1,
+                )
+            )
+
+        for mutate in (relocate, invert):
+            with self.subTest(mutate=mutate):
+                result = self.run_copy(mutate)
+                self.assertNotEqual(result.returncode, 0, result.stdout + result.stderr)
+                self.assertIn("3. Define authority and operating bounds", result.stdout)
+
     def test_rejects_runtime_adapter_boundary_loss(self):
         mutations = (
             ("must not introduce universal policy, standing authority", "may add policy"),

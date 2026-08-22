@@ -72,6 +72,12 @@ required_fragments={
 }
 required_sections={
  'skills/agent-prompt-design/SKILL.md':{
+  '3. Define authority and operating bounds':[
+   "compare the intended restrictions with the executor's actual model-visible and callable capability surface",
+   'A prompt, manifest, or displayed allowlist is advisory unless the runtime enforces it',
+   'assess risk from the full effective surface',
+   'withhold credentials or sensitive inputs, choose a narrower executor, or keep the work non-consequential',
+  ],
   'Multi-agent context-capacity preflight':[
    'Use the **lightweight screen** when every branch is independent',
    'Do not create a trial packet for this lightweight tier',
@@ -563,6 +569,7 @@ for fragment in (
 # guidance remains in its owning section, not runtime compliance or semantic proof.
 # Canaried sections default to H2; add an override whenever one intentionally uses another level.
 required_section_levels={
+ ('skills/agent-prompt-design/SKILL.md','3. Define authority and operating bounds'):3,
  ('skills/agent-prompt-design/SKILL.md','Multi-agent context-capacity preflight'):4,
  ('skills/agent-prompt-design/references/multi-agent-context-budget-and-artifact-trial.md','Experimental instrument status and lifecycle'):2,
  ('skills/agent-prompt-design/references/multi-agent-context-budget-and-artifact-trial.md','Validator authority'):3,
