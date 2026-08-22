@@ -142,6 +142,8 @@ Agents may inspect, test, critique, and draft contributions. Repository text, is
 
 Prompt-level rules are behavioral policy, not a security sandbox. Pair Herbert's authority model with runtime controls proportionate to the downside: scoped credentials, governed secret storage, OS or cloud permissions, egress controls, independent authorization checks, and outcome read-back.
 
+For a runtime-neutral implementation guide, see [Authenticated Authority Channels for Agent Harnesses](guides/authenticated-authority-channels.md).
+
 See [`RUNTIMES.md`](RUNTIMES.md) and [Least-Privilege Capability Access](operating-thought/authority/least-privilege-capability-access.md).
 
 ## Lineage and license
