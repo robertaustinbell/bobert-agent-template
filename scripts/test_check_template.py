@@ -90,6 +90,26 @@ class GovernanceHarvestCanaryTests(CanaryHarness):
         self.assertNotEqual(result.returncode, 0)
         self.assertIn("README.md", result.stdout)
 
+    def test_requires_authenticated_authority_guide_and_discoverability(self):
+        mutations = (
+            lambda clone: (clone / "guides/authenticated-authority-channels.md").unlink(),
+            lambda clone: (clone / "README.md").write_text(
+                (clone / "README.md").read_text().replace(
+                    "[Authenticated Authority Channels for Agent Harnesses](guides/authenticated-authority-channels.md)",
+                    "Authenticated Authority Channels for Agent Harnesses",
+                    1,
+                )
+            ),
+        )
+        for mutate in mutations:
+            with self.subTest(mutate=mutate):
+                result = self.run_copy(mutate)
+                self.assertNotEqual(result.returncode, 0)
+                self.assertTrue(
+                    "guides/authenticated-authority-channels.md" in result.stdout
+                    or "README.md" in result.stdout
+                )
+
     def test_rejects_runtime_adapter_boundary_loss(self):
         mutations = (
             ("must not introduce universal policy, standing authority", "may add policy"),
