@@ -1337,6 +1337,231 @@ class ContextCapacityPackageCanaryTests(CanaryHarness):
         self.assertNotEqual(result.returncode, 0, result.stdout + result.stderr)
         self.assertIn("context fit", result.stdout)
 
+    def test_rejects_loss_of_two_tier_proportionality(self):
+        markers = (
+            "lightweight screen",
+            "Do not create a trial packet for this lightweight tier",
+            "Use the full preflight and packet only when",
+        )
+        for marker in markers:
+            with self.subTest(marker=marker):
+                def mutate(clone, phrase=marker):
+                    path = clone / "skills/agent-prompt-design/SKILL.md"
+                    path.write_text(path.read_text().replace(phrase, "removed proportionality rule", 1))
+
+                result = self.run_copy(mutate)
+                self.assertNotEqual(result.returncode, 0, result.stdout + result.stderr)
+                self.assertIn("agent-prompt-design/SKILL.md", result.stdout)
+
+    def test_rejects_loss_of_experimental_instrument_boundary(self):
+        markers = (
+            "Experimental instrument",
+            "no public field evidence is included",
+            "CI protection while the instrument remains included does not imply permanence",
+        )
+        for marker in markers:
+            with self.subTest(marker=marker):
+                def mutate(clone, phrase=marker):
+                    path = clone / "skills/agent-prompt-design/references/multi-agent-context-budget-and-artifact-trial.md"
+                    path.write_text(path.read_text().replace(phrase, "removed experimental boundary", 1))
+
+                result = self.run_copy(mutate)
+                self.assertNotEqual(result.returncode, 0, result.stdout + result.stderr)
+                self.assertIn("multi-agent-context-budget-and-artifact-trial.md", result.stdout)
+
+    def test_rejects_preflight_guidance_relocated_to_unrelated_active_section(self):
+        def mutate(clone):
+            path = clone / "skills/agent-prompt-design/SKILL.md"
+            marker = "Do not create a trial packet for this lightweight tier"
+            text = path.read_text().replace(marker, "Keep the lightweight record concise", 1)
+            path.write_text(text.replace("#### Capability escalation and advisor hook", f"#### Capability escalation and advisor hook\n\n{marker}.", 1))
+
+        result = self.run_copy(mutate)
+        self.assertNotEqual(result.returncode, 0, result.stdout + result.stderr)
+        self.assertIn("Multi-agent context-capacity preflight", result.stdout)
+
+    def test_rejects_preflight_guidance_preserved_only_in_comment(self):
+        def mutate(clone):
+            path = clone / "skills/agent-prompt-design/SKILL.md"
+            marker = "Use the full preflight and packet only when the graph has dependencies"
+            path.write_text(path.read_text().replace(marker, f"<!-- {marker} -->", 1))
+
+        result = self.run_copy(mutate)
+        self.assertNotEqual(result.returncode, 0, result.stdout + result.stderr)
+        self.assertIn("Multi-agent context-capacity preflight", result.stdout)
+
+    def test_rejects_preflight_guidance_preserved_only_in_fence(self):
+        def mutate(clone):
+            path = clone / "skills/agent-prompt-design/SKILL.md"
+            marker = "Use the **lightweight screen** when every branch is independent"
+            path.write_text(path.read_text().replace(marker, f"```text\n{marker}\n```", 1))
+
+        result = self.run_copy(mutate)
+        self.assertNotEqual(result.returncode, 0, result.stdout + result.stderr)
+        self.assertIn("Multi-agent context-capacity preflight", result.stdout)
+
+    def test_rejects_preflight_tier_inversion(self):
+        def mutate(clone):
+            path = clone / "skills/agent-prompt-design/SKILL.md"
+            marker = "Do not create a trial packet for this lightweight tier"
+            path.write_text(path.read_text().replace(marker, "Create a trial packet for this lightweight tier", 1))
+
+        result = self.run_copy(mutate)
+        self.assertNotEqual(result.returncode, 0, result.stdout + result.stderr)
+        self.assertIn("Multi-agent context-capacity preflight", result.stdout)
+
+    def test_rejects_preflight_heading_at_wrong_level(self):
+        def mutate(clone):
+            path = clone / "skills/agent-prompt-design/SKILL.md"
+            path.write_text(path.read_text().replace("#### Multi-agent context-capacity preflight", "### Multi-agent context-capacity preflight", 1))
+
+        result = self.run_copy(mutate)
+        self.assertNotEqual(result.returncode, 0, result.stdout + result.stderr)
+        self.assertIn("expected heading '#### Multi-agent context-capacity preflight'", result.stdout)
+
+    def test_rejects_experimental_lifecycle_relocated_to_unrelated_active_section(self):
+        def mutate(clone):
+            path = clone / "skills/agent-prompt-design/references/multi-agent-context-budget-and-artifact-trial.md"
+            marker = "CI protection while the instrument remains included does not imply permanence"
+            text = path.read_text().replace(marker, "CI protects the current checks", 1)
+            path.write_text(text.replace("## Packet commands", f"## Packet commands\n\n{marker}.", 1))
+
+        result = self.run_copy(mutate)
+        self.assertNotEqual(result.returncode, 0, result.stdout + result.stderr)
+        self.assertIn("Experimental instrument status and lifecycle", result.stdout)
+
+    def test_rejects_experimental_status_preserved_only_in_comment(self):
+        def mutate(clone):
+            path = clone / "skills/agent-prompt-design/references/multi-agent-context-budget-and-artifact-trial.md"
+            marker = "no public field evidence is included"
+            path.write_text(path.read_text().replace(marker, f"<!-- {marker} -->", 1))
+
+        result = self.run_copy(mutate)
+        self.assertNotEqual(result.returncode, 0, result.stdout + result.stderr)
+        self.assertIn("Experimental instrument status and lifecycle", result.stdout)
+
+    def test_rejects_experimental_lifecycle_preserved_only_in_fence(self):
+        def mutate(clone):
+            path = clone / "skills/agent-prompt-design/references/multi-agent-context-budget-and-artifact-trial.md"
+            line = next(line for line in path.read_text().splitlines() if "**Remove** it when repeated use" in line)
+            path.write_text(path.read_text().replace(line, f"```text\n{line}\n```", 1))
+
+        result = self.run_copy(mutate)
+        self.assertNotEqual(result.returncode, 0, result.stdout + result.stderr)
+        self.assertIn("Experimental instrument status and lifecycle", result.stdout)
+
+    def test_rejects_ci_permanence_inversion(self):
+        def mutate(clone):
+            path = clone / "skills/agent-prompt-design/references/multi-agent-context-budget-and-artifact-trial.md"
+            marker = "CI protection while the instrument remains included does not imply permanence"
+            path.write_text(path.read_text().replace(marker, "CI protection implies the instrument is permanent", 1))
+
+        result = self.run_copy(mutate)
+        self.assertNotEqual(result.returncode, 0, result.stdout + result.stderr)
+        self.assertIn("Experimental instrument status and lifecycle", result.stdout)
+
+    def test_rejects_validator_authority_relocated_to_unrelated_active_section(self):
+        def mutate(clone):
+            path = clone / "skills/agent-prompt-design/references/multi-agent-context-budget-and-artifact-trial.md"
+            paragraph = next(line for line in path.read_text().splitlines() if "normative executable authority" in line)
+            text = path.read_text().replace(paragraph, "Validator roles omitted here.", 1)
+            path.write_text(text.replace("### Separate aggregation and adoption decision", f"### Separate aggregation and adoption decision\n\n{paragraph}", 1))
+
+        result = self.run_copy(mutate)
+        self.assertNotEqual(result.returncode, 0, result.stdout + result.stderr)
+        self.assertIn("Validator authority", result.stdout)
+
+    def test_rejects_validator_authority_preserved_only_in_comment(self):
+        def mutate(clone):
+            path = clone / "skills/agent-prompt-design/references/multi-agent-context-budget-and-artifact-trial.md"
+            paragraph = next(line for line in path.read_text().splitlines() if "normative executable authority" in line)
+            path.write_text(path.read_text().replace(paragraph, f"<!-- {paragraph} -->", 1))
+
+        result = self.run_copy(mutate)
+        self.assertNotEqual(result.returncode, 0, result.stdout + result.stderr)
+        self.assertIn("Validator authority", result.stdout)
+
+    def test_rejects_validator_authority_preserved_only_in_fence(self):
+        def mutate(clone):
+            path = clone / "skills/agent-prompt-design/references/multi-agent-context-budget-and-artifact-trial.md"
+            paragraph = next(line for line in path.read_text().splitlines() if "normative executable authority" in line)
+            path.write_text(path.read_text().replace(paragraph, f"```text\n{paragraph}\n```", 1))
+
+        result = self.run_copy(mutate)
+        self.assertNotEqual(result.returncode, 0, result.stdout + result.stderr)
+        self.assertIn("Validator authority", result.stdout)
+
+    def test_rejects_validator_authority_deletion(self):
+        def mutate(clone):
+            path = clone / "skills/agent-prompt-design/references/multi-agent-context-budget-and-artifact-trial.md"
+            paragraph = next(line for line in path.read_text().splitlines() if "normative executable authority" in line)
+            path.write_text(path.read_text().replace(paragraph, "", 1))
+
+        result = self.run_copy(mutate)
+        self.assertNotEqual(result.returncode, 0, result.stdout + result.stderr)
+        self.assertIn("Validator authority", result.stdout)
+
+    def test_rejects_validator_authority_inversion_and_conflation(self):
+        def mutate(clone):
+            path = clone / "skills/agent-prompt-design/references/multi-agent-context-budget-and-artifact-trial.md"
+            paragraph = next(line for line in path.read_text().splitlines() if "normative executable authority" in line)
+            inverted = "The JSON Schema is the normative executable authority, while the Python validator is only informative; either may override the other."
+            path.write_text(path.read_text().replace(paragraph, inverted, 1))
+
+        result = self.run_copy(mutate)
+        self.assertNotEqual(result.returncode, 0, result.stdout + result.stderr)
+        self.assertIn("Validator authority", result.stdout)
+
+
+class ConsequentialActionControlLayerCanaryTests(CanaryHarness):
+    TARGET = "operating-thought/authority/permissions-controls-and-discretion.md"
+    HEADING = "## Consequential-action control layers"
+    MARKER = "No evidence or control in one layer establishes another"
+
+    def test_rejects_each_control_layer_deletion(self):
+        for marker in (
+            "**Admission:** Is this exact action authorized and valid under the governing policy?",
+            "**Execution containment:** If the acting process is wrong or compromised, what limits the reachable damage?",
+            "**Provenance:** Which actor or acting surface attempted the exact operation?",
+            "**Observed effect:** What resulting state is independently observable?",
+            self.MARKER,
+        ):
+            with self.subTest(marker=marker):
+                def mutate(clone, phrase=marker):
+                    path = clone / self.TARGET
+                    path.write_text(path.read_text().replace(phrase, "removed control-layer guidance", 1))
+
+                result = self.run_copy(mutate)
+                self.assertNotEqual(result.returncode, 0, result.stdout + result.stderr)
+                self.assertIn("Consequential-action control layers", result.stdout)
+
+    def test_rejects_control_layer_relocation(self):
+        def mutate(clone):
+            path = clone / self.TARGET
+            text = path.read_text().replace(self.MARKER, "removed control-layer guidance", 1)
+            path.write_text(text.replace("## Stop conditions\n", f"## Stop conditions\n\n{self.MARKER}\n", 1))
+
+        result = self.run_copy(mutate)
+        self.assertNotEqual(result.returncode, 0, result.stdout + result.stderr)
+        self.assertIn("Consequential-action control layers", result.stdout)
+
+    def test_rejects_direct_control_layer_conflation_or_inversion(self):
+        mutations = (
+            ("Authorization does not prove execution or outcome", "Authorization proves execution and outcome"),
+            ("Containment does not authorize the contained action", "Containment authorizes the contained action"),
+            ("A signature or other provenance record does not grant permission or prove success", "A provenance record grants permission and proves success"),
+            ("A successful read-back does not retroactively authorize the action that produced it", "A successful read-back retroactively authorizes the action that produced it"),
+        )
+        for old, new in mutations:
+            with self.subTest(old=old):
+                def mutate(clone, source=old, replacement=new):
+                    path = clone / self.TARGET
+                    path.write_text(path.read_text().replace(source, replacement, 1))
+
+                result = self.run_copy(mutate)
+                self.assertNotEqual(result.returncode, 0, result.stdout + result.stderr)
+                self.assertIn("Consequential-action control layers", result.stdout)
+
 
 class RouterRetrievalTests(unittest.TestCase):
     def test_value_trigger_does_not_displace_model_adequacy_trigger(self):

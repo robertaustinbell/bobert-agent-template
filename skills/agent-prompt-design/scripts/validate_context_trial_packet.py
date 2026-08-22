@@ -1,8 +1,10 @@
 #!/usr/bin/env python3
-"""Strict standard-library validator for context trial packets.
+"""Normative executable validator for experimental context trial packets.
 
 Validation establishes representation and internal consistency only. It does not
-observe a runtime, run an orchestration trial, or prove task/source truth.
+observe a runtime, run an orchestration trial, or prove task/source truth. The
+paired JSON Schema is an informative interoperability representation; drift is a
+release blocker.
 """
 
 from __future__ import annotations

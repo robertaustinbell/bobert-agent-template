@@ -400,6 +400,9 @@ class ContextTrialPacketTests(unittest.TestCase):
 
     def test_schema_removes_machine_valid_promotion_status(self):
         schema = json.loads(SCHEMA.read_text(encoding="utf-8"))
+        self.assertIn("Informative interoperability representation", schema["description"])
+        self.assertIn("Python validator is normative executable authority", schema["description"])
+        self.assertIn("drift blocks release", schema["description"])
         statuses = schema["$defs"]["final_disposition"]["properties"]["status"]["enum"]
         self.assertNotIn("promote_typed_bounded", statuses)
 

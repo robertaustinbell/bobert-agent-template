@@ -1,5 +1,19 @@
 # Material operating log
 
+## 2026-08-21 — Separated four consequential-action control layers
+
+- **Repair:** the authority owner now evaluates admission, execution containment, provenance, and observed effect as separate layers and states that no evidence or control in one establishes another.
+- **Decision effect:** authorization cannot stand in for execution or outcome; containment cannot grant authority; provenance cannot prove permission or success; and read-back cannot retroactively authorize an effect.
+- **Boundary:** apply layers proportionally to the actual failure surface. This does not require four mechanisms for every action or claim runtime containment that Herbert does not implement.
+- **Verification:** an active-section canary and deletion, relocation, and direct conflation/inversion mutations protect the distinction as static public guidance, not runtime behavior.
+
+## 2026-08-21 — Corrected context preflight proportionality and marked the packet experimental
+
+- **Correction:** independent shallow bounded fan-out with a simple merge, ample observed margin, and non-consequential missing-branch risk now uses a lightweight screen with no packet; the full preflight and packet are reserved for dependency, growth, repeated-join/loop, compaction/retrieval, near-capacity, variable-tool-output, or consequential branch/provenance risks.
+- **Instrument status:** the nested context packet is an **Experimental instrument** with structural and hostile-fixture validation but no included public field evidence. Promotion, revision, and removal conditions are explicit; CI protection while included does not imply permanence.
+- **Contract authority:** the Python validator is normative executable authority and the JSON Schema is an informative interoperability representation; drift blocks release.
+- **Boundary:** this change does not run an orchestration trial, establish task quality, or add a new skill directory.
+
 ## 2026-08-21 — Restored framework synthesis and general backward planning
 
 - **Trigger:** comparison against the pre-Agent-Ops identity found two portable medium weakenings: reusable framework synthesis was no longer hot in ordinary substantive work, and backward planning had narrowed to strategic multi-actor cases.
@@ -20,8 +34,8 @@
 - **Source:** a bounded Hermes implementation added and tested three runtime contracts using different evidence classes: prompt and continuity-prefix contract tests for persistence authority; injected resolver-failure integration tests for unattended toolset resolution; and offline, non-mutating inventory and budget tests for fixed prompt/tool-schema diagnostics.
 - **Portable repair:** `RUNTIMES.md` now asks adapters to disposition each acceptance probe explicitly, accept null persistence reviews without source-derived retention authority, block unresolved unattended capability scope rather than widen it, and measure always-loaded context cost without treating size as behavioral proof.
 - **Placement:** implementation code, thresholds, live inventories, and raw evidence remain runtime-owned; Herbert carries only the runtime-neutral acceptance boundaries and verification probes.
-- **Evidence handles:** public source-fork commits `548fb95f2c9763eec37e3246543a0f80fbab1406`, `d2151ca5221116987a45f6c91f00d505b1ce7655`, and `fba90539ca5e75444ca0588106dec43a7c766089` on the repository author's public `hermes-agent` fork identify the tested implementation and fixtures without copying runtime evidence into Herbert.
-- **Boundary:** the unattended-resolution tests exercise blocking, recovery, and repeated-failure visibility before agent construction. The prompt diagnostic tests exercise offline inspection and source-home non-mutation. The persistence tests establish prompt and continuity-prefix contracts but do not establish end-to-end model behavior under hostile retrieved content. None establishes cross-runtime reliability.
+- **Evidence handles:** public source-fork commits [`548fb95f2c9763eec37e3246543a0f80fbab1406`](https://github.com/robertaustinbell/hermes-agent/commit/548fb95f2c9763eec37e3246543a0f80fbab1406), [`d2151ca5221116987a45f6c91f00d505b1ce7655`](https://github.com/robertaustinbell/hermes-agent/commit/d2151ca5221116987a45f6c91f00d505b1ce7655), and [`fba90539ca5e75444ca0588106dec43a7c766089`](https://github.com/robertaustinbell/hermes-agent/commit/fba90539ca5e75444ca0588106dec43a7c766089) on the repository author's public `hermes-agent` fork identify the tested implementation and fixtures without copying runtime evidence into Herbert.
+- **Boundary:** the unattended-resolution tests exercise blocking, recovery, and repeated-failure visibility before agent construction. The prompt diagnostic tests exercise offline inspection and source-home non-mutation. The persistence tests establish prompt and continuity-prefix contracts but do not establish end-to-end model behavior under hostile retrieved content. No integrated runtime trial combines the three probes, and none establishes cross-runtime reliability.
 
 ## 2026-08-17 — Made SOUL the activation owner and bounded re-entry by changed state
 

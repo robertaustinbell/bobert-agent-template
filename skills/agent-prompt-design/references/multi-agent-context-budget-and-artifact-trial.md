@@ -1,6 +1,18 @@
 # Multi-agent context budget and artifact trial
 
-Use this reference only when a multi-agent graph is a real candidate. It is a capacity preflight and a bounded comparison protocol, not permission to dispatch agents. A fit result says that the intended context path fits the observed runtime under recorded assumptions; it does **not** establish task quality, source truth, privacy, authority, or coordination reliability.
+## Experimental instrument status and lifecycle
+
+> **Experimental instrument.** This nested packet and comparison procedure is structurally validated, including hostile fixtures, but no public field evidence is included. It is not a stable parent procedure, a production orchestration standard, or permission to dispatch agents.
+
+Use this reference only when a multi-agent graph is a real candidate and the full-tier triggers in the parent skill apply. It is a capacity preflight and a bounded comparison protocol, not permission to dispatch agents. A fit result says that the intended context path fits the observed runtime under recorded assumptions; it does **not** establish task quality, source truth, privacy, authority, or coordination reliability. Independent shallow bounded fan-out with a simple merge, ample observed margin, and non-consequential missing-branch risk uses the parent's lightweight screen and no packet.
+
+### Lifecycle decisions
+
+- **Promote** the instrument toward stable parent guidance only after fresh representative field packets show a recurring decision or defect-prevention benefit across more than synthetic or authored cases, with acceptable correction burden and no severe authority, privacy, or fabricated-success defect.
+- **Revise** it when field use exposes false alarms, missing triggers, validator/schema drift, excess ceremony, misleading measurements, or a cheaper existing evidence path that resolves the same decision.
+- **Remove** it when repeated use adds no material decision or repair value, its carrying cost exceeds its benefit, it encourages packet creation for the lightweight tier, or a severe safety, privacy, authority, or false-verification failure makes continued inclusion unjustified.
+
+CI protection while the instrument remains included does not imply permanence. The canaries protect the stated experimental boundary and internal consistency so removal or revision is deliberate; they do not promote the instrument.
 
 ## Context-capacity preflight
 
@@ -88,7 +100,11 @@ For each condition record:
 - authority, privacy, fabricated-success, missing-branch, or source-integrity hard-gate defects;
 - condition disposition and final trial disposition.
 
-Use `references/context-trial-packet-v1.schema.json` as the representation contract and `scripts/validate_context_trial_packet.py` as the strict standard-library consistency gate. The validator rejects duplicate JSON keys, non-finite numbers, fractional exact or ranged byte/token counts, unknown fields, malformed or duplicate condition identities, impossible passed states, silently missing branches, and unreconciled context-fit claims. Acceptance `expected` and `observed` values use recursive strict JSON type/value equality, so booleans never compare equal to numbers, including inside arrays or objects. Final dispositions are closed: `retain_baseline` selects an accepted `baseline`; `trial_only`, `blocked`, and `inconclusive` select `null`; v1 has no promotion status. The validator deliberately performs no network lookup, runtime probe, digest recomputation, trial execution, or truth adjudication.
+### Validator authority
+
+The Python validator at `scripts/validate_context_trial_packet.py` is the normative executable authority. The JSON Schema at `references/context-trial-packet-v1.schema.json` is an informative interoperability representation. Drift between them blocks release; update and test both, but resolve semantic uncertainty in favor of the Python validator until an explicit versioned contract change is reviewed.
+
+The validator rejects duplicate JSON keys, non-finite numbers, fractional exact or ranged byte/token counts, unknown fields, malformed or duplicate condition identities, impossible passed states, silently missing branches, and unreconciled context-fit claims. Acceptance `expected` and `observed` values use recursive strict JSON type/value equality, so booleans never compare equal to numbers, including inside arrays or objects. Final dispositions are closed: `retain_baseline` selects an accepted `baseline`; `trial_only`, `blocked`, and `inconclusive` select `null`; v1 has no promotion status. The validator deliberately performs no network lookup, runtime probe, digest recomputation, trial execution, or truth adjudication.
 
 ### Separate aggregation and adoption decision
 

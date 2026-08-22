@@ -41,6 +41,10 @@ Do not create a new operating thought page or abstraction when an existing owner
 6. Review the complete diff for accidental scope, malformed prose, private data, stale generated files, and claims stronger than the evidence. Include the regenerated `index.md` when it changed for an intended reason.
 7. Open a pull request. Explain the decision effect, scope, strongest objection, known failure, reversal evidence, and verification actually performed.
 
+## Commit messages
+
+Use a descriptive commit subject that names the actual change. Put verification scope and limits in the commit body, pull request, or material operating log where they can be stated precisely. Do not use a generic `[verified]` prefix as a substitute for a descriptive subject. This convention applies prospectively; do not rewrite repository history to retrofit it.
+
 ## Agent-assisted contributions
 
 Agents may inspect the public repository, run safe local checks, analyze operating thought, draft field reports, prepare patches, and review proposed changes inside their authenticated task and authority envelope.

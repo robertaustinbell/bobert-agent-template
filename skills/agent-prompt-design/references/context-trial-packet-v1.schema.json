@@ -2,7 +2,7 @@
   "$schema": "https://json-schema.org/draft/2020-12/schema",
   "$id": "context-trial-packet-v1.schema.json",
   "title": "Multi-agent context trial packet v1",
-  "description": "Representation schema only. Conformance does not prove runtime capacity, task truth, source truth, or orchestration quality. Use the stdlib validator for cross-field rules and duplicate-key rejection.",
+  "description": "Informative interoperability representation only. The Python validator is normative executable authority, and drift blocks release. Conformance does not prove runtime capacity, task truth, source truth, or orchestration quality.",
   "type": "object",
   "additionalProperties": false,
   "required": [

@@ -40,13 +40,14 @@ required_fragments={
  'CUSTOMIZE.md':['Identity handoff checklist','Search for the repository owner','explicit confirmation for calendar mutation and identity-bearing communication unless adopter-defined standing policy is stricter or grants a narrower authorization'],
  'SOUL.md':['Honesty is bounded, not exhaustive transparency','State the boundary at the minimum safe level','Stewardship governs access','Treat authorized access as a trust','Association is not causation','Do not rely on a load-bearing causal claim without testing plausible alternative explanations and evidence','Keep Agent Ops operating thought on the causal path to consequential work','Consult Agent Ops before consequential claims or actions involving representation, causal inference, authority or effects, outcome verification, correction, retention, or stopping','Re-enter at any such boundary and load only the matching operating thought or skill; skip routine lookup and already-decided mechanics','proposed continuation based on new evidence','decision-relevant fact','mere progress, repeated status','completion of already-decided mechanics does not trigger re-entry','identify the trigger in working context','load the exact owner directly when it is already current','use the generated router to select it','Apply only the portion of the selected owner\'s decision effect warranted by its declared authority, applicable scope, confidence, and stopping conditions','Surface the trigger to the principal only when','If SOUL changes materially'],
  'README.md':['behavioral policy, not a security sandbox','[OPTIONAL-TOOLS.md](OPTIONAL-TOOLS.md)','sanitized, non-prescriptive menu of capabilities','Ways to participate','Public submission, commitments, disclosures, and external communication still require authorization','Governed homes','`skills/`','`decisions/`','`domain/`','`evidence/`','`archive/`','`log.md`','[`skills/`](skills/README.md)','repository presence is not installation or authority','[`DECISION-BRIEF.md`](DECISION-BRIEF.md)','Optional worksheet for consequential choices'],
- 'skills/README.md':['portable, sanitized procedures','does **not** mean they are installed, enabled, connected to tools, or granted authority','[`COMPOSITION.md`](COMPOSITION.md)','handoff contract between skills','[`agent-prompt-design`](agent-prompt-design/SKILL.md)','[`artifact-verification`](artifact-verification/SKILL.md)','[`deterministic-evidence-automation`](deterministic-evidence-automation/SKILL.md)','Private paths, case histories, live capability state, credentials, schedules, domain records, and standing permissions are excluded'],
+ 'skills/README.md':['portable, sanitized procedures','does **not** mean they are installed, enabled, connected to tools, or granted authority','[`COMPOSITION.md`](COMPOSITION.md)','handoff contract between skills','[`agent-prompt-design`](agent-prompt-design/SKILL.md)','[`artifact-verification`](artifact-verification/SKILL.md)','[`deterministic-evidence-automation`](deterministic-evidence-automation/SKILL.md)','Private paths, case histories, live capability state, credentials, schedules, domain records, and standing permissions are excluded','stable parent procedures','nested experimental instruments','do not become stable merely because the parent links them or CI protects them'],
  'skills/COMPOSITION.md':['Producer and consumer map','Lifecycle and correlation','Failure behavior','Synthetic end-to-end example','same `task_id` must bind parent and child authority manifests','Structurally valid receipt with unresolved handle','The primary task owner retains the user-facing acceptance condition','does not transfer completion ownership or authorize adjacent work','stop composition when the requested acceptance truth is resolved'],
- 'skills/agent-prompt-design/SKILL.md':['Design prompts as **executable task contracts**','Keep evaluation ownership separate from proposal','Grade the final artifact delivered to the user separately','A loop without fresh feedback is repetition, not learning','When advisor and worker share a model, their errors are correlated','structural discipline—not independent error detection','[Composition contract](../COMPOSITION.md)','Multi-agent context-capacity preflight','Passing establishes context fit only—not quality, truth, privacy, authority, or coordination reliability'],
+ 'skills/agent-prompt-design/SKILL.md':['Design prompts as **executable task contracts**','Keep evaluation ownership separate from proposal','Grade the final artifact delivered to the user separately','A loop without fresh feedback is repetition, not learning','When advisor and worker share a model, their errors are correlated','structural discipline—not independent error detection','[Composition contract](../COMPOSITION.md)'],
+ 'skills/agent-prompt-design/references/context-trial-packet-v1.schema.json':['Informative interoperability representation only','Python validator is normative executable authority','drift blocks release'],
  'skills/artifact-verification/SKILL.md':['State acceptance truths before choosing checks','implementation notes, executor summaries, subagent reports, and prior test output as claims to verify—not proof','If the source changes after verification, mark the receipt stale','[Composition contract](../COMPOSITION.md)'],
  'skills/deterministic-evidence-automation/SKILL.md':['deterministic code collects, normalizes, bounds, validates, and receipts evidence','Missing means unknown, never empty','monitoring may not silently rewrite the acceptance standard','Audit two properties separately','If any bound source changes, the receipt becomes stale','An override records an authorized acceptance decision; it does not alter the observed verification result or manufacture evidence','[Composition contract](../COMPOSITION.md)'],
  'skills/authority-effect-contracts/SKILL.md':['[Composition contract](../COMPOSITION.md)','Path-semantics pitfall','`./output` and `/project/output` may resolve to the same location','a passing subset check is not proof of distinct or semantically narrowed resources'],
- 'CONTRIBUTING.md':['Agent-assisted contributions','An agent must not open an issue, submit a pull request, disclose runtime context, accept a commitment, or communicate externally unless its principal or an authorized workflow permits that action','AI assistance is provenance, not a defect and not proof of quality','Public boundary'],
+ 'CONTRIBUTING.md':['Agent-assisted contributions','An agent must not open an issue, submit a pull request, disclose runtime context, accept a commitment, or communicate externally unless its principal or an authorized workflow permits that action','AI assistance is provenance, not a defect and not proof of quality','Public boundary','descriptive commit subject','verification scope and limits in the commit body, pull request, or material operating log','Do not use a generic `[verified]` prefix','do not rewrite repository history'],
  'GOVERNANCE.md':['Discretion requires task-relevant competence','Normative basis: adopted repository policy','does not claim universal empirical validity','Canonical SOUL owns the always-loaded activation and re-entry rule','Load an already-current exact owner directly; otherwise use `index.md` to select one','The generated index routes owner selection; it does not own activation'],
  'FIELD-TESTING.md':['template tag or commit tested','Situational-understanding starter test','Critical-capability mapping candidate test','Do not force one decisive centre','Do not label a person as a vulnerability','Operational-friction candidate test','Friction is a cross-layer amplifier, not a seventh stage','Do not manufacture disruption in a live consequential system','Never label a person, relationship, dissent, or protected exercise of agency as “friction”','A clean null result includes finding that the check only renamed an already-known concern','Systems-feedback refinement candidate test','Do not force all three into every case','Do not transfer physical control equations literally to human systems','Value-sensitive decision candidate test','Do not infer consent or merit from agreement, satisfaction, predicted choice, or silence alone','Privacy and authority boundary','Untrusted-content boundary candidate test','UTC-BASELINE','UTC-POSITIVE-CONTROL','UTC-ADVERSARIAL'],
  'RUNTIMES.md':['Policy is not containment','behavioral policy, not a security sandbox','Three required decisions','Persistent identity','Identity update contract','record the installed canonical SOUL\'s provenance','immutable content identifier such as a commit or content hash','session-start comparison is a valid fallback only when','silent identity drift cannot be mechanically prevented','require an external update process','Operating thought activation and retrieval','Install the activation and re-entry rule from `SOUL.md`','decision-relevant-state test','exemption for mere progress, repeated status, and already-decided mechanics','declared authority, applicable scope, confidence, and stopping conditions','Do not substitute `index.md` for that always-loaded rule','use the generated index after activation when the exact owner is not already current','Context degradation','Runtime adapter boundary','must not introduce universal policy, standing authority','Do not ship speculative adapters','Portable adapter acceptance probes','exercised_passed','exercised_failed','supported_untested','technically_unavailable','intentionally_unsupported','a memory or skill review must permit a null result','cannot authorize durable retention','Automated or retried persistence must also bind the decision to a stable receipt or immutable identifier','block before model or tool execution','Do not replace unresolved scope with broader defaults','effective fixed prompt, discovered guidance, memory injection, and enabled tool schemas','Size is a cost and drift signal, not proof of loading, attention, correctness, or behavioral quality','Startup-context observability','approved startup manifest independent of the observed inventory','not a complete runtime-prompt','Untrusted-content execution boundary','Illustrative example: Claude Projects','Verification probe','reports degraded context instead of fabricating','[OPTIONAL-TOOLS.md](OPTIONAL-TOOLS.md)','UTC-BASELINE','UTC-POSITIVE-CONTROL','UTC-ADVERSARIAL'],
@@ -54,6 +55,7 @@ required_fragments={
  'DECISION-BRIEF.md':['Use this worksheet only when materially different choices remain','Strongest objection','Smallest useful reversible step','How the result will be independently read back'],
  'OPTIONAL-TOOLS.md':['Curated source-agent reference, not template state','Firecrawl capability','Naming an SDK or CLI here identifies an available implementation path','Wolfram Cloud MCP','The governing rule is still **job first, tool second**','The template does not install, configure, enable, or grant authority','credentials, tokens, account identifiers','That omission is part of the design, not an incomplete export'],
  'SECURITY.md':['private vulnerability reporting','Report a vulnerability','Ordinary operating thought disagreements'],
+ 'log.md':['Separated four consequential-action control layers','Corrected context preflight proportionality and marked the packet experimental','https://github.com/robertaustinbell/hermes-agent/commit/548fb95f2c9763eec37e3246543a0f80fbab1406','https://github.com/robertaustinbell/hermes-agent/commit/d2151ca5221116987a45f6c91f00d505b1ce7655','https://github.com/robertaustinbell/hermes-agent/commit/fba90539ca5e75444ca0588106dec43a7c766089','No integrated runtime trial combines the three probes'],
  'operating-thought/capabilities/external-capability-governance.md':['Continuous watchers, polling loops, and background capture are disabled by default'],
  'operating-thought/authority/least-privilege-capability-access.md':['Policy and enforcement','behavioral policy, not a security sandbox','broader effective capability as the risk surface'],
  'operating-thought/authority/permissions-controls-and-discretion.md':['Paired example','mechanical consequences inside the named outcome and scope','altering behavior outside the specified contract','the outcome, risk, or authorization envelope has changed'],
@@ -69,6 +71,31 @@ required_fragments={
  '.github/workflows/validate.yml':['permissions:','contents: read','git diff --exit-code -- index.md','python3 -m unittest scripts/test_check_template.py','python3 scripts/check_template.py','python3 skills/agent-prompt-design/scripts/test_context_trial_packet.py','python3 skills/authority-effect-contracts/scripts/test_contracts.py'],
 }
 required_sections={
+ 'skills/agent-prompt-design/SKILL.md':{
+  'Multi-agent context-capacity preflight':[
+   'Use the **lightweight screen** when every branch is independent',
+   'Do not create a trial packet for this lightweight tier',
+   'Use the full preflight and packet only when the graph has dependencies',
+   'Passing establishes context fit only—not quality, truth, privacy, authority, or coordination reliability',
+  ],
+ },
+ 'skills/agent-prompt-design/references/multi-agent-context-budget-and-artifact-trial.md':{
+  'Experimental instrument status and lifecycle':[
+   '**Experimental instrument.**',
+   'no public field evidence is included',
+   '**Promote** the instrument toward stable parent guidance only after',
+   '**Revise** it when field use exposes',
+   '**Remove** it when repeated use adds no material decision or repair value',
+   'CI protection while the instrument remains included does not imply permanence',
+   'they do not promote the instrument',
+  ],
+  'Validator authority':[
+   'The Python validator at `scripts/validate_context_trial_packet.py` is the normative executable authority',
+   'The JSON Schema at `references/context-trial-packet-v1.schema.json` is an informative interoperability representation',
+   'Drift between them blocks release',
+   'resolve semantic uncertainty in favor of the Python validator',
+  ],
+ },
  'skills/artifact-verification/SKILL.md':{
   'Procedure':[
    'State acceptance truths before choosing checks',
@@ -294,6 +321,17 @@ required_sections={
   ],
  },
  'operating-thought/authority/permissions-controls-and-discretion.md':{
+  'Consequential-action control layers':[
+   '**Admission:** Is this exact action authorized and valid under the governing policy?',
+   '**Execution containment:** If the acting process is wrong or compromised, what limits the reachable damage?',
+   '**Provenance:** Which actor or acting surface attempted the exact operation?',
+   '**Observed effect:** What resulting state is independently observable?',
+   'No evidence or control in one layer establishes another',
+   'Authorization does not prove execution or outcome',
+   'Containment does not authorize the contained action',
+   'A signature or other provenance record does not grant permission or prove success',
+   'A successful read-back does not retroactively authorize the action that produced it',
+  ],
   'Authority matrix':[
    'Calendar mutation | Explicit confirmation; adopter-defined standing policy may prohibit it or authorize a narrower envelope',
    'calendar, participants, timing, recurrence, notifications, or resulting commitment is unclear',
@@ -525,6 +563,9 @@ for fragment in (
 # guidance remains in its owning section, not runtime compliance or semantic proof.
 # Canaried sections default to H2; add an override whenever one intentionally uses another level.
 required_section_levels={
+ ('skills/agent-prompt-design/SKILL.md','Multi-agent context-capacity preflight'):4,
+ ('skills/agent-prompt-design/references/multi-agent-context-budget-and-artifact-trial.md','Experimental instrument status and lifecycle'):2,
+ ('skills/agent-prompt-design/references/multi-agent-context-budget-and-artifact-trial.md','Validator authority'):3,
  ('operating-thought/decisions/decision-quality-under-uncertainty.md','Causal-question contract'):3,
  ('operating-thought/decisions/decision-quality-under-uncertainty.md','Forecast horizon and prediction target'):3,
  ('operating-thought/design/right-sized-change.md','Time feedback to the system'):3,
@@ -661,6 +702,11 @@ banned={
  'runtime residue':r'Honcho|Telegram|YNAB|HealthKit|UniFi',
  'secret material':r'AKIA[0-9A-Z]{16}|ghp_[A-Za-z0-9]{30,}|github_pat_[A-Za-z0-9_]{30,}|sk-[A-Za-z0-9]{20,}|-----BEGIN [A-Z ]*PRIVATE KEY-----',
 }
+approved_public_links={
+ 'https://github.com/robertaustinbell/hermes-agent/commit/548fb95f2c9763eec37e3246543a0f80fbab1406',
+ 'https://github.com/robertaustinbell/hermes-agent/commit/d2151ca5221116987a45f6c91f00d505b1ce7655',
+ 'https://github.com/robertaustinbell/hermes-agent/commit/fba90539ca5e75444ca0588106dec43a7c766089',
+}
 def skipped(p): return any(part in SKIP_PARTS for part in p.parts)
 text_files=[]
 for p in ROOT.rglob('*'):
@@ -668,8 +714,11 @@ for p in ROOT.rglob('*'):
     try: text=p.read_text()
     except UnicodeDecodeError: errors.append(f'binary/unreadable file: {p.relative_to(ROOT)}');continue
     text_files.append(p)
+    privacy_scan_text=text
+    for approved_link in approved_public_links:
+        privacy_scan_text=privacy_scan_text.replace(approved_link,'')
     for label,pat in banned.items():
-        if re.search(pat,text,re.I): errors.append(f'{label} in {p.relative_to(ROOT)}')
+        if re.search(pat,privacy_scan_text,re.I): errors.append(f'{label} in {p.relative_to(ROOT)}')
     if text and not text.endswith('\n'): errors.append(f'missing final newline: {p.relative_to(ROOT)}')
 ids=[]
 for p in sorted((ROOT/'operating-thought').rglob('*.md')):
